@@ -5,4 +5,11 @@ import org.junit.jupiter.api.Test;
 
 class BasketTest {
 
+    @Test
+    public void testAddItems(){
+        Basket basket = new Basket(5);
+
+        boolean response = basket.addItem("A");
+
+    }
 }

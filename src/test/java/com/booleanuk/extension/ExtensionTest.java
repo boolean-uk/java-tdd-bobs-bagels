@@ -6,6 +6,6 @@ public class ExtensionTest {
 
     @Test
     public void TestMethod(){
-        
+
     }
 }

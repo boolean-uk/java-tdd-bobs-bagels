@@ -13,7 +13,7 @@ public class Basket {
     }
 
     public boolean addItem(String item){
-
+        bagels.add(item);
         return true;
     }
 }

@@ -13,7 +13,11 @@ public class Basket {
     }
 
     public boolean addItem(String item){
-        bagels.add(item);
-        return true;
+        if (bagels.size()<this.capacity){
+            bagels.add(item);
+            return true;
+        }
+        System.out.println("You can´t add a new bagel. your basket is full");
+        return false;
     }
 }

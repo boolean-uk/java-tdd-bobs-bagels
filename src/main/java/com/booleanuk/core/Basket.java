@@ -12,7 +12,11 @@ public class Basket {
     }
 
     public boolean addBagel(String bagelType){
-        return true;
+        if (this.bagels.size() < this.basketCapacity){
+            this.bagels.add(bagelType);
+            return true;
+        }
+        System.out.println("Basket is full, could not add bagel!");
+        return false;
     }
-
 }

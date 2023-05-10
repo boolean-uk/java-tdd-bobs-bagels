@@ -1,6 +1,7 @@
 package com.booleanuk.core;
 
 import java.lang.reflect.Array;
+import java.util.Objects;
 
 public class Basket {
     String [] bagels;
@@ -47,5 +48,29 @@ public class Basket {
         }
         System.out.println("Specified bagel not found");
         return false;
+    }
+    public boolean changeCapacity(int newCapacity){
+        if(newCapacity<=0){
+            System.out.println("New capacity is less than or equals to 0");
+            return false;
+        }
+        int activeBagels =0;
+        for(int i=0;i<this.bagels.length;i++){
+            if(!Objects.equals(this.bagels[i], "")){
+                activeBagels++;
+            }
+        }
+        if(newCapacity<activeBagels){
+            System.out.println("New capacity is less than the number of bagels in the basket");
+            return false;
+        }
+        String[] newBagels = new String[newCapacity];
+
+
+        for(int i=0;i<activeBagels;i++){
+            newBagels[i] = this.bagels[i];
+        }
+        this.bagels = newBagels;
+        return true;
     }
 }

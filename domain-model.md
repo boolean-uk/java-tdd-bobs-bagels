@@ -83,6 +83,6 @@ class name: Basket
 | int capacity    |                                     | The basket is full and the bagel cannot be added                                    | return false and print an error message           |
 |                 | boolean remove(String bagel)        | The basket contains the specified bagel                                             | return true and delete the bagel                  |
 |                 |                                     | The basket does not contain the specified bagel                                     | return false and print an error message           |
-|                 | boolean changeCapacity(int newSize) | The new size is smaller of equal to zero                                            | return false and print an error message           |
+|                 | boolean changeCapacity(int newSize) | The new size is smaller or equal to zero                                            | return false and print an error message           |
 |                 |                                     | The new size is smaller than the current number of items in the basket              | return false and print an error message           |
 |                 |                                     | The new size is greater than or equal to the current number of bagels in the basket | return true and update the capacity of the basket |

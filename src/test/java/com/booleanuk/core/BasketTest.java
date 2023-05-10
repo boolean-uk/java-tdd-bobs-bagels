@@ -33,4 +33,22 @@ class BasketTest {
         response = basket.add("bagel2");
         Assertions.assertFalse(response);
     }
+    @Test
+    public void testChangeCapacity(){
+        Basket basket = new Basket(10);
+        Assertions.assertEquals(10,basket.bagels.length); //constructor is working
+        boolean response = basket.changeCapacity(-1); //should be false
+        Assertions.assertFalse(response);
+        basket.add("Bagel 1");
+        basket.add("Bagel 2");
+        response = basket.changeCapacity(1);
+        Assertions.assertEquals(10,basket.bagels.length);
+        Assertions.assertFalse(response);
+        response = basket.changeCapacity(3);
+        Assertions.assertEquals(3,basket.bagels.length);
+        Assertions.assertTrue(response);
+        response = basket.changeCapacity(12);
+        Assertions.assertEquals(12,basket.bagels.length); //the actual memory allocated for that
+        Assertions.assertTrue(response);
+    }
 }

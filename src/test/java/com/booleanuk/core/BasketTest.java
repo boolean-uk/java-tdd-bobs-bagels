@@ -9,5 +9,12 @@ class BasketTest {
         Basket basket = new Basket();
         boolean response = basket.add("Whole wheat");
         Assertions.assertTrue(response);
+        Assertions.assertEquals("Whole wheat", basket.bagels[0]);
+        response = basket.add("bagel2");
+        Assertions.assertTrue(response);
+        Assertions.assertEquals("bagel2", basket.bagels[1]);
+        Assertions.assertEquals("Whole wheat", basket.bagels[0]);
     }
+
+
 }

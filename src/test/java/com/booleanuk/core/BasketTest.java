@@ -17,21 +17,22 @@ class BasketTest {
         Assertions.assertTrue(response);
         Assertions.assertEquals(3,basket.bagels.size());
 
-        // testing for adding items beyond the capacity
+        // 3. user story
         Assertions.assertTrue(response);
         basket.addItem("D");
         basket.addItem("E");
         response = basket.addItem("F");
         Assertions.assertFalse(response);
         Assertions.assertEquals(basket.capacity,basket.bagels.size());
+    }
 
+    @Test
+    public void testRemoveItem(){
+        Basket basket = new Basket(3);
+        basket.addItem("A");
+        basket.addItem("B");
+        basket.addItem("C");
 
-
-
-
-
-
-
-
+        boolean response = basket.removeItem("A");
     }
 }

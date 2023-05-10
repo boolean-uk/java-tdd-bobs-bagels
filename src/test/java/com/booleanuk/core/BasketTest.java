@@ -42,7 +42,7 @@ class BasketTest {
         basket.basket.add("cornBagel");
         basket.basket.add("corn1Bagel");
         basket.basket.add("corn2Bagel"); //size=3
-        ArrayList<String> expectedArray = new ArrayList();
+        ArrayList<String> expectedArray = new ArrayList<>();
         expectedArray.add("cornBagel");
         expectedArray.add("corn1Bagel");
         Assertions.assertTrue(basket.remove("corn2Bagel"));
@@ -54,14 +54,14 @@ class BasketTest {
     @Test
     void testAdd() {
         Basket basket = new Basket();
-        ArrayList<String> expectedArray = new ArrayList();
-        basket.capacity.setCapacity(2);
+        ArrayList<String> expectedArray = new ArrayList<>();
+        //basket.capacity.setCapacity(2);
         Assertions.assertIterableEquals(basket.basket, expectedArray);
-        basket.basket.add("cornBagel");
-        basket.basket.add("corn1Bagel");
+        basket.add("cornBagel");
+        basket.add("corn1Bagel");
         expectedArray.add("cornBagel");
         expectedArray.add("corn1Bagel");
         Assertions.assertIterableEquals(basket.basket, expectedArray);
-        Assertions.assertFalse(basket.basket.add("corn1Bagel"));
+        Assertions.assertFalse(basket.add("corn1Bagel"));
     }
 }

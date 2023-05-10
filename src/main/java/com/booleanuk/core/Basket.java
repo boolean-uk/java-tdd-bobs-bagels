@@ -19,4 +19,9 @@ public class Basket {
         System.out.println("Basket is full, could not add bagel!");
         return false;
     }
+
+    public boolean removeBagel(String bagelType){
+
+        return true;
+    }
 }

@@ -18,4 +18,14 @@ class BasketTest {
         Assertions.assertFalse(basket.addBagel("Grondboontjeboter"));
         Assertions.assertFalse(basket.bagels.contains("Grondboontjeboter"));
     }
+
+    @Test
+    public void testRemoveBagel() {
+        // Test for successfully removed Bagel
+        Basket basket = new Basket();
+        Assertions.assertTrue(basket.removeBagel("Avocado"));
+        Assertions.assertFalse(basket.bagels.contains("Avocado"));
+
+        // Test for failure
+    }
 }

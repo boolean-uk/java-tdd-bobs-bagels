@@ -21,5 +21,5 @@
 |         |                           |                          | Else                   | true   |
 |         |                           | removeBagel(String type) | If type exists         | true   |
 |         |                           |                          | Else                   | false  |
-|         | static int capacity       | setCapacity(int size)    | If size is more than 0 | true   |
-|         |                           |                          | Else                   | false  |
+|         | static int capacity       | setCapacity(int size)    | If size is less than 0 | false  |
+|         |                           |                          | Else                   | true   |

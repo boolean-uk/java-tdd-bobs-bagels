@@ -26,6 +26,7 @@ public class Basket {
             bagels.remove(item);
             return true;
         }
+        System.out.println("Item does not exists");
         return false;
     }
 }

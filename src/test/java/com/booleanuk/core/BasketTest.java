@@ -33,7 +33,16 @@ class BasketTest {
         basket.addItem("B");
         basket.addItem("C");
 
+        // 2. user story
         boolean response = basket.removeItem("A");
         Assertions.assertTrue(response);
+        Assertions.assertEquals(2,basket.bagels.size());
+        // 5. user story
+        response = basket.removeItem("A");
+        Assertions.assertFalse(response);
+        Assertions.assertEquals(2,basket.bagels.size());
+
+
+
     }
 }

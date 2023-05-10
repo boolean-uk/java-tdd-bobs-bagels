@@ -29,5 +29,7 @@ public class Basket {
         return true;
 
     }
-
+    public boolean remove(String bagel) {
+        return true;
+    }
 }

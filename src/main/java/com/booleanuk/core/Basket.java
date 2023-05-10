@@ -11,4 +11,9 @@ public class Basket {
         this.bagels= new ArrayList<>();
         this.capacity = capacity;
     }
+
+    public boolean addItem(String item){
+
+        return true;
+    }
 }

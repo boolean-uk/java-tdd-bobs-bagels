@@ -4,11 +4,13 @@ import java.lang.reflect.Array;
 
 public class Basket {
     String [] bagels;
+    int capacity;
     public Basket(){
         this.bagels = new String[5];
         for(int i = 0; i < 5; i++){
             this.bagels[i] = "";
         }
+        this.capacity = this.bagels.length;
     }
 
     public Basket (int size){
@@ -16,6 +18,7 @@ public class Basket {
         for(int i = 0; i < size; i++) {
             this.bagels[i] = "";
         }
+        this.capacity = this.bagels.length;
     }
     public boolean add(String bagel){
         int index = 0;

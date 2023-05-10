@@ -39,6 +39,17 @@ class BasketTest {
         Assertions.assertTrue(basket.updateBasketCapacity(5));
         Assertions.assertEquals(5, basket.basketCapacity);
 
+        //Test for failed updated capacity (0 or negative number)
+        Assertions.assertFalse(basket.updateBasketCapacity(0));
+        Assertions.assertFalse(basket.updateBasketCapacity(-1));
+
+        //Test for failed updated capacity (capacity made smaller than basket size)
+        basket.addBagel("Avocado");
+        basket.addBagel("Smoked Salmon");
+        basket.addBagel("Hummus");
+
+        Assertions.assertFalse(basket.updateBasketCapacity(2));
+
     }
 
 }

@@ -30,6 +30,7 @@ public class Basket {
     }
 
     public boolean updateBasketCapacity(int newCapacity) {
+
         this.basketCapacity = newCapacity;
         return true;
     }

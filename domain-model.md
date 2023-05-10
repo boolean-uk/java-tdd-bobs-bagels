@@ -36,7 +36,8 @@ I'd like to remove a bagel from my basket.``
 
 ``5.
 As a member of the public
-So that I can maintain my sanity``
+So that I can maintain my sanity
+I'd like to know if I try to remove an item that doesn't exist in my basket.``
 
 I'd like to know if I try to remove an item that doesn't exist in my basket.
 For this user story, the basket must be updated and now looks like this:

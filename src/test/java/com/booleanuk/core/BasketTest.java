@@ -15,6 +15,10 @@ class BasketTest {
         Assertions.assertEquals("bagel2", basket.bagels[1]);
         Assertions.assertEquals("Whole wheat", basket.bagels[0]);
     }
-
-
+    @Test
+    public void testRemove(){
+        Basket basket = new Basket();
+        boolean response = basket.remove("Bagel");
+        //this will not pass because remove does not exist
+    }
 }

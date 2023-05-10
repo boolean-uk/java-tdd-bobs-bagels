@@ -8,5 +8,6 @@ class BasketTest {
     public void testAdd(){
         Basket basket = new Basket();
         boolean response = basket.add("Whole wheat");
+        Assertions.assertTrue(response);
     }
 }

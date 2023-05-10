@@ -20,6 +20,6 @@ class BasketTest {
         Basket basket = new Basket();
         boolean response = basket.remove("Bagel");
         //this will not pass because remove does not exist
-        Assertions.assertTrue(response);
+        Assertions.assertFalse(response);
     }
 }

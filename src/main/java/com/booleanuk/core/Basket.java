@@ -30,6 +30,15 @@ public class Basket {
 
     }
     public boolean remove(String bagel) {
-        return true;
+        int index =0;
+        for(String item:this.bagels){
+            if(item.equals(bagel)){
+                this.bagels[index] = "";
+                return true;
+            }
+            index++;
+        }
+        System.out.println("Specified bagel not found");
+        return false;
     }
 }

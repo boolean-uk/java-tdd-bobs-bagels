@@ -23,9 +23,11 @@ class BasketTest {
     public void testRemoveBagel() {
         // Test for successfully removed Bagel
         Basket basket = new Basket();
+        basket.addBagel("Avocado");
         Assertions.assertTrue(basket.removeBagel("Avocado"));
         Assertions.assertFalse(basket.bagels.contains("Avocado"));
 
         // Test for failure
+
     }
 }

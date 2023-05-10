@@ -20,8 +20,11 @@ public class Basket {
         return false;
     }
 
-    public boolean removeBagel(String bagelType){
-
-        return true;
+    public boolean removeBagel(String bagelType) {
+        if (this.bagels.contains(bagelType)) {
+            this.bagels.remove(bagelType);
+            return true;
+        }
+        return false;
     }
 }

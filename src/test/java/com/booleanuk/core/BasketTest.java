@@ -10,5 +10,6 @@ class BasketTest {
         // Test for successfully added Bagel
         Basket basket = new Basket();
         Assertions.assertTrue(basket.addBagel("Avocado"));
+        Assertions.assertTrue(basket.bagels.contains("Avocado"));
     }
 }

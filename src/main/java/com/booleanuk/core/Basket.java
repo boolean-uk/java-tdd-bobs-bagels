@@ -11,4 +11,8 @@ public class Basket {
         this.basketCapacity = 3;
     }
 
+    public boolean addBagel(String bagelType){
+        return true;
+    }
+
 }

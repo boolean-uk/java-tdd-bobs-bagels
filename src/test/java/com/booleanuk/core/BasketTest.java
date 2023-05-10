@@ -34,5 +34,6 @@ class BasketTest {
         basket.addItem("C");
 
         boolean response = basket.removeItem("A");
+        Assertions.assertTrue(response);
     }
 }

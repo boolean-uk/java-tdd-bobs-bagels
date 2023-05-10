@@ -20,4 +20,7 @@ public class Basket {
         System.out.println("You can´t add a new bagel. your basket is full");
         return false;
     }
+    public boolean removeItem(String item){
+        return true;
+    }
 }

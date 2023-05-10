@@ -25,4 +25,12 @@ class BasketTest {
         response = basket.remove("Simple bagel");
         Assertions.assertTrue(response);
     }
+
+    @Test
+    public void testAddAgain (){
+        Basket basket = new Basket(1);
+        boolean response = basket.add("Whole wheat");
+        response = basket.add("bagel2");
+        Assertions.assertFalse(response);
+    }
 }

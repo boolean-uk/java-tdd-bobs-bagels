@@ -21,6 +21,10 @@ public class Basket {
         this.capacity = this.bagels.length;
     }
     public boolean add(String bagel){
+        if (!this.bagels[this.bagels.length - 1].equals("")){
+            System.out.println("Basket is full");
+            return false;
+        }
         int index = 0;
         for (String item : this.bagels){
             if(item.equals("")){

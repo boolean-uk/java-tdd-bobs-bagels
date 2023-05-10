@@ -3,7 +3,6 @@
 
 | Fields                                 | Methods                                 | Scenarios                                                                    | Outputs/Outcomes                             |
 |----------------------------------------|-----------------------------------------|------------------------------------------------------------------------------|----------------------------------------------|
-| `int bagelCount`                       |                                         |                                                                              |                                              |
 | `HashMap<String, Integer> bagelTypes`  |                                         |                                                                              |                                              |
 | `int capcity`                          |                                         |                                                                              |                                              |
 |                                        | `add(String bagelType, int count)`      | Basket capacity is full                                                      | Return false, inform the user                |

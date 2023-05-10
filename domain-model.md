@@ -20,12 +20,12 @@ I'd like to add a specific type of bagel to my basket.``
 For this user story, the basket must be updated and now looks like this:
 class name: Basket
 
-| Attributes      | Methods       | Scenario                      | Outcome(s)                                  |
-|-----------------|---------------|-------------------------------|---------------------------------------------|
-| String[] bagels | boolean add() | The basket can hold the bagel | return true and add the bagel to the basket |
-|                 |               |                               |                                             |
-|                 |               |                               |                                             |
-|                 |               |                               |                                             |
+| Attributes      | Methods                   | Scenario                      | Outcome(s)                                  |
+|-----------------|---------------------------|-------------------------------|---------------------------------------------|
+| String[] bagels | boolean add(String bagel) | The basket can hold the bagel | return true and add the bagel to the basket |
+|                 |                           |                               |                                             |
+|                 |                           |                               |                                             |
+|                 |                           |                               |                                             |
 
 
 ## User story 2 and 4
@@ -42,12 +42,12 @@ I'd like to know if I try to remove an item that doesn't exist in my basket.
 For this user story, the basket must be updated and now looks like this:
 class name: Basket
 
-| Attributes      | Methods          | Scenario                                        | Outcome(s)                                  |
-|-----------------|------------------|-------------------------------------------------|---------------------------------------------|
-| String[] bagels | boolean add()    | The basket can hold the bagel                   | return true and add the bagel to the basket |
-|                 |                  |                                                 |                                             |
-|                 | boolean remove() | The basket contains the specified bagel         | return true and delete the bagel            |
-|                 |                  | The basket does not contain the specified bagel | return false and print an error message     |
+| Attributes      | Methods                   | Scenario                                        | Outcome(s)                                  |
+|-----------------|---------------------------|-------------------------------------------------|---------------------------------------------|
+| String[] bagels | boolean add(String bagel) | The basket can hold the bagel                   | return true and add the bagel to the basket |
+|                 |                           |                                                 |                                             |
+|                 | boolean remove()          | The basket contains the specified bagel         | return true and delete the bagel            |
+|                 |                           | The basket does not contain the specified bagel | return false and print an error message     |
 
 
 ## User story 3
@@ -59,12 +59,12 @@ I'd like to know when my basket is full when I try adding an item beyond my bask
 For this user story, the basket must be updated and now looks like this:
 class name: Basket
 
-| Attributes      | Methods          | Scenario                                         | Outcome(s)                                  |
-|-----------------|------------------|--------------------------------------------------|---------------------------------------------|
-| String[] bagels | boolean add()    | The basket has space and the bagel can be added  | return true and add the bagel to the basket |
-| int capacity    |                  | The basket is full and the bagel cannot be added | return false and print an error message     |
-|                 | boolean remove() | The basket contains the specified bagel          | return true and delete the bagel            |
-|                 |                  | The basket does not contain the specified bagel  | return false and print an error message     | 
+| Attributes      | Methods                   | Scenario                                         | Outcome(s)                                  |
+|-----------------|---------------------------|--------------------------------------------------|---------------------------------------------|
+| String[] bagels | boolean add(String bagel) | The basket has space and the bagel can be added  | return true and add the bagel to the basket |
+| int capacity    |                           | The basket is full and the bagel cannot be added | return false and print an error message     |
+|                 | boolean remove()          | The basket contains the specified bagel          | return true and delete the bagel            |
+|                 |                           | The basket does not contain the specified bagel  | return false and print an error message     | 
 
 ## User story 4
 ``4.
@@ -78,7 +78,7 @@ class name: Basket
 
 | Attributes      | Methods                             | Scenario                                                                            | Outcome(s)                                        |
 |-----------------|-------------------------------------|-------------------------------------------------------------------------------------|---------------------------------------------------|
-| String[] bagels | boolean add()                       | The basket has space and the bagel can be added                                     | return true and add the bagel to the basket       |
+| String[] bagels | boolean add(String bagel)           | The basket has space and the bagel can be added                                     | return true and add the bagel to the basket       |
 | int capacity    |                                     | The basket is full and the bagel cannot be added                                    | return false and print an error message           |
 |                 | boolean remove()                    | The basket contains the specified bagel                                             | return true and delete the bagel                  |
 |                 |                                     | The basket does not contain the specified bagel                                     | return false and print an error message           |

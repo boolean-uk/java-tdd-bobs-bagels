@@ -26,7 +26,7 @@ public class BasketTest {
 
         Assertions.assertEquals(-1, basket.bagels.indexOf("B"));
 
-        Assertions.assertEquals(BASKETERROR.MAXCAPACITY, basket.lastError);
+        Assertions.assertEquals(NOTIFICATION.MAXCAPACITY, basket.notification);
     }
     // removeBagel() tests
     @Test
@@ -53,12 +53,14 @@ public class BasketTest {
 
         Assertions.assertEquals(-1, basket.bagels.indexOf("A"));
 
-        Assertions.assertEquals(BASKETERROR.BAGELNOTFOUND, basket.lastError);
+        Assertions.assertEquals(NOTIFICATION.BAGELNOTFOUND, basket.notification);
     }
     // setCapacity() tests
     @Test
     void setCapacityShouldBe2() {
         Basket basket = new Basket();
+
+        Basket.setCapacity(1);
 
         Assertions.assertEquals(1, Basket.capacity);
 
@@ -69,6 +71,8 @@ public class BasketTest {
     @Test
     void setCapacityShouldNotBeMinus2() {
         Basket basket = new Basket();
+
+        Basket.setCapacity(1);
 
         Assertions.assertEquals(1, Basket.capacity);
 

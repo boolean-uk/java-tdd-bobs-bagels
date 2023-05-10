@@ -31,4 +31,14 @@ class BasketTest {
         // Test for failure
         Assertions.assertFalse(basket.removeBagel("Grondboontjeboter"));
     }
+
+    @Test
+    public void testUpdateBasketCapacity() {
+        //Test for successfully updated capacity
+        Basket basket = new Basket();
+        Assertions.assertTrue(basket.updateBasketCapacity(5));
+        Assertions.assertEquals(5, basket.basketCapacity);
+
+    }
+
 }

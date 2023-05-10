@@ -25,6 +25,10 @@ public class Basket {
             this.bagels.remove(bagelType);
             return true;
         }
+        System.out.println("The bagel does not exist in the basket!");
         return false;
     }
+
+
+
 }

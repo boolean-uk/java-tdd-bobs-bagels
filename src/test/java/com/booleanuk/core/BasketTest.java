@@ -135,4 +135,10 @@ class BasketTest {
         Assertions.assertEquals(1, basket.getAvailableCapacity());
     }
 
+    @Test
+    public void testCheckPrice() {
+        Assertions.assertEquals(8.99, basket.checkPrice());
+        Assertions.assertNotEquals(2.99, basket.checkPrice());
+    }
+
 }

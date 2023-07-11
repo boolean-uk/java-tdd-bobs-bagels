@@ -2,23 +2,41 @@ package com.booleanuk.core;
 
 import lombok.Getter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 public class Basket {
-    private Bagel[] bagels;
+    private List<Bagel> bagels;
+    private int capacity;
+    private int idx = 0;
 
     public Basket(int capacity) {
-        bagels = new Bagel[capacity];
+        bagels = new ArrayList<>(capacity);
+        this.capacity = capacity;
     }
 
     public void addBagel(Bagel bagel) {
-        // TODO
+        if (bagels.size() >= capacity) {
+            throw new IllegalStateException("Cannot add any more bagels - basket is full");
+        }
+
+        bagels.add(bagel);
     }
 
     public void removeBagel(Bagel bagel) {
-        // TODO
+        if (!bagels.contains(bagel)) {
+            throw new IllegalArgumentException(String.format("Cannot remove bagel: %s - it's not in the basket", bagel));
+        }
+
+        bagels.remove(bagel);
     }
 
     public void resize(int capacity) {
-        // TODO
+        if (bagels.size() > capacity) {
+            throw new IllegalArgumentException(String.format("Basket cannot be smaller than amount of items it contains [%d]", bagels.size()));
+        }
+
+        this.capacity = capacity;
     }
 }

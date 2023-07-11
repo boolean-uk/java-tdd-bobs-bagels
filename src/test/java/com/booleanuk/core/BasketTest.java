@@ -135,7 +135,7 @@ class BasketTest {
     public void testRemove_WhenSpecificQuantityOfBagelsOfSpecificTypeAreRemoved_ShouldQuantityBeDecreased(){
         //Given
         String bagelName = "chocolate bagel";
-        Basket basket = new Basket(4);
+        Basket basket = new Basket(5);
 
         //When
         basket.add(bagelName, 2);

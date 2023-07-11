@@ -17,8 +17,8 @@ public class Basket {
         return capacity;
     }
 
-    public void add(String bagel){
-        if(isFull()) {
+    public void add(String bagel) {
+        if (isFull()) {
             System.out.println("Basket is full.");
             return;
         }
@@ -26,20 +26,20 @@ public class Basket {
     }
 
     public void remove(String bagel) {
-        if(doesBagelExist(bagel)){
+        if (doesBagelExist(bagel)) {
             bagels.remove(bagel);
         } else {
             System.out.println("Bagel does not exist.");
         }
     }
 
-    public boolean isFull(){
+    public boolean isFull() {
         if (bagels.size() < capacity) return false;
         else return true;
     }
 
-    public void setCapacity(int newCapacity){
-        if(newCapacity < bagels.size()) {
+    public void setCapacity(int newCapacity) {
+        if (newCapacity < bagels.size()) {
             System.out.println("You cannot change capacity.");
             return;
         }
@@ -54,11 +54,17 @@ public class Basket {
         bagels.clear();
     }
 
-    public int getAvailableCapacity(){
+    public int getAvailableCapacity() {
         return capacity - bagels.size();
     }
 
     public double checkPrice() {
         return bagelPrice;
+    }
+
+    public void setPrice(double newBagelPrice) {
+        if (newBagelPrice > 0) {
+            bagelPrice = newBagelPrice;
+        }
     }
 }

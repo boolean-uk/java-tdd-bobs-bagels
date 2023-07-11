@@ -65,6 +65,8 @@ public class Basket {
     public void setPrice(double newBagelPrice) {
         if (newBagelPrice > 0) {
             bagelPrice = newBagelPrice;
+        } else {
+            System.out.println("Price must be greater than 0.");
         }
     }
 }

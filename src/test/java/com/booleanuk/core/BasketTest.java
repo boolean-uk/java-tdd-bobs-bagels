@@ -30,9 +30,9 @@ class BasketTest {
         String[] basketArray = new String[3];
         basketArray[0] = bagel1;
         basketArray[1] = bagel2;
-        boolean boolCheckFalse = basket.bagelCheck(bagel2);
+        boolean boolCheckFalse = basket.bagelCheck(basketArray, bagel3);
         Assertions.assertFalse(boolCheckFalse);
-        boolean boolCheckTrue = basket.bagelCheck(bagel3);
+        boolean boolCheckTrue = basket.bagelCheck(basketArray, bagel2);
         Assertions.assertTrue(boolCheckTrue);
     }
 
@@ -45,9 +45,9 @@ class BasketTest {
         String[] basketArray = new String[3];
         basketArray[0] = bagel1;
         basketArray[1] = bagel2;
-        boolean boolCheckFalse = basket.removeBagel(bagel3);
+        boolean boolCheckFalse = basket.removeBagel(basketArray, bagel3);
         Assertions.assertFalse(boolCheckFalse);
-        boolean boolCheckTrue = basket.removeBagel(bagel2);
+        boolean boolCheckTrue = basket.removeBagel(basketArray, bagel2);
         Assertions.assertTrue(boolCheckTrue);
     }
 
@@ -55,10 +55,10 @@ class BasketTest {
     public void addBagelTest() {
         Basket basket = new Basket();
         String bagel1 = "bagel1";
-        String[] basketArray = new String[3];
-        boolean boolCheckTrue = basket.addBagel(bagel1);
+        String[] basketArray = new String[1];
+        boolean boolCheckTrue = basket.addBagel(basketArray, bagel1);
         Assertions.assertTrue(boolCheckTrue);
-        boolean boolCheckFalse = basket.addBagel(bagel1);
+        boolean boolCheckFalse = basket.addBagel(basketArray, bagel1);
         Assertions.assertFalse(boolCheckFalse);
     }
 
@@ -66,9 +66,9 @@ class BasketTest {
     public void sizeChangeTest() {
         Basket basket = new Basket();
         String[] basketArray = new String[3];
-        boolean boolCheckTrue = basket.sizeChange(basketArray, 30);
-        Assertions.assertTrue(boolCheckTrue);
-        boolean boolCheckFalse = basket.sizeChange(basketArray, 101);
-        Assertions.assertFalse(boolCheckFalse);
+        String[] newArray1 = basket.sizeChange(basketArray, 30);
+        Assertions.assertEquals(30, newArray1.length);
+        String[] newArray2 = basket.sizeChange(basketArray, 101);
+        Assertions.assertEquals(null, newArray2);
     }
 }

@@ -107,4 +107,19 @@ class BasketTest {
         Assertions.assertEquals(5, basket.freeSpace());
     }
 
+    @Test
+    public void testgetBagels() {
+        basket.add("Sweet");
+
+        Assertions.assertEquals(1, basket.getBagels().size());
+
+        basket.add("Sweet2");
+
+        Assertions.assertEquals(2, basket.getBagels().size());
+        Assertions.assertTrue(basket.getBagels().contains("Sweet"));
+        Assertions.assertTrue(basket.getBagels().contains("Sweet2"));
+        Assertions.assertFalse(basket.getBagels().contains("Sweet23"));
+
+    }
 }
+

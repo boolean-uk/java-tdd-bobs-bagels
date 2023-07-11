@@ -39,7 +39,7 @@ public class Basket {
             System.out.println("New capacity size must be positive. You cannot set it to " + newSize + ".");
         else if(newSize >= bagles.size())
             System.out.println("You already got " + bagles.size() + " bagles in basket so you can't downsize basket to " + newSize + " spaces");
-
+            this.capacity = bagles.size();
     }
 
     public int getCapacity() {

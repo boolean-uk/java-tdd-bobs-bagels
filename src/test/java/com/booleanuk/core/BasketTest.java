@@ -59,4 +59,17 @@ class BasketTest {
         //Then
         Assertions.assertEquals(result, 2);
     }
+
+    @Test
+    public void testAdd_WhenQuantityOfBagelIsInvalid_ShouldReturnFalse(){
+        //Given
+        String bagelName = "chocolate bagel";
+        Basket basket = new Basket(4);
+
+        //When
+        boolean result = basket.add(bagelName, -2);
+
+        //Then
+        Assertions.assertFalse(result);
+    }
 }

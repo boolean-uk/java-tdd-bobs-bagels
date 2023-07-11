@@ -40,6 +40,16 @@ public class BagelTest {
         Assertions.assertFalse(basket.containsBagel(plainBagel));
     }
 
+    @Test
+    public void testSetCapacity() {
+        Basket basket = new Basket(5);
+
+        basket.setCapacity(10);
+        int newCapacity = basket.getCapacity();
+
+        Assertions.assertEquals(10, newCapacity);
+    }
+
 
 
 

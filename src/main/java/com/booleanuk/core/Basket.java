@@ -21,4 +21,12 @@ public class Basket {
             return false;
         }
     }
+
+    public boolean remove(String type){
+        if  (bagles.contains(type)){
+            bagles.remove(type);
+            return true;
+        }
+        return false;
+    }
 }

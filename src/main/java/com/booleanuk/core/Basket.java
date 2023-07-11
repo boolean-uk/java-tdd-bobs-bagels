@@ -36,4 +36,10 @@ public class Basket {
     public HashMap<String, Integer> getBagels() {
         return bagels;
     }
+
+    public boolean remove(String bagelName) {
+        bagels.remove(bagelName);
+
+        return true;
+    }
 }

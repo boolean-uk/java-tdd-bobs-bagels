@@ -18,6 +18,10 @@ public class Basket {
         return basket;
     }
 
+    public void remove(String bagel) {
+        basket.remove(bagel);
+    }
+
     /*
     * 1.As a member of the public,
 So I can order a bagel before work,

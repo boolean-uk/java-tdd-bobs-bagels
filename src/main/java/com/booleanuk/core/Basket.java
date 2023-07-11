@@ -41,4 +41,8 @@ public class Basket {
         }
         capacity = newCapacity;
     }
+
+    public boolean containsItem(String item) {
+        return items.contains(item);
+    }
 }

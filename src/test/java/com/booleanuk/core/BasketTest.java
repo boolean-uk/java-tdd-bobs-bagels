@@ -58,10 +58,9 @@ class BasketTest {
         basket.addItem("Bagel 2");
         basket.addItem("Bagel 3");
         Assertions.assertEquals(3, basket.getItemCount());
-        Assertions.assertTrue(basket.items.containsItem("Bagel 1"));
-        Assertions.assertTrue(basket.items.containsItem("Bagel 2"));
-        Assertions.assertTrue(basket.items.containsItem("Bagel 3"));
-        Assertions.assertFalse(basket.items.containsItem("Bagel 4"));
-
+        Assertions.assertTrue(basket.containsItem("Bagel 1"));
+        Assertions.assertTrue(basket.containsItem("Bagel 2"));
+        Assertions.assertTrue(basket.containsItem("Bagel 3"));
+        Assertions.assertFalse(basket.containsItem("Bagel 4"));
     }
 }

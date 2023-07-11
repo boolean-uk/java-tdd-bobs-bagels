@@ -15,4 +15,19 @@ class BasketTest {
         //Then
         Assertions.assertTrue(result);
     }
+
+    @Test
+    public void testAdd_WhenThereIsEnoughSpaceInTheBasketAndThereIsBagelWithGivenNameInIt_ShouldQuantityBeIncreased(){
+        //Given
+        String bagelName = "chocolate bagel";
+        Basket basket = new Basket();
+
+        //When
+        basket.add(bagelName, 2);
+        basket.add(bagelName, 3);
+        int result = basket.getBagels().get(bagelName);
+
+        //Then
+        Assertions.assertTrue(result, 5);
+    }
 }

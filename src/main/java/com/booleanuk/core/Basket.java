@@ -72,7 +72,7 @@ public class Basket {
            if(isManager) {
                menu.remove(bagel);
                System.out.println("Bagel removed from menu");
-           } else {
+             } else {
                System.out.println("Customers cannot change menu");
            }
     }

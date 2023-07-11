@@ -146,9 +146,16 @@ class BasketTest {
         basket.setPrice(7.99);
         Assertions.assertEquals(7.99, basket.checkPrice());
         basket.setPrice(0);
+        Assertions.assertEquals("Price must be greater than 0.", outputStreamCaptor.toString().trim());
         Assertions.assertEquals(7.99, basket.checkPrice());
+
+        outputStreamCaptor.reset();
+
         basket.setPrice(-2.78);
+        Assertions.assertEquals("Price must be greater than 0.", outputStreamCaptor.toString().trim());
         Assertions.assertEquals(7.99, basket.checkPrice());
     }
+
+
 
 }

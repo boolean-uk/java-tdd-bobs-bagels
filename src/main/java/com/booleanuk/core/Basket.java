@@ -20,15 +20,19 @@ public class Basket {
         this.capacity = capacity;
     }
 
-    public boolean add(Bagel bagel) {
-        if (this.bagels.size() == capacity) {
+    public boolean addBagel(Bagel bagel) {
+        if (isFull()) {
             return false;
         }
         this.bagels.add(bagel);
         return true;
     }
 
-    public boolean remove(UUID id) {
+    private boolean isFull() {
+        return this.bagels.size() == capacity;
+    }
+
+    public boolean removeBagel(UUID id) {
         Bagel bagel = bagels.stream().filter(x -> x.id.equals(id)).findFirst().orElse(null);
         if (bagel == null) {
             return false;

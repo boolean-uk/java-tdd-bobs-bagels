@@ -21,7 +21,7 @@ class BasketTest {
         Basket basket = new Basket();
         Bagel bagel = new Bagel(BagelType.CLASSIC);
 
-        basket.add(bagel);
+        basket.addBagel(bagel);
 
         assertEquals(1, basket.bagels.size());
 
@@ -31,44 +31,44 @@ class BasketTest {
     public void shouldRemoveBagelFromBasket() {
         Basket basket = new Basket();
         Bagel bagel = new Bagel(BagelType.CLASSIC);
-        basket.add(bagel);
+        basket.addBagel(bagel);
 
-        assertTrue(basket.remove(bagel.id));
-        assertFalse(basket.remove(bagel.id));
+        assertTrue(basket.removeBagel(bagel.id));
+        assertFalse(basket.removeBagel(bagel.id));
         assertEquals(0, basket.bagels.size());
     }
 
     @Test
     public void shouldPreventOverfillingBasket() {
         Basket basket = new Basket(2);
-        basket.add(new Bagel(BagelType.CLASSIC));
+        basket.addBagel(new Bagel(BagelType.CLASSIC));
 
-        assertTrue(basket.add(new Bagel(BagelType.CLASSIC)));
-        assertFalse(basket.add(new Bagel(BagelType.CLASSIC)));
+        assertTrue(basket.addBagel(new Bagel(BagelType.CLASSIC)));
+        assertFalse(basket.addBagel(new Bagel(BagelType.CLASSIC)));
     }
 
     @Test
     public void shouldChangeCapacity() {
         Basket basket = new Basket(2);
-        basket.add(new Bagel(BagelType.CLASSIC));
+        basket.addBagel(new Bagel(BagelType.CLASSIC));
 
-        assertTrue(basket.add(new Bagel(BagelType.CLASSIC)));
-        assertFalse(basket.add(new Bagel(BagelType.CLASSIC)));
+        assertTrue(basket.addBagel(new Bagel(BagelType.CLASSIC)));
+        assertFalse(basket.addBagel(new Bagel(BagelType.CLASSIC)));
 
         assertFalse(basket.changeCapacity(-1));
         assertTrue(basket.changeCapacity(3));
 
-        assertTrue(basket.add(new Bagel(BagelType.CLASSIC)));
-        assertFalse(basket.add(new Bagel(BagelType.CLASSIC)));
+        assertTrue(basket.addBagel(new Bagel(BagelType.CLASSIC)));
+        assertFalse(basket.addBagel(new Bagel(BagelType.CLASSIC)));
     }
 
     @Test
     public void shouldReturnFalseWhenDeletingBagelNotStoredInBasket() {
         Basket basket = new Basket();
         Bagel bagel = new Bagel(BagelType.CLASSIC);
-        basket.add(bagel);
+        basket.addBagel(bagel);
         Bagel notInBasketBagel = new Bagel(BagelType.BLUEBERRY);
 
-        assertFalse(basket.remove(notInBasketBagel.id));
+        assertFalse(basket.removeBagel(notInBasketBagel.id));
     }
 }

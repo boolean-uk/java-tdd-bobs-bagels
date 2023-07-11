@@ -38,8 +38,8 @@ I'd like to know if I try to remove an item that doesn't exist in my basket.
 ## Domain Model
 | Classes | Methods                         | Fields             | Scenario                                               | Outcome                  |
 |---------|---------------------------------|--------------------|--------------------------------------------------------|--------------------------|
-| Basket  | add(Bagel bagel)                | List<Bagel> bagels | Add bagel to basket                                    | Return id of added bagel |
-|         | remove(UUID id)                 |                    | If bagel in basket                                     | Return true              |
+| Basket  | addBagel(Bagel bagel)           | List<Bagel> bagels | Add bagel to basket                                    | Return id of added bagel |
+|         | removeBagel(UUID id)            |                    | If bagel in basket                                     | Return true              |
 |         |                                 |                    | If bagel not in basket                                 | Return false             |
 |         | isFull()                        | int capacity       | If basket full                                         | Return true              |
 |         |                                 |                    | If basket not full                                     | Return false             |

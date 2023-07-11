@@ -69,4 +69,14 @@ class BasketTest {
 
     }
 
+    @Test
+    public void testIfBagelExist() {
+        basket.add("First bagel");
+        basket.add("Second bagel");
+        basket.add("Third bagel");
+
+        Assertions.assertTrue(basket.doesBagelExist("Second bagel"));
+        Assertions.assertFalse(basket.doesBagelExist("Fourth bagel"));
+    }
+
 }

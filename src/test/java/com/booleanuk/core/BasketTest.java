@@ -34,8 +34,14 @@ class BasketTest {
         basket.add(bagel);
         basket.add(bagel1);
         Assertions.assertFalse(basket.add(bagel2));
-
-
+    }
+    @Test
+    public void ChangingCapacityTest()
+    {
+        Basket basket = new Basket(2);
+        int newCapacity = 5;
+        basket.changeCapacity(newCapacity);
+        Assertions.assertEquals(newCapacity, basket.capacity);
     }
 
 }

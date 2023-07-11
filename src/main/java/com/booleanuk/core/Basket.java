@@ -18,8 +18,10 @@ public class Basket {
 
     public boolean add(String bagel)
     {
-        if(bagelsBasket.size()==capacity)
-            return  false;
+        if(bagelsBasket.size()==capacity) {
+            System.out.println("Sorry, your basket if full");
+            return false;
+        }
         bagelsBasket.add(bagel);
         return true;
     }
@@ -27,6 +29,10 @@ public class Basket {
     public void remove(String bagel)
     {
         bagelsBasket.remove(bagel);
+    }
+
+    public void changeCapacity(int newCapacity){
+
     }
 
 }

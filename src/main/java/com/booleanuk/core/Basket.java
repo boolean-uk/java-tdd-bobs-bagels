@@ -54,4 +54,8 @@ public class Basket {
     public List<String> getContents() {
         return contents;
     }
+
+    public void clearBasket() {
+        contents.clear();
+    }
 }

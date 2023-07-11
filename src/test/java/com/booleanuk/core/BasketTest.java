@@ -21,8 +21,10 @@ class BasketTest {
     public void removeTest(){
         Basket basket = new Basket(3);
         Assertions.assertFalse(basket.remove("Something"));
-        boolean result1 = basket.add("Plain bagle");
-        Assertions.assertTrue(result1);
+
+        basket.add("Plain Bagle");
+        Assertions.assertTrue(basket.remove("Plain Bagle"));
+        Assertions.assertFalse(basket.bagles.contains("Plain Bagle"));
     }
 
     @Test

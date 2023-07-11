@@ -65,6 +65,17 @@ class BasketTest {
         basket.changeCapacityOfBasket(-5);
 
         Assertions.assertEquals(3, basket.getCapacity());
-
     }
+
+    @Test
+    public void changeCapacityOfBasketWhenThereAreAlreadyBaglesInBasket() {
+        basket.addToBasket("bread");
+        basket.addToBasket("frenchRoll");
+        basket.addToBasket("bagle1");
+
+
+        basket.changeCapacityOfBasket(1);
+        Assertions.assertEquals(3, basket.getCapacity());
+    }
+
 }

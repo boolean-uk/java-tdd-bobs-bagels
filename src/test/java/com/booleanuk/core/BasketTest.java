@@ -2,7 +2,6 @@ package com.booleanuk.core;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,11 +17,7 @@ class BasketTest {
         var basket = new Basket(1);
         basket.addBagel(Bagel.Plain);
 
-        assertTrue(
-                Arrays
-                        .asList(basket.getBagels())
-                        .contains(Bagel.Plain)
-        );
+        assertTrue(basket.getBagels().contains(Bagel.Plain));
     }
 
     @Test
@@ -40,11 +35,7 @@ class BasketTest {
 
         basket.removeBagel(Bagel.Plain);
 
-        assertTrue(
-                Arrays
-                        .asList(basket.getBagels())
-                        .contains(Bagel.Plain)
-        );
+        assertTrue(basket.getBagels().contains(Bagel.Plain));
     }
 
     @Test
@@ -64,7 +55,7 @@ class BasketTest {
         var expectedSize = 5;
 
         assertDoesNotThrow(() -> basket.resize(expectedSize));
-        assertEquals(expectedSize, basket.getBagels().length);
+        assertEquals(expectedSize, basket.getBagels().size());
     }
 
     @Test

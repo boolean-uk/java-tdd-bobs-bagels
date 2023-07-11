@@ -18,6 +18,8 @@ public class Basket {
 
     public boolean add(String bagel)
     {
+        if(bagelsBasket.size()==capacity)
+            return  false;
         bagelsBasket.add(bagel);
         return true;
     }

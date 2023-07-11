@@ -167,4 +167,23 @@ class BasketTest {
         Assertions.assertEquals(26.97, basket.getTotalPrice());
     }
 
+    @Test
+    public void testOfferDiscount() {
+        basket.add("First bagel");
+        basket.add("Second bagel");
+        Assertions.assertEquals(16.18, basket.offerDiscount(10));
+
+
+        Assertions.assertEquals(16.18, basket.offerDiscount(100));
+        Assertions.assertEquals("Discount cannot be greater or equal to 100%.", outputStreamCaptor.toString().trim());
+        outputStreamCaptor.reset();
+
+        Assertions.assertEquals(16.18, basket.offerDiscount(120));
+        Assertions.assertEquals("Discount cannot be greater or equal to 100%.", outputStreamCaptor.toString().trim());
+        outputStreamCaptor.reset();
+
+        Assertions.assertEquals(16.18, basket.offerDiscount(-20));
+        Assertions.assertEquals("Discount must be greater than 0%.", outputStreamCaptor.toString().trim());
+    }
+
 }

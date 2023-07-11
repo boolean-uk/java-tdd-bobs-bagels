@@ -13,6 +13,10 @@ public class Basket {
     }
 
     public void add(String bagel){
+        if(isFull()) {
+            System.out.println("Basket is full.");
+            return;
+        }
         bagels.add(bagel);
     }
 

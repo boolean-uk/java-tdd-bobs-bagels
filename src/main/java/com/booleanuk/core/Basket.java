@@ -52,4 +52,8 @@ public class Basket {
     public void empty() {
         bagels.clear();
     }
+
+    public int getAvailableCapacity(){
+        return capacity - bagels.size();
+    }
 }

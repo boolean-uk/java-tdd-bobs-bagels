@@ -45,6 +45,7 @@ class BasketTest {
         basket.add(bagel1);
         Assertions.assertFalse(basket.add(bagel2));
     }
+
     @Test
     public void ChangingCapacityManagerTest()
     {
@@ -76,6 +77,18 @@ class BasketTest {
         basket.add(bagel);
         basket.add(bagel1);
         Assertions.assertFalse(basket.remove(bagel2));
+    }
+
+    @Test
+    public void AddingBagelNotInMenuTest()
+    {
+        Basket basket = new Basket();
+        String bagel = "bagel";
+        String bagel1 = "bagel1";
+        String bagel3 = "bagel3";
+        basket.add(bagel);
+        basket.add(bagel1);
+        Assertions.assertFalse(basket.add(bagel3));
     }
 
 }

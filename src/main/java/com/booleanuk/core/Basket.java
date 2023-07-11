@@ -5,12 +5,16 @@ import java.util.ArrayList;
 public class Basket {
 
     ArrayList<String> bagelsBasket=new ArrayList<>();
+    ArrayList<String> menu =new ArrayList<>();
     int capacity;
     boolean isManager = false;
 
     public Basket()
     {
         capacity = 5;
+        menu.add("bagel");
+        menu.add("bagel1");
+        menu.add("bagel2");
     }
 
     public Basket(int capacity) {

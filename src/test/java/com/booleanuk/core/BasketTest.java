@@ -20,4 +20,12 @@ class BasketTest {
         Assertions.assertTrue(basket.getBagels().contains("Sweet"));
     }
 
+    @Test
+    public void testRemoveBagel() {
+        basket.add("Sweet");
+        basket.remove("Sweet");
+        Assertions.assertEquals(0 ,basket.getBagels().size());
+        Assertions.assertFalse(basket.getBagels().contains("Sweet"));
+    }
+
 }

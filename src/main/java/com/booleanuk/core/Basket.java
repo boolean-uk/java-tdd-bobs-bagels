@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Basket {
     private int capacity;
-    private List<String> items;
+    public List<String> items;
 
     public Basket(int capacity) {
         this.capacity = capacity;

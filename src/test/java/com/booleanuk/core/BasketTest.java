@@ -50,4 +50,18 @@ class BasketTest {
             basket.removeItem("Bagel 1");
         });
     }
+
+    @Test
+    public void seeAllBagels(){
+        Basket basket = new Basket(3);
+        basket.addItem("Bagel 1");
+        basket.addItem("Bagel 2");
+        basket.addItem("Bagel 3");
+        Assertions.assertEquals(3, basket.getItemCount());
+        Assertions.assertTrue(basket.items.containsItem("Bagel 1"));
+        Assertions.assertTrue(basket.items.containsItem("Bagel 2"));
+        Assertions.assertTrue(basket.items.containsItem("Bagel 3"));
+        Assertions.assertFalse(basket.items.containsItem("Bagel 4"));
+
+    }
 }

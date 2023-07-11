@@ -36,6 +36,13 @@ So that I can maintain my sanity
 I'd like to know if I try to remove an item that doesn't exist in my basket.
 ```
 
+```
+Additional
+As a member of the public
+So that I can check the content of my basket
+I'd like to see all bagels in my basket.
+```
+
 | Classes  | Methods                                  | Scenario                                                                                         | Outputs                                     |
 |----------|------------------------------------------|--------------------------------------------------------------------------------------------------|---------------------------------------------|
 | `Basket` | `capacity (integer)`                     | The maximum number of items that the basket can hold                                             | The maximum number of items                 |

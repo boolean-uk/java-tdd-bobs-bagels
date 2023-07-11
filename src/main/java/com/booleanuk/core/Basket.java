@@ -47,4 +47,30 @@ public class Basket {
         return currentLoad>=capacity;
     }
 
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void changeCapacity(int newCapacity) {
+        if(newCapacity <= 0) return;
+        if(newCapacity > this.capacity) {
+            this.capacity = newCapacity;
+            return;
+        }
+        this.capacity = newCapacity;
+        int difference = newCapacity - currentLoad;
+
+        for(String key: items.keySet()) {
+            if(items.get(key) > difference) {
+                items.replace(key, items.get(key)-difference);
+                currentLoad -= difference;
+                return;
+            }
+
+            currentLoad -= items.remove(key);
+            items.remove(key);
+            if (items.get(key) == difference)
+                return;
+        }
+    }
 }

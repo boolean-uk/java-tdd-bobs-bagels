@@ -47,3 +47,6 @@ I'd like to know if I try to remove an item that doesn't exist in my basket.
 |         |                                 |                    | If newCapacity <= 0 or newCapacity < bagels in basket  | Return false             |
 |         | isInBasket(UUID id)             |                    | If bagel in basket                                     | Return true              |
 |         |                                 |                    | If bagel not in basket                                 | Return false             |
+| Bagel   |                                 | UUID               |                                                        |                          |
+|         |                                 | BagelType          |                                                        |                          |
+

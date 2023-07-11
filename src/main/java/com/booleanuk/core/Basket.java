@@ -25,6 +25,17 @@ public class Basket {
             else throw new Exception ("Bagel Type does not exist");
         }
     }
+    public void removeFromBasket(String bagelType)
+    {
+        if (contents.contains(bagelType))
+        {
+            contents.remove(bagelType);
+        }
+        else
+        {
+            System.out.println(bagelType+" bagel is not in the basket");
+        }
+    }
 
     public ArrayList<String> getContents() {
         return contents;

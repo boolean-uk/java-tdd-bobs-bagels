@@ -131,4 +131,14 @@ class BasketTest {
         Assertions.assertTrue(basket.menu.contains(bagel));
     }
 
+    @Test
+    public void ChangingCapacityToSmallerTest()
+    {
+        Basket basket = new Basket(5);
+        int newCapacity = 3;
+        basket.isManager = true;
+        basket.changeCapacity(newCapacity);
+        Assertions.assertNotEquals(newCapacity, basket.capacity);
+    }
+
 }

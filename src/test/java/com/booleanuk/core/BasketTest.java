@@ -28,6 +28,6 @@ class BasketTest {
         int result = basket.getBagels().get(bagelName);
 
         //Then
-        Assertions.assertTrue(result, 5);
+        Assertions.assertEquals(result, 5);
     }
 }

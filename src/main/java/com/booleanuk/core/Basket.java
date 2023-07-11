@@ -9,9 +9,18 @@ public class Basket {
         this.bagels = new HashMap<>();
     }
 
-    public boolean add(String bagel, int i) {
-        bagels.put(bagel, i);
+    public boolean add(String bagel, int quantity) {
+        if(this.bagels.containsKey(bagel)){
+            int newQuantity = this.bagels.get(bagel) + quantity;
+            this.bagels.put(bagel, newQuantity);
+        } else {
+            bagels.put(bagel, quantity);
+        }
 
         return true;
+    }
+
+    public HashMap<String, Integer> getBagels() {
+        return bagels;
     }
 }

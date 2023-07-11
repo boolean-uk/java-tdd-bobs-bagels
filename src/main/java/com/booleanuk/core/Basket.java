@@ -3,14 +3,26 @@ package com.booleanuk.core;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 public class Basket {
+    int capacity = 5;
 
     List<Bagel> bagels = new ArrayList<>();
 
-    public void add(Bagel bagel) {
+    public Basket() {
+
+    }
+
+    public Basket(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public boolean add(Bagel bagel) {
+        if (this.bagels.size() == capacity) {
+            return false;
+        }
         this.bagels.add(bagel);
+        return true;
     }
 
     public boolean remove(UUID id) {
@@ -21,11 +33,6 @@ public class Basket {
         this.bagels.remove(bagels.indexOf(bagel));
         return true;
     }
-
-//    int index = users.stream()
-//            .map(user -> user.getName())
-//            .collect(Collectors.toList())
-//            .indexOf(username);
 
     static class Bagel {
         UUID id;

@@ -1,8 +1,9 @@
 package com.booleanuk.core;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class BasketTest {
 
@@ -16,42 +17,51 @@ class BasketTest {
     @Test
     public void testAddBagel() {
         basket.add("Sweet");
-        Assertions.assertEquals(1 ,basket.getBagels().size());
-        Assertions.assertTrue(basket.getBagels().contains("Sweet"));
+        assertEquals(1 ,basket.getBagels().size());
+        assertTrue(basket.getBagels().contains("Sweet"));
+        basket.add("Sweet1");
+        basket.add("Sweet2");
+        basket.add("Sweet3");
+        basket.add("Sweet4");
+        basket.add("Sweet5");
+        assertEquals(5,basket.getBagels().size());
+        assertFalse(basket.getBagels().contains("Sweet5"));
+
+
     }
 
     @Test
     public void testRemoveBagel() {
         basket.add("Sweet");
         basket.remove("Sweet");
-        Assertions.assertEquals(0 ,basket.getBagels().size());
-        Assertions.assertFalse(basket.getBagels().contains("Sweet"));
+        assertEquals(0 ,basket.getBagels().size());
+        assertFalse(basket.getBagels().contains("Sweet"));
     }
 
     @Test
     public void testIsFullBagel() {
-        Assertions.assertFalse(basket.isFull());
+        assertFalse(basket.isFull());
         basket.add("Sweet");
         basket.add("S");
         basket.add("Sw");
         basket.add("Swe");
         basket.add("Swee");
 
-        Assertions.assertTrue(basket.isFull());
+        assertTrue(basket.isFull());
 
         basket.add("Sweett");
 
-        Assertions.assertEquals(5 ,basket.getBagels().size());
-        Assertions.assertFalse(basket.getBagels().contains("Sweett"));
+        assertEquals(5 ,basket.getBagels().size());
+        assertFalse(basket.getBagels().contains("Sweett"));
     }
 
     @Test
     public void testChangeCapacityBagel() {
-        Assertions.assertEquals(5, basket.getCapacity());
+        assertEquals(5, basket.getCapacity());
 
         basket.changeCapacity(7);
 
-        Assertions.assertEquals(7, basket.getCapacity());
+        assertEquals(7, basket.getCapacity());
         basket.add("Sweet");
         basket.add("Sweet1");
         basket.add("Sweet2");
@@ -59,70 +69,70 @@ class BasketTest {
 
         basket.changeCapacity(3);
 
-        Assertions.assertEquals(7, basket.getCapacity());
+        assertEquals(7, basket.getCapacity());
     }
 
     @Test
     public void testCheckIfExistBagel() {
         basket.add("Sweet");
-        Assertions.assertEquals(1 ,basket.getBagels().size());
-        Assertions.assertTrue(basket.getBagels().contains("Sweet"));
+        assertEquals(1 ,basket.getBagels().size());
+        assertTrue(basket.getBagels().contains("Sweet"));
 
         basket.remove("Swee");
 
-        Assertions.assertTrue(basket.checkIfExists("Sweet"));
-        Assertions.assertFalse(basket.checkIfExists("Swee"));
+        assertTrue(basket.checkIfExists("Sweet"));
+        assertFalse(basket.checkIfExists("Swee"));
 
     }
 
     @Test
     public void testGetBagelCount() {
         basket.add("Sweet");
-        Assertions.assertEquals(1 ,basket.getBagelCount());
-        Assertions.assertTrue(basket.getBagels().contains("Sweet"));
+        assertEquals(1 ,basket.getBagelCount());
+        assertTrue(basket.getBagels().contains("Sweet"));
 
         basket.remove("Swee");
 
-        Assertions.assertEquals(1 ,basket.getBagelCount());
+        assertEquals(1 ,basket.getBagelCount());
 
         basket.add("Sweet2");
 
-        Assertions.assertEquals(2 ,basket.getBagelCount());
+        assertEquals(2 ,basket.getBagelCount());
 
         basket.remove("Sweet");
 
-        Assertions.assertEquals(1 ,basket.getBagelCount());
+        assertEquals(1 ,basket.getBagelCount());
     }
 
     @Test
     public void testHasBagel() {
         basket.add("Sweet");
-        Assertions.assertTrue(basket.checkIfExists("Sweet"));
-        Assertions.assertFalse(basket.checkIfExists("Swe"));
+        assertTrue(basket.checkIfExists("Sweet"));
+        assertFalse(basket.checkIfExists("Swe"));
     }
 
     @Test
     public void testFreeSpaceBagel() {
         basket.add("Sweet");
-        Assertions.assertEquals(4, basket.freeSpace());
+        assertEquals(4, basket.freeSpace());
 
         basket.remove("Sweet");
 
-        Assertions.assertEquals(5, basket.freeSpace());
+        assertEquals(5, basket.freeSpace());
     }
 
     @Test
     public void testGetBagels() {
         basket.add("Sweet");
 
-        Assertions.assertEquals(1, basket.getBagels().size());
+        assertEquals(1, basket.getBagels().size());
 
         basket.add("Sweet2");
 
-        Assertions.assertEquals(2, basket.getBagels().size());
-        Assertions.assertTrue(basket.getBagels().contains("Sweet"));
-        Assertions.assertTrue(basket.getBagels().contains("Sweet2"));
-        Assertions.assertFalse(basket.getBagels().contains("Sweet23"));
+        assertEquals(2, basket.getBagels().size());
+        assertTrue(basket.getBagels().contains("Sweet"));
+        assertTrue(basket.getBagels().contains("Sweet2"));
+        assertFalse(basket.getBagels().contains("Sweet23"));
 
     }
 
@@ -132,11 +142,11 @@ class BasketTest {
         basket.add("Sweet2");
         basket.add("Sweet3");
 
-        Assertions.assertEquals(3, basket.getBagels().size());
+        assertEquals(3, basket.getBagels().size());
 
         basket.clearBasket();
 
-        Assertions.assertEquals(0, basket.getBagels().size());
+        assertEquals(0, basket.getBagels().size());
     }
 }
 

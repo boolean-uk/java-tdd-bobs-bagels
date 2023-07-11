@@ -242,4 +242,21 @@ class BasketTest {
         //Then
         Assertions.assertEquals(result, 5);
     }
+
+    @Test
+    public void testChangeBasketCapacity_WhenNewCapacityIsLessThanBasketQuantity_ShouldCapacityNotBeChanged(){
+        //Given
+        String bagelName1 = "chocolate bagel";
+        String bagelName2 = "lemon bagel";
+        Basket basket = new Basket(5);
+
+        //When
+        basket.add(bagelName1, 1);
+        basket.add(bagelName2, 2);
+        basket.changeBasketCapacity(2);
+        int result = basket.getBasketCapacity();
+
+        //Then
+        Assertions.assertEquals(result, 5);
+    }
 }

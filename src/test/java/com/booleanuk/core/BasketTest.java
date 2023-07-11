@@ -52,10 +52,14 @@ class BasketTest {
         basket.changeCapacity(7);
 
         Assertions.assertEquals(7, basket.getCapacity());
+        basket.add("Sweet");
+        basket.add("Sweet1");
+        basket.add("Sweet2");
+        basket.add("Sweet3");
 
         basket.changeCapacity(3);
 
-        Assertions.assertEquals(3, basket.getCapacity());
+        Assertions.assertEquals(7, basket.getCapacity());
     }
 
     @Test

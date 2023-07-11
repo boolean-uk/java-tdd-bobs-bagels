@@ -73,4 +73,15 @@ public class Basket {
     public double getTotalPrice() {
         return bagelPrice * bagels.size();
     }
+
+    public double offerDiscount(int discount) {
+        if (discount >= 0 && discount < 100) {
+            bagelPrice -= (discount * bagelPrice) / 100;
+        } else if (discount < 0) {
+            System.out.println("Discount must be greater than 0%.");
+        } else {
+            System.out.println("Discount cannot be greater or equal to 100%.");
+        }
+        return Math.round(getTotalPrice() * 100.0) / 100.0;
+    }
 }

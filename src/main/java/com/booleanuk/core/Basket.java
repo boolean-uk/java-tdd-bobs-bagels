@@ -43,4 +43,8 @@ public class Basket {
             return true;
         } else return false;
     }
+
+    public boolean remove(String bagel, int quantity) {
+        return true;
+    }
 }

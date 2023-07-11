@@ -19,4 +19,14 @@ class BasketTest {
         Assertions.assertEquals(2, basket.getAllBagles().size());
     }
 
+    @Test
+    public void checkIfBasketIsFull() {
+        basket.addToBasket("bread");
+        basket.addToBasket("frenchRoll");
+        basket.addToBasket("bagle1");
+        basket.addToBasket("bagle2");
+
+        Assertions.assertEquals(3, basket.getAllBagles().size());
+    }
+
 }

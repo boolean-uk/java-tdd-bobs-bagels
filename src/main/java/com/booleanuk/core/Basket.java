@@ -14,6 +14,9 @@ public class Basket {
     }
 
     public Basket(int capacity) {
+        if (capacity <= 0) {
+            throw new IllegalArgumentException();
+        }
         this.capacity = capacity;
     }
 
@@ -30,7 +33,15 @@ public class Basket {
         if (bagel == null) {
             return false;
         }
-        this.bagels.remove(bagels.indexOf(bagel));
+        bagels.remove(bagels.indexOf(bagel));
+        return true;
+    }
+
+    public boolean changeCapacity(int newCapacity) {
+        if (newCapacity <= 0 || newCapacity < bagels.size()) {
+            return false;
+        }
+        capacity = newCapacity;
         return true;
     }
 
@@ -40,7 +51,7 @@ public class Basket {
 
 
         public Bagel(BagelType bagelType) {
-            this.id = UUID.randomUUID();
+            id = UUID.randomUUID();
             this.bagelType = bagelType;
         }
     }

@@ -4,11 +4,14 @@ import com.booleanuk.core.Basket.Bagel;
 import com.booleanuk.core.Basket.BagelType;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class BasketTest {
+
+    @Test
+    public void shouldNotCreateBasket() {
+        assertThrows(IllegalArgumentException.class, () -> new Basket(-1));
+    }
 
     @Test
     public void shouldAddBagelToBasket() {

@@ -90,4 +90,11 @@ class BasketTest {
         Assertions.assertEquals(1 ,basket.getBagelCount());
     }
 
+    @Test
+    public void testHasBagel() {
+        basket.add("Sweet");
+        Assertions.assertTrue(basket.hasBagel("Sweet"));
+        Assertions.assertFalse(basket.hasBagel("Swe"));
+    }
+
 }

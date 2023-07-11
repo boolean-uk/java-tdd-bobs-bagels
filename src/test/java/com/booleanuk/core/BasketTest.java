@@ -35,7 +35,7 @@ class BasketTest {
 
         basket.removeBagel(Bagel.Plain);
 
-        assertTrue(basket.getBagels().contains(Bagel.Plain));
+        assertFalse(basket.getBagels().contains(Bagel.Plain));
     }
 
     @Test
@@ -55,7 +55,7 @@ class BasketTest {
         var expectedSize = 5;
 
         assertDoesNotThrow(() -> basket.resize(expectedSize));
-        assertEquals(expectedSize, basket.getBagels().size());
+        assertEquals(expectedSize, basket.getCapacity());
     }
 
     @Test

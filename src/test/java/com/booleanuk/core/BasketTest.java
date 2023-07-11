@@ -43,6 +43,18 @@ class BasketTest {
         Assertions.assertTrue(basket.isFull());
     }
 
+    @Test
+    public void testAddingWhenFull() {
+        basket.add("First bagel");
+        basket.add("Second bagel");
+        basket.add("Third bagel");
 
+        Assertions.assertEquals(3, basket.getBagels().size());
+
+        basket.add("Fourth bagel");
+
+        Assertions.assertEquals(3, basket.getBagels().size());
+        Assertions.assertFalse(basket.getBagels().contains("Fourth bagel"));
+    }
 
 }

@@ -175,4 +175,18 @@ class BasketTest {
         //Then
         Assertions.assertFalse(result);
     }
+
+    @Test
+    public void testRemove_WhenQuantityOfBagelIsInvalid_ShouldReturnFalse(){
+        //Given
+        String bagelName = "chocolate bagel";
+        Basket basket = new Basket(5);
+
+        //When
+        basket.add(bagelName, 2);
+        boolean result = basket.remove(bagelName, -5);
+
+        //Then
+        Assertions.assertFalse(result);
+    }
 }

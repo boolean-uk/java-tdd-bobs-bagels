@@ -41,7 +41,10 @@ public class Basket {
         if(this.bagels.containsKey(bagel)) {
             bagels.remove(bagel);
             return true;
-        } else return false;
+        } else {
+            System.out.println("Specific bagel is not in the basket!");
+            return false;
+        }
     }
 
     public boolean remove(String bagel, int quantity) {
@@ -52,7 +55,10 @@ public class Basket {
             else this.bagels.put(bagel, newQuantity);
 
             return true;
-        } else return false;
+        } else {
+            System.out.println("Specific bagel is not in the basket!");
+            return false;
+        }
     }
 
 }

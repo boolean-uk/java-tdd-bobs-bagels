@@ -26,10 +26,6 @@ public class Basket {
         return bagels;
     }
 
-    public void setBagels(List<String> bagels) {
-        this.bagels = bagels;
-    }
-
     public void add(String bagel) {
         if (isFull() && !checkIfExists(bagel)) System.out.println("Basket is full!");
         else bagels.add(bagel);

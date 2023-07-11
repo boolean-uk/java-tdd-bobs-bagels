@@ -43,4 +43,8 @@ public class Basket {
         items.remove(item);
         return true;
     }
+    public boolean isFull() {
+        return currentLoad>=capacity;
+    }
+
 }

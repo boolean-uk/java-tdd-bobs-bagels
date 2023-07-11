@@ -8,9 +8,4 @@
 |         |                     |                                     |        | if i>0            | int                              |
 |         |                     | getAllBagles                        |        |                   | List<String>                     |
 |         |                     | getCapacity                         |        |                   | int                              |
-|         |                     |                                     |        |                   |                                  |
-|         |                     |                                     |        |                   |                                  |
-|         |                     |                                     |        |                   |                                  |
 
-List<String> bagle
-public Basket(int capacity)

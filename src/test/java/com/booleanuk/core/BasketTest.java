@@ -78,9 +78,14 @@ class BasketTest {
         basket.add("Third bagel");
         basket.setCapacity(4);
         basket.add("Fourth bagel");
+        Assertions.assertEquals(4, basket.getCapacity());
         Assertions.assertEquals(4, basket.getBagels().size());
         Assertions.assertTrue(basket.getBagels().contains("Fourth bagel"));
 
+        basket.setCapacity(1);
+
+        Assertions.assertEquals("You cannot change capacity.", outputStreamCaptor.toString().trim());
+        Assertions.assertEquals(4, basket.getCapacity());
     }
 
     @Test

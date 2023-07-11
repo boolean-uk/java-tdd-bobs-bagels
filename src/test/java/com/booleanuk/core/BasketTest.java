@@ -43,5 +43,16 @@ class BasketTest {
         basket.changeCapacity(newCapacity);
         Assertions.assertEquals(newCapacity, basket.capacity);
     }
+    @Test
+    public void RemovingNonExistingBagelTest()
+    {
+        Basket basket = new Basket(2);
+        String bagel = "bagel";
+        String bagel1 = "bagel1";
+        String bagel2 = "bagel2";
+        basket.add(bagel);
+        basket.add(bagel1);
+        Assertions.assertFalse(basket.remove(bagel2));
+    }
 
 }

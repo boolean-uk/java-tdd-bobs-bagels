@@ -26,9 +26,10 @@ public class Basket {
         return true;
     }
 
-    public void remove(String bagel)
+    public boolean remove(String bagel)
     {
         bagelsBasket.remove(bagel);
+        return true;
     }
 
     public void changeCapacity(int capacity){

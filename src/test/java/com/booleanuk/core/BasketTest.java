@@ -113,4 +113,48 @@ class BasketTest {
         //Verify
         Assertions.assertTrue(isBasketFull);
     }
+
+    @Test
+    public void shouldChangeBasketCapacity() {
+        //Setup
+        int newCapacity = 4;
+
+        //Execute
+        basket.setCapacity(newCapacity);
+
+        //Verify
+        Assertions.assertEquals(newCapacity, basket.getCapacity());
+    }
+
+    @Test
+    public void shouldNotChangeBasketCapacityToNegativeValue() {
+        //Setup
+        int oldCapacity = basket.getCapacity();
+        int newCapacity = -1;
+
+        //Execute
+        basket.setCapacity(newCapacity);
+
+        //Verify
+        Assertions.assertEquals(oldCapacity, basket.getCapacity());
+    }
+
+    @Test
+    public void shouldNotChangeBasketCapacityForLowerValueThanBasketSize() {
+        //Setup
+        int oldCapacity = basket.getCapacity();
+        int newCapacity = 2;
+        String bagel = "Plain";
+        String bagel2 = "Sesame";
+        String bagel3 = "Plain";
+        basket.addBagel(bagel);
+        basket.addBagel(bagel2);
+        basket.addBagel(bagel3);
+
+        //Execute
+        basket.setCapacity(newCapacity);
+
+        //Verify
+        Assertions.assertEquals(oldCapacity, basket.getCapacity());
+    }
 }

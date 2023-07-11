@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Basket {
-    private final int capacity;
+    private int capacity;
     private final List<String> bagels;
 
     public Basket(int capacity) {
@@ -14,6 +14,12 @@ public class Basket {
 
     public int getCapacity() {
         return capacity;
+    }
+
+    public void setCapacity(int capacity) {
+        if (capacity > 0 && capacity > bagels.size()) {
+            this.capacity = capacity;
+        }
     }
 
     public List<String> getBagels() {
@@ -30,6 +36,7 @@ public class Basket {
     public boolean isBasketFull() {
         return bagels.size() == capacity;
     }
+
     public void addBagel(String bagel) {
         if (!isBasketFull()) {
             bagels.add(bagel);

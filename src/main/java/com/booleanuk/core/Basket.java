@@ -21,6 +21,9 @@ public class Basket {
             bagels.remove(bagel);
             System.out.println("Successfully removed the bagel");
         }
+         else{
+             System.out.println("You can't remove something that is not here!");
+         }
     }
 
     public int getSizeOfBasket() {

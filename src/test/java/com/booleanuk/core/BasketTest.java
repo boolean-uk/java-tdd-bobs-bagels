@@ -72,4 +72,34 @@ class BasketTest {
         //Then
         Assertions.assertFalse(result);
     }
+
+    @Test
+    public void testAdd_WhenQuantityOfBagelIsInvalid_ShouldQuantityNotBeChanged(){
+        //Given
+        String bagelName = "chocolate bagel";
+        Basket basket = new Basket(4);
+
+        //When
+        basket.add(bagelName, 2);
+        basket.add(bagelName, -3);
+        int result = basket.getBagels().get(bagelName);
+
+        //Then
+        Assertions.assertEquals(result, 2);
+    }
+
+    @Test
+    public void testRemove_WhenAllBagelsOfSpecificTypeAreRemoved_ShouldReturnTrue(){
+        //Given
+        String bagelName = "chocolate bagel";
+        Basket basket = new Basket(4);
+
+        //When
+        basket.add(bagelName, 2);
+        basket.add(bagelName, 3);
+        boolean result = basket.remove(bagelName);
+
+        //Then
+        Assertions.assertTrue(result);
+    }
 }

@@ -46,4 +46,13 @@ class BasketTest {
 
         Assertions.assertEquals(1, basket.getAllBagles().size());
     }
+
+    @Test
+    public void changeCapacityOfBasketToPositiveValue() {
+         Assertions.assertEquals(3, basket.getCapacity());
+
+         basket.changeCapacityOfBasket(10);
+
+         Assertions.assertEquals(10, basket.getCapacity());
+    }
 }

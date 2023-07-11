@@ -7,7 +7,7 @@
 |         |                     | changeCapacityOfBasket(int newSize) |        | if newSize<=0     | error                            |
 |         |                     |                                     |        | if i>0            | int                              |
 |         |                     | getAllBagles                        |        |                   | List<String>                     |
-|         |                     |                                     |        |                   |                                  |
+|         |                     | getCapacity                         |        |                   | int                              |
 |         |                     |                                     |        |                   |                                  |
 |         |                     |                                     |        |                   |                                  |
 |         |                     |                                     |        |                   |                                  |

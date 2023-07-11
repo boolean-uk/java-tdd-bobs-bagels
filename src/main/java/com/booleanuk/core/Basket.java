@@ -47,7 +47,10 @@ public class Basket {
     public boolean remove(String bagel, int quantity) {
         if(this.bagels.containsKey(bagel)){
             int newQuantity = this.bagels.get(bagel) - quantity;
-            this.bagels.put(bagel, newQuantity);
+
+            if(newQuantity <= 0) this.bagels.remove(bagel);
+            else this.bagels.put(bagel, newQuantity);
+
             return true;
         } else return false;
     }

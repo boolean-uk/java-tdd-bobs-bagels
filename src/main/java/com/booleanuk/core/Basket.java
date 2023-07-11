@@ -32,4 +32,8 @@ public class Basket {
     public void setCapacity(int newCapacity){
         capacity = newCapacity;
     }
+
+    public boolean doesBagelExist(String bagel) {
+        return bagels.contains(bagel);
+    }
 }

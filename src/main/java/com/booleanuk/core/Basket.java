@@ -12,4 +12,12 @@ public class Basket {
         this.capacity = capacity;
     }
 
+    public void addToBasket(String bagle) {
+
+    }
+
+    public List<String> getAllBagles() {
+        return bagles;
+    }
+
 }

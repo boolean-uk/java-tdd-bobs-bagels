@@ -16,18 +16,35 @@ public class BagelTest {
     }
 
     @Test
-    public void testAddBeyondCapacity() {
-        // Given
-        Basket basket = new Basket(2); // Assuming capacity is set in constructor
+    public void testGetSize() {
+        Basket basket = new Basket(5);
         Bagel plainBagel = new Bagel("plain");
         Bagel sesameBagel = new Bagel("sesame");
-        Bagel poppyBagel = new Bagel("poppy");
 
-        // When
         basket.addBagel(plainBagel);
         basket.addBagel(sesameBagel);
-        basket.addBagel(poppyBagel); // Should throw exception
+        int size = basket.getSize();
 
+        Assertions.assertEquals(2, size);
     }
+
+    @Test
+    public void testRemoveBagel() {
+        Basket basket = new Basket();
+        Bagel plainBagel = new Bagel("plain");
+        basket.addBagel(plainBagel);
+
+        basket.removeBagel(plainBagel);
+
+        Assertions.assertEquals(0, basket.getSize());
+        Assertions.assertFalse(basket.containsBagel(plainBagel));
+    }
+
+
+
+
+
+
+
 
 }

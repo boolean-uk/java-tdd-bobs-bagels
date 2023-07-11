@@ -47,4 +47,7 @@ public class Basket {
     }
 
 
+    public int getBagelCount() {
+        return bagels.size();
+    }
 }

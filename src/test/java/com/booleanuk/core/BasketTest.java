@@ -4,13 +4,11 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.nio.file.AccessDeniedException;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 class BasketTest {
 
-    private static Basket BASKET;
     private static String CHEESE_BAGLE;
     private static String VEGE_BAGLE;
     private static String NUTELLA_BAGLE;
@@ -25,62 +23,62 @@ class BasketTest {
 
     @Test
     void addBagle_ShouldAddBagleCapacityNotfull(){
-        BASKET = new Basket(User.MEMBER_OF_PUBLIC);
+        Basket basket = new Basket(User.MEMBER_OF_PUBLIC);
         ArrayList<String> expectedBasket = new ArrayList<>();
         expectedBasket.add("Vege Bagle");
 
-        Assertions.assertDoesNotThrow(() -> BASKET.addBagle(VEGE_BAGLE));
-        Assertions.assertEquals(expectedBasket, BASKET.getBagelsInBasket());
+        Assertions.assertDoesNotThrow(() -> basket.addBagle(VEGE_BAGLE));
+        Assertions.assertEquals(expectedBasket, basket.getBagelsInBasket());
     }
 
     @Test
     void addBagle_ShouldNotAddBagleCapacityFull(){
-        BASKET = new Basket(User.MEMBER_OF_PUBLIC);
-        BASKET.addBagle(CHEESE_BAGLE);
-        BASKET.addBagle(VEGE_BAGLE);
-        BASKET.addBagle(NUTELLA_BAGLE);
+        Basket basket = new Basket(User.MEMBER_OF_PUBLIC);
+        for (int i = 0; i < basket.getUserCapacity(); i++){
+            basket.addBagle(PENAUTBUTTER_BAGLE);
+        }
 
-        Assertions.assertThrows(IllegalStateException.class, () -> BASKET.addBagle(PENAUTBUTTER_BAGLE));
+        Assertions.assertThrows(IllegalStateException.class, () -> basket.addBagle(PENAUTBUTTER_BAGLE));
     }
 
     @Test
     void removeBagle_ShouldRemoveBagle(){
-        BASKET = new Basket(User.MEMBER_OF_PUBLIC);
-        BASKET.addBagle(CHEESE_BAGLE);
+        Basket basket = new Basket(User.MEMBER_OF_PUBLIC);
+        basket.addBagle(CHEESE_BAGLE);
 
-        Assertions.assertDoesNotThrow(() -> BASKET.removeBagle(CHEESE_BAGLE));
-        Assertions.assertTrue(BASKET.getBagelsInBasket().isEmpty());
+        Assertions.assertDoesNotThrow(() -> basket.removeBagle(CHEESE_BAGLE));
+        Assertions.assertTrue(basket.getBagelsInBasket().isEmpty());
     }
 
     @Test
     void removeBagle_ShouldNotRemoveBagleNotInBaglesInBasket(){
-        BASKET = new Basket(User.MEMBER_OF_PUBLIC);
-        BASKET.addBagle(NUTELLA_BAGLE);
-        Assertions.assertThrows(NoSuchElementException.class,() -> BASKET.removeBagle(CHEESE_BAGLE));
+        Basket basket = new Basket(User.MEMBER_OF_PUBLIC);
+        basket.addBagle(NUTELLA_BAGLE);
+        Assertions.assertThrows(NoSuchElementException.class,() -> basket.removeBagle(CHEESE_BAGLE));
     }
 
     @Test
     void changeBasketSize_ShouldChangeCapacity(){
-        BASKET = new Basket(User.BAGELS_MANAGER);
+        Basket basket = new Basket(User.BAGELS_MANAGER);
         int newCapacity = 10;
-        BASKET.changeBasketSize(newCapacity);
+        basket.changeBasketSize(newCapacity);
 
-        Assertions.assertEquals(BASKET.getCapacity(), newCapacity);
+        Assertions.assertEquals(basket.getCapacity(), newCapacity);
     }
 
     @Test
     void changeBasketSize_ShouldNotChangeCapacityPermissionDenied(){
-        BASKET = new Basket(User.MEMBER_OF_PUBLIC);
-        Assertions.assertThrows(IllegalStateException.class,() -> BASKET.changeBasketSize(7));
+        Basket basket = new Basket(User.MEMBER_OF_PUBLIC);
+        Assertions.assertThrows(IllegalStateException.class,() -> basket.changeBasketSize(7));
 
     }
 
     @Test
     void changeBasketSize_ShouldChangeCapacityForNextBasket() {
-        BASKET = new Basket(User.BAGELS_MANAGER);
+        Basket basket = new Basket(User.BAGELS_MANAGER);
 
         int newCapacity = 6;
-        BASKET.changeBasketSize(newCapacity);
+        basket.changeBasketSize(newCapacity);
 
         Basket basket2 = new Basket(User.MEMBER_OF_PUBLIC);
 
@@ -89,12 +87,12 @@ class BasketTest {
 
     @Test
     void changeBasketSize_ShouldNotChangeCapacityForPreviousBasket(){
-        BASKET = new Basket(User.MEMBER_OF_PUBLIC);
-        int basketCappacity = BASKET.getCapacity();
+        Basket basket = new Basket(User.MEMBER_OF_PUBLIC);
+        int basketCappacity = basket.getCapacity();
         Basket menagerBasket = new Basket(User.BAGELS_MANAGER);
         int newCapacity = 10;
         menagerBasket.changeBasketSize(newCapacity);
 
-        Assertions.assertEquals(BASKET.getUserCapacity(), basketCappacity);
+        Assertions.assertEquals(basket.getUserCapacity(), basketCappacity);
     }
 }

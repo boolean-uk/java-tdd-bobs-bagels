@@ -69,4 +69,8 @@ public class Basket {
             System.out.println("Price must be greater than 0.");
         }
     }
+
+    public double getTotalPrice() {
+        return bagelPrice * bagels.size();
+    }
 }

@@ -13,6 +13,10 @@ public class Basket {
     }
 
     public void addToBasket(String bagle) {
+        if(capacity > bagles.size()) {
+            bagles.add(bagle);
+            System.out.println("Spaces left in basket: " + (capacity - bagles.size()));
+        }
 
     }
 

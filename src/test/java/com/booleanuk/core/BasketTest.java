@@ -8,7 +8,7 @@ class BasketTest {
     Basket basket;
     private int capacity;
 
-     public BasketTest(int size) {
+     public BasketTest() {
         this.basket = new Basket(3);
      }
 

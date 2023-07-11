@@ -17,7 +17,9 @@ public class Basket {
     }
 
     public void changeCapacity(int capacity) {
-        this.capacity = capacity;
+        if(capacity >= getBagelCount()) this.capacity = capacity;
+        else System.out.println("New capacity is smaller than bagel count");
+
     }
 
     public List<String> getBagels() {

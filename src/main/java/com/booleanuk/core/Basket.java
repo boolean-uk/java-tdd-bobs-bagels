@@ -11,4 +11,9 @@ public class Basket {
         bagelsBasket.add(bagel);
     }
 
+    public void remove(String bagel)
+    {
+
+    }
+
 }

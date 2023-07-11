@@ -29,7 +29,7 @@ public class Basket {
     }
 
     public void add(String bagel) {
-        if (isFull()) System.out.println("Basket is full!");
+        if (isFull() && !checkIfExists(bagel)) System.out.println("Basket is full!");
         else bagels.add(bagel);
     }
 

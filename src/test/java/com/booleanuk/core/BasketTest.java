@@ -93,8 +93,8 @@ class BasketTest {
     @Test
     public void testHasBagel() {
         basket.add("Sweet");
-        Assertions.assertTrue(basket.hasBagel("Sweet"));
-        Assertions.assertFalse(basket.hasBagel("Swe"));
+        Assertions.assertTrue(basket.checkIfExists("Sweet"));
+        Assertions.assertFalse(basket.checkIfExists("Swe"));
     }
 
 }

@@ -54,4 +54,8 @@ public class Basket {
     public int freeSpace() {
         return capacity - getBagelCount();
     }
+
+    public void clearBasket() {
+        bagels.clear();
+    }
 }

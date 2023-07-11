@@ -130,7 +130,7 @@ class BasketTest {
 
         Assertions.assertEquals(3, basket.getBagels().size());
 
-        basket.clear();
+        basket.clearBasket();
 
         Assertions.assertEquals(0, basket.getBagels().size());
     }

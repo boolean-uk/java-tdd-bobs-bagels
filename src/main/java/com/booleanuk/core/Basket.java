@@ -46,8 +46,14 @@ public class Basket {
 
     public void changeCapacity(int capacity){
         if(isManager) {
-            this.capacity = capacity;
-            System.out.println("Capacity of the basket is changed");
+            if(capacity<= this.capacity)
+            {
+                System.out.println("You shouldn't change capacity to smaller one, you may lose your bagels!");
+            }
+            else {
+                this.capacity = capacity;
+                System.out.println("Capacity of the basket is changed");
+            }
         } else {
             System.out.println("Customers cannot change basket capacity");
         }

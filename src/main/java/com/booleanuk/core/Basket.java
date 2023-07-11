@@ -13,7 +13,7 @@ public class Basket {
 
     public void remove(String bagel)
     {
-
+        bagelsBasket.remove(bagel);
     }
 
 }

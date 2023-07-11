@@ -2,10 +2,9 @@ package com.booleanuk.core;
 
 import com.booleanuk.core.Basket.Bagel;
 import com.booleanuk.core.Basket.BagelType;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class BasketTest {
 
@@ -25,8 +24,9 @@ class BasketTest {
         Basket basket = new Basket();
         Bagel bagel = new Bagel(BagelType.CLASSIC);
         basket.add(bagel);
-        basket.remove(bagel.id);
 
+        assertTrue(basket.remove(bagel.id));
+        assertFalse(basket.remove(bagel.id));
         assertEquals(0, basket.bagels.size());
     }
 }

@@ -26,6 +26,9 @@ public class Basket {
         if(bagelsBasket.size()==capacity) {
             System.out.println("Sorry, your basket if full");
             return false;
+        } else if(!menu.contains(bagel)) {
+             System.out.println("We don't have it on the menu");
+             return false;
         }
         bagelsBasket.add(bagel);
         return true;

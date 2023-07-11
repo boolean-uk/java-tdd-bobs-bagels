@@ -130,4 +130,20 @@ class BasketTest {
         //Then
         Assertions.assertTrue(result);
     }
+
+    @Test
+    public void testRemove_WhenSpecificQuantityOfBagelsOfSpecificTypeAreRemoved_ShouldQuantityBeDecreased(){
+        //Given
+        String bagelName = "chocolate bagel";
+        Basket basket = new Basket(4);
+
+        //When
+        basket.add(bagelName, 2);
+        basket.add(bagelName, 3);
+        basket.remove(bagelName, 4);
+        int result = basket.getBagels().get(bagelName);
+
+        //Then
+        Assertions.assertEquals(result, 1);
+    }
 }

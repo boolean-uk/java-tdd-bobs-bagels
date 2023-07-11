@@ -27,4 +27,9 @@ public class Basket {
     public void setBagels(List<String> bagels) {
         this.bagels = bagels;
     }
+
+    public void add(String bagel) {
+        bagels.add(bagel);
+    }
+
 }

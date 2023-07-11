@@ -33,7 +33,7 @@ public class Basket {
         if (bagel == null) {
             return false;
         }
-        bagels.remove(bagels.indexOf(bagel));
+        bagels.remove(bagel);
         return true;
     }
 

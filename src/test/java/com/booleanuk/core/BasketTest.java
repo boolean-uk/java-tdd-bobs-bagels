@@ -4,7 +4,10 @@ import com.booleanuk.core.Basket.Bagel;
 import com.booleanuk.core.Basket.BagelType;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class BasketTest {
 
@@ -57,5 +60,15 @@ class BasketTest {
 
         assertTrue(basket.add(new Bagel(BagelType.CLASSIC)));
         assertFalse(basket.add(new Bagel(BagelType.CLASSIC)));
+    }
+
+    @Test
+    public void shouldReturnFalseWhenDeletingBagelNotStoredInBasket() {
+        Basket basket = new Basket();
+        Bagel bagel = new Bagel(BagelType.CLASSIC);
+        basket.add(bagel);
+        Bagel notInBasketBagel = new Bagel(BagelType.BLUEBERRY);
+
+        assertFalse(basket.remove(notInBasketBagel.id));
     }
 }

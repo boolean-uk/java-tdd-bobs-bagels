@@ -7,6 +7,7 @@ public class Basket {
 
     List<String> bagels = new ArrayList<>();
     int capacity = 3;
+    double bagelPrice = 8.99;
 
     public List<String> getBagels() {
         return bagels;
@@ -55,5 +56,9 @@ public class Basket {
 
     public int getAvailableCapacity(){
         return capacity - bagels.size();
+    }
+
+    public double checkPrice() {
+        return bagelPrice;
     }
 }

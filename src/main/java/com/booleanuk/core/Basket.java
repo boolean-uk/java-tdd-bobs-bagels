@@ -11,6 +11,10 @@ public class Basket {
         this.bagels = new ArrayList<>();
     }
 
+    public Basket(int capacity) {
+        this.bagels = new ArrayList<>(capacity);
+    }
+
     public void addBagel(Bagel bagel) {
         bagels.add(bagel);
     }

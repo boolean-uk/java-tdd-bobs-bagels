@@ -11,10 +11,8 @@ class BasketTest {
 
         basket.addBagel(plainBagel);
 
-        assertEquals(1, basket.getSize());
-        assertTrue(basket.containsBagel(plainBagel));
+        Assertions.assertEquals(1, basket.getSize());
+        Assertions.assertTrue(basket.containsBagel(plainBagel));
     }
-
-
 
 }

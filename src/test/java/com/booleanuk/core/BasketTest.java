@@ -79,4 +79,17 @@ class BasketTest {
         Assertions.assertFalse(basket.doesBagelExist("Fourth bagel"));
     }
 
+    @Test
+    public void testRemovingWhenDoesNotExist(){
+        basket.add("First bagel");
+        basket.add("Second bagel");
+        basket.add("Third bagel");
+
+        Assertions.assertEquals(3, basket.getBagels().size());
+        basket.remove("Fourth bagel");
+        Assertions.assertEquals(3, basket.getBagels().size());
+        basket.remove("Second bagel");
+        Assertions.assertEquals(2, basket.getBagels().size());
+    }
+
 }

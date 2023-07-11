@@ -34,6 +34,15 @@ class BasketTest {
         Assertions.assertEquals(List.of("First bagel", "Third bagel"), basket.getBagels());
     }
 
+    @Test
+    public void testIsFull(){
+        basket.add("First bagel");
+        basket.add("Second bagel");
+        Assertions.assertFalse(basket.isFull());
+        basket.add("Third bagel");
+        Assertions.assertTrue(basket.isFull());
+    }
+
 
 
 }

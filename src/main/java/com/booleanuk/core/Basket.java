@@ -48,4 +48,8 @@ public class Basket {
     public boolean doesBagelExist(String bagel) {
         return bagels.contains(bagel);
     }
+
+    public void empty() {
+        bagels.clear();
+    }
 }

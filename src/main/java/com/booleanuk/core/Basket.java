@@ -28,6 +28,10 @@ public class Basket {
 
     public boolean remove(String bagel)
     {
+        if(!bagelsBasket.contains(bagel)) {
+            System.out.println("You can't remove a bagel you don't have");
+            return false;
+        }
         bagelsBasket.remove(bagel);
         return true;
     }

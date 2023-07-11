@@ -4,6 +4,7 @@ import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Getter
 public class Basket {
@@ -26,7 +27,7 @@ public class Basket {
 
     public void removeBagel(Bagel bagel) {
         if (!bagels.contains(bagel)) {
-            throw new IllegalArgumentException(String.format("Cannot remove bagel: %s - it's not in the basket", bagel));
+            throw new NoSuchElementException(String.format("Cannot remove bagel: %s - it's not in the basket", bagel));
         }
 
         bagels.remove(bagel);

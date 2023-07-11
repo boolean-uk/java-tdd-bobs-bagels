@@ -43,6 +43,19 @@ public class Basket {
         return contents.size()==capacity;
     }
 
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public void changeBasketCapacity(int newCapacity) throws Exception {
+        if (capacity>newCapacity)
+        {
+            throw new Exception ("Cannot change capacity to lower than the current!");
+        }
+        else
+        this.capacity = newCapacity;
+    }
+
     public ArrayList<String> getContents() {
         return contents;
     }

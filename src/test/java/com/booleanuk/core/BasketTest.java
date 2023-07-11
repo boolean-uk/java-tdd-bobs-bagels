@@ -125,7 +125,7 @@ class BasketTest {
     }
 
     @Test
-    public void shouldChangeBasketCapacity() {
+    public void shouldChangeBasketCapacity() throws Exception {
         // Setup
         int new_capacity = 5;
 

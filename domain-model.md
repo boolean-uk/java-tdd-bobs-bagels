@@ -38,10 +38,10 @@ I'd like to know if I try to remove an item that doesn't exist in my basket.
 
 ## -----------------------
 
-| Class  | Method                         | Fields                      | Outcome                                |
-|--------|--------------------------------|-----------------------------|----------------------------------------|
-| Basket | `addBagel(String bagel)`       | `ArrayList<String> basket`  | bagel added to basket                  |
-|        | `removeBagel(String bagel)`    | `ArrayList<String> basket`  | remove bagel from basket               |
-|        | `checkBasket()`                | `ArrayList<String> basket`  | an error is thrown                     |
-|        | `changeCapacity(int capacity)` | `ArrayList<String> basket`  | changing capacity of basket            |
-|        | `checkSanity(String bagel)`    | `ArrayList<String> basket`  | return true or false depends on sanity |
+| Class  | Method                         | Fields                      | Outcome                                         |
+|--------|--------------------------------|-----------------------------|-------------------------------------------------|
+| Basket | `addBagel(String bagel)`       | `ArrayList<String> basket`  | bagel is added to the basket                    |
+|        | `removeBagel(String bagel)`    | `ArrayList<String> basket`  | bagel is removed from the basket                |
+|        | `checkBasket()`                | `ArrayList<String> basket`  | true if the basket is full, false if not        |
+|        | `changeCapacity(int capacity)` | `ArrayList<String> basket`  | capacity of the basket is changed               |
+|        | `checkSanity(String bagel)`    | `ArrayList<String> basket`  | true if the basket contains bagel, false if not |

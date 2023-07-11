@@ -5,31 +5,45 @@ import java.util.ArrayList;
 public class Basket {
 
     private ArrayList<String> basket = new ArrayList<>();
+    private int capacity;
 
-
-
-
-    public void add(String bagel) {
-        basket.add(bagel);
-
+    public Basket(int capacity) {
+        this.capacity = capacity;
     }
 
     public ArrayList<String> getBasket() {
         return basket;
     }
 
-    public void remove(String bagel) {
-        basket.remove(bagel);
+    public int getCapacity() {
+        return capacity;
     }
 
-    /*
-    * 1.As a member of the public,
-So I can order a bagel before work,
-I'd like to add a specific type of bagel to my basket.
-2.
-As a member of the public,
-So I can change my order,
-I'd like to remove a bagel from my basket.
-*/
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
 
+    public void add(String bagel) {
+        if(checkBasket()){
+            System.out.println("Basket is full!");
+        } else {
+            basket.add(bagel);
+        }
+    }
+
+    public void remove(String bagel) {
+        if(!checkSanity(bagel)){
+            System.out.println("This bagel does not exist!");
+        } else {
+            basket.remove(bagel);
+        }
+    }
+
+    public boolean checkSanity(String bagel){
+        return basket.contains(bagel);
+    }
+
+    private boolean checkBasket() {
+        return basket.size() == capacity;
+    }
 }

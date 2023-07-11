@@ -32,4 +32,11 @@ public class Basket {
             System.out.println("The " + bagle + " is not inside the basket, so it can't be removed.");
     }
 
+    public void changeCapacityOfBasket(int newSize) {
+        this.capacity = newSize;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
 }

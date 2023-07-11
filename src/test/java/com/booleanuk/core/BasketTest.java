@@ -17,7 +17,7 @@ class BasketTest {
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
     @BeforeEach
-    void setUp(){
+    void setUp() {
         basket = new Basket();
         System.setOut(new PrintStream(outputStreamCaptor));
     }
@@ -28,7 +28,7 @@ class BasketTest {
     }
 
     @Test
-    public void testAdd(){
+    public void testAdd() {
         basket.add("First bagel");
         Assertions.assertEquals(1, basket.getBagels().size());
         Assertions.assertTrue(basket.getBagels().contains("First bagel"));
@@ -47,7 +47,7 @@ class BasketTest {
     }
 
     @Test
-    public void testIsFull(){
+    public void testIsFull() {
         basket.add("First bagel");
         basket.add("Second bagel");
         Assertions.assertFalse(basket.isFull());
@@ -72,7 +72,7 @@ class BasketTest {
     }
 
     @Test
-    public void testSetCapacity(){
+    public void testSetCapacity() {
         basket.add("First bagel");
         basket.add("Second bagel");
         basket.add("Third bagel");
@@ -99,7 +99,7 @@ class BasketTest {
     }
 
     @Test
-    public void testRemovingWhenDoesNotExist(){
+    public void testRemovingWhenDoesNotExist() {
         basket.add("First bagel");
         basket.add("Second bagel");
         basket.add("Third bagel");
@@ -125,6 +125,14 @@ class BasketTest {
         basket.empty();
 
         Assertions.assertEquals(0, basket.getBagels().size());
+    }
+
+    @Test
+    public void testGetAvailableCapacity() {
+        basket.add("First bagel");
+        basket.add("Second bagel");
+
+        Assertions.assertEquals(1, basket.getAvailableCapacity());
     }
 
 }

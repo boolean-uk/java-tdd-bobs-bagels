@@ -156,6 +156,15 @@ class BasketTest {
         Assertions.assertEquals(7.99, basket.checkPrice());
     }
 
+    @Test
+    public void testGetTotalPrice() {
+        Assertions.assertEquals(0, basket.getTotalPrice());
 
+        basket.add("First bagel");
+        basket.add("Second bagel");
+        basket.add("Third bagel");
+
+        Assertions.assertEquals(26.97, basket.getTotalPrice());
+    }
 
 }

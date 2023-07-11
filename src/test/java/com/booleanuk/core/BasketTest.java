@@ -141,4 +141,14 @@ class BasketTest {
         Assertions.assertNotEquals(2.99, basket.checkPrice());
     }
 
+    @Test
+    public void testSetPrice() {
+        basket.setPrice(7.99);
+        Assertions.assertEquals(7.99, basket.checkPrice());
+        basket.setPrice(0);
+        Assertions.assertEquals(7.99, basket.checkPrice());
+        basket.setPrice(-2.78);
+        Assertions.assertEquals(7.99, basket.checkPrice());
+    }
+
 }

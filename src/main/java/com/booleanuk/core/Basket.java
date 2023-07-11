@@ -50,4 +50,8 @@ public class Basket {
     public int getBagelCount() {
         return bagels.size();
     }
+
+    public int freeSpace() {
+        return capacity - getBagelCount();
+    }
 }

@@ -115,4 +115,19 @@ class BasketTest {
         //Then
         Assertions.assertFalse(result);
     }
+
+    @Test
+    public void testRemove_WhenSpecificQuantityOfBagelsOfSpecificTypeAreRemoved_ShouldReturnTrue(){
+        //Given
+        String bagelName = "chocolate bagel";
+        Basket basket = new Basket(4);
+
+        //When
+        basket.add(bagelName, 2);
+        basket.add(bagelName, 3);
+        boolean result = basket.remove(bagelName, 4);
+
+        //Then
+        Assertions.assertTrue(result);
+    }
 }

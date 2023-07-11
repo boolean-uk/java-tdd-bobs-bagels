@@ -37,9 +37,10 @@ public class Basket {
         return bagels;
     }
 
-    public boolean remove(String bagelName) {
-        bagels.remove(bagelName);
-
-        return true;
+    public boolean remove(String bagel) {
+        if(this.bagels.containsKey(bagel)) {
+            bagels.remove(bagel);
+            return true;
+        } else return false;
     }
 }

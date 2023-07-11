@@ -16,11 +16,11 @@ class BasketTest {
     }
 
     @Test
-    public void addToBasketTypeExists() {
+    public void addToBasketTypeExists() throws Exception {
         String bagelType = "Ham and cheese";
 
         // Execute
-        Basket.addToBasket(bagelType);
+        basket.addToBasket(bagelType);
 
         // Verify
         Assertions.assertEquals(Arrays.asList(bagelType), basket.getContents());
@@ -32,7 +32,7 @@ class BasketTest {
 
         // Execute
         try {
-            Basket.addToBasket(bagelType);
+            basket.addToBasket(bagelType);
         }
         catch (Exception e) {
             message = e.toString();

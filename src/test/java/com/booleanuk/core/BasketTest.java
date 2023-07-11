@@ -8,7 +8,7 @@ class BasketTest {
     public void testAdd_WhenThereIsEnoughSpaceInTheBasket_ShouldReturnTrue(){
         //Given
         String bagelName = "chocolate bagel";
-        Basket basket = new Basket();
+        Basket basket = new Basket(5);
 
         //When
         boolean result = basket.add(bagelName, 2);
@@ -21,7 +21,7 @@ class BasketTest {
     public void testAdd_WhenThereIsEnoughSpaceInTheBasketAndThereIsBagelWithGivenNameInIt_ShouldQuantityBeIncreased(){
         //Given
         String bagelName = "chocolate bagel";
-        Basket basket = new Basket();
+        Basket basket = new Basket(5);
 
         //When
         basket.add(bagelName, 2);
@@ -39,7 +39,7 @@ class BasketTest {
         Basket basket = new Basket(2);
 
         //When
-        int result = basket.add(bagelName, 3);
+        boolean result = basket.add(bagelName, 3);
 
         //Then
         Assertions.assertFalse(result);

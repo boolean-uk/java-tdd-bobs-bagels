@@ -21,19 +21,24 @@ public class Basket {
     }
 
     public String addItem(String item, int quantity){
+        if(quantity < 0)
+            return "You cannot add item with negative quantity";
+        if(quantity == 0)
+            return "You cannot add item with quantity equals to zero";
 
         if (capacity-currentLoad>=quantity){
             currentLoad+=quantity;
             items.put(item,quantity);
+            if (capacity-currentLoad == 0)
+                return "Added item to basket, but basket is full";
             return "Added item to basket, you can add " + String.valueOf(capacity-currentLoad) + " items more";
         }
         return "Basket is full";
     }
 
     public boolean removeItem(String item, int quantity) {
-        if(!items.containsKey(item)) {
+        if(!items.containsKey(item) || quantity <= 0)
             return false;
-        }
 
         if(items.get(item) - quantity > 0) {
             items.replace(item, items.get(item) - quantity);

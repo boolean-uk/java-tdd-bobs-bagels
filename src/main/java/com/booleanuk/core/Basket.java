@@ -64,4 +64,7 @@ public class Basket {
         }
     }
 
+    public boolean changeBasketCapacity(int newCapacity) {
+        return true;
+    }
 }

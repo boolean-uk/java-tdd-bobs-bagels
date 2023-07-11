@@ -53,4 +53,12 @@ public class Basket {
         }
     }
 
+    public void addToMenu(String bagel){
+
+    }
+
+    public void removeFromMenu(String bagel){
+
+    }
+
 }

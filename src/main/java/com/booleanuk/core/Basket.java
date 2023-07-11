@@ -28,4 +28,17 @@ public class Basket {
         }
         items.remove(item);
     }
+
+    public boolean isFull(){
+        if(items.size() >= capacity)
+            return true;
+        return false;
+    }
+
+    public void changeCapacity(int newCapacity){
+        if(items.size() > newCapacity){
+            throw new RuntimeException("New capacity is less than old capacity of the basket");
+        }
+        capacity = newCapacity;
+    }
 }

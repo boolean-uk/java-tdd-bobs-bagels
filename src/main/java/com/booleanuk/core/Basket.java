@@ -65,7 +65,7 @@ public class Basket {
     }
 
     public boolean changeBasketCapacity(int newCapacity) {
-        if(newCapacity < 0) {
+        if(newCapacity < 0 || newCapacity < basketQuantity) {
             return false;
         } else {
             this.basketCapacity = newCapacity;

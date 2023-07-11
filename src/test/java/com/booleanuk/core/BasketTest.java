@@ -114,4 +114,17 @@ class BasketTest {
         Assertions.assertEquals(2, basket.getBagels().size());
     }
 
+    @Test
+    public void testEmptyBasket() {
+        basket.add("First bagel");
+        basket.add("Second bagel");
+        basket.add("Third bagel");
+
+        Assertions.assertEquals(3, basket.getBagels().size());
+
+        basket.empty();
+
+        Assertions.assertEquals(0, basket.getBagels().size());
+    }
+
 }

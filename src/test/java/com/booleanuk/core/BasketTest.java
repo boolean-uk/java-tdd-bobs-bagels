@@ -46,13 +46,26 @@ class BasketTest {
         Assertions.assertFalse(basket.add(bagel2));
     }
     @Test
-    public void ChangingCapacityTest()
+    public void ChangingCapacityManagerTest()
     {
         Basket basket = new Basket(2);
         int newCapacity = 5;
+        basket.isManager = true;
         basket.changeCapacity(newCapacity);
         Assertions.assertEquals(newCapacity, basket.capacity);
     }
+
+    @Test
+    public void ChangingCapacityNotManagerTest()
+    {
+        int oldCapacity = 2;
+        Basket basket = new Basket(oldCapacity);
+        int newCapacity = 5;
+        basket.isManager = false;
+        basket.changeCapacity(newCapacity);
+        Assertions.assertEquals(oldCapacity, basket.capacity);
+    }
+
     @Test
     public void RemovingNonExistingBagelTest()
     {

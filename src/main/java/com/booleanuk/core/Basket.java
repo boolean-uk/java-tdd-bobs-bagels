@@ -6,6 +6,7 @@ public class Basket {
 
     ArrayList<String> bagelsBasket=new ArrayList<>();
     int capacity;
+    boolean isManager = false;
 
     public Basket()
     {
@@ -37,8 +38,12 @@ public class Basket {
     }
 
     public void changeCapacity(int capacity){
-        this.capacity = capacity;
-        System.out.println("Capacity of the basket is changed");
+        if(isManager) {
+            this.capacity = capacity;
+            System.out.println("Capacity of the basket is changed");
+        } else {
+            System.out.println("Customers cannot change basket capacity");
+        }
     }
 
 }

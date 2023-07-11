@@ -8,7 +8,7 @@ public class Basket {
 
     public void add(String bagel)
     {
-
+        bagelsBasket.add(bagel);
     }
 
 }

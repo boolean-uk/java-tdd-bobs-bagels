@@ -48,7 +48,10 @@ public class Basket {
     }
 
     public boolean remove(String bagel, int quantity) {
-        if(this.bagels.containsKey(bagel)){
+        if(quantity < 0){
+            System.out.println("Invalid quantity of specific bagel!");
+            return false;
+        } else if(this.bagels.containsKey(bagel)){
             int newQuantity = this.bagels.get(bagel) - quantity;
 
             if(newQuantity <= 0) this.bagels.remove(bagel);

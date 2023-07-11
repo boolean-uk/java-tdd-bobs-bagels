@@ -46,4 +46,59 @@ class BasketTest {
         Assertions.assertTrue(basket.isOverfilled(2));
     }
 
+    @Test
+    public void removeTestIfBagelIsNotFound(){
+        Basket basket = new Basket();
+        basket.add("Bagel 1");
+        Assertions.assertEquals(basket.remove("Bagel 2"), "bagel not found");
+    }
+
+    @Test
+    public void removeTestIfBagelIsFound(){
+        Basket basket = new Basket();
+        basket.add("Bagel 1");
+        Assertions.assertEquals(basket.remove("Bagel 1"), "bagel removed");
+        Assertions.assertFalse(basket.bagels.containsKey("Bagel 1"));
+        Assertions.assertEquals(basket.total, 0);
+    }
+
+    @Test
+    public void removeWithCountTestIfBagelIsNotFound(){
+        Basket basket = new Basket();
+        basket.add("Bagel 1");
+        Assertions.assertEquals(basket.remove("Bagel 2", 1), "bagel not found");
+    }
+
+    @Test
+    public void removeWithCountTestIfBagelIsFound(){
+        Basket basket = new Basket();
+        basket.add("Bagel 1", 2);
+        Assertions.assertEquals(basket.remove("Bagel 1", 1), "bagel removed");
+        Assertions.assertEquals(basket.bagels.get("Bagel 1"), 1);
+    }
+
+    @Test
+    public void removeWithCountTestIfGivenCountIsBiggerThanBagelQuantity(){
+        Basket basket = new Basket();
+        basket.add("Bagel 1");
+        Assertions.assertEquals(basket.remove("Bagel 1", 2), "count is bigger than quantity of this bagel");
+    }
+
+    @Test
+    public void emptyBasketTestIfAllBagelsRemoved(){
+        Basket basket = new Basket();
+        basket.add("Bagel 1");
+        basket.add("Bagel 2");
+        Assertions.assertEquals(basket.emptyBasket(), "bagels removed");
+        Assertions.assertFalse(basket.bagels.containsKey("Bagel 1"));
+        Assertions.assertFalse(basket.bagels.containsKey("Bagel 2"));
+        Assertions.assertEquals(basket.total, 0);
+    }
+    @Test
+    public void changeCapacityTestGoesWell(){
+        Basket basket = new Basket();
+        basket.changeCapacity(10);
+        Assertions.assertEquals(basket.capacity, 10);
+    }
+
 }

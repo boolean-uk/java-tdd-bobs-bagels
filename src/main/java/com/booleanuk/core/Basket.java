@@ -12,6 +12,10 @@ public class Basket {
         return bagels;
     }
 
+    public int getCapacity() {
+        return capacity;
+    }
+
     public void add(String bagel){
         if(isFull()) {
             System.out.println("Basket is full.");
@@ -34,6 +38,10 @@ public class Basket {
     }
 
     public void setCapacity(int newCapacity){
+        if(newCapacity < bagels.size()) {
+            System.out.println("You cannot change capacity.");
+            return;
+        }
         capacity = newCapacity;
     }
 

@@ -80,8 +80,16 @@ class BasketTest {
     }
 
     @Test
-    public void removeTestIfBagelIsFound(){
+    public void removeTestIfBagelIsFoundWithTotalOne(){
         basket.add("Bagel 1");
+        Assertions.assertEquals(basket.remove("Bagel 1"), "bagel removed");
+        Assertions.assertFalse(basket.bagels.containsKey("Bagel 1"));
+        Assertions.assertEquals(basket.total, 0);
+    }
+
+    @Test
+    public void removeTestIfBagelIsFoundWithTotalMoreThanOne(){
+        basket.add("Bagel 1", 5);
         Assertions.assertEquals(basket.remove("Bagel 1"), "bagel removed");
         Assertions.assertFalse(basket.bagels.containsKey("Bagel 1"));
         Assertions.assertEquals(basket.total, 0);

@@ -45,8 +45,8 @@ public class Basket {
 
     public String remove(String bagelType) {
         if (bagels.containsKey(bagelType)) {
+            total -= bagels.get(bagelType);
             bagels.remove(bagelType);
-            total -= 1;
             return "bagel removed";
         } else return "bagel not found";
     }

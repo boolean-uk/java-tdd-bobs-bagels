@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.nio.file.AccessDeniedException;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
@@ -59,7 +60,7 @@ class BasketTest {
     }
 
     @Test
-    void changeBasketSize_ShouldChangeSize(){
+    void changeBasketSize_ShouldChangeCapacity(){
         BASKET = new Basket(User.BAGELS_MANAGER);
         int newCapacity = 10;
         BASKET.changeBasketSize(newCapacity);
@@ -68,7 +69,32 @@ class BasketTest {
     }
 
     @Test
-    void changeBasketSize_ShouldNotChangeSizePermissionDenied(){
+    void changeBasketSize_ShouldNotChangeCapacityPermissionDenied(){
+        BASKET = new Basket(User.MEMBER_OF_PUBLIC);
+        Assertions.assertThrows(IllegalStateException.class,() -> BASKET.changeBasketSize(7));
 
+    }
+
+    @Test
+    void changeBasketSize_ShouldChangeCapacityForNextBasket() {
+        BASKET = new Basket(User.BAGELS_MANAGER);
+
+        int newCapacity = 6;
+        BASKET.changeBasketSize(newCapacity);
+
+        Basket basket2 = new Basket(User.MEMBER_OF_PUBLIC);
+
+        Assertions.assertEquals(newCapacity,basket2.getUserCapacity());
+    }
+
+    @Test
+    void changeBasketSize_ShouldNotChangeCapacityForPreviousBasket(){
+        BASKET = new Basket(User.MEMBER_OF_PUBLIC);
+        int basketCappacity = BASKET.getCapacity();
+        Basket menagerBasket = new Basket(User.BAGELS_MANAGER);
+        int newCapacity = 10;
+        menagerBasket.changeBasketSize(newCapacity);
+
+        Assertions.assertEquals(BASKET.getUserCapacity(), basketCappacity);
     }
 }

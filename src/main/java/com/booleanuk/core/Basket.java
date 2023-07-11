@@ -34,10 +34,15 @@ public class Basket {
     }
 
     public void remove(String bagel) {
-        bagels.remove(bagel);
+        if (checkIfExists(bagel)) bagels.remove(bagel);
+        else System.out.println("No such bagel in a basket");
     }
 
     public boolean isFull() {
         return bagels.size() >= capacity;
+    }
+
+    public boolean checkIfExists(String bagel) {
+        return bagels.contains(bagel);
     }
 }

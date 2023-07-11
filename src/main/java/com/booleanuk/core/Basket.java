@@ -65,6 +65,11 @@ public class Basket {
     }
 
     public boolean changeBasketCapacity(int newCapacity) {
+        this.basketCapacity = newCapacity;
         return true;
+    }
+
+    public int getBasketCapacity() {
+        return this.basketCapacity;
     }
 }

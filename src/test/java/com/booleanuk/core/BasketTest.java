@@ -11,6 +11,7 @@ class BasketTest {
         Assertions.assertTrue(basket.add("Plain", 1));
         Assertions.assertFalse(basket.add("Everything", 8));
         Assertions.assertFalse(basket.add("Plastic", 3));
+        Assertions.assertFalse(basket.add("Plain", 0));
     }
 
     @Test
@@ -22,6 +23,7 @@ class BasketTest {
         Assertions.assertTrue(basket.remove("Plain", 4));
         Assertions.assertFalse(basket.remove("Everything", 4));
         Assertions.assertFalse(basket.remove("Plastic", 2));
+        Assertions.assertFalse(basket.remove("Plain", 0));
     }
 
     @Test
@@ -59,7 +61,9 @@ class BasketTest {
         basket.add("Plain", 6);
         basket.add("Everything", 2);
         basket.add("Cinnamon", 2);
+        Assertions.assertEquals(40, basket.totalCost());
         Assertions.assertTrue(basket.changeBagelPrice("Plain", 7));
+        Assertions.assertEquals(64, basket.totalCost());
         Assertions.assertFalse(basket.changeBagelPrice("Everything", 0));
         Assertions.assertFalse(basket.changeBagelPrice("Blueberry", 6));
     }

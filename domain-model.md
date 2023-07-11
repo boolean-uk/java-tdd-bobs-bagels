@@ -50,18 +50,18 @@ So that I can adjust prices to economic situation
 I'd like to change the price of available bagels
 ```
 
-| Class  | Field                                    | Method                                                  | Condition                                                               | Output                         |
-|--------|------------------------------------------|---------------------------------------------------------|-------------------------------------------------------------------------|--------------------------------|
-| Basket | Hashmap<String, Integer> bagelsCount     | boolean add(String bagelType, int amount)               | if there are less bagels in total than capacity                         | true                           |
-|        | int capacity                             |                                                         | if there are more bagels in total than capacity or the bagelType is N/A | false                          |
-|        | int currentAmount                        | boolean remove(String bagelType, int amount)            | if the amount of bagels of bagelType in basket is >= amount             | true                           |
-|        | Hashmap<String, Integer> availableBagels |                                                         | if the amount of bagels of bagelType in basket is < amount              | false                          |
-|        |                                          | boolean changeCapacity(int newCapacity)                 | if newCapacity >= currentAmount                                         | true                           |
-|        |                                          |                                                         | if newCapacity < currentAmount                                          | false                          |
-|        |                                          | int totalCost()                                         | always                                                                  | total cost of bagels in basket |
-|        |                                          | boolean addBagelType(String bagelType, int cost)        | if bagelType is N/A                                                     | true                           |
-|        |                                          |                                                         | if bagelType is available or cost <= 0                                  | false                          |
-|        |                                          | boolean changeBagelPrice(String bagelType, int newCost) | if bagelType is available                                               | true                           |
-|        |                                          |                                                         | if bagelType is N/A or newCost <= 0                                     | false                          |
+| Class  | Field                                    | Method                                                  | Condition                                                                              | Output                         |
+|--------|------------------------------------------|---------------------------------------------------------|----------------------------------------------------------------------------------------|--------------------------------|
+| Basket | Hashmap<String, Integer> bagelsCount     | boolean add(String bagelType, int amount)               | if there are less bagels in total than capacity                                        | true                           |
+|        | int capacity                             |                                                         | if there are more bagels in total than capacity or the bagelType is N/A or amount <= 0 | false                          |
+|        | int currentAmount                        | boolean remove(String bagelType, int amount)            | if the amount of bagels of bagelType in basket is >= amount                            | true                           |
+|        | Hashmap<String, Integer> availableBagels |                                                         | if the amount of bagels of bagelType in basket is < amount or amount <= 0              | false                          |
+|        |                                          | boolean changeCapacity(int newCapacity)                 | if newCapacity >= currentAmount                                                        | true                           |
+|        |                                          |                                                         | if newCapacity < currentAmount                                                         | false                          |
+|        |                                          | int totalCost()                                         | always                                                                                 | total cost of bagels in basket |
+|        |                                          | boolean addBagelType(String bagelType, int cost)        | if bagelType is N/A                                                                    | true                           |
+|        |                                          |                                                         | if bagelType is available or cost <= 0                                                 | false                          |
+|        |                                          | boolean changeBagelPrice(String bagelType, int newCost) | if bagelType is available                                                              | true                           |
+|        |                                          |                                                         | if bagelType is N/A or newCost <= 0                                                    | false                          |
 
 

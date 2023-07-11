@@ -48,9 +48,8 @@ public class Basket {
         if(this.bagels.containsKey(bagel)){
             int newQuantity = this.bagels.get(bagel) - quantity;
             this.bagels.put(bagel, newQuantity);
-        }
-
-        return true;
+            return true;
+        } else return false;
     }
 
 }

@@ -10,6 +10,7 @@ public class Basket {
 
 
     public void add(String bagel) {
+        basket.add(bagel);
 
     }
 

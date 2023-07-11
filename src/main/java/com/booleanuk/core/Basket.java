@@ -17,9 +17,8 @@ public class Basket {
             bagles.add(type);
             return true;
         }
-        else{
-            return false;
-        }
+        return false;
+
     }
 
     public boolean remove(String type){
@@ -31,11 +30,11 @@ public class Basket {
     }
 
     public boolean changeCapacity(int capacity) {
-        if(capacity > 0 && capacity > this.capacity){
+        if(capacity >= this.bagles.size() && capacity >0){
             this.capacity = capacity;
             return true;
         }
-        else return false;
+         return false;
 
     }
 }

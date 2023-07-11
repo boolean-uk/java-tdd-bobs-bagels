@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Basket {
 
-    private List<String> bagles;
+    private final List<String> bagles;
     private int capacity;
     public Basket(int capacity) {
         bagles = new ArrayList<>();
@@ -33,7 +33,10 @@ public class Basket {
     }
 
     public void changeCapacityOfBasket(int newSize) {
-        this.capacity = newSize;
+        if (newSize > 0)
+            this.capacity = newSize;
+        else
+            System.out.println("New capacity size must be positive. You cannot set it to " + newSize + ".");
     }
 
     public int getCapacity() {

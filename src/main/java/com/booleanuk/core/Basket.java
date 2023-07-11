@@ -21,7 +21,11 @@ public class Basket {
     }
 
     public void remove(String bagel) {
-        bagels.remove(bagel);
+        if(doesBagelExist(bagel)){
+            bagels.remove(bagel);
+        } else {
+            System.out.println("Bagel does not exist.");
+        }
     }
 
     public boolean isFull(){

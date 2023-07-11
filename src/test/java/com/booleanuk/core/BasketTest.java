@@ -189,4 +189,31 @@ class BasketTest {
         //Then
         Assertions.assertFalse(result);
     }
+
+    @Test
+    public void testRemove_WhenQuantityOfBagelIsInvalid_ShouldQuantityNotBeChanged(){
+        //Given
+        String bagelName = "chocolate bagel";
+        Basket basket = new Basket(5);
+
+        //When
+        basket.add(bagelName, 2);
+        basket.remove(bagelName, -5);
+        int result = basket.getBagels().get(bagelName);
+
+        //Then
+        Assertions.assertEquals(result, 2);
+    }
+
+    @Test
+    public void testChangeBasketCapacity_WhenCapacityIsValid_ShouldCapacityBeChanged(){
+        //Given
+        Basket basket = new Basket(5);
+
+        //When
+        int result = basket.changeBasketCapacity(6);
+
+        //Then
+        Assertions.assertTrue(result);
+    }
 }

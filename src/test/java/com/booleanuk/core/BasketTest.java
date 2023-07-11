@@ -37,4 +37,13 @@ class BasketTest {
 
         Assertions.assertEquals(0, basket.getAllBagles().size());
     }
+
+    @Test
+    public void removeFromBasketWhenItemDoesNotExist() {
+        basket.addToBasket("bread");
+
+        basket.removeFromBasket("frenchRoll");
+
+        Assertions.assertEquals(1, basket.getAllBagles().size());
+    }
 }

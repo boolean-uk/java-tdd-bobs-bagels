@@ -72,7 +72,7 @@ class BasketTest {
     }
 
     @Test
-    public void testGetBagelCountExistBagel() {
+    public void testGetBagelCount() {
         basket.add("Sweet");
         Assertions.assertEquals(1 ,basket.getBagelCount());
         Assertions.assertTrue(basket.getBagels().contains("Sweet"));
@@ -108,7 +108,7 @@ class BasketTest {
     }
 
     @Test
-    public void testgetBagels() {
+    public void testGetBagels() {
         basket.add("Sweet");
 
         Assertions.assertEquals(1, basket.getBagels().size());

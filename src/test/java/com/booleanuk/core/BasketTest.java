@@ -71,11 +71,11 @@ class BasketTest {
     public void changeCapacityOfBasketWhenThereAreAlreadyBaglesInBasket() {
         basket.addToBasket("bread");
         basket.addToBasket("frenchRoll");
-        basket.addToBasket("bagle1");
+
 
 
         basket.changeCapacityOfBasket(1);
-        Assertions.assertEquals(3, basket.getCapacity());
+        Assertions.assertEquals(2, basket.getCapacity());
     }
 
 }

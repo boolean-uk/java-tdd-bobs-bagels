@@ -58,4 +58,17 @@ class BasketTest {
         Assertions.assertEquals(3, basket.getCapacity());
     }
 
+    @Test
+    public void testCheckIfExistBagel() {
+        basket.add("Sweet");
+        Assertions.assertEquals(1 ,basket.getBagels().size());
+        Assertions.assertTrue(basket.getBagels().contains("Sweet"));
+
+        basket.remove("Swee");
+
+        Assertions.assertTrue(basket.checkIfExists("Sweet"));
+        Assertions.assertFalse(basket.checkIfExists("Swee"));
+
+    }
+
 }

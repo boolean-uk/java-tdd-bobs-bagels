@@ -61,8 +61,12 @@ class BasketTest {
     @Test
     void changeBasketSize_ShouldChangeSize(){
         BASKET = new Basket(User.BAGELS_MANAGER);
+        int newCapacity = 10;
+        BASKET.changeBasketSize(newCapacity);
 
+        Assertions.assertEquals(BASKET.getCapacity(), newCapacity);
     }
+
     @Test
     void changeBasketSize_ShouldNotChangeSizePermissionDenied(){
 

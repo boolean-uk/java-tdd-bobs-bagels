@@ -17,7 +17,7 @@ public class Basket {
     }
 
     public void addBagle(String typeOfBagle){
-        if (bagelsInBasket.size() < capacity)
+        if (bagelsInBasket.size() < userCapacity)
             bagelsInBasket.add(typeOfBagle);
         else
             throw new IllegalStateException("You can not add more Bagles, max number of Bagles in basket is: " + userCapacity);
@@ -29,11 +29,24 @@ public class Basket {
     }
 
     public void changeBasketSize(int newSize){
-        //TODO
+        if (this.user.equals(User.BAGELS_MANAGER)) {
+            capacity = newSize;
+            System.out.println("Capacity changed to" + newSize);
+        }
+        else
+            throw new IllegalStateException("You don't have permission to change default capacity.");
     }
 
     public ArrayList<String> getBagelsInBasket() {
         return bagelsInBasket;
+    }
+
+    public int getCapacity(){
+        return capacity;
+    }
+
+    public int getUserCapacity(){
+        return userCapacity;
     }
 }
 

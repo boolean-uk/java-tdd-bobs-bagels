@@ -40,4 +40,19 @@ class BasketTest {
         assertTrue(basket.add(new Bagel(BagelType.CLASSIC)));
         assertFalse(basket.add(new Bagel(BagelType.CLASSIC)));
     }
+
+    @Test
+    public void shouldChangeCapacity() {
+        Basket basket = new Basket(2);
+        basket.add(new Bagel(BagelType.CLASSIC));
+
+        assertTrue(basket.add(new Bagel(BagelType.CLASSIC)));
+        assertFalse(basket.add(new Bagel(BagelType.CLASSIC)));
+
+        assertFalse(basket.changeCapacity(-1));
+        assertTrue(basket.changeCapacity(3));
+
+        assertTrue(basket.add(new Bagel(BagelType.CLASSIC)));
+        assertFalse(basket.add(new Bagel(BagelType.CLASSIC)));
+    }
 }

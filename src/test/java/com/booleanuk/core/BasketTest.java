@@ -10,7 +10,6 @@ import java.util.Arrays;
 import java.util.List;
 
 class BasketTest {
-    private final PrintStream standardOut = System.out;
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
     private Basket basket;
     private static final int INITIAL_CAPACITY = 2;
@@ -34,18 +33,18 @@ class BasketTest {
 
     @Test
     public void addToBasketTypeDoesNotExist() {
-        String bagelType = "Harnas Bagel";
+        String bagelType = "Harnaś Bagel";
 
         // Execute
         try {
             basket.addToBasket(bagelType);
         }
         catch (Exception e) {
-            message = e.toString();
+            message = e.getMessage();
         }
 
         // Verify
-        Assertions.assertEquals("java.lang.Exception: Bagel Type does not exist", message);
+        Assertions.assertEquals("Bagel Type does not exist", message);
     }
 
     @Test
@@ -145,11 +144,27 @@ class BasketTest {
         try {
             basket.changeBasketCapacity(new_capacity);
         } catch (Exception e) {
-            message = e.toString();
+            message = e.getMessage();
         }
 
         // Verify
-        Assertions.assertEquals("java.lang.Exception: Cannot change capacity " +
+        Assertions.assertEquals("Cannot change capacity " +
                 "to lower than the current!", message);
     }
+
+    @Test
+    public void shouldRemoveAllBagelsFromBasket() throws Exception {
+        // Setup
+        String bagelType1 = "Ham and cheese";
+        String bagelType2 = "Cheese and bacon";
+        basket.addToBasket(bagelType1);
+        basket.addToBasket(bagelType2);
+
+        // Execute
+        basket.clearBasket();
+
+        // Verify
+        Assertions.assertEquals(List.of(), basket.getContents());
+    }
+
 }

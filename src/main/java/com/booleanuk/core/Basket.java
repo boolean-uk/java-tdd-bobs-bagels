@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Basket {
 
-    private static List<String> acceptableBagels = Arrays.asList("Ham and cheese","Cheese and bacon", "Nutella");
-    private ArrayList<String> contents = new ArrayList<>();
+    private static final List<String> acceptableBagels = Arrays.asList("Ham and cheese","Cheese and bacon", "Nutella");
+    private final List<String> contents = new ArrayList<>();
     private int capacity;
     public Basket(int capacity)
     {
@@ -18,14 +18,10 @@ public class Basket {
     {
         if (!isBasketFull())
         {
-            if (acceptableBagels.contains(bagelType))
-            {
-                contents.add(bagelType);
-            }
+            if (acceptableBagels.contains(bagelType)) contents.add(bagelType);
             else throw new Exception ("Bagel Type does not exist");
         }
-        else
-            System.out.println("Basket is full!!!");
+        else System.out.println("Basket is full!!!");
     }
     public void removeFromBasket(String bagelType)
     {
@@ -35,12 +31,12 @@ public class Basket {
         }
         else
         {
-            System.out.println(bagelType+" bagel is not in the basket");
+            System.out.println(bagelType + " bagel is not in the basket");
         }
     }
     public boolean isBasketFull()
     {
-        return contents.size()==capacity;
+        return contents.size() == capacity;
     }
 
     public int getCapacity() {
@@ -48,15 +44,14 @@ public class Basket {
     }
 
     public void changeBasketCapacity(int newCapacity) throws Exception {
-        if (capacity>newCapacity)
+        if (capacity > newCapacity)
         {
             throw new Exception ("Cannot change capacity to lower than the current!");
         }
-        else
-        this.capacity = newCapacity;
+        else this.capacity = newCapacity;
     }
 
-    public ArrayList<String> getContents() {
+    public List<String> getContents() {
         return contents;
     }
 }

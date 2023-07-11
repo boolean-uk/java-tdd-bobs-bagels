@@ -32,4 +32,7 @@ public class Basket {
         bagels.add(bagel);
     }
 
+    public void remove(String bagel) {
+        bagels.remove(bagel);
+    }
 }

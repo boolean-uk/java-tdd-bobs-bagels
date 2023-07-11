@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Basket {
 
-    private ArrayList<String> bagels = new ArrayList<>();
+    private final ArrayList<String> bagels = new ArrayList<>();
     public static int MAX_CAPACITY = 5;
 
     public void addBagel(String bagel) {
@@ -17,13 +17,12 @@ public class Basket {
     }
 
     public void removeBagel(String bagel) {
-         if (checkIfBagelIsInTheBasket(bagel)) {
+        if (checkIfBagelIsInTheBasket(bagel)) {
             bagels.remove(bagel);
             System.out.println("Successfully removed the bagel");
+        } else {
+            System.out.println("You can't remove something that is not here!");
         }
-         else{
-             System.out.println("You can't remove something that is not here!");
-         }
     }
 
     public int getSizeOfBasket() {
@@ -36,9 +35,8 @@ public class Basket {
     }
 
     public int changeCapacityOfBasket(int capacity) {
-        MAX_CAPACITY = capacity;
         System.out.println("Successfully changed the capacity");
-        return MAX_CAPACITY;
+        return MAX_CAPACITY = capacity;
     }
 
     public boolean checkIfBagelIsInTheBasket(String bagel) {

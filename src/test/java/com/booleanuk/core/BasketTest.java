@@ -1,26 +1,11 @@
 package com.booleanuk.core;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 class BasketTest {
+
     Basket basket = new Basket();
-
-    @BeforeAll
-    static void testSetup() {
-//        bagel = "bagel1";
-//        bagel2 = "bagel2";
-//        bagel3 = "bagel1";
-//        bagels.add(bagel);
-//        bagels.add(bagel2);
-//        bagels.add(bagel3);
-    }
-
-//    @AfterEach
-//    void resetTodoList() {
-//        bagels.clear();
-//    }
 
     @Test
     public void orderBagelTest() {
@@ -37,17 +22,11 @@ class BasketTest {
 
     @Test
     public void checkIsBasketFullWhenBasketIsFullTest() {
-        String bagel = "bagel4";
-        String bagel2 = "bagel4";
-        String bagel3 = "bagel4";
-        String bagel4 = "bagel4";
-        String bagel5 = "bagel4";
-
-        basket.addBagel(bagel);
-        basket.addBagel(bagel2);
-        basket.addBagel(bagel3);
-        basket.addBagel(bagel4);
-        basket.addBagel(bagel5);
+        basket.addBagel("bagel1");
+        basket.addBagel("bagel2");
+        basket.addBagel("bagel3");
+        basket.addBagel("bagel4");
+        basket.addBagel("bagel5");
 
         Assertions.assertTrue(basket.isBasketFull());
     }
@@ -57,11 +36,9 @@ class BasketTest {
         Assertions.assertFalse(basket.isBasketFull());
     }
 
-
     @Test
     public void changeCapacityOfBasketTest() {
         Assertions.assertEquals(7, basket.changeCapacityOfBasket(7));
-
     }
 
     @Test

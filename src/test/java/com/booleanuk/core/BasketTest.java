@@ -24,5 +24,18 @@ class BasketTest {
         basket.remove(bagel);
         Assertions.assertFalse(basket.bagelsBasket.contains(bagel));
     }
+    @Test
+    public void OverfillingBasketTest()
+    {
+        Basket basket = new Basket(2);
+        String bagel = "bagel";
+        String bagel1 = "bagel1";
+        String bagel2 = "bagel2";
+        basket.add(bagel);
+        basket.add(bagel1);
+        Assertions.assertFalse(basket.add(bagel2));
+
+
+    }
 
 }

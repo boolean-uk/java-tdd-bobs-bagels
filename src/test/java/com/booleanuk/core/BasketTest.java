@@ -28,4 +28,21 @@ class BasketTest {
         Assertions.assertFalse(basket.getBagels().contains("Sweet"));
     }
 
+    @Test
+    public void testIsFullBagel() {
+        Assertions.assertFalse(basket.isFull());
+        basket.add("Sweet");
+        basket.add("S");
+        basket.add("Sw");
+        basket.add("Swe");
+        basket.add("Swee");
+
+        Assertions.assertTrue(basket.isFull());
+
+        basket.add("Sweett");
+
+        Assertions.assertEquals(5 ,basket.getBagels().size());
+        Assertions.assertFalse(basket.getBagels().contains("Sweett"));
+    }
+
 }

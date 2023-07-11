@@ -25,12 +25,16 @@ So that I can maintain my sanity
 I'd like to know if I try to remove an item that doesn't exist in my basket.
 ```
 
-| Classes  | Members                                                           | Methods                                 | Scenario                              | Outputs |
-|----------|-------------------------------------------------------------------|-----------------------------------------|---------------------------------------|---------|
-| `Basket` | HashMap<String, Integer> bagels (key is bagel, value is quantity) | `add(String bagel, int quantity)`       | there is still room for another bagel | true    |
-|          |                                                                   |                                         | there is no room for another bagel    | false   |
-|          |                                                                   | `remove(String bagel)`                  | bagel with given name is removed      | true    |
-|          |                                                                   |                                         | bagel with given name does not exists | false   |
-|          |                                                                   | `changeBasketCapacity(int newCapacity)` | new capacity of baskets is valid      | true    |
-|          |                                                                   |                                         | new capacity of baskets is invalid    | false   |
+| Classes  | Members                                                           | Methods                                 | Scenario                                                                              | Outputs |
+|----------|-------------------------------------------------------------------|-----------------------------------------|---------------------------------------------------------------------------------------|---------|
+| `Basket` | HashMap<String, Integer> bagels (key is bagel, value is quantity) | `add(String bagel, int quantity)`       | there is still room for another bagel and specific bagel does not exist in the basket | true    |
+|          |                                                                   |                                         | there is still room for another bagel and specific bagel exists in the basket         | true    |
+|          |                                                                   |                                         | there is no room for another bagel                                                    | false   |
+|          |                                                                   |                                         | given quantity is invalid                                                             | false   |
+|          |                                                                   | `remove(String bagel)`                  | all bagels of specific name are removed                                               | true    |
+|          |                                                                   |                                         | bagel with given name does not exists in the basket                                   | false   |
+|          |                                                                   | `remove(String bagel, int quantity)`    | specific quantity of bagels of specific name are removed                              | true    |
+|          |                                                                   |                                         | bagel with given name does not exists                                                 | false   |
+|          |                                                                   | `changeBasketCapacity(int newCapacity)` | new capacity of baskets is valid                                                      | true    |
+|          |                                                                   |                                         | new capacity of baskets is invalid                                                    | false   |
 

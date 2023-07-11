@@ -29,4 +29,13 @@ public class Basket {
         }
         return false;
     }
+
+    public boolean changeCapacity(int capacity) {
+        if(capacity > 0 && capacity > this.capacity){
+            this.capacity = capacity;
+            return true;
+        }
+        else return false;
+
+    }
 }

@@ -123,4 +123,33 @@ class BasketTest {
         Assertions.assertEquals(expected, outputStreamCaptor.toString()
                 .trim());
     }
+
+    @Test
+    public void shouldChangeBasketCapacity() {
+        // Setup
+        int new_capacity = 5;
+
+        // Execute
+        basket.changeBasketCapacity(new_capacity);
+
+        // Verify
+        Assertions.assertEquals(new_capacity, basket.getCapacity());
+    }
+
+    @Test
+    public void shouldNotChangeBasketCapacityAndThrowException() {
+        // Setup
+        int new_capacity = 1;
+
+        // Execute
+        try {
+            basket.changeBasketCapacity(new_capacity);
+        } catch (Exception e) {
+            message = e.toString();
+        }
+
+        // Verify
+        Assertions.assertEquals("java.lang.Exception: Cannot change capacity " +
+                "to lower than the current!", message);
+    }
 }

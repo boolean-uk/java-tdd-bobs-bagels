@@ -1,5 +1,8 @@
 package com.booleanuk.core;
 
+import lombok.Getter;
+
+@Getter
 public class Basket {
     private Bagel[] bagels;
 

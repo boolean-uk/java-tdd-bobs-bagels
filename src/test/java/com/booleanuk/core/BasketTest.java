@@ -25,4 +25,19 @@ class BasketTest {
         Assertions.assertTrue(result1);
     }
 
+    @Test
+    public void capacityChangeTest(){
+        Basket basket = new Basket(3);
+        boolean result1 = basket.changeCapacity(5);
+        Assertions.assertTrue(result1);
+        Assertions.assertEquals(5, basket.capacity);
+
+        boolean result2 = basket.changeCapacity(-5);
+        Assertions.assertFalse(result2);
+
+        boolean result3 = basket.changeCapacity(4);
+        Assertions.assertFalse(result3);
+        Assertions.assertEquals(5, basket.capacity);
+    }
+
 }

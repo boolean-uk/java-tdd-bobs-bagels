@@ -26,7 +26,7 @@ public class Basket {
     }
 
     public void removeFromBasket(String bagle) {
-
+        bagles.remove(bagle);
     }
 
 }

@@ -13,8 +13,12 @@ class BasketTest {
 
         basket.add("Blueberry bagle");
         basket.add("Everything bagle");
+        Assertions.assertTrue(basket.bagles.contains("Everything bagle"));
+
         boolean result2 = basket.add("Egg bagle");
         Assertions.assertFalse(result2);
+        Assertions.assertFalse(basket.bagles.contains("Egg bagle"));
+
     }
 
     @Test
@@ -37,9 +41,20 @@ class BasketTest {
         boolean result2 = basket.changeCapacity(-5);
         Assertions.assertFalse(result2);
 
+        basket.add("Bagle1");
+        basket.add("Bagle2");
+        basket.add("Bagle3");
+        basket.add("Bagle4");
+        basket.add("Bagle5");
+
         boolean result3 = basket.changeCapacity(4);
         Assertions.assertFalse(result3);
         Assertions.assertEquals(5, basket.capacity);
+
+        basket.remove("Bagle1");
+        boolean result4 = basket.changeCapacity(4);
+        Assertions.assertTrue(result4);
+        Assertions.assertEquals(4, basket.capacity);
     }
 
 }

@@ -40,5 +40,14 @@ class BasketTest {
         assertTrue(basket.removeItem(BAGEL3, 5));
         assertFalse(basket.removeItem("x", 3));
     }
+    @Test
+    public void  isFullTest(){
+        Basket basket = new Basket(6);
+        basket.addItem(BAGEL1,3);
+        assertFalse(basket.isFull());
+        basket.addItem(BAGEL2,3);
+        assertTrue(basket.isFull());
+    }
+
 
 }

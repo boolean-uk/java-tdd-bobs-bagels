@@ -29,4 +29,12 @@ class BasketTest {
         Assertions.assertEquals(3, basket.getAllBagles().size());
     }
 
+    @Test
+    public void removeFromBasketWhenItemExists() {
+        basket.addToBasket("bread");
+
+        basket.removeFromBasket("bread");
+
+        Assertions.assertEquals(0, basket.getAllBagles().size());
+    }
 }

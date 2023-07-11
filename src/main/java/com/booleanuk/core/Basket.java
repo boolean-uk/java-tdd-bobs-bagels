@@ -25,4 +25,8 @@ public class Basket {
         return bagles;
     }
 
+    public void removeFromBasket(String bagle) {
+
+    }
+
 }

@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Basket {
 
-    private static List<String> acceptableBagels = Arrays.asList("Ham and cheese","Cheese and bacon");
+    private static List<String> acceptableBagels = Arrays.asList("Ham and cheese","Cheese and bacon", "Nutella");
     private ArrayList<String> contents = new ArrayList<>();
     private int capacity;
     public Basket(int capacity)
@@ -16,7 +16,7 @@ public class Basket {
 
     public void addToBasket(String bagelType) throws Exception
     {
-        if (contents.size()<capacity)
+        if (!isBasketFull())
         {
             if (acceptableBagels.contains(bagelType))
             {
@@ -24,6 +24,8 @@ public class Basket {
             }
             else throw new Exception ("Bagel Type does not exist");
         }
+        else
+            System.out.println("Basket is full!!!");
     }
     public void removeFromBasket(String bagelType)
     {
@@ -35,6 +37,10 @@ public class Basket {
         {
             System.out.println(bagelType+" bagel is not in the basket");
         }
+    }
+    public boolean isBasketFull()
+    {
+        return contents.size()==capacity;
     }
 
     public ArrayList<String> getContents() {

@@ -54,11 +54,21 @@ public class Basket {
     }
 
     public void addToMenu(String bagel){
-
+          if(isManager) {
+              menu.add(bagel);
+              System.out.println("Bagel added to menu");
+          } else {
+              System.out.println("Customers cannot change menu");
+          }
     }
 
     public void removeFromMenu(String bagel){
-
+           if(isManager) {
+               menu.remove(bagel);
+               System.out.println("Bagel removed from menu");
+           } else {
+               System.out.println("Customers cannot change menu");
+           }
     }
 
 }

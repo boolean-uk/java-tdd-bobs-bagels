@@ -17,6 +17,7 @@ public class Basket {
             bagles.add(bagle);
             System.out.println("Spaces left in basket: " + (capacity - bagles.size()));
         }
+        System.out.println("There is no more space left in basket");
 
     }
 

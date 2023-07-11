@@ -1,5 +1,17 @@
 package com.booleanuk.core;
 
-public class Basket {
+import java.util.HashMap;
 
+public class Basket {
+    private final HashMap<String, Integer> bagels;
+
+    public Basket() {
+        this.bagels = new HashMap<>();
+    }
+
+    public boolean add(String bagel, int i) {
+        bagels.put(bagel, i);
+
+        return true;
+    }
 }

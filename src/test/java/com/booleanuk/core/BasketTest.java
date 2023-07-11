@@ -229,4 +229,17 @@ class BasketTest {
         //Then
         Assertions.assertEquals(result, 6);
     }
+
+    @Test
+    public void testChangeBasketCapacity_WhenCapacityIsInvalid_ShouldCapacityNotBeChanged(){
+        //Given
+        Basket basket = new Basket(5);
+
+        //When
+        basket.changeBasketCapacity(-5);
+        int result = basket.getBasketCapacity();
+
+        //Then
+        Assertions.assertEquals(result, 6);
+    }
 }

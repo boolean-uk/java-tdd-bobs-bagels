@@ -26,6 +26,10 @@ public class Basket {
     public boolean containsBagel(Bagel bagel) {
         return bagels.contains(bagel);
     }
+
+    public boolean removeBagel(Bagel bagel) {
+        return bagels.remove(bagel);
+    }
 }
 
 class Bagel {

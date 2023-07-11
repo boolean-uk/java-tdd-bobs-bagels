@@ -7,65 +7,68 @@ class BasketTest {
 
     @Test
     public void basketCheckTest() {
-        Basket basket1 = new Basket();
-        Basket basket2 = new Basket();
-        Basket basket3 = new Basket();
-        Basket basket4 = new Basket();
-        Basket[] basketArray = new Basket[3];
-        basketArray[0] = basket1;
-        basketArray[1] = basket2;
-        boolean boolCheckTrue = basket4.basketCheck();
+        Basket basket = new Basket();
+        String bagel1 = "bagel1";
+        String bagel2 = "bagel2";
+        String bagel3 = "bagel3";
+        String[] basketArray = new String[3];
+        basketArray[0] = bagel1;
+        basketArray[1] = bagel2;
+        boolean boolCheckTrue = basket.basketCheck(basketArray);
         Assertions.assertTrue(boolCheckTrue);
-        basketArray[2] = basket3;
-        boolean boolCheckFalse = basket4.basketCheck();
+        basketArray[2] = bagel3;
+        boolean boolCheckFalse = basket.basketCheck(basketArray);
         Assertions.assertFalse(boolCheckFalse);
     }
 
     @Test
     public void bagelCheckTest() {
-        Basket basket1 = new Basket();
-        Basket basket2 = new Basket();
-        Basket basket3 = new Basket();
-        Basket[] basketArray = new Basket[3];
-        basketArray[0] = basket1;
-        basketArray[1] = basket2;
-        boolean boolCheckFalse = basket3.bagelCheck();
+        Basket basket = new Basket();
+        String bagel1 = "bagel1";
+        String bagel2 = "bagel2";
+        String bagel3 = "bagel3";
+        String[] basketArray = new String[3];
+        basketArray[0] = bagel1;
+        basketArray[1] = bagel2;
+        boolean boolCheckFalse = basket.bagelCheck(bagel2);
         Assertions.assertFalse(boolCheckFalse);
-        boolean boolCheckTrue = basket2.bagelCheck();
+        boolean boolCheckTrue = basket.bagelCheck(bagel3);
         Assertions.assertTrue(boolCheckTrue);
     }
 
     @Test
     public void removeBagelTest() {
-        Basket basket1 = new Basket();
-        Basket basket2 = new Basket();
-        Basket basket3 = new Basket();
-        Basket[] basketArray = new Basket[3];
-        basketArray[0] = basket1;
-        basketArray[1] = basket2;
-        boolean boolCheckFalse = basket3.removeBagel();
+        Basket basket = new Basket();
+        String bagel1 = "bagel1";
+        String bagel2 = "bagel2";
+        String bagel3 = "bagel3";
+        String[] basketArray = new String[3];
+        basketArray[0] = bagel1;
+        basketArray[1] = bagel2;
+        boolean boolCheckFalse = basket.removeBagel(bagel3);
         Assertions.assertFalse(boolCheckFalse);
-        boolean boolCheckTrue = basket2.removeBagel();
+        boolean boolCheckTrue = basket.removeBagel(bagel2);
         Assertions.assertTrue(boolCheckTrue);
     }
 
     @Test
     public void addBagelTest() {
-        Basket basket1 = new Basket();
-        Basket basket2 = new Basket();
-        Basket[] basketArray = new Basket[1];
-        boolean boolCheckTrue = basket1.addBagel();
+        Basket basket = new Basket();
+        String bagel1 = "bagel1";
+        String[] basketArray = new String[3];
+        boolean boolCheckTrue = basket.addBagel(bagel1);
         Assertions.assertTrue(boolCheckTrue);
-        boolean boolCheckFalse = basket2.addBagel();
+        boolean boolCheckFalse = basket.addBagel(bagel1);
         Assertions.assertFalse(boolCheckFalse);
     }
 
     @Test
     public void sizeChangeTest() {
-        Basket[] basketArray = new Basket[1];
-        boolean boolCheckTrue = basketArray.sizeChange(30);
+        Basket basket = new Basket();
+        String[] basketArray = new String[3];
+        boolean boolCheckTrue = basket.sizeChange(basketArray, 30);
         Assertions.assertTrue(boolCheckTrue);
-        boolean boolCheckFalse = basketArray.sizeChange(101);
+        boolean boolCheckFalse = basket.sizeChange(basketArray, 101);
         Assertions.assertFalse(boolCheckFalse);
     }
 }

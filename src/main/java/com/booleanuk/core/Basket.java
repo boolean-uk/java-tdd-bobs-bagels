@@ -3,9 +3,16 @@ package com.booleanuk.core;
 import java.util.HashMap;
 
 public class Basket {
-    private HashMap<String, Integer> items;
+    private final HashMap<String, Integer> items;
     private int capacity;
     private int currentLoad;
+
+    public Basket(){
+        this.items = new HashMap<>();
+        this.capacity = 5;
+        this.currentLoad = 0;
+    }
+
     public Basket(int capacity){
         this.items = new HashMap<>();
         this.capacity = capacity;
@@ -23,4 +30,17 @@ public class Basket {
         return "Basket is full";
     }
 
+    public boolean removeItem(String item, int quantity) {
+        if(!items.containsKey(item)) {
+            return false;
+        }
+
+        if(items.get(item) - quantity > 0) {
+            items.replace(item, items.get(item) - quantity);
+            currentLoad -= quantity;
+            return true;
+        }
+        items.remove(item);
+        return true;
+    }
 }

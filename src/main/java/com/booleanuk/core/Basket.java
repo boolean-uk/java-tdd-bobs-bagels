@@ -29,10 +29,15 @@ public class Basket {
     }
 
     public void add(String bagel) {
-        bagels.add(bagel);
+        if (isFull()) System.out.println("Basket is full!");
+        else bagels.add(bagel);
     }
 
     public void remove(String bagel) {
         bagels.remove(bagel);
+    }
+
+    public boolean isFull() {
+        return bagels.size() >= capacity;
     }
 }

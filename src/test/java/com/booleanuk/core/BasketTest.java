@@ -57,4 +57,16 @@ class BasketTest {
         Assertions.assertFalse(basket.getBagels().contains("Fourth bagel"));
     }
 
+    @Test
+    public void testSetCapacity(){
+        basket.add("First bagel");
+        basket.add("Second bagel");
+        basket.add("Third bagel");
+        basket.setCapacity(4);
+        basket.add("Fourth bagel");
+        Assertions.assertEquals(4, basket.getBagels().size());
+        Assertions.assertTrue(basket.getBagels().contains("Fourth bagel"));
+
+    }
+
 }

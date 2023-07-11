@@ -16,7 +16,7 @@ public class Basket {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
+    public void changeCapacity(int capacity) {
         this.capacity = capacity;
     }
 

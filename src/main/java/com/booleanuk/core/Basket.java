@@ -13,7 +13,10 @@ public class Basket {
     }
 
     public boolean add(String bagel, int quantity) {
-        if(basketQuantity + quantity > basketCapacity){
+        if(quantity < 0){
+            System.out.println("Invalid quantity of specific bagel!");
+            return false;
+        } else if(basketQuantity + quantity > basketCapacity){
             System.out.println("There is no room for another bagel!");
             return false;
         } else {

@@ -13,7 +13,7 @@ class BasketTest {
     private final PrintStream standardOut = System.out;
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
     private Basket basket;
-    private static final int INITIAL_CAPACITY = 3;
+    private static final int INITIAL_CAPACITY = 2;
     private String message;
     @BeforeEach
     public void setUp() {
@@ -74,6 +74,52 @@ class BasketTest {
 
         // Verify
         String expected = "Cheese and bacon bagel is not in the basket";
+        Assertions.assertEquals(expected, outputStreamCaptor.toString()
+                .trim());
+    }
+
+    @Test
+    public void isBasketFullShouldReturnTrue() throws Exception {
+        // Setup
+        String bagelType1 = "Ham and cheese";
+        String bagelType2 = "Cheese and bacon";
+        basket.addToBasket(bagelType1);
+        basket.addToBasket(bagelType2);
+
+        // Execute
+        boolean isBasketFull = basket.isBasketFull();
+
+        // Verify
+        Assertions.assertTrue(isBasketFull);
+    }
+
+    @Test
+    public void isBasketFullShouldReturnFalse() throws Exception {
+        // Setup
+        String bagelType1 = "Ham and cheese";
+        basket.addToBasket(bagelType1);
+
+        // Execute
+        boolean isBasketFull = basket.isBasketFull();
+
+        // Verify
+        Assertions.assertFalse(isBasketFull);
+    }
+
+    @Test
+    public void isBasketFullShouldNotAllowAddingToBasket() throws Exception {
+        // Setup
+        String bagelType1 = "Ham and cheese";
+        String bagelType2 = "Cheese and bacon";
+        String bagelType3 = "Nutella";
+        basket.addToBasket(bagelType1);
+        basket.addToBasket(bagelType2);
+
+        // Execute
+        basket.addToBasket(bagelType3);
+
+        // Verify
+        String expected = "Basket is full!!!";
         Assertions.assertEquals(expected, outputStreamCaptor.toString()
                 .trim());
     }

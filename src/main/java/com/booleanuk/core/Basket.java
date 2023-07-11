@@ -28,8 +28,9 @@ public class Basket {
         return bagels.size() == MAX_CAPACITY;
     }
 
-    public void changeCapacityOfBasket(int capacity) {
+    public int changeCapacityOfBasket(int capacity) {
         MAX_CAPACITY = capacity;
+        return MAX_CAPACITY;
     }
 
     public boolean checkIfBagelIsInTheBasket(String bagel) {

@@ -57,13 +57,13 @@ class BasketTest {
         Assertions.assertFalse(basket.isBasketFull());
     }
 
-    //
-//    @Test
-//    public void changeCapacityOfBasketTest() {
-//
-//
-//    }
-//
+
+    @Test
+    public void changeCapacityOfBasketTest() {
+        Assertions.assertEquals(7, basket.changeCapacityOfBasket(7));
+
+    }
+
     @Test
     public void checkIsItemInTheBasketAndReturnTrue() {
         basket.addBagel("bagel1");

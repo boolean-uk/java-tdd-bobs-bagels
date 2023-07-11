@@ -21,9 +21,12 @@ class BasketTest {
     @Test
     public void testAddItem(){
         Basket basket = new Basket(5);
-        assertEquals("Added item to basket, you can add 3 items more", basket.addItem(BAGEL1,2));
-        assertEquals("Added item to basket, you can add 0 items more", basket.addItem(BAGEL2,3));
-        assertEquals("Basket is full", basket.addItem(BAGEL3,2));
+        assertEquals("Added item to basket, you can add 3 items more",
+                basket.addItem(BAGEL1,2));
+        assertEquals("Added item to basket, you can add 0 items more",
+                basket.addItem(BAGEL2,3));
+        assertEquals("Basket is full",
+                basket.addItem(BAGEL3,2));
 
     }
 
@@ -49,5 +52,36 @@ class BasketTest {
         assertTrue(basket.isFull());
     }
 
+    @Test
+    public void getCapacityTest() {
+        Basket basket1 = new Basket(1);
+        Basket basket2 = new Basket(2);
+        Basket basket3 = new Basket(3);
 
+        assertEquals(1, basket1.getCapacity());
+        assertEquals(2, basket2.getCapacity());
+        assertEquals(3, basket3.getCapacity());
+    }
+
+    @Test
+    public void changeCapacityTest() {
+        Basket basket = new Basket(); // size = 5
+        basket.addItem(BAGEL1,2);
+        basket.addItem(BAGEL2,3);
+
+        basket.changeCapacity(6);
+        assertEquals(6, basket.getCapacity());
+        assertEquals("Added item to basket, you can add 0 items more",
+                basket.addItem(BAGEL3,1));
+
+        basket.changeCapacity(3);
+        assertTrue(basket.isFull());
+        assertEquals(3, basket.getCapacity());
+
+        basket.changeCapacity(0);
+        assertEquals(3, basket.getCapacity());
+
+        basket.changeCapacity(-1);
+        assertEquals(3, basket.getCapacity());
+    }
 }

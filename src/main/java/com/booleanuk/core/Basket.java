@@ -9,7 +9,7 @@ public class Basket {
 
     public Basket()
     {
-
+        capacity = 5;
     }
 
     public Basket(int capacity) {

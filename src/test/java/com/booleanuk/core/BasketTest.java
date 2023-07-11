@@ -13,6 +13,7 @@ class BasketTest {
         basket.add(bagel);
         Assertions.assertEquals(basket.bagelsBasket.get(0),bagel);
     }
+
     @Test
     public void RemovingBagelTest()
     {
@@ -24,6 +25,15 @@ class BasketTest {
         basket.remove(bagel);
         Assertions.assertFalse(basket.bagelsBasket.contains(bagel));
     }
+
+    @Test
+    public void RemovingBagelFromEmptyBasketTest()
+    {
+        Basket basket = new Basket();
+        String bagel = "bagel";
+        Assertions.assertFalse(basket.remove(bagel));
+    }
+
     @Test
     public void OverfillingBasketTest()
     {
@@ -46,7 +56,7 @@ class BasketTest {
     @Test
     public void RemovingNonExistingBagelTest()
     {
-        Basket basket = new Basket(2);
+        Basket basket = new Basket();
         String bagel = "bagel";
         String bagel1 = "bagel1";
         String bagel2 = "bagel2";

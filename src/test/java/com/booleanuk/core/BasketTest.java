@@ -27,4 +27,21 @@ class BasketTest {
         assertEquals(1, basket.getBasket().size());
     }
 
+
+    @Test
+    public void shouldRemoveBagelFromBasket(){
+
+        //when
+        String bagel = "Plain Bagel";
+        String bagel2 = "Egg Bagel";
+        basket.add(bagel);
+        basket.add(bagel2);
+        //given
+
+        basket.remove(bagel2);
+        //then
+
+        assertEquals(1, basket.getBasket().size());
+    }
+
 }

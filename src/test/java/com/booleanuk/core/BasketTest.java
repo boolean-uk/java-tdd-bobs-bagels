@@ -1,5 +1,6 @@
 package com.booleanuk.core;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -20,14 +21,24 @@ class BasketTest {
 
     @Test
     public void testAddItem(){
-        Basket basket = new Basket(5);
-        assertEquals("Added item to basket, you can add 3 items more",
+        Basket basket = new Basket(6);
+        assertEquals("Added item to basket, you can add 4 items more",
                 basket.addItem(BAGEL1,2));
-        assertEquals("Added item to basket, you can add 0 items more",
+        assertEquals("Added item to basket, you can add 3 items more",
+                basket.addItem(BAGEL1,1));
+        assertEquals("Added item to basket, but basket is full",
                 basket.addItem(BAGEL2,3));
         assertEquals("Basket is full",
                 basket.addItem(BAGEL3,2));
+    }
 
+    @Test
+    public void testAddNegativeQuantity(){
+        Basket basket = new Basket(6);
+        assertEquals("You cannot add item with negative quantity",
+                basket.addItem(BAGEL1,-2));
+        assertEquals("You cannot add item with quantity equals to zero",
+                basket.addItem(BAGEL1,0));
     }
 
     @Test
@@ -37,11 +48,13 @@ class BasketTest {
         basket.addItem(BAGEL2,3);
         basket.addItem(BAGEL3, 4);
 
+        assertFalse(basket.removeItem(BAGEL1, -3));
+        assertFalse(basket.removeItem(BAGEL2, 0));
         assertTrue(basket.removeItem(BAGEL1, 1));
         assertTrue(basket.removeItem(BAGEL1, 1));
         assertTrue(basket.removeItem(BAGEL2, 3));
         assertTrue(basket.removeItem(BAGEL3, 5));
-        assertFalse(basket.removeItem("x", 3));
+        assertFalse(basket.removeItem("example", 3));
     }
     @Test
     public void  isFullTest(){
@@ -71,7 +84,7 @@ class BasketTest {
 
         basket.changeCapacity(6);
         assertEquals(6, basket.getCapacity());
-        assertEquals("Added item to basket, you can add 0 items more",
+        assertEquals("Added item to basket, but basket is full",
                 basket.addItem(BAGEL3,1));
 
         basket.changeCapacity(3);

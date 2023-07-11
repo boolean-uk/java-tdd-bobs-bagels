@@ -28,4 +28,8 @@ public class Basket {
         if (bagels.size() < capacity) return false;
         else return true;
     }
+
+    public void setCapacity(int newCapacity){
+        capacity = newCapacity;
+    }
 }

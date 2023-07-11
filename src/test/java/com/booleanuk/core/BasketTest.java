@@ -74,7 +74,7 @@ class BasketTest {
         Basket basket = new Basket();
         basket.add("Bagel 1", 2);
         Assertions.assertEquals(basket.remove("Bagel 1", 1), "bagel removed");
-        Assertions.assertEquals(basket.bagels.get("Bagel 1"), 1);
+        Assertions.assertEquals(1, basket.bagels.get("Bagel 1") );
     }
 
     @Test

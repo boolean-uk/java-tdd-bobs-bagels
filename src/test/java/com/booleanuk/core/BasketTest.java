@@ -5,4 +5,16 @@ import org.junit.jupiter.api.Test;
 
 class BasketTest {
 
+    @Test
+    public void addTest(){
+        Basket basket = new Basket(3);
+        boolean result1 = basket.add("Plain bagle");
+        Assertions.assertTrue(result1);
+
+        basket.add("Blueberry bagle");
+        basket.add("Everything bagle");
+        boolean result2 = basket.add("Egg bagle");
+        Assertions.assertFalse(result2);
+    }
+
 }

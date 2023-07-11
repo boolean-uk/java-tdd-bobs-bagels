@@ -7,16 +7,32 @@ public class Basket {
     int capacity;
     int total;
 
+    public Basket() {
+        this.total = 0;
+        this.capacity = 5;
+        this.bagels = new HashMap<>();
+    }
+
     public String add(String bagelType, int count){
-        return "";
+        if (!isOverfilled(count)) {
+            this.bagels.put(bagelType,  count);
+            this.total += count;
+            return "bagel added";
+        }
+        return "overfilled cart";
     }
 
     public String add(String bagelType){
-        return "";
+        if (!isOverfilled(1)) {
+            this.bagels.put(bagelType,  1);
+            this.total += 1;
+            return "bagel added";
+        }
+        return "overfilled cart";
     }
 
     public boolean isOverfilled(int count){
-        return false;
+        return count + this.total > this.capacity;
     }
 
 

@@ -31,8 +31,9 @@ public class Basket {
         bagelsBasket.remove(bagel);
     }
 
-    public void changeCapacity(int newCapacity){
-
+    public void changeCapacity(int capacity){
+        this.capacity = capacity;
+        System.out.println("Capacity of the basket is changed");
     }
 
 }

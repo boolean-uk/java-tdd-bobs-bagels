@@ -71,4 +71,23 @@ class BasketTest {
 
     }
 
+    @Test
+    public void testGetBagelCountExistBagel() {
+        basket.add("Sweet");
+        Assertions.assertEquals(1 ,basket.getBagelCount());
+        Assertions.assertTrue(basket.getBagels().contains("Sweet"));
+
+        basket.remove("Swee");
+
+        Assertions.assertEquals(1 ,basket.getBagelCount());
+
+        basket.add("Sweet2");
+
+        Assertions.assertEquals(2 ,basket.getBagelCount());
+
+        basket.remove("Sweet");
+
+        Assertions.assertEquals(1 ,basket.getBagelCount());
+    }
+
 }

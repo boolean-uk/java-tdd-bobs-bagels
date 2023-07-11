@@ -45,4 +45,6 @@ public class Basket {
     public boolean checkIfExists(String bagel) {
         return bagels.contains(bagel);
     }
+
+
 }

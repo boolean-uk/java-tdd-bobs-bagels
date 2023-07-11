@@ -26,7 +26,10 @@ public class Basket {
     }
 
     public void removeFromBasket(String bagle) {
-        bagles.remove(bagle);
+        if (bagles.contains(bagle))
+            bagles.remove(bagle);
+        else
+            System.out.println("The " + bagle + " is not inside the basket, so it can't be removed.");
     }
 
 }

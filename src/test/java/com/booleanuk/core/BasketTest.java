@@ -240,6 +240,6 @@ class BasketTest {
         int result = basket.getBasketCapacity();
 
         //Then
-        Assertions.assertEquals(result, 6);
+        Assertions.assertEquals(result, 5);
     }
 }

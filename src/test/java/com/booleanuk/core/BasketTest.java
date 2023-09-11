@@ -91,14 +91,14 @@ class BasketTest {
         Basket basket = new Basket(5);
         Assertions.assertTrue(basket.add("Apple"));
         Assertions.assertEquals(1, basket.bagelsBasket.size());
-        Assertions.assertTrue(basket.bagelsBasket.contains("Onion"));
+        Assertions.assertTrue(basket.isInBasket("Onion"));
     }
     @Test
     public void testCheckForExistingProductInBasket() {
         Basket basket = new Basket(5);
         Assertions.assertTrue(basket.add("Apple"));
         Assertions.assertEquals(1, basket.bagelsBasket.size());
-        Assertions.assertTrue(basket.bagelsBasket.contains("Apple"));
+        Assertions.assertTrue(basket.isInBasket("Apple"));
     }
 
 }

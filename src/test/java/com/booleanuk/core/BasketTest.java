@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class BasketTest {
 
     @Test
-    public void addTypeBagel(){
+    public void addTypeBagel() {
         Basket basket = new Basket();
         String type = "Sesame";
         double price = 6;
@@ -16,7 +16,20 @@ class BasketTest {
 
         double price2 = 8;
         Assertions.assertFalse(basket.add(type, price2));
-        Assertions.assertEquals(price2, basket.bagels.get(type));
+        Assertions.assertEquals(price, basket.bagels.get(type));
+    }
+
+    @Test
+    public void removeBagel() {
+        Basket basket = new Basket();
+        String type = "Multigrain";
+        String type2 = "Sesame";
+        Assertions.assertFalse(basket.remove(type));
+        Assertions.assertFalse(basket.bagels.containsKey(type));
+        Assertions.assertTrue(basket.remove(type2));
+        Assertions.assertTrue(basket.bagels.containsKey(type2));
+
+        Assertions.assertEquals(null, basket.bagels.isEmpty());
     }
 
 }

@@ -8,8 +8,9 @@
 |          |                                        | `addBagel(String type, int price)`           | if type of new bagel is on the list bagels                                        | false                   |
 |          |                                        |                                              | if type of new bagel in not on the list bagels                                    | true                    |
 |          |                                        |                                              |                                                                                   |                         |
-|          |                                        | `remove(String type)`                        | if type is not on the list                                                        | false                   |
-|          |                                        |                                              | if type is on the list                                                            | true                    |
+|          |                                        | `remove(String type)`                        | if it is not empty and if type is not on the list                                 | false                   |
+|          |                                        |                                              | if it is not empty and if type is on the list                                     | true                    |
+|          |                                        |                                              | if it is empty                                                                    | null                    |
 |          |                                        |                                              |                                                                                   |                         |
 |          |                                        | `full()`                                     | if the size of the list bagels is more or equal than the capacity                 | true                    |
 |          |                                        |                                              | if the size of the list bagels is less to the capacity                            | false                   |
@@ -17,5 +18,5 @@
 |          |                                        | `setCapacity(int capacity)`                  | if the default capacity is the same as the new capacity                           | false                   |
 |          |                                        |                                              | if the default capacity is not the same as the new capacity, set the new capacity | void                    |
 |          |                                        |                                              |                                                                                   |                         |
-|          |                                        | `removeIfExists(String type)`                | if the type is in the list, print message that is existing                        | message                 |
-|          |                                        |                                              | if the type is not in the list, print message that is not existing                | message                 |
+|          |                                        | `removeIfExists(String type)`                | if the type is in the list, print message that is existing                        | String                  |
+|          |                                        |                                              | if the type is not in the list, print message that is not existing                | String                  |

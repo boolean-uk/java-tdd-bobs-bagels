@@ -37,5 +37,6 @@ class BasketTest {
         Assertions.assertFalse(bagels.add("Multigrain"));
         bagels.expandSize(5);
         Assertions.assertTrue(bagels.add("Multigrain"));
+        Assertions.assertTrue(bagels.contents.contains("Multigrain"));
     }
 }

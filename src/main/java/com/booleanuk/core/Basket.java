@@ -21,15 +21,15 @@ public class Basket {
         if (this.contents.size() == capacity){
             return false;
         }
-        contents.add(bagel);
+        this.contents.add(bagel);
         return true;
     }
 
     public void remove(String bagel) {
-        contents.remove(bagel);
+        this.contents.remove(bagel);
     }
 
     public void expandSize(int newSize) {
-
+        this.capacity = newSize;
     }
 }

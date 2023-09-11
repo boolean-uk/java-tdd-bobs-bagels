@@ -24,12 +24,18 @@ class BasketTest {
         Basket basket = new Basket();
         String type = "Multigrain";
         String type2 = "Sesame";
-        Assertions.assertFalse(basket.remove(type));
-        Assertions.assertFalse(basket.bagels.containsKey(type));
-        Assertions.assertTrue(basket.remove(type2));
-        Assertions.assertTrue(basket.bagels.containsKey(type2));
+        double price = 6;
+        basket.bagels.put(type2, price);
 
-        Assertions.assertEquals(null, basket.bagels.isEmpty());
+        Assertions.assertFalse(basket.bagels.isEmpty());
+
+        Assertions.assertFalse(basket.bagels.containsKey(type));
+        Assertions.assertFalse(basket.remove(type));
+
+        Assertions.assertTrue(basket.bagels.containsKey(type2));
+        Assertions.assertTrue(basket.remove(type2));
+
+        Assertions.assertTrue(basket.bagels.isEmpty());
     }
 
 }

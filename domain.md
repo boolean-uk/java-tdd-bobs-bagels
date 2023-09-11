@@ -10,7 +10,7 @@
 |          |                                        |                                              |                                                                                   |                         |
 |          |                                        | `remove(String type)`                        | if it is not empty and if type is not on the list                                 | false                   |
 |          |                                        |                                              | if it is not empty and if type is on the list                                     | true                    |
-|          |                                        |                                              | if it is empty                                                                    | null                    |
+|          |                                        |                                              | if it is empty                                                                    | false                   |
 |          |                                        |                                              |                                                                                   |                         |
 |          |                                        | `full()`                                     | if the size of the list bagels is more or equal than the capacity                 | true                    |
 |          |                                        |                                              | if the size of the list bagels is less to the capacity                            | false                   |

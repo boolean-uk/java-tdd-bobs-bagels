@@ -17,4 +17,16 @@ public class Basket {
         bagels.put(type, price);
         return true;
     }
+
+    public boolean remove(String type) {
+        if (bagels.isEmpty()) {
+            return false;
+        } else {
+            if (!bagels.containsKey(type)) {
+                return false;
+            }
+            bagels.remove(type);
+            return true;
+        }
+    }
 }

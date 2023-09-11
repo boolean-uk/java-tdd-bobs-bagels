@@ -16,6 +16,6 @@ public class Basket {
     }
 
     public void add(String bagel){
-
+        contents.add(bagel);
     }
 }

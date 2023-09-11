@@ -55,4 +55,34 @@ class BasketTest {
         Assertions.assertTrue(basket.isFull());
     }
 
+    @Test
+    public void testSetCapacityToExpand() {
+        Basket basket = new Basket(3);
+        Assertions.assertEquals(3, basket.capacity);
+        basket.setCapacity(5);
+        Assertions.assertEquals(5, basket.capacity);
+    }
+    @Test
+    public void testSetCapacityToShrinkWithFullBasket() {
+        Basket basket = new Basket(4);
+        Assertions.assertEquals(4, basket.capacity);
+        Assertions.assertTrue(basket.add("Apple"));
+        Assertions.assertTrue(basket.add("Onion"));
+        Assertions.assertTrue(basket.add("Blueberry"));
+        Assertions.assertTrue(basket.add("Sourdough"));
+        Assertions.assertEquals(4, basket.bagelsBasket.size());
+        basket.setCapacity(3);
+        Assertions.assertEquals(3, basket.capacity);
+        Assertions.assertEquals(3, basket.bagelsBasket.size());
+    }
+    @Test
+    public void testSetCapacityToZeroOrNegative() {
+        Basket basket = new Basket(4);
+        Assertions.assertEquals(4, basket.capacity);
+        basket.setCapacity(0);
+        Assertions.assertEquals(4, basket.capacity);
+        basket.setCapacity(-1);
+        Assertions.assertEquals(4, basket.capacity);
+    }
+
 }

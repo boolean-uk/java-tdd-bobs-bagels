@@ -78,14 +78,22 @@ class BasketTest {
         String productTwo = "Cinnamon";
         String productThree = "Blueberry";
         String productFour = "Poppy-seed";
+        String productFive = "Onion";
+        String productSix = "Garlic";
 
         basket.add(productOne);
         basket.add(productTwo);
         basket.add(productThree);
         basket.add(productFour);
 
+//        The arraylist size is 4 here, so it should return true. As the max capacity is bigger
+
         Assertions.assertTrue(basket.capChecker());
 
+//        The arraylist size is 6 here, so it should return false. As the max capacity is bigger
+        basket.add(productFive);
+        basket.add(productSix);
+        Assertions.assertFalse(basket.capChecker());
 
     }
 

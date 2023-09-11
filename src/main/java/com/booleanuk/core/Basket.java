@@ -16,14 +16,20 @@ public class Basket {
 
     public void add(String bagelname) {
         items.add(bagelname);
-        System.out.println(items);
+//        System.out.println(items);
     }
 
     public void remove(String bagelname) {
         items.remove(bagelname);
-        System.out.println(items.contains(bagelname));
+//        System.out.println(items.contains(bagelname));
 
+    }
 
+    public boolean capChecker() {
+        System.out.println(items.size());
+        System.out.println(capacity);
+        System.out.println(items.size() < 5);
+        return items.size() < 5;
     }
 
 

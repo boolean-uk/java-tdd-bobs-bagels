@@ -20,6 +20,6 @@ public class Basket {
     }
 
     public void remove(String bagel) {
-
+        contents.remove(bagel);
     }
 }

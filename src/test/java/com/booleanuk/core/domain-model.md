@@ -1,4 +1,5 @@
 # Basket
+
 <!---
 1.
 As a member of the public,
@@ -26,20 +27,20 @@ So that I can maintain my sanity
 I'd like to know if I try to remove an item that doesn't exist in my basket.
 -->
 
-| Classes | Methods                                                     | Scenario                              | Outputs |
-|---------|-------------------------------------------------------------|---------------------------------------|---------|
-| Basket  | add(String bagelname)                                       | if the bagel has been added           | true    |
-|         |                                                             | if the bagel has not been found       | false   |
-|         |                                                             |                                       |         |
-|         | remove(String name)                                         | if the bagel is still in the list     | false   |
-|         |                                                             | if the bagel has been removed         | true    |
-|         |                                                             |                                       |         |
-|         | capacityCheck(ArrayList<String> items)                      | if max capacity has been exceeded     | false   |
-|         |                                                             | if max capacity hasn't been exceeded  | true    |
-|         |                                                             |                                       |         |
-|         | changeMaxCapacity(ArrayList<String> items, int maxCapacity) | if max capacity has been changed      | true    |
-|         |                                                             | if max capacity hasn't been changed   | false   |
-|         |                                                             |                                       |         |
-|         | removeItemChecker(ArrayList<String> items, String bagel)    | If the user has admin rights          | true    |
-|         |                                                             | If the user doesn't have admin rights | false   |
+| Classes | Methods                                                  | Scenario                              | Outputs |
+|---------|----------------------------------------------------------|---------------------------------------|---------|
+| Basket  | add(String bagelname)                                    | if the bagel has been added           | true    |
+|         |                                                          | if the bagel has not been found       | false   |
+|         |                                                          |                                       |         |
+|         | remove(String name)                                      | if the bagel is still in the list     | false   |
+|         |                                                          | if the bagel has been removed         | true    |
+|         |                                                          |                                       |         |
+|         | capacityCheck()                                          | if max capacity has been exceeded     | false   |
+|         |                                                          | if max capacity hasn't been exceeded  | true    |
+|         |                                                          |                                       |         |
+|         | changeMaxCapacity()                                      | if max capacity has been changed      | true    |
+|         |                                                          | if max capacity hasn't been changed   | false   |
+|         |                                                          |                                       |         |
+|         | removeItemChecker(ArrayList<String> items, String bagel) | If the user has admin rights          | true    |
+|         |                                                          | If the user doesn't have admin rights | false   |
 

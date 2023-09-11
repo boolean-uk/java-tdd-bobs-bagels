@@ -29,7 +29,8 @@ public class Basket {
         this.contents.remove(bagel);
     }
 
-    public void expandSize(int newSize) {
+    public boolean expandSize(int newSize) {
         this.capacity = newSize;
+        return true;
     }
 }

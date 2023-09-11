@@ -39,4 +39,10 @@ class BasketTest {
         Assertions.assertTrue(bagels.add("Multigrain"));
         Assertions.assertTrue(bagels.contents.contains("Multigrain"));
     }
+
+    @Test
+    public void newCapacityMustBeBigger() {
+        Basket bagels = new Basket();
+        Assertions.assertFalse(bagels.expandSize(3));
+    }
 }

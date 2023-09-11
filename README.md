@@ -69,7 +69,7 @@ I'd like to know if I try to remove an item that doesn't exist in my basket.
 ```
 | Member Variables               | Methods                        | Scenario                         | Outputs |
 |--------------------------------|--------------------------------|----------------------------------|---------|
-| List<String> inventory         | `removeItem(String bagelType)` | If type exists in basket         | true    |
+| List<String> inventory         | `isInBasket(String bagelType)` | If type exists in basket         | true    |
 | HashMap<String,Integer> basket |                                | If type does not exist in basket | false   |
 | int capacity                   |                                |                                  |         |
 

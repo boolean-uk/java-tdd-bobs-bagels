@@ -9,7 +9,7 @@ class BasketTest {
     void addedCorrectly() {
         Basket basket = new Basket();
 
-        Assertions.assertTrue(basket.addBagel("Egg"));
+        Assertions.assertEquals("Added",basket.addBagel("Egg"));
 
     }
 
@@ -18,14 +18,15 @@ class BasketTest {
         Basket basket = new Basket();
 
         basket.addBagel("Rainbow");
-        Assertions.assertTrue(basket.addBagel("Rainbow"));
+        Assertions.assertEquals("This type already exists in the basket",basket.addBagel("Rainbow"));
     }
+
 
     @Test
     void removedCorrectly() {
         Basket basket = new Basket();
 
-        Assertions.assertEquals("Does not exist", basket.removeBagel("Everything "));
+        Assertions.assertEquals("This type does not exist", basket.removeBagel("Everything "));
 
     }
 
@@ -38,7 +39,7 @@ class BasketTest {
     }
 
     @Test
-    void checkBasketsCapacityCorrectly() {
+    void checkIfBasketIsFull() {
         Basket basket = new Basket();
         basket.addBagel("Plain");
         basket.addBagel("Chocolate");
@@ -48,28 +49,28 @@ class BasketTest {
     }
 
     @Test
-    void checkBasketsCapacityCorrectly2() {
+    void checkIfBasketIsFull2() {
         Basket basket = new Basket();
         basket.addBagel("Plain");
         basket.addBagel("Chocolate");
         basket.addBagel("Poppy");
         basket.addBagel("Sesame");
 
-        Assertions.assertFalse(basket.isBasketFull());
+        Assertions.assertTrue(basket.isBasketFull());
     }
 
     @Test
     void increasedBasketsCapacityCorrectly() {
         Basket basket = new Basket();
 
-        Assertions.assertEquals("Enter a bigger number", basket.increaseCapacity(7));
+        Assertions.assertEquals("Enter a bigger number", basket.increaseCapacity(2));
     }
 
     @Test
     void increasedBasketsCapacityCorrectly2() {
         Basket basket = new Basket();
 
-        Assertions.assertEquals("Done", basket.increaseCapacity(20));
+        Assertions.assertEquals("Done", basket.increaseCapacity(10));
     }
 
 }

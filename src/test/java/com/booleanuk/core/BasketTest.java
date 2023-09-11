@@ -27,5 +27,6 @@ class BasketTest {
         Assertions.assertTrue(bagels.add("Blueberry"));
         //Now size is 4 so adding another bagel shouldn't be allowed.
         Assertions.assertFalse(bagels.add("Multigrain"));
+        Assertions.assertFalse(bagels.contents.contains("Multigrain"));
     }
 }

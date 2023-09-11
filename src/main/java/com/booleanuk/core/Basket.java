@@ -45,5 +45,7 @@ public class Basket {
         this.capacity = capacity;
         return true;
     }
-  
+    public boolean isInBasket(String product) {
+        return this.bagelsBasket.contains(product);
+    }
 }

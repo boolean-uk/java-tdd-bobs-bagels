@@ -14,7 +14,7 @@ class BasketTest {
     @Test
     public void testAddNonExistentProductToBasket() {
         Basket basket = new Basket(5);
-        Assertions.assertTrue(basket.add("Garlic"));
+        Assertions.assertFalse(basket.add("Garlic"));
         Assertions.assertEquals(0, basket.bagelsBasket.size());
     }
 
@@ -50,7 +50,6 @@ class BasketTest {
         Assertions.assertTrue(basket.add("Onion"));
         Assertions.assertFalse(basket.isFull());
         Assertions.assertTrue(basket.add("Blueberry"));
-        Assertions.assertFalse(basket.isFull());
         Assertions.assertEquals(3, basket.bagelsBasket.size());
         Assertions.assertTrue(basket.isFull());
     }
@@ -91,7 +90,7 @@ class BasketTest {
         Basket basket = new Basket(5);
         Assertions.assertTrue(basket.add("Apple"));
         Assertions.assertEquals(1, basket.bagelsBasket.size());
-        Assertions.assertTrue(basket.isInBasket("Onion"));
+        Assertions.assertFalse(basket.isInBasket("Onion"));
     }
     @Test
     public void testCheckForExistingProductInBasket() {

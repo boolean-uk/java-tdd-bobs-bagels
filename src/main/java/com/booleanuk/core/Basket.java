@@ -30,6 +30,9 @@ public class Basket {
     }
 
     public boolean expandSize(int newSize) {
+        if (newSize <= this.capacity) {
+            return false;
+        }
         this.capacity = newSize;
         return true;
     }

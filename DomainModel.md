@@ -43,9 +43,10 @@ So that I can expand my business,
 I’d like to change the capacity of baskets.
 ```
 
-| Class  | Attribute      | Method                  | Scenario                                                                                                             | Outcome                                   |
-|--------|----------------|-------------------------|----------------------------------------------------------------------------------------------------------------------|-------------------------------------------|
-| Basket | int capacity   | expandSize(int newSize) | Supposing expanding the business means Baskets become bigger and not smaller, I want to increase the Basket Capacity | No Return Value, Capacity Value Increases |
+| Class  | Attribute      | Method                  | Scenario                                                                                                             | Outcome                        |
+|--------|----------------|-------------------------|----------------------------------------------------------------------------------------------------------------------|--------------------------------|
+| Basket | int capacity   | expandSize(int newSize) | Supposing expanding the business means Baskets become bigger and not smaller, I want to increase the Basket Capacity | True, Capacity Value Increases |
+|        |                |                         | I am missing the whole point of expanding, so I want to decrease the Basket Capacity instead                         | False                          |
 
 ```
 5.
@@ -57,4 +58,4 @@ I'd like to know if I try to remove an item that doesn't exist in my basket.
 | Class  | Attribute                  | Method               | Scenario               | Outcome                         |
 |--------|----------------------------|----------------------|------------------------|---------------------------------|
 | Basket | ArrayList<String> contents | remove(String bagel) | If Bagel in Basket     | True, Bagel removed from Basket |
-|        |                            |                      | If Bagel not in Basket | False, Notify User              |
+|        |                            |                      | If Bagel not in Basket | False                           |

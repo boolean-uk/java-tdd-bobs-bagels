@@ -44,5 +44,7 @@ class BasketTest {
     public void newCapacityMustBeBigger() {
         Basket bagels = new Basket();
         Assertions.assertFalse(bagels.expandSize(3));
+        //Current capacity is already 4
+        Assertions.assertFalse(bagels.expandSize(4));
     }
 }

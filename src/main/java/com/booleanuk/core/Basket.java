@@ -26,6 +26,9 @@ public class Basket {
     }
 
     public boolean remove(String bagel) {
+        if (!this.contents.contains(bagel)) {
+            return false;
+        }
         this.contents.remove(bagel);
         return true;
     }

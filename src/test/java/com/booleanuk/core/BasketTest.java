@@ -47,4 +47,13 @@ class BasketTest {
         //Current capacity is already 4
         Assertions.assertFalse(bagels.expandSize(4));
     }
+
+    @Test
+    public void removeShouldCheckIfBagelInBasket() {
+        Basket bagels = new Basket();
+        Assertions.assertTrue(bagels.contents.contains("Plain"));
+        Assertions.assertTrue(bagels.remove("Plain"));
+        Assertions.assertFalse(bagels.contents.contains("Multigrain"));
+        Assertions.assertFalse(bagels.remove("Multigrain"));
+    }
 }

@@ -25,8 +25,9 @@ public class Basket {
         return true;
     }
 
-    public void remove(String bagel) {
+    public boolean remove(String bagel) {
         this.contents.remove(bagel);
+        return true;
     }
 
     public boolean expandSize(int newSize) {

@@ -69,8 +69,21 @@ class BasketTest {
 
         Assertions.assertTrue(basket.setCapacity(4));
         Assertions.assertNotEquals(5, basket.getCapacity());
+    }
 
+    @Test
+    public void removeNonExistingBagel() {
+        Basket basket = new Basket();
 
+        basket.bagels.put("Sesame", 6.0);
+        basket.bagels.put("Multigrain", 8.0);
+        basket.bagels.put("Blueberry", 7.5);
+
+        String type = "Blueberry";
+        Assertions.assertEquals("Bagel does exist and it is removed", basket.removeIfExists(type));
+
+        String type2 = "Egg";
+        Assertions.assertEquals("Bagel does not exist", basket.removeIfExists(type2));
     }
 
 }

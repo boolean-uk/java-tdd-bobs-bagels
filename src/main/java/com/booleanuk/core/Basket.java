@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class Basket {
     ArrayList<String> contents;
+    int capacity;
 
     public Basket() {
         this.contents = new ArrayList<>(){
@@ -13,10 +14,12 @@ public class Basket {
                 add("PoppySeed");
             }
         };
+        this.capacity = 4;
     }
 
-    public void add(String bagel){
+    public boolean add(String bagel){
         contents.add(bagel);
+        return true;
     }
 
     public void remove(String bagel) {

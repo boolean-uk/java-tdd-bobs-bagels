@@ -19,4 +19,13 @@ class BasketTest {
         bagels.remove("Plain");
         Assertions.assertFalse(bagels.contents.contains("Plain"));
     }
+
+    @Test
+    public void addShouldCheckCapacityFirstAndReturnValueAccordingly() {
+        Basket bagels = new Basket();
+        //Current size is 3 and capacity is 4, so we can add a bagel.
+        Assertions.assertTrue(bagels.add("Blueberry"));
+        //Now size is 4 so adding another bagel shouldn't be allowed.
+        Assertions.assertFalse(bagels.add("Multigrain"));
+    }
 }

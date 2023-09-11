@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class BasketTest {
 
     @Test
-    void addProductsChecker() {
+    void addProducts() {
         Basket basket = new Basket();
         String productOne = "Plain";
         String productTwo = "Cinnamon";
@@ -14,7 +14,6 @@ class BasketTest {
         String productFour = "Poppy-seed";
         String productFive = "Onion";
         String productSix = "Garlic";
-
 
         basket.add(productOne);
         basket.add(productTwo);
@@ -26,6 +25,33 @@ class BasketTest {
         Assertions.assertFalse(basket.items.contains(productFour));
         Assertions.assertFalse(basket.items.contains(productFive));
         Assertions.assertFalse(basket.items.contains(productSix));
+
+    }
+
+    @Test
+    void removeProducts() {
+        Basket basket = new Basket();
+        String productOne = "Plain";
+        String productTwo = "Cinnamon";
+        String productThree = "Blueberry";
+        String productFour = "Poppy-seed";
+        String productFive = "Onion";
+        String productSix = "Garlic";
+
+        basket.add(productOne);
+        basket.add(productTwo);
+        basket.add(productThree);
+        basket.add(productFour);
+        basket.add(productFive);
+        basket.add(productSix);
+
+        //remove product 4,5,6
+
+        Assertions.assertFalse(basket.remove(productFour));
+
+
+//        Assertions.assertFalse(basket.items.contains(productFive));
+//        Assertions.assertFalse(basket.items.contains(productSix));
 
 
     }

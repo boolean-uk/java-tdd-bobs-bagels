@@ -60,4 +60,15 @@ class BasketTest {
         Assertions.assertTrue(basket.isFull());
     }
 
+    @Test
+    public void changeCapacity() {
+        Basket basket = new Basket();
+
+        int capacity = 5;
+        Assertions.assertNotEquals(basket.getCapacity, capacity);
+
+        int capacity2 = 3;
+        Assertions.assertEquals(basket.getCapacity, capacity2);
+    }
+
 }

@@ -56,11 +56,11 @@ As a Bob's Bagels manager,
 So that I can expand my business,
 I’d like to change the capacity of baskets.
 ```
-| Member Variables               | Methods       | Scenario                                        | Outputs            |
-|--------------------------------|---------------|-------------------------------------------------|--------------------|
-| List<String> inventory         | `setCapacity` | If basket shrinks                               | void/print message |
-| HashMap<String,Integer> basket |               | If basket expands successfully                  | void/print message |
-| int capacity                   |               | If manager tries to set the basket capacity <=0 | void/print message |
+| Member Variables               | Methods       | Scenario                                        | Outputs             |
+|--------------------------------|---------------|-------------------------------------------------|---------------------|
+| List<String> inventory         | `setCapacity` | If basket shrinks                               | void                |
+| HashMap<String,Integer> basket |               | If basket expands successfully                  | void/print message  |
+| int capacity                   |               | If manager tries to set the basket capacity <=0 | void/print message  |
 ```
 5.
 As a member of the public
@@ -72,7 +72,6 @@ I'd like to know if I try to remove an item that doesn't exist in my basket.
 | List<String> inventory         | `removeItem(String bagelType)` | If type exists in basket         | true    |
 | HashMap<String,Integer> basket |                                | If type does not exist in basket | false   |
 | int capacity                   |                                |                                  |         |
-```
 
 ## Set up instructions
 - Fork this repository and clone the forked version to your machine

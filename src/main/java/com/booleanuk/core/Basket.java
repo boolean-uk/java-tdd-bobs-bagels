@@ -34,4 +34,12 @@ public class Basket {
     public boolean isFull() {
        return this.bagelsBasket.size()==capacity;
     }
+    public void setCapacity(int capacity) {
+        if (capacity<=0) {
+            System.out.println("The capacity must be a positive number");
+        } else if (capacity<this.bagelsBasket.size()) {
+            this.bagelsBasket =  new ArrayList<>(bagelsBasket.subList(0, capacity));
+        }
+        this.capacity = capacity;
+    }
 }

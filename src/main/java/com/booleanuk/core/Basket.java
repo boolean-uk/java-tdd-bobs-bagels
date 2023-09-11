@@ -5,9 +5,11 @@ import java.util.HashMap;
 public class Basket {
 
     HashMap<String, Double> bagels;
+    int capacity;
 
     public Basket() {
         this.bagels = new HashMap<>();
+        this.capacity = 3;
     }
 
     public boolean add(String type, double price){
@@ -30,4 +32,10 @@ public class Basket {
         }
     }
 
+    public boolean isFull() {
+        if (bagels.size() == 0) {
+            return false;
+        }
+        return bagels.size() >= capacity;
+    }
 }

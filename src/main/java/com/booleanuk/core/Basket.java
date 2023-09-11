@@ -24,14 +24,16 @@ public class Basket {
         return bagelInventory.contains(bagelType);
     }
 
-//    public boolean add(List<String> BagelBasket, String bagelType) {
-//        if (bagelInventory.contains(bagelType)) {
-//            this.BagelBasket.add(bagelType);
-//            System.out.println(BagelBasket);
-//            return true;
-//        }
-//        return false;
+    public boolean add(List<String> BagelBasket, String bagelType) {
+        if (bagelInventory.contains(bagelType)) {
+            this.BagelBasket.add(bagelType);
+            System.out.println(this.BagelBasket);
+            return true;
+        }
+        System.out.println(this.BagelBasket);
+        return false;
     }
+}
 
 
 

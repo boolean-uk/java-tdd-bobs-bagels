@@ -46,7 +46,7 @@ class BasketTest {
             String bagelType = "sourDough";
             List<String> BagelBasket = new ArrayList<>();
 
-            Assertions.assertTrue(basket.add(bagelType));
+            Assertions.assertTrue(basket.add(BagelBasket, bagelType));
         }
     }
 

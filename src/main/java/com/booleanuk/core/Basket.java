@@ -1,5 +1,7 @@
 package com.booleanuk.core;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 public class Basket {
@@ -8,3 +10,7 @@ public class Basket {
         return bagelInventory.contains(bagelType);
     }
 }
+
+
+
+

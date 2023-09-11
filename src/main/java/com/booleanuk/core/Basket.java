@@ -30,4 +30,8 @@ public class Basket {
     public boolean remove(String product) {
         return this.bagelsBasket.remove(product);
     }
+
+    public boolean isFull() {
+       return this.bagelsBasket.size()==capacity;
+    }
 }

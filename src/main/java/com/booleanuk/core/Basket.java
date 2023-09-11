@@ -38,4 +38,16 @@ public class Basket {
         }
         return bagels.size() >= capacity;
     }
+
+    public boolean setCapacity(int newCapacity) {
+        if (capacity == newCapacity) {
+            return false;
+        }
+        this.capacity = newCapacity;
+        return true;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
 }

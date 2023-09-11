@@ -12,8 +12,9 @@
 |          |                                        |                                              | if it is not empty and if type is on the list                                     | true                    |
 |          |                                        |                                              | if it is empty                                                                    | false                   |
 |          |                                        |                                              |                                                                                   |                         |
-|          |                                        | `full()`                                     | if the size of the list bagels is more or equal than the capacity                 | true                    |
-|          |                                        |                                              | if the size of the list bagels is less to the capacity                            | false                   |
+|          |                                        | `full()`                                     | if the size of the list bagels is 0                                               | false                   |
+|          |                                        |                                              | if the size of the list bagels is not 0 and is more than or equal to the capacity | true                    |
+|          |                                        |                                              | if the size of the list bagels is more than 0 and less than the capacity          | false                   |
 |          |                                        |                                              |                                                                                   |                         |
 |          |                                        | `setCapacity(int capacity)`                  | if the default capacity is the same as the new capacity                           | false                   |
 |          |                                        |                                              | if the default capacity is not the same as the new capacity, set the new capacity | void                    |

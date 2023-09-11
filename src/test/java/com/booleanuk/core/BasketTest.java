@@ -38,4 +38,22 @@ class BasketTest {
         Assertions.assertTrue(basket.bagels.isEmpty());
     }
 
+    @Test
+    public void isFull() {
+        Basket basket = new Basket();
+
+        Assertions.assertEquals(0, basket.bagels.size());
+
+        basket.bagels.put("Sesame", 6.0);
+        basket.bagels.put("Multigrain", 8.0);
+        basket.bagels.put("Blueberry", 7.5);
+
+        Assertions.assertNotEquals(0, basket.bagels.size());
+        Assertions.assertTrue(basket.bagels.size() > basket.getCapacity);
+        Assertions.assertEquals(basket.bagels.size(), basket.getCapacity);
+        Assertions.assertFalse(basket.bagels.size() < basket.getCapacity);
+
+        Assertions.assertNotEquals(5, basket.getCapacity);
+    }
+
 }

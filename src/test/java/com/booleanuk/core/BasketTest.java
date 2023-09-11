@@ -21,8 +21,13 @@ class BasketTest {
         bagelInventory.add("sourDough");
         String bagelType = "sourDough";
 
+//      This test passes because sourDough is in the bagelInventory
         boolean found = basket.search(bagelInventory, bagelType);
         Assertions.assertTrue(found);
-    }
+//      Assertions.assertTrue(basket.search(bagelInventory, "sourDough"));
 
+//        these test pass because the outcome is indeed false, there are no bagels like this in the inventory
+        Assertions.assertFalse(basket.search(bagelInventory, "chocolate"));
+        Assertions.assertFalse(basket.search(bagelInventory, " "));
+    }
 }

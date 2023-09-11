@@ -71,4 +71,23 @@ class BasketTest {
     }
 
 
+    @Test
+    void checkIfUserIsUnderMaxCapacity() {
+        Basket basket = new Basket();
+        String productOne = "Plain";
+        String productTwo = "Cinnamon";
+        String productThree = "Blueberry";
+        String productFour = "Poppy-seed";
+
+        basket.add(productOne);
+        basket.add(productTwo);
+        basket.add(productThree);
+        basket.add(productFour);
+
+        Assertions.assertTrue(basket.capChecker());
+
+
+    }
+
+
 }

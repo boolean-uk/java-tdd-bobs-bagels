@@ -52,15 +52,20 @@ class BasketTest {
         Assertions.assertTrue(basket.items.contains(productFive));
         Assertions.assertTrue(basket.items.contains(productSix));
 
+        basket.remove(productFour);
+        basket.remove(productFive);
+        basket.remove(productSix);
+
+
         //remove product 4,5,6 in the method caller below
         //check every string again to see if items that are supposed to be true are still true
         Assertions.assertTrue(basket.items.contains(productOne));
         Assertions.assertTrue(basket.items.contains(productTwo));
         Assertions.assertTrue(basket.items.contains(productThree));
 
-        Assertions.assertFalse(basket.remove(productFour));
-        Assertions.assertFalse(basket.remove(productFive));
-        Assertions.assertFalse(basket.remove(productSix));
+        Assertions.assertFalse(basket.items.contains(productFour));
+        Assertions.assertFalse(basket.items.contains(productFive));
+        Assertions.assertFalse(basket.items.contains(productSix));
 
 
     }

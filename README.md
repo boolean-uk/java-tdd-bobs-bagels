@@ -19,7 +19,14 @@
 As a member of the public,
 So I can order a bagel before work,
 I'd like to add a specific type of bagel to my basket.
+
+
+Class Basket:
 ```
+| Member Variables               | Methods                             | Scenario                            | Outputs |
+|--------------------------------|-------------------------------------|-------------------------------------|---------|
+| List<String> inventory         | `addToBasket(String bagelType)`     | If type exists                      | true    |
+| HashMap<String,Integer> basket |                                     | If type does not exist              | false   |
 
 ```
 2.
@@ -27,6 +34,10 @@ As a member of the public,
 So I can change my order,
 I'd like to remove a bagel from my basket.
 ```
+| Member Variables               | Methods                              | Scenario                         | Outputs |
+|--------------------------------|--------------------------------------|----------------------------------|---------|
+| List<String> inventory         | `removeFromBasket(Product product)`  | If type exists in basket         | true    |
+| HashMap<String,Integer> basket |                                      | If type does not exist in basket | false   |
 
 ```
 3.
@@ -34,19 +45,33 @@ As a member of the public,
 So that I can not overfill my small bagel basket
 I'd like to know when my basket is full when I try adding an item beyond my basket capacity.
 ```
-
+| Member Variables               | Methods    | Scenario                       | Outputs |
+|--------------------------------|------------|--------------------------------|---------|
+| List<String> inventory         | `isFull()` | If no more space in the basket | true    |
+| HashMap<String,Integer> basket |            | If basket is not full yet      | false   |
+| int capacity                   |            |                                |         |
 ```
 4.
 As a Bob's Bagels manager,
 So that I can expand my business,
 I’d like to change the capacity of baskets.
 ```
-
+| Member Variables               | Methods       | Scenario                                        | Outputs            |
+|--------------------------------|---------------|-------------------------------------------------|--------------------|
+| List<String> inventory         | `setCapacity` | If basket shrinks                               | void/print message |
+| HashMap<String,Integer> basket |               | If basket expands successfully                  | void/print message |
+| int capacity                   |               | If manager tries to set the basket capacity <=0 | void/print message |
 ```
 5.
 As a member of the public
 So that I can maintain my sanity
 I'd like to know if I try to remove an item that doesn't exist in my basket.
+```
+| Member Variables               | Methods                        | Scenario                         | Outputs |
+|--------------------------------|--------------------------------|----------------------------------|---------|
+| List<String> inventory         | `removeItem(String bagelType)` | If type exists in basket         | true    |
+| HashMap<String,Integer> basket |                                | If type does not exist in basket | false   |
+| int capacity                   |                                |                                  |         |
 ```
 
 ## Set up instructions

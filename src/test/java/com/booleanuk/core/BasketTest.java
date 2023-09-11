@@ -64,11 +64,13 @@ class BasketTest {
     public void changeCapacity() {
         Basket basket = new Basket();
 
-        int capacity = 5;
-        Assertions.assertNotEquals(basket.getCapacity, capacity);
+        Assertions.assertFalse(basket.setCapacity(3));
+        Assertions.assertEquals(3, basket.getCapacity());
 
-        int capacity2 = 3;
-        Assertions.assertEquals(basket.getCapacity, capacity2);
+        Assertions.assertTrue(basket.setCapacity(4));
+        Assertions.assertNotEquals(5, basket.getCapacity());
+
+
     }
 
 }

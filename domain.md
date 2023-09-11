@@ -16,8 +16,8 @@
 |          |                                        |                                              | if the size of the list bagels is not 0 and is more than or equal to the capacity | true                    |
 |          |                                        |                                              | if the size of the list bagels is more than 0 and less than the capacity          | false                   |
 |          |                                        |                                              |                                                                                   |                         |
-|          |                                        | `setCapacity(int capacity)`                  | if the default capacity is the same as the new capacity                           | false                   |
-|          |                                        |                                              | if the default capacity is not the same as the new capacity, set the new capacity | void                    |
+|          |                                        | `setCapacity(int newCapacity)`               | if the default capacity is the same as the new capacity                           | false                   |
+|          |                                        |                                              | if the default capacity is not the same as the new capacity, set the new capacity | true                    |
 |          |                                        |                                              |                                                                                   |                         |
 |          |                                        | `removeIfExists(String type)`                | if the type is in the list, print message that is existing                        | String                  |
 |          |                                        |                                              | if the type is not in the list, print message that is not existing                | String                  |

@@ -21,7 +21,7 @@ class BasketTest {
         bagelInventory.add("sourDough");
         String bagelType = "sourDough";
 
-        boolean found = basket.search(bagelInventory, "sourDough");
+        boolean found = basket.search(bagelInventory, bagelType);
         Assertions.assertTrue(found);
     }
 

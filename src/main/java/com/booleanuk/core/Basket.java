@@ -18,4 +18,8 @@ public class Basket {
     public void add(String bagel){
         contents.add(bagel);
     }
+
+    public void remove(String bagel) {
+
+    }
 }

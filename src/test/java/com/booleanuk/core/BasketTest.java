@@ -11,4 +11,12 @@ class BasketTest {
         bagels.add("Blueberry");
         Assertions.assertTrue(bagels.contents.contains("Blueberry"));
     }
+
+    @Test
+    public void removeKnownValueShouldAlwaysSucceed() {
+        Basket bagels = new Basket();
+        Assertions.assertTrue(bagels.contents.contains("Plain"));
+        bagels.remove("Plain");
+        Assertions.assertFalse(bagels.contents.contains("Plain"));
+    }
 }

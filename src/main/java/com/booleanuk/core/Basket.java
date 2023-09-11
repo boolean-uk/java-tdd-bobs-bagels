@@ -17,8 +17,12 @@ public class Basket {
         System.out.println(items);
     }
 
+    public boolean remove(String bagelname) {
+        items.remove(bagelname);
+        System.out.println(items.contains(bagelname));
+        return items.contains(bagelname);
 
-
+    }
 
 
 }

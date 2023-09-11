@@ -19,13 +19,13 @@ class BasketTest {
         basket.add(productOne);
         basket.add(productTwo);
         basket.add(productThree);
-        Assertions.assertTrue(basket.contains(productOne));
-        Assertions.assertTrue(basket.contains(productTwo));
-        Assertions.assertTrue(basket.contains(productThree));
+        Assertions.assertTrue(basket.items.contains(productOne));
+        Assertions.assertTrue(basket.items.contains(productTwo));
+        Assertions.assertTrue(basket.items.contains(productThree));
 
-        Assertions.assertFalse(basket.contains(productFour));
-        Assertions.assertFalse(basket.contains(productFive));
-        Assertions.assertFalse(basket.contains(productSix));
+        Assertions.assertFalse(basket.items.contains(productFour));
+        Assertions.assertFalse(basket.items.contains(productFive));
+        Assertions.assertFalse(basket.items.contains(productSix));
 
 
     }

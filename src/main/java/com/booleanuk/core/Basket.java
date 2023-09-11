@@ -50,4 +50,16 @@ public class Basket {
     public int getCapacity() {
         return capacity;
     }
+
+    public String removeIfExists(String type) {
+        String message;
+
+        if (!bagels.containsKey(type)) {
+            message = "Bagel does not exist";
+        } else {
+            bagels.remove(type);
+            message = "Bagel does exist and it is removed";
+        }
+        return message;
+    }
 }

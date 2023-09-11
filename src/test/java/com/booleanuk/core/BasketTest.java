@@ -81,6 +81,7 @@ class BasketTest {
 
         String type = "Blueberry";
         Assertions.assertEquals("Bagel does exist and it is removed", basket.removeIfExists(type));
+        System.out.println(basket.bagels);
 
         String type2 = "Egg";
         Assertions.assertEquals("Bagel does not exist", basket.removeIfExists(type2));

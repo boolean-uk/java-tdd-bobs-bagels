@@ -43,9 +43,9 @@ So that I can expand my business,
 I’d like to change the capacity of baskets.
 ```
 
-| Class  | Attribute                                | Method                  | Scenario                                                                                                             | Outcome                                 |
-|--------|------------------------------------------|-------------------------|----------------------------------------------------------------------------------------------------------------------|-----------------------------------------|
-| Basket | ArrayList<String> contents, int capacity | expandSize(int newSize) | Supposing expanding the business means Baskets become bigger and not smaller, I want to increase the Basket Capacity | No Return Value, Capacity Value Changes |
+| Class  | Attribute      | Method                  | Scenario                                                                                                             | Outcome                                   |
+|--------|----------------|-------------------------|----------------------------------------------------------------------------------------------------------------------|-------------------------------------------|
+| Basket | int capacity   | expandSize(int newSize) | Supposing expanding the business means Baskets become bigger and not smaller, I want to increase the Basket Capacity | No Return Value, Capacity Value Increases |
 
 ```
 5.

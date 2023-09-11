@@ -29,4 +29,13 @@ class BasketTest {
         Assertions.assertFalse(bagels.add("Multigrain"));
         Assertions.assertFalse(bagels.contents.contains("Multigrain"));
     }
+
+    @Test
+    public void capacityShouldIncreaseSuccessfully() {
+        Basket bagels = new Basket();
+        Assertions.assertTrue(bagels.add("Blueberry"));
+        Assertions.assertFalse(bagels.add("Multigrain"));
+        bagels.expandSize(5);
+        Assertions.assertTrue(bagels.add("Multigrain"));
+    }
 }

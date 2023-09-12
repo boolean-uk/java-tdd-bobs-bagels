@@ -125,6 +125,8 @@ class BasketTest {
 //      The capChecker should return true now because we changed the max capacity with the code above to 8,
 //      which is bigger than the listitems we added (6).
         Assertions.assertTrue(basket.capChecker());
+        Assertions.assertEquals(newMaxCap, basket.capacity);
+
 
     }
 

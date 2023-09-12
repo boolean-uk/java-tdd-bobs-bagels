@@ -37,7 +37,7 @@ class BasketTest {
     @Test
 
     public void testRemoveFromBasketSuccessful() {
-        Basket basket = new Basket(5); //object
+        Basket basket = new Basket(1); //object
 
         assertTrue(basket.addToBasket("plain"));
         assertEquals(1, basket.bagelBasket.size()); // check if it's added successfully

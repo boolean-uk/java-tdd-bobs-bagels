@@ -29,7 +29,7 @@ public class Basket {
         System.out.println(items.size());
         System.out.println(capacity);
         System.out.println(items.size() < 5);
-        return items.size() < 5;
+        return items.size() <= 5;
     }
 
 

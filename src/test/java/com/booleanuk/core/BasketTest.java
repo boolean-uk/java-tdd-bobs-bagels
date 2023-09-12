@@ -85,15 +85,43 @@ class BasketTest {
         basket.add(productTwo);
         basket.add(productThree);
         basket.add(productFour);
-
-//        The arraylist size is 4 here, so it should return true. As the max capacity is bigger
-
+        basket.add(productFive);
+//        The arraylist size is 5 here, so it should return true. As the max capacity is equal to it
         Assertions.assertTrue(basket.capChecker());
 
 //        The arraylist size is 6 here, so it should return false. As the max capacity is bigger
-        basket.add(productFive);
         basket.add(productSix);
         Assertions.assertFalse(basket.capChecker());
+
+    }
+
+    @Test
+    void UserChangesMaxCapacityOfBagelList() {
+        Basket basket = new Basket();
+
+        String productOne = "Plain";
+        String productTwo = "Cinnamon";
+        String productThree = "Blueberry";
+        String productFour = "Poppy-seed";
+        String productFive = "Onion";
+        String productSix = "Garlic";
+
+        basket.add(productOne);
+        basket.add(productTwo);
+        basket.add(productThree);
+        basket.add(productFour);
+        basket.add(productFive);
+        basket.add(productSix);
+
+//        There are more items in the list than the max capacity which is 5
+        Assertions.assertFalse(basket.capChecker());
+        int newMaxCap = 8;
+
+        basket.changeMaxCap(newMaxCap);
+
+//      The capChecker should return true now because we changed the max capacity with the code above to 8,
+//      which is bigger than the listitems we added (6).
+        Assertions.assertTrue(basket.capChecker());
 
     }
 

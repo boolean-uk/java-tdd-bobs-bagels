@@ -23,10 +23,15 @@ public class Basket {
     }
 
     public boolean removeFromBasket(String bagelType) {
+        if (!bagelBasket.contains(bagelType)) {
+            System.out.println("Bagel is not in basket, you can't remove it" + " " + bagelBasket.size());
+            return false;
+        }
         this.bagelBasket.remove(bagelType);
         System.out.println("removed bagel from basket" + " " + bagelBasket.size());
         return true;
     }
+
 }
 
 

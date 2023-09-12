@@ -1,6 +1,5 @@
 package com.booleanuk.core;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -56,10 +55,11 @@ class BasketTest {
     public void testChangeBasketSize() {
         Basket basket = new Basket(1);
 
-        assertTrue(basket.addToBasketSize());
-        assertEquals(2, basket.basketSize);
-        assertFalse(basket.addToBasketSize());
-        assertEquals(1, basket.basketSize);
+        assertTrue(basket.addToBasketSize(1)); //increase by 1
+        assertEquals(2, basket.basketSize); //Verify the new Basket Size
+
+        assertFalse(basket.addToBasketSize(-2)); // Decrease size by 2, which is not allowed
+        assertEquals(2, basket.basketSize); // Verify that size remains unchanged
     }
 }
 

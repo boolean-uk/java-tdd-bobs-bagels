@@ -15,6 +15,7 @@ public class Basket {
     public boolean addToBasket(String bagelType) {
         if (bagelBasket.size() >= this.basketSize) {
             System.out.println("Basket is full" + " " + bagelBasket.size());
+            System.out.println(bagelBasket.toString()); //shows what is in the arraylist
             return false;
         }
         this.bagelBasket.add(bagelType);  //return this.bagelBasket.add(bagelType); same method
@@ -32,7 +33,19 @@ public class Basket {
         return true;
     }
 
+    public boolean addToBasketSize(int changeBasketSize) {
+        int newBasketSize = this.basketSize + changeBasketSize;
+        if (newBasketSize < 1) {
+            System.out.println("changing basket size didn't work" + " " + basketSize);
+            return false;
+        } else {
+            this.basketSize = newBasketSize;
+            System.out.println("changing basket size did work" + " " + basketSize);
+            return true;
+        }
+    }
 }
+
 
 
 

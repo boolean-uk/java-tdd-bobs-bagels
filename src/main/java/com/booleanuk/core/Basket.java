@@ -19,8 +19,16 @@ public class Basket {
 //        System.out.println(items);
     }
 
-    public void remove(String bagelname) {
-        items.remove(bagelname);
+    public boolean remove(String bagelname) {
+        System.out.println(items);
+        if (items.contains(bagelname)) {
+            items.remove(bagelname);
+            System.out.println(items);
+            return true;
+        }
+        System.out.println("This item is not in the list: " + bagelname);
+        return false;
+
 //        System.out.println(items.contains(bagelname));
 
     }
@@ -32,11 +40,10 @@ public class Basket {
         return items.size() <= capacity;
     }
 
-    public void changeMaxCap(int newCap){
+    public void changeMaxCap(int newCap) {
         capacity = newCap;
 //        System.out.println(capacity);
     }
-
 
 
 }

@@ -5,15 +5,15 @@ import java.util.ArrayList;
 public class Basket {
     ArrayList<String> bagelBasket;
 
-    int bagelSize;
+    int basketSize;
 
-    public Basket(int bagelSize) {
-        this.bagelSize = bagelSize;
+    public Basket(int basketSize) {
+        this.basketSize = basketSize;
         this.bagelBasket = new ArrayList<>();
     }
 
     public boolean addToBasket(String bagelType) {
-        if (bagelBasket.size() >= this.bagelSize) {
+        if (bagelBasket.size() >= this.basketSize) {
             System.out.println("Basket is full" + " " + bagelBasket.size());
             return false;
         }

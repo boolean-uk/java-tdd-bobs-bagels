@@ -2,11 +2,6 @@ package com.booleanuk.core;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class BasketTest {
@@ -54,6 +49,17 @@ class BasketTest {
         assertEquals(1, basket.bagelBasket.size()); // check if it's added successfully
         assertFalse(basket.removeFromBasket("sourDough"));
         assertEquals(1, basket.bagelBasket.size()); // check if removing was unsuccessful
+    }
+
+    @Test
+
+    public void testChangeBasketSize() {
+        Basket basket = new Basket(1);
+
+        assertTrue(basket.addToBasketSize());
+        assertEquals(2, basket.basketSize);
+        assertFalse(basket.addToBasketSize());
+        assertEquals(1, basket.basketSize);
     }
 }
 

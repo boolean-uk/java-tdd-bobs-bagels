@@ -44,6 +44,17 @@ class BasketTest {
         assertTrue(basket.removeFromBasket("plain"));
         assertEquals(0, basket.bagelBasket.size()); // check if it's removed successfully
     }
+
+    @Test
+
+    public void testRemoveFromBasketFailed() {
+        Basket basket = new Basket(1); //object
+
+        assertTrue(basket.addToBasket("plain"));
+        assertEquals(1, basket.bagelBasket.size()); // check if it's added successfully
+        assertFalse(basket.removeFromBasket("sourDough"));
+        assertEquals(1, basket.bagelBasket.size()); // check if removing was unsuccessful
+    }
 }
 
 

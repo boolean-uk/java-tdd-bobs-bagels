@@ -10,14 +10,22 @@ public class Basket {
 
     public Basket() {
         this.items = new ArrayList<>();
-        this.capacity = 5;
+        this.capacity = 6;
     }
 
 
-    public void add(String bagelname) {
-        items.add(bagelname);
-//        System.out.println(items);
+    public void addItem(String bagelname) {
+        if (items.size() < capacity) {
+            items.add(bagelname);
+
+            System.out.println("Bagel succesfully added");
+            System.out.println(capacity);
+            System.out.println(items);
+        } else {
+            System.out.println("Max capacity for basket has been reached");
+        }
     }
+
 
     public boolean remove(String bagelname) {
         System.out.println(items);
@@ -37,7 +45,7 @@ public class Basket {
 //        System.out.println(items.size());
 //        System.out.println(capacity);
 //        System.out.println(items.size() < 5);
-        return items.size() <= capacity;
+        return items.size() < capacity;
     }
 
     public void changeMaxCap(int newCap) {

@@ -18,12 +18,20 @@ class BasketTest {
         String productFive = "Onion";
         String productSix = "Garlic";
 
-        basket.add(productOne);
-        basket.add(productTwo);
-        basket.add(productThree);
+        basket.addItem(productOne);
+        basket.addItem(productTwo);
+        basket.addItem(productThree);
+        basket.addItem("filler-bagel1");
+        basket.addItem("filler-bagel2");
+        basket.addItem("filler-bagel3");
+        basket.addItem("filler-bagel4");
+
+
         Assertions.assertTrue(basket.items.contains(productOne));
         Assertions.assertTrue(basket.items.contains(productTwo));
         Assertions.assertTrue(basket.items.contains(productThree));
+        Assertions.assertTrue(basket.items.contains(productTwo));
+
 
         Assertions.assertFalse(basket.items.contains(productFour));
         Assertions.assertFalse(basket.items.contains(productFive));
@@ -41,12 +49,12 @@ class BasketTest {
         String productFive = "Onion";
         String productSix = "Garlic";
 
-        basket.add(productOne);
-        basket.add(productTwo);
-        basket.add(productThree);
-        basket.add(productFour);
-        basket.add(productFive);
-        basket.add(productSix);
+        basket.addItem(productOne);
+        basket.addItem(productTwo);
+        basket.addItem(productThree);
+        basket.addItem(productFour);
+        basket.addItem(productFive);
+        basket.addItem(productSix);
 
         Assertions.assertTrue(basket.items.contains(productOne));
         Assertions.assertTrue(basket.items.contains(productTwo));
@@ -84,16 +92,18 @@ class BasketTest {
         String productFive = "Onion";
         String productSix = "Garlic";
 
-        basket.add(productOne);
-        basket.add(productTwo);
-        basket.add(productThree);
-        basket.add(productFour);
-        basket.add(productFive);
+        basket.addItem(productOne);
+        basket.addItem(productTwo);
+        basket.addItem(productThree);
+        basket.addItem(productFour);
+        basket.addItem(productFive);
+
 //        The arraylist size is 5 here, so it should return true. As the max capacity is equal to it
         Assertions.assertTrue(basket.capChecker());
 
 //        The arraylist size is 6 here, so it should return false. As the max capacity is bigger
-        basket.add(productSix);
+     
+        basket.addItem(productSix);
         Assertions.assertFalse(basket.capChecker());
 
     }
@@ -109,12 +119,12 @@ class BasketTest {
         String productFive = "Onion";
         String productSix = "Garlic";
 
-        basket.add(productOne);
-        basket.add(productTwo);
-        basket.add(productThree);
-        basket.add(productFour);
-        basket.add(productFive);
-        basket.add(productSix);
+        basket.addItem(productOne);
+        basket.addItem(productTwo);
+        basket.addItem(productThree);
+        basket.addItem(productFour);
+        basket.addItem(productFive);
+        basket.addItem(productSix);
 
 //        There are more items in the list than the max capacity which is 5
         Assertions.assertFalse(basket.capChecker());
@@ -141,9 +151,9 @@ class BasketTest {
         String productFour = "Poppy-seed";
 
 
-        basket.add(productOne);
-        basket.add(productTwo);
-        basket.add(productThree);
+        basket.addItem(productOne);
+        basket.addItem(productTwo);
+        basket.addItem(productThree);
 
         // Product below exists in the items list, so it should return true
         Assertions.assertTrue(basket.remove(productOne));

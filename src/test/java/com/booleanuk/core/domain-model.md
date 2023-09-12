@@ -38,7 +38,7 @@ I'd like to know if I try to remove an item that doesn't exist in my basket.
 |         | capacityCheck()                                          | if max capacity has been exceeded     | false   |
 |         |                                                          | if max capacity hasn't been exceeded  | true    |
 |         |                                                          |                                       |         |
-|         | changeMaxCapacity()                                      | if max capacity has been changed      | true    |
+|         | changeMaxCapacity(int newMaxCapValue)                    | if max capacity has been changed      | true    |
 |         |                                                          | if max capacity hasn't been changed   | false   |
 |         |                                                          |                                       |         |
 |         | removeItemChecker(ArrayList<String> items, String bagel) | If the user has admin rights          | true    |

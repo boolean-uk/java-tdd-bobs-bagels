@@ -26,16 +26,15 @@ public class Basket {
     }
 
     public boolean capChecker() {
-        System.out.println(items.size());
-        System.out.println(capacity);
-        System.out.println(items.size() < 5);
+//        System.out.println(items.size());
+//        System.out.println(capacity);
+//        System.out.println(items.size() < 5);
         return items.size() <= capacity;
     }
 
     public void changeMaxCap(int newCap){
         capacity = newCap;
-        System.out.println(capacity);
-
+//        System.out.println(capacity);
     }
 
 

@@ -3,6 +3,9 @@ package com.booleanuk.core;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class BasketTest {
 
     @Test
@@ -122,6 +125,30 @@ class BasketTest {
 //      The capChecker should return true now because we changed the max capacity with the code above to 8,
 //      which is bigger than the listitems we added (6).
         Assertions.assertTrue(basket.capChecker());
+
+    }
+
+
+    @Test
+    void checkIfItemToRemoveExists() {
+        Basket basket = new Basket();
+
+        String productOne = "Plain";
+        String productTwo = "Cinnamon";
+        String productThree = "Blueberry";
+        String productFour = "Poppy-seed";
+
+
+        basket.add(productOne);
+        basket.add(productTwo);
+        basket.add(productThree);
+
+        // Product below exists in the items list, so it should return true
+        Assertions.assertTrue(basket.remove(productOne));
+
+        // Product below doesn't exist in the items list, so it should return false
+        Assertions.assertFalse(basket.remove(productFour));
+
 
     }
 

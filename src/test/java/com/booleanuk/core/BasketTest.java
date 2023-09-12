@@ -102,7 +102,7 @@ class BasketTest {
         Assertions.assertTrue(basket.capChecker());
 
 //        The arraylist size is 6 here, so it should return false. As the max capacity is bigger
-     
+
         basket.addItem(productSix);
         Assertions.assertFalse(basket.capChecker());
 

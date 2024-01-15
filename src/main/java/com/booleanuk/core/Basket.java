@@ -21,6 +21,11 @@ public class Basket {
 			items.add(id);
 		}
 	}
+	public void removeBagel(int id){
+		if(items.contains(id)){
+			items.remove((Integer)id);
+		}
+	}
 
 
 }

@@ -17,6 +17,7 @@ class BasketTest {
 		Assertions.assertFalse(basket.inBasket(2));
 	}
 
+	@Test
 	public void removeBagelTest(){
 		initInventory();
 		Basket basket=new Basket(inventory);

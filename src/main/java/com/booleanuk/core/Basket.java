@@ -28,6 +28,17 @@ public class Basket {
     }
 
     public int changeCapacityOfBasket(int numberOfExtraIndices) {
-        return basket.length+3;
+        if(numberOfExtraIndices > 0) {
+            Bagel[] newArray = new Bagel[basket.length+numberOfExtraIndices];
+
+            if(basket[0] != null) { //Copy over existing bagels in basket to new array
+                for (int i = 0; i < basket.length; i++) {
+                    newArray[i] = basket[i];
+                }
+            }
+            basket = newArray;
+        }
+        return basket.length;
     }
+
 }

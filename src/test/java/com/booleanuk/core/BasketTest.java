@@ -56,7 +56,6 @@ class BasketTest {
         Basket basket = new Basket();
         int originalLength = basket.basket.length;
         int newLength = basket.changeCapacityOfBasket(3);
-        Assertions.assertEquals(newLength, originalLength+3);
+        Assertions.assertEquals(originalLength+3, newLength);
     }
-
 }

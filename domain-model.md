@@ -76,8 +76,8 @@ Class Basket
 
 | Class vars     | Methods                                          | Scenario                       | Return/Result |
 |----------------|--------------------------------------------------|--------------------------------|---------------|
-| Bagel[] basket | changeCapacityOfBasket(int numberOfExtraIndices) | if extra capacity is added     | true          |
-|                |                                                  | if extra capacity is not added | false         |
+| Bagel[] basket | changeCapacityOfBasket(int numberOfExtraIndices) | if extra capacity is added     | int           |
+|                |                                                  | if extra capacity is not added | int           |
 
 Class Bagel
 

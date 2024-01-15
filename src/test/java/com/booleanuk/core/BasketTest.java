@@ -48,4 +48,36 @@ class BasketTest {
         Basket basket = new Basket();
         Assertions.assertFalse(basket.changeCapacity(-2));
     }
+
+    @Test
+    public void testAddMultipleBagelsAndChangeCapacity() {
+        Basket basket = new Basket();
+        Assertions.assertTrue(basket.changeCapacity(2));
+        Assertions.assertTrue(basket.add(("Plain")));
+        Assertions.assertTrue(basket.add(("Everything")));
+        Assertions.assertFalse(basket.add(("Blueberry")));
+        Assertions.assertTrue(basket.changeCapacity(3));
+        Assertions.assertTrue(basket.add(("Blueberry")));
+        Assertions.assertFalse(basket.add(("HamAndCheese")));
+    }
+
+    @Test
+    public void testIsFull() {
+        Basket basket = new Basket();
+        Assertions.assertTrue(basket.changeCapacity(2));
+        Assertions.assertTrue(basket.add(("Plain")));
+        Assertions.assertFalse(basket.isFull());
+        Assertions.assertTrue(basket.add(("Everything")));
+        Assertions.assertTrue(basket.isFull());
+    }
+
+    @Test
+    public void testChangeCapasityToLowerNumberThanBagelsInBasket() {
+        Basket basket = new Basket();
+        Assertions.assertTrue(basket.changeCapacity(3));
+        Assertions.assertTrue(basket.add(("Plain")));
+        Assertions.assertTrue(basket.add(("Everything")));
+        Assertions.assertTrue(basket.add(("Blueberry")));
+        Assertions.assertFalse(basket.changeCapacity(2));
+    }
 }

@@ -8,23 +8,23 @@ class BasketTest {
 
 	@Test
 	public void addBagelTest(){
-		initInventroy();
-		Basket basket = new Basket();
+		initInventory();
+		Basket basket = new Basket(inventory);
 		Assertions.assertFalse(basket.inBasket(1));
 		Assertions.assertFalse(basket.inBasket(2));
 		basket.addBagel(1);
 		Assertions.assertTrue(basket.inBasket(1));
 		Assertions.assertFalse(basket.inBasket(2));
-
 	}
-	private void initInventroy(){
-		Bagel bagel1 = new Bagel(1,"Plain",1.99);
-		Bagel bagel2 = new Bagel(2,"Ham",1.99);
-		Bagel bagel3 = new Bagel(3,"Cheese",1.99);
-		Bagel bagel4 = new Bagel(4,"Everything",2.49);
-		inventroy.add(bagel1);
-		inventroy.add(bagel2);
-		inventroy.add(bagel3);
-		inventroy.add(bagel4);
+	private void initInventory(){
+		inventory=new Inventory();
+		Bagel bagel1 = new Bagel(0,"Plain",1.99);
+		Bagel bagel2 = new Bagel(1,"Ham",1.99);
+		Bagel bagel3 = new Bagel(2,"Cheese",1.99);
+		Bagel bagel4 = new Bagel(3,"Everything",2.49);
+		inventory.addItem(bagel1.id);
+		inventory.addItem(bagel2.id);
+		inventory.addItem(bagel3.id);
+		inventory.addItem(bagel4.id);
 	}
 }

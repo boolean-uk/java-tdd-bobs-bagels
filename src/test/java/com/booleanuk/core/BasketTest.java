@@ -8,7 +8,7 @@ class BasketTest {
     @Test
     public void addChocolateBagelReturnTrue() {
         Basket basket = new Basket();
-        boolean result = backet.addBagel("choclate");
+        boolean result = basket.addBagel("choclate");
         Assertions.assertTrue(result);
     }
 

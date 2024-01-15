@@ -1,16 +1,14 @@
 package com.booleanuk.core;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 
 public class Basket {
 
-    LinkedHashMap<String, Integer> items;
+    HashMap<String, Integer> items;
     int maxCapacity;
 
     public Basket(){
-        this.items = new LinkedHashMap<>();
+        this.items = new HashMap<>();
         this.maxCapacity = 5;
     }
 
@@ -47,11 +45,17 @@ public class Basket {
         return totalAmount;
     }
 
-    public void setBasketCapacity(int capacity){
-        System.out.println(items);
+    public String setBasketCapacity(int capacity){
+        String msg = "";
         if(capacity <= getTotalAmount()){
-            System.out.println("its less than");
-        }
+           this.items.clear();
+           msg += "Basket is now empty, ";
+           }
+
+
         this.maxCapacity = capacity;
+        msg += "new max capacity set to " + capacity;
+        return msg;
     }
+
 }

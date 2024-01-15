@@ -64,11 +64,11 @@ So that I can expand my business,
 I’d like to change the capacity of baskets.
 ```
 
-| Classes | Methods                  | Members     | Scenario                  | Output |
-|---------|--------------------------|-------------|---------------------------|--------|
-| Bagel   | updateBasket(int amount) | ArrayList<> | Item is not already added | true   |
-|         |                          |             | Item is already added     | false  |
-|         |                          |             |                           |        |
+| Classes | Methods                  | Members     | Scenario                  | Output          |
+|---------|--------------------------|-------------|---------------------------|-----------------|
+| Bagel   | updateBasket(int amount) | ArrayList<> | Item is not already added | New Amount      |
+|         |                          |             | Item is already added     | Previous Amount |
+|         |                          |             |                           |                 |
 
 
 ```

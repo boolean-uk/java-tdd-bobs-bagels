@@ -68,5 +68,17 @@ class BasketTest {
 
     }
 
+    @Test
+    public void hasListBeenUpdated() {
+        Basket basket1 = new Basket();
+
+        int result = basket1.updateBasket(30);
+        Assertions.assertEquals(30, result);
+    }
+
+
+
+
+
 
 }

@@ -44,10 +44,10 @@ public class Basket {
 
         return false;
     }
-    public boolean updateBasket(int amount) {
+    public int updateBasket(int amount) {
 
 
-        return true;
+        return 0;
     }
     public String canItemBeRemoved(String name) {
 

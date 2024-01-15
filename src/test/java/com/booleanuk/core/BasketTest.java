@@ -12,4 +12,12 @@ class BasketTest {
 
     }
 
+    @Test
+    public void testAddTwoOfTheSameBagelsToBasket(){
+        Basket basket = new Basket();
+        Assertions.assertEquals("Cream Cheese added", basket.addBagel("Cream Cheese added"));
+        Assertions.assertEquals("Cream Cheese already exists in basket", basket.addBagel("Cream Cheese added"));
+
+    }
+
 }

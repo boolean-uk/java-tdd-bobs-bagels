@@ -20,6 +20,8 @@ public class Basket {
 
     }
 
-
+    public boolean isFull(int capacity){
+        return this.bagelsList.size() == capacity;
+    }
 
 }

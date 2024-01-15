@@ -30,4 +30,18 @@ class BasketTest {
         Assertions.assertFalse(result);
     }
 
+    @Test
+    public void checkIfBasketIsFull(){
+        Basket basket = new Basket();
+        basket.add("bread");
+        basket.add("milk");
+        basket.add("coffee");
+        basket.add("butter");
+        basket.add("juice");
+
+        Assertions.assertTrue(basketIsfull());
+
+
+    }
+
 }

@@ -13,10 +13,12 @@ public class Basket {
         return bagelBasket.isEmpty();
     }
     public String addBagel(String bagel){
-        if (bagelBasket.isEmpty()){
+        if (bagel == null && bagelBasket.isEmpty()){
             return "Basket is empty";
         }
-        return "";
+        bagelBasket.add(bagel);
+
+        return bagel + " added to basket";
     }
 }
 

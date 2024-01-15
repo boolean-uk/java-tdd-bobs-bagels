@@ -32,7 +32,7 @@ I’d like to change the capacity of baskets.
 5.
 As a member of the public
 So that I can maintain my sanity
-I'd like to know if I try to remove an item that doesn't exist in my basket.        if the item does not exist return error message
+I'd like to know if I try to remove an item that doesn't exist in my basket.
 ```
 
 

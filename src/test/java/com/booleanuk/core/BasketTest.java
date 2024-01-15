@@ -65,7 +65,9 @@ class BasketTest {
         Basket basket = new Basket();
         Assertions.assertEquals(10, basket.changeBasketSize(10));
         Assertions.assertEquals(5, basket.changeBasketSize(5));
+        Assertions.assertNotEquals(5, basket.changeBasketSize(10));
     }
+
 
 
 }

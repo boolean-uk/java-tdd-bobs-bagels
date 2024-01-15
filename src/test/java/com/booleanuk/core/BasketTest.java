@@ -37,9 +37,8 @@ class BasketTest {
         basket.add("milk");
         basket.add("coffee");
         basket.add("butter");
-        basket.add("juice");
 
-        Assertions.assertTrue(basketIsfull());
+        Assertions.assertFalse(basket.add("juice"));
 
 
     }

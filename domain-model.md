@@ -18,11 +18,11 @@ As a member of the public,
 So I can change my order,
 I'd like to remove a bagel from my basket.
 ```
-| Methods                           | Member variables    | Scenario                  | Outputs/Results        |
-|-----------------------------------|---------------------|---------------------------|------------------------|
-| boolean removeBagel(String bagel) | String[] bagelTypes | If bagelType exist        | Remove bagel to basket |
-|                                   | String[] basket     | && bagelType is in basket |                        |
-|                                   |                     |                           |                        |
+| Methods                           | Member variables  | Scenario           | Outputs/Results        |
+|-----------------------------------|-------------------|--------------------|------------------------|
+| boolean removeBagel(String bagel) | ArrayList basket  | Bagel is in basket | Remove bagel to basket |
+|                                   |                   |                    |                        |
+|                                   |                   |                    |                        |
 
 ```
 3.
@@ -30,11 +30,11 @@ As a member of the public,
 So that I can not overfill my small bagel basket
 I'd like to know when my basket is full when I try adding an item beyond my basket capacity.
 ```
-| Methods                | Member variables   | Scenario           | Outputs/Results |
-|------------------------|--------------------|--------------------|-----------------|
-| boolean isBasketFull() | int basketItems    | If basket is full  | Print message   |
-|                        | int basketCapacity | If basket not full | Print message   |
-|                        |                    |                    |                 |
+| Methods             | Member variables    | Scenario           | Outputs/Results    |
+|---------------------|---------------------|--------------------|--------------------|
+| boolean addBagel()  | int basketCapacity  | If basket is full  | Print message      |
+|                     |                     | If basket not full | Continue as normal |
+|                     |                     |                    |                    |
 
 ```
 4.

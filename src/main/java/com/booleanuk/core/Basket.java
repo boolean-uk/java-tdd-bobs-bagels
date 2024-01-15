@@ -26,6 +26,13 @@ public class Basket {
 
     public boolean removeFromBasket(String type)
     {
+        if(basketList.contains(type))
+        {
+            basketList.remove(type);
+            System.out.println("Successfully removed " + type + " bagel from basket");
+            return true;
+        }
+        System.out.println("Bagel of type \"" + type + "\" is not in basket");
         return false;
     }
 

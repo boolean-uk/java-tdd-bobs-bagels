@@ -102,4 +102,17 @@ class BasketTest {
         basket.remove(new VeganBagel());
         basket.remove(new VeganBagel());
     }
+
+    @Test
+    public void testingTotalCost(){
+        Basket basket = new Basket();
+        basket.add(new SpicyBagel());
+        basket.add(new SpicyBagel());
+        basket.add(new SpicyBagel());
+        basket.add(new VeganBagel());
+        basket.add(new VeganBagel());
+
+        double estimated = new SpicyBagel().price*3 + new VeganBagel().price*2;
+        Assertions.assertEquals(estimated, basket.totalCost());
+    }
 }

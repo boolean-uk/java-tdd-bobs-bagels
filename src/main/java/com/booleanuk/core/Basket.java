@@ -17,6 +17,14 @@ public class Basket {
         }
         return true;
     }
+    public boolean removeBagel(String bagel){
+
+        if (bagels.contains(bagel)){
+            bagels.remove(bagel);
+            return true;
+        }
+        return false;
+    }
 
 
 

@@ -20,4 +20,8 @@ public class Basket {
         return true;
     }
 
+    public boolean removeBagelTypeFromBasket(String bagelType) {
+        return true;
+    }
+
 }

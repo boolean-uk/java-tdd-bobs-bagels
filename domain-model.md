@@ -29,7 +29,7 @@ I'd like to remove a bagel from my basket.
 ```
 ``` Notes ```
 Class | Member variables | Methods | Scenario | Output/Result
-Basket  String type        removeagelType()   Add a specific type of bagel to basket Return true
+Basket  String type        removeBagelType()   Add a specific type of bagel to basket Return true
 
 Version 1
 

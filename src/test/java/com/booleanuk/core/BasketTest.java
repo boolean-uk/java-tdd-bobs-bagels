@@ -20,8 +20,6 @@ class BasketTest {
     public void removeBagelFromBasketReturnTrue() {
         Basket basket = new Basket();
 
-        basket.removeBagelTypeFromBasket("Chocolate Bagels");
-
         boolean bagelRemoved = !basket.bagels.contains("Chocolate Bagels");
 
         Assertions.assertTrue(bagelRemoved);

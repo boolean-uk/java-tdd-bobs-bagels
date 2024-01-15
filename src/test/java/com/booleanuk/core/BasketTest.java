@@ -23,6 +23,23 @@ class BasketTest {
 
     }
 
+    @Test
+    public void testItemInListRemove() {
+        Basket basket1 = new Basket();
+
+        boolean result = basket1.remove("Regular");
+        Assertions.assertTrue(result);
+    }
+
+    @Test
+    public void testItemNotInListRemove() {
+        Basket basket1 = new Basket();
+
+        boolean result = basket1.remove("Fried");
+        Assertions.assertFalse(result);
+
+    }
+
 
 
 }

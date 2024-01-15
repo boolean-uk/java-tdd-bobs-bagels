@@ -50,6 +50,11 @@ class BasketTest {
         Basket basket = new Basket(4);
         Assertions.assertEquals(8,basket.changeCapacity(8));
     }
+    public void removeItemNotInTheBasketShouldReturnFalse(){
+        Basket basket = new Basket();
+        basket.add("Cinnamon bagels");
+        Assertions.assertFalse(basket.isItemInBasket("Sesam bagel"));
+    }
 
 
 }

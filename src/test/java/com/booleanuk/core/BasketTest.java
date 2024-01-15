@@ -60,6 +60,28 @@ class BasketTest {
     }
 
     @Test
+    public void testCapacityChanged(){
+        Basket basket = new Basket();
+        basket.addBagel("Plain Bagel");
+        basket.addBagel("Plain Bagel");
+        basket.addBagel("Plain Bagel");
+        basket.addBagel("Plain Bagel");
+        basket.addBagel("Plain Bagel");
+        basket.addBagel("Plain Bagel");
+        basket.addBagel("Plain Bagel");
+        basket.addBagel("Plain Bagel");
+        Assertions.assertTrue(basket.basketIsFull());
+        if (basket.basketIsFull()){
+            basket.changeCapacity(8);
+            Assertions.assertFalse(basket.basketIsFull());
+            basket.addBagel("Plain Bagel");
+            basket.addBagel("Plain Bagel");
+        }
+        Assertions.assertEquals(8,basket.bagelBasket.size());
+    }
+
+
+    @Test
     public void testRemoveNonExistingItem(){
         Basket basket = new Basket();
         basket.addBagel("Plain bagel");

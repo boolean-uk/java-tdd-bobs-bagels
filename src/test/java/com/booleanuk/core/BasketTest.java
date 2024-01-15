@@ -35,8 +35,8 @@ class BasketTest {
     public void testChangeArrayCapacity(){
         Basket basket = new Basket();
 
-        basket.changeBasketCapacity(5);
-        Assertions.assertEquals(5,basket.basketArr.length);
+        basket.changeBasketCapacity(6);
+        Assertions.assertEquals(6,basket.basketArr.length);
     }
 
     @Test

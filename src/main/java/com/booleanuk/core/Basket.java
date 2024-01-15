@@ -1,12 +1,14 @@
 package com.booleanuk.core;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Comparator;
 
 public class Basket {
     String[] basketArr;
 
     public Basket(){
-        this.basketArr = new String[4];
+        this.basketArr = new String[5];
         this.basketArr[0] = "Chocolate";
         this.basketArr[3] = "Strawberry";
     }
@@ -49,12 +51,39 @@ public class Basket {
 
     public void changeBasketCapacity(int size){
         String[] newArray = new String[size];
+        //Sorting algorithm from stackoverflow
+        //needed it to sort the array because of null values
+        Arrays.sort(basketArr, (o1, o2) -> {
+            if (o1 == null && o2 == null) {
+                return 0;
+            }
+            if (o1 == null) {
+                return 1;
+            }
+            if (o2 == null) {
+                return -1;
+            }
+            return o1.compareTo(o2);
+        });
 
-        for (int i = 0; i < this.basketArr.length; i++) {
-            newArray[i] = this.basketArr[i];
+        //Loop that adds values into the new array
+        for (int i = 0; i < basketArr.length; i++) {
+            if(basketArr[i] != null){
+                newArray[i] = this.basketArr[i];
+            }
+
         }
-        this.basketArr = newArray;
+        //Makes the original array == the new array
+        basketArr = newArray;
+    }
+
+    public static void main(String[] args) {
+        Basket basket = new Basket();
+
+
+        System.out.println(Arrays.toString(basket.basketArr));
     }
 
 
 }
+

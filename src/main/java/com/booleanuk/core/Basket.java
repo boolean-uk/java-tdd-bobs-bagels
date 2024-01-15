@@ -52,7 +52,7 @@ public class Basket {
 
     public void changeCapacityOfBasket(int i) {
 
-        this.capacityOfBasket = 2;
+        this.capacityOfBasket = i;
     }
 }
 

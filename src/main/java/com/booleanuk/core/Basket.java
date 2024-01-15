@@ -13,4 +13,8 @@ public class Basket {
         itemList.put(bagel, 1);
     }
 
+    public void remove(Bagel bagel){
+        itemList.remove(bagel);
+    }
+
 }

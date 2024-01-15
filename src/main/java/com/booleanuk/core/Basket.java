@@ -8,6 +8,7 @@ public class Basket {
 
     public Basket() {
         this.items = new ArrayList<>();
+        this.capacity = 3;
     }
 
     public boolean isFull() {
@@ -22,6 +23,14 @@ public class Basket {
 
     public boolean remove(String bagel) {
         return this.items.remove(bagel);
+    }
+
+    public boolean changeCapacity(int capacity) {
+        if (capacity >= 0) {
+            this.capacity = capacity;
+            return true;
+        }
+        return false;
     }
 
 }

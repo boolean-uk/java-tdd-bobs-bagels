@@ -11,14 +11,17 @@ public class Basket {
         this.basketLimit = 3;
     }
 
-    public boolean add(String name) {
-        if (name.isBlank() || this.basketContents.size() >= basketLimit) {return false;}
-        this.basketContents.put(name, 1);
+    public boolean add(String name, int num) {
+        if (name.isBlank() || (this.basketContents.size()+ num) > basketLimit) {return false;}
+        this.basketContents.put(name, num);
         return true;
     }
 
-    public boolean remove(String name) {
-        if (name.isBlank() || !this.basketContents.containsKey(name)) {return false;}
+    public boolean remove(String name, int num) {
+        if (name.isBlank() || !this.basketContents.containsKey(name) || this.basketContents.get(name) < num) {return false;}
+        if (this.basketContents.get(name) > num) {
+            this.basketContents.put(name,this.basketContents.get(name)-num);
+        }
         this.basketContents.remove(name);
         return true;
     }

@@ -8,34 +8,34 @@ class BasketTest {
     @Test
     public void testAddBagelToEmptyBasket() {
         Basket basket = new Basket();
-        Assertions.assertTrue(basket.add("Brown"));
+        Assertions.assertTrue(basket.add("Brown", 1));
     }
 
     @Test
     public void testAddBagelToEmptyBasketAndCheckIfAdded() {
         Basket basket = new Basket();
-        basket.add("Brown");
+        basket.add("Brown", 1);
         Assertions.assertTrue(basket.basketContents.containsKey("Brown"));
     }
 
     @Test
     public void testAddBagelWithoutNameBasket() {
         Basket basket = new Basket();
-        Assertions.assertFalse(basket.add(""));
+        Assertions.assertFalse(basket.add("", 1));
     }
 
     @Test
     public void testRemoveBagelFromBasket() {
         Basket basket = new Basket();
-        basket.add("Brown");
-        Assertions.assertTrue(basket.remove("Brown"));
+        basket.add("Brown", 1);
+        Assertions.assertTrue(basket.remove("Brown", 1));
     }
 
     @Test
     public void testRemoveBagelFromBasketAndCheckIfGone() {
         Basket basket = new Basket();
         basket.basketContents.put("Brown", 1);
-        basket.remove("Brown");
+        basket.remove("Brown", 1);
         Assertions.assertTrue(basket.basketContents.isEmpty());
     }
 
@@ -45,7 +45,7 @@ class BasketTest {
         basket.basketContents.put("Brown", 1);
         basket.basketContents.put("Sourdough", 1);
         basket.basketContents.put("Plain", 1);
-        Assertions.assertFalse(basket.add("Seeds"));
+        Assertions.assertFalse(basket.add("Seeds", 1));
     }
 
     @Test
@@ -60,21 +60,21 @@ class BasketTest {
         Basket basket = new Basket();
         basket.setBasketLimit(1);
         basket.basketContents.put("Brown", 1);
-        Assertions.assertFalse(basket.add("Seeds"));
+        Assertions.assertFalse(basket.add("Seeds", 1));
     }
 
     @Test
     public void testSetBagelLimitHigherToAddMore() {
         Basket basket = new Basket();
-        basket.add("Brown");
+        basket.add("Brown", 1);
         basket.setBasketLimit(2);
-        Assertions.assertTrue(basket.add("Seeds"));
+        Assertions.assertTrue(basket.add("Seeds", 1));
     }
 
     @Test
     public void testRemoveBagelFromEmptyBasket() {
         Basket basket = new Basket();
-        Assertions.assertFalse(basket.remove("Seeds"));
+        Assertions.assertFalse(basket.remove("Seeds", 1));
     }
 
     @Test
@@ -82,7 +82,7 @@ class BasketTest {
         Basket basket = new Basket();
         basket.basketContents.put("Brown",1);
         basket.basketContents.put("Sourdough",1);
-        Assertions.assertFalse(basket.remove("Seeds"));
+        Assertions.assertFalse(basket.remove("Seeds", 1));
     }
 
     @Test

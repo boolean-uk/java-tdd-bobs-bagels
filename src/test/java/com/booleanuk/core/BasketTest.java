@@ -17,4 +17,13 @@ class BasketTest {
         String bagel = "Plain bagel";
         Assertions.assertEquals("Plain bagel added to basket",basket.addBagel(bagel));
     }
+
+    @Test
+    public void testRemoveBagel(){
+        Basket basket = new Basket();
+        String bagel = "Plain bagel";
+        basket.addBagel(bagel);
+        Assertions.assertEquals("Plain bagel removed from basket", basket.removeBagel(bagel));
+    }
+
 }

@@ -17,6 +17,12 @@ class BasketTest {
         basket.add(("Plain"));
 
         Assertions.assertTrue(basket.remove("Plain"));
+    }
 
+    @Test
+    public void testRemoveReturnFalseIfBagelNotInBasket() {
+        Basket basket = new Basket();
+
+        Assertions.assertFalse(basket.remove("Plain"));
     }
 }

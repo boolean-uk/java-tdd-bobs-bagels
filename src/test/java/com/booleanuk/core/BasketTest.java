@@ -73,7 +73,7 @@ class BasketTest {
     public void testSettingCapaityToHigherNumber(){
         Basket basket = new Basket();
         Assertions.assertEquals(5, basket.maxCapacity);
-        Assertions.assertEquals(("New max capaxity set to 10") , (basket.setBasketCapacity(10));
+        Assertions.assertEquals("new max capacity set to 10", basket.setBasketCapacity(10));
         Assertions.assertEquals(10, basket.maxCapacity);
     }
 
@@ -89,7 +89,7 @@ class BasketTest {
 
         Assertions.assertEquals(5, basket.maxCapacity);
 
-        Assertions.assertEquals(("Basket is now empty and new max capaxity set to 3") , (basket.setBasketCapacity(3));
+        Assertions.assertEquals("Basket is now empty, new max capacity set to 3", basket.setBasketCapacity(3));
 
         Assertions.assertEquals(3, basket.maxCapacity);
         Assertions.assertTrue(basket.items.isEmpty());

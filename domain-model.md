@@ -47,10 +47,10 @@ So that I can expand my business,
 I’d like to change the capacity of baskets.
 ```
 
-| Classes | Methods                              | Scenario                       | Returns |
-|---------|--------------------------------------|--------------------------------|---------|
-| Basket  | boolean changeCapacity(int capacity) | Add a valid capacity           | true    |
-|         |                                      | Add invalid capacity (e.g. -1) | false   |
+| Classes | Methods                              | Scenario                            | Returns |
+|---------|--------------------------------------|-------------------------------------|---------|
+| Basket  | boolean changeCapacity(int capacity) | Add a valid capacity                | true    |
+|         |                                      | Add invalid capacity (e.g. -1 or 0) | false   |
 
 
 ```

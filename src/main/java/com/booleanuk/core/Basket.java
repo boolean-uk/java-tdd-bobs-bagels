@@ -28,4 +28,8 @@ public class Basket {
         }
         return "Bagel not in basket";
     }
+    public boolean changeCapacity(int capacity){
+        this.capacity += capacity;
+        return true;
+    }
 }

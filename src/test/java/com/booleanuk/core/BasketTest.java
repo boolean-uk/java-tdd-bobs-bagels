@@ -54,7 +54,6 @@ class BasketTest {
     @Test
     public void testReducingCapacityByTwoOfABasket(){
         Basket basket = new Basket();
-        Assertions.assertTrue(true, basket.changeCapacity(2));
-
+        Assertions.assertTrue(basket.changeCapacity(2));
     }
 }

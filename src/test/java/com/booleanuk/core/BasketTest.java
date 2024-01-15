@@ -9,6 +9,15 @@ class BasketTest {
     {
         Basket basket = new Basket();
 
-        Assertions.assertTrue(basket.add("Whole wheat"));
+        Assertions.assertTrue(basket.addToBasket("Whole wheat"));
+    }
+
+    @Test
+    public void testAddTypeInBasketReturnsFalse()
+    {
+        Basket basket = new Basket();
+
+        basket.addToBasket("Whole wheat");
+        Assertions.assertFalse(basket.addToBasket("Whole wheat"));
     }
 }

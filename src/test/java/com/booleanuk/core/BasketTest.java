@@ -50,4 +50,13 @@ class BasketTest {
         basket.remove("vanilla");
         Assertions.assertEquals(1, basket.items.get("vanilla"));
     }
+
+    @Test
+    public void testLoweringCapacity() {
+        Basket basket = new Basket();
+        basket.add("vanilla");
+        basket.add("vanilla");
+        basket.updateCapacity(2);
+        Assertions.assertFalse(basket.add("vanilla"));
+    }
 }

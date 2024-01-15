@@ -76,4 +76,17 @@ class BasketTest {
         Assertions.assertEquals(1, basket.getBasket().size());
         Assertions.assertFalse(basket.isFull());
     }
+
+    @Test
+    public void canChangeBasketCapacity() {
+        Basket basket = new Basket(1);
+        basket.add("Plain");
+
+        Assertions.assertTrue(basket.isFull());
+        Assertions.assertFalse(basket.add("Pumpernickel"));
+
+        basket.setCapacity(2);
+        Assertions.assertFalse(basket.isFull());
+        Assertions.assertTrue(basket.add("Pumpernickel"));
+    }
 }

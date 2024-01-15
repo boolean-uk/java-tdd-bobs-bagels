@@ -19,8 +19,11 @@ public class Basket {
         return false;
     }
     public String delete(String name) {
-        bagels.remove(name);
-        return name + " has been deleted";
+        if(bagels.contains(name)) {
+            bagels.remove(name);
+            return name + " has been deleted";
+        }
+        return name + " was not found";
     }
     public void expand(int newSize) {
 

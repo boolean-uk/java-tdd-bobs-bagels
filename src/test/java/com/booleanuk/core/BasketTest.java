@@ -40,13 +40,23 @@ class BasketTest {
 
     // 3.
     @Test
-    public void addChocolateToAFullBasketReturFalse() {
+    public void addBagelsToAFullBasketReturFalse() {
         Basket basket = new Basket(3);
         boolean result = basket.addBagel("choclate");
         result = basket.addBagel("cheese");
         result = basket.addBagel("creme");
         result = basket.addBagel("ham");
         Assertions.assertFalse(result);
+    }
+
+    @Test
+    public void repeatedlyAddChocolateToAFullBasketReturnTrue() {
+        Basket basket = new Basket(3);
+        boolean result = basket.addBagel("choclate");
+        result = basket.addBagel("choclate");
+        result = basket.addBagel("choclate");
+        result = basket.addBagel("choclate");
+        Assertions.assertTrue(result);
     }
 
 

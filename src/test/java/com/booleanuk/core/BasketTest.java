@@ -18,4 +18,20 @@ class BasketTest {
         Assertions.assertTrue(basket.addBagelToBasket("Bagel1"));
 
     }
+
+
+
+    @Test
+    public void testAddBagelThatIsntValidInBagelList() {
+        Basket basket = new Basket(5, new HashMap<>() {
+            {
+                put("Bagel1", 15);
+            }
+        });
+
+        Assertions.assertFalse(basket.addBagelToBasket("Bagel2"));
+        Assertions.assertTrue(basket.addBagelToBasket(("Bagel1")));
+        Assertions.assertFalse(basket.addBagelToBasket("Bagel1"));
+
+    }
 }

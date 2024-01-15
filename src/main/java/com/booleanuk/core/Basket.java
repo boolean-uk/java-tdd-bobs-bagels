@@ -18,7 +18,6 @@ public class Basket {
     public boolean addBagelToBasket(String bagel1) {
 
         if(this.basket != null) {
-
             this.basket.put(bagel1, new HashMap<String, Integer>() {
                 {
                     putIfAbsent("Quantity", 1);
@@ -48,3 +47,5 @@ public class Basket {
         return false;
     }
 }
+
+

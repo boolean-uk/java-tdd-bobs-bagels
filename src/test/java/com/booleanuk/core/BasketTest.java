@@ -84,4 +84,30 @@ class BasketTest {
         basket.basketContents.put("Sourdough",1);
         Assertions.assertFalse(basket.remove("Seeds"));
     }
+
+    @Test
+    public void testAddMultipleOfSingleBagel() {
+        Basket basket = new Basket();
+        Assertions.assertTrue(basket.add("Onion", 3));
+    }
+
+    @Test
+    public void testAddMoreBagelsThanCapacity() {
+        Basket basket = new Basket();
+        Assertions.assertFalse(basket.add("Onion", 40));
+    }
+
+    @Test
+    public void testRemoveMultipleBagelsFromBasket() {
+        Basket basket = new Basket();
+        basket.add("Onion", 3);
+        Assertions.assertTrue(basket.remove("Onion", 2));
+    }
+
+    @Test
+    public void testRemoveMoreBagelsThanWhatIsInBasket() {
+        Basket basket = new Basket();
+        basket.add("Onion", 2);
+        Assertions.assertFalse(basket.remove("Onion", 3));
+    }
 }

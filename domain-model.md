@@ -48,13 +48,13 @@ I'd like to know when my basket is full when I try adding an item beyond my bask
 
 Class Basket
 
-| Class variables                          | Methods                 | Scenario               | Output/Return              |
-|------------------------------------------|-------------------------|------------------------|----------------------------|
-| Map<String, Map<String, Integer>> basket | checkIfCapacityIsFull() | Checks if basket is at | True if bagel can be added |
-| int capacityOfBasket                     |                         | max bagels             | false if not               |
-|                                          |                         |                        |                            |
-|                                          |                         |                        |                            |
-|                                          |                         |                        |                            |
+| Class variables                          | Methods                        | Scenario                          | Output/Return              |
+|------------------------------------------|--------------------------------|-----------------------------------|----------------------------|
+| Map<String, Map<String, Integer>> basket | addBagelToBasket(String bagel) | Throws outOfBounds exception      | True if bagel can be added |
+| int capacityOfBasket                     |                                | when bagel is added when capacity | false if not               |
+|                                          |                                | is full                           |                            |
+|                                          |                                |                                   |                            |
+|                                          |                                |                                   |                            |
 
 
 ## 4
@@ -84,12 +84,12 @@ I'd like to know if I try to remove an item that doesn't exist in my basket.
 
 Class Basket
 
-| Class variables                          | Methods                                  | Scenario                       | Output/Return   |
-|------------------------------------------|------------------------------------------|--------------------------------|-----------------|
-| Map<String, Map<String, Integer>> basket | doesBasketContainBagel(String bagelName) | Check if basket contains       | True if bagel   |
-|                                          |                                          | bagel according to name        | is in basket    |
-|                                          |                                          |                                |                 |
-|                                          | removeBagelFromBasket(String bagelName)  | Bagel gets removed from        | True if removal |
-|                                          |                                          | basket and if bagel doesnt     | was correct and |
-|                                          |                                          | exist it is printed in console | false if not    |
+| Class variables                          | Methods                                  | Scenario                             | Output/Return   |
+|------------------------------------------|------------------------------------------|--------------------------------------|-----------------|
+| Map<String, Map<String, Integer>> basket | doesBasketContainBagel(String bagelName) | Check if basket contains             | True if bagel   |
+|                                          |                                          | bagel according to name              | is in basket    |
+|                                          |                                          |                                      |                 |
+|                                          | removeBagelFromBasket(String bagelName)  | Bagel gets removed from              | True if removal |
+|                                          |                                          | basket and if bagel doesnt           | was correct and |
+|                                          |                                          | exist it throws nullpointerexception | false if not    |
 

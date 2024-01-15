@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Basket {
 
     ArrayList<String> basket;
-    int capacity;
+    public int capacity;
 
     public Basket(){
         this.basket = new ArrayList<>();
@@ -22,16 +22,23 @@ public class Basket {
         }
         System.out.println("Basket is not full, adding bagel");
         return true;
-
     }
 
-    public boolean changeCapacity(int capacity){
-        if(capacity < 0 ){
-            System.out.println("Invalid capacity");
-            return false;
+    public String tryRemoveBagel(String bagel){
+        if (!this.basket.contains(bagel)) {
+            System.out.println("Bagel not in list");
+            return "Bagel not in list";
         }
-        this.capacity = capacity;
-        return true;
+        System.out.println("Bagel is removed from list");
+        this.basket.remove(bagel);
+        return "Bagel is removed from list";
+    }
+    public int changeCapacity(int capacity){
+        if(capacity < 0 ){
+            System.out.println("Invalid capacity, setting default capacity of 5");
+            return this.capacity = 5;
+        }
+        return this.capacity = capacity;
     }
     public boolean remove(String bagel) {
         if(bagel == null){
@@ -40,7 +47,7 @@ public class Basket {
         if(!this.basket.contains(bagel)){
             return false;
         }
-        this.basket.remove((bagel));
+        this.tryRemoveBagel(bagel);
         return true;
     }
 

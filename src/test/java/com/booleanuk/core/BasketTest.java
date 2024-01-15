@@ -10,7 +10,7 @@ class BasketTest {
 
         basket.addBagel(bagel);
 
-        assertTrue(basket.isBasketFull());
+        assertEquals(1, basket.getBasket().size()); // Expecting exactly one bagel in the basket
         assertTrue(basket.getBasket().contains(bagel));
     }
 }

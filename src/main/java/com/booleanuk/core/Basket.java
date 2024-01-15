@@ -17,7 +17,15 @@ public class Basket {
         return bagels.add(type);
     }
 
+    public boolean removeBagel(String type) {
+        if(bagels.contains(type)) {
+            return bagels.remove(type);
 
+        } else {
+            System.out.println("There was no bagel of that type in the basket");
+            return false;
+        }
+    }
 
     public boolean isBasketFull() {
         if (bagels.size() >= basketCapacity) {

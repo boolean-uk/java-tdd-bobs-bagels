@@ -22,4 +22,8 @@ public class Basket {
         this.basketContents.remove(name);
         return true;
     }
+
+    public void setBasketLimit(int capacity) {
+        this.basketLimit = capacity;
+    }
 }

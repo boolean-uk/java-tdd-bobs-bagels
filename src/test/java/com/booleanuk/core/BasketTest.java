@@ -36,4 +36,35 @@ class BasketTest {
         Assertions.assertTrue(basket.remove("Cookie Dough"));
     }
 
+    @Test
+    public void testCheckIfBasketIsAboveCapacity(){
+        Basket basket = new Basket();
+
+        basket.add("Cookie Dough");
+        basket.add("Vanilla");
+        basket.add("Chocolate");
+        basket.add("Blueberry");
+        basket.add("Strawberry");
+        basket.add("Plain");
+
+        Assertions.assertTrue(6, basket.capacity);
+        Assertions.assertFalse(4, basket.capacity);
+    }
+
+    @Test
+    public void testAddBagelIfBasketIsFull(){
+        Basket basket = new Basket();
+
+        basket.add("Cookie Dough");
+        basket.add("Vanilla");
+        basket.add("Chocolate");
+        basket.add("Blueberry");
+        basket.add("Strawberry");
+        basket.add("Plain");
+
+        Assertions.assertFalse(4, basket.size());
+        Assertions.assertTrue(5, basket.size());
+        Assertions.assertFalse(6, basket.size());
+    }
+
 }

@@ -59,18 +59,22 @@ public class Basket {
 
     public String listBasketItems()
     {
-        StringBuilder result = new StringBuilder();
-        result.append("Your basket has ");
-        result.append(basketList.size());
-        result.append(" items:\n");
-        for(String item : basketList)
-        {
-            result.append(item);
-            result.append("\n");
+        if(basketList.size() > 0) {
+            StringBuilder result = new StringBuilder();
+            result.append("Your basket has ");
+            result.append(basketList.size());
+            result.append(" items:\n");
+            for (String item : basketList) {
+                result.append(item);
+                result.append("\n");
+            }
+
+            System.out.println(result);
+
+            return result.toString();
         }
-
-        System.out.println(result);
-
-        return result.toString();
+        String emptyBasket = "No items to show, basket is empty";
+        System.out.println(emptyBasket);
+        return emptyBasket;
     }
 }

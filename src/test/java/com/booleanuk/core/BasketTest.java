@@ -43,6 +43,16 @@ class BasketTest {
         Basket basket = new Basket();
         Assertions.assertEquals("Bagel added", basket.addBagel("Bagel"));
     }
+    @Test
+    public void reducingSizeOfBasket(){
+        Basket basket = new Basket();
+        Assertions.assertTrue(basket.changeSize(2));
+    }
+    @Test
+    public void reducingSizeWithNegativeNumber(){
+        Basket basket = new Basket();
+        Assertions.assertFalse(basket.changeSize(-1));
+    }
 
 
 

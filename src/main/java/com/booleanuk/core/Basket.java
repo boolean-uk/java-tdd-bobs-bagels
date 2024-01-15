@@ -18,5 +18,8 @@ public class Basket {
         bagelBasket.remove(name);
         return name+" removed";
     }
+    public boolean changeSize(int size){
+        return false;
+    }
 
 }

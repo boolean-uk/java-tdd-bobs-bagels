@@ -12,12 +12,16 @@ public class Basket {
     }
 
     public boolean order(String name) {
-        return true;
+        if(bagels.size() < this.capacity) {
+            bagels.add(name);
+            return true;
+        }
+        return false;
     }
     public String delete(String name) {
         return "";
     }
     public void expand(int newSize) {
-        
+
     }
 }

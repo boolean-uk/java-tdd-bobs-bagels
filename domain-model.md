@@ -8,9 +8,10 @@ I'd like to add a specific type of bagel to my basket.
 ````
 Class Basket
 
-| Class vars     | Methods               | Scenario                    | Return/Result |
-|----------------|-----------------------|-----------------------------|---------------|
-| Bagel[] basket | addBagel(Bagel bagel) | if bagel is added to basket | true          |
+| Class vars     | Methods               | Scenario                        | Return/Result |
+|----------------|-----------------------|---------------------------------|---------------|
+| Bagel[] basket | addBagel(Bagel bagel) | if bagel is added to basket     | true          |
+|                |                       | if bagel is not added to basket | false         |
 
 Class Bagel
 

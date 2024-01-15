@@ -76,6 +76,23 @@ class BasketTest {
         Assertions.assertEquals(30, result);
     }
 
+    @Test
+    public void testItemCanBeRemoved() {
+        Basket basket1 = new Basket();
+
+        String result = basket1.canItemBeRemoved("Regular");
+        Assertions.assertEquals("The item can be removed.", result);
+    }
+
+    @Test
+    public void testItemCannotBeRemoved() {
+        Basket basket1 = new Basket();
+
+        String result = basket1.canItemBeRemoved("Fried");
+        Assertions.assertEquals("The item is not in the list!", result);
+
+    }
+
 
 
 

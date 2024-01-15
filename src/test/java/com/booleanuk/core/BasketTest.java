@@ -9,7 +9,7 @@ class BasketTest {
     public void addItemToBasketReturnTrue() {
         Basket basket = new Basket();
 
-        boolean result = basket.add("bread");
+        boolean result = basket.addBagel("plain");
         Assertions.assertTrue(result);
     }
 
@@ -18,8 +18,8 @@ class BasketTest {
     public void removeItemFromBasket() {
         Basket basket = new Basket();
 
-        basket.add("bread");
-        boolean result = basket.remove("bread");
+        basket.addBagel("plain");
+        boolean result = basket.removeBagel("plain");
         Assertions.assertTrue(result);
     }
 
@@ -27,19 +27,19 @@ class BasketTest {
     public void removeItemNotInBasket() {
         Basket basket = new Basket();
 
-        boolean result = basket.remove("bread");
+        boolean result = basket.removeBagel("bread");
         Assertions.assertFalse(result);
     }
 
     @Test
     public void checkIfBasketIsFull() {
         Basket basket = new Basket();
-        basket.add("bread");
-        basket.add("milk");
-        basket.add("coffee");
-        basket.add("butter");
+        basket.addBagel("plain");
+        basket.addBagel("chocolate");
+        basket.addBagel("honey");
+        basket.addBagel("salmon");
 
-        Assertions.assertFalse(basket.add("juice"));
+        Assertions.assertFalse(basket.addBagel("cheese"));
 
 
     }

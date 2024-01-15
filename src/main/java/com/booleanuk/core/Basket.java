@@ -12,7 +12,7 @@ public class Basket {
         this.bagelsList = new ArrayList<>();
     }
 
-    public boolean add(String bagel) {
+    public boolean addBagel(String bagel) {
         if (bagelsList.size() == basketCapacity) {
             System.out.println("Basket is full");
             return false;
@@ -22,7 +22,7 @@ public class Basket {
 
     }
 
-    public boolean remove(String bagel) {
+    public boolean removeBagel(String bagel) {
         if (bagelsList.isEmpty()) {
             System.out.println("Can't remove item from empty basket");
             return false;

@@ -9,14 +9,20 @@ class BasketTest {
     public void testAddBagelInEmptyBasket() {
         Basket basket = new Basket();
 
-        Assertions.assertTrue(basket.addBagel());
+        Assertions.assertTrue(basket.addBagel("Blueberry"));
     }
 
     @Test
     public void testAddBagelToFullBasket() {
         Basket basket = new Basket();
 
-        Assertions.assertFalse(basket.addBagel());
+        Assertions.assertTrue(basket.addBagel("Blueberry"));
+        Assertions.assertTrue(basket.addBagel("Cinnamon"));
+        Assertions.assertTrue(basket.addBagel("Egg"));
+        Assertions.assertTrue(basket.addBagel("Everything"));
+        Assertions.assertTrue(basket.addBagel("Blueberry"));
+
+        Assertions.assertFalse(basket.addBagel("Plain"));
     }
 
 }

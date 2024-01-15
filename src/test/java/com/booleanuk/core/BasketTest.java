@@ -31,6 +31,18 @@ class BasketTest {
         Basket basket = new Basket();
         Assertions.assertEquals("Bagel not in basket", basket.removeBagel("Bagel"));
     }
+    @Test
+    public void addToAFullBasket(){
+        Basket basket = new Basket();
+        basket.addBagel("Bagel1");
+        basket.addBagel("Bagel2");
+        Assertions.assertEquals("Basket full", basket.addBagel("Bagel3"));
+    }
+    @Test
+    public void addBagelWhenNotFull(){
+        Basket basket = new Basket();
+        Assertions.assertEquals("Bagel added", basket.addBagel("Bagel"));
+    }
 
 
 

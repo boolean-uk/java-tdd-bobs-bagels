@@ -8,10 +8,9 @@ I'd like to add a specific type of bagel to my basket.
 ````
 Class Basket
 
-| Class vars     | Methods               | Scenario                  | Return/Result |
-|----------------|-----------------------|---------------------------|---------------|
-| Bagel[] basket | addBagel(Bagel bagel) | if bagel is not in basket | return false  |
-|                |                       | if bagel is in basket     | return true   |
+| Class vars     | Methods               | Scenario                    | Return/Result |
+|----------------|-----------------------|-----------------------------|---------------|
+| Bagel[] basket | addBagel(Bagel bagel) | if bagel is added to basket | true          |
 
 Class Bagel
 
@@ -30,11 +29,10 @@ I'd like to remove a bagel from my basket.
 
 Class Basket
 
-| Class vars     | Methods                  | Scenario                                       | Return/Result |
-|----------------|--------------------------|------------------------------------------------|---------------|
-| Bagel[] basket | removeBagel(Bagel bagel) | if bagel is not in basket                      | false         |
-|                |                          | if bagel is in basket and removed successfully | true          |
-|                |                          | if bagel is in basket but not removed          | false         |
+| Class vars     | Methods                  | Scenario                              | Return/Result |
+|----------------|--------------------------|---------------------------------------|---------------|
+| Bagel[] basket | removeBagel(Bagel bagel) | if bagel is not in basket             | false         |
+|                |                          | if bagel is removed from basket       | true          |
 
 Class Bagel
 
@@ -53,10 +51,10 @@ I'd like to know when my basket is full when I try adding an item beyond my bask
 
 Class Basket
 
-| Class vars     | Methods        | Scenario                                  | Return/Result |
-|----------------|----------------|-------------------------------------------|---------------|
-| Bagel[] basket | basketIsFull() | if basket is not full and bagel was added | false         |
-|                |                | if basket is full and bagel was not added | true          |
+| Class vars     | Methods               | Scenario                                  | Return/Result |
+|----------------|-----------------------|-------------------------------------------|---------------|
+| Bagel[] basket | basketIsAlreadyFull() | if basket is not full and bagel was added | false         |
+|                |                       | if basket is full and bagel was not added | true          |
 
 Class Bagel
 
@@ -75,10 +73,9 @@ I’d like to change the capacity of baskets.
 
 Class Basket
 
-| Class vars     | Methods                                          | Scenario                              | Return/Result |
-|----------------|--------------------------------------------------|---------------------------------------|---------------|
-| Bagel[] basket | changeCapacityOfBasket(int numberOfExtraIndices) | if capacity is added successfully     | true          |
-|                |                                                  | if capacity is not added successfully | false         |
+| Class vars     | Methods                                          | Scenario                                    | Return/Result |
+|----------------|--------------------------------------------------|---------------------------------------------|---------------|
+| Bagel[] basket | changeCapacityOfBasket(int numberOfExtraIndices) | if extra capacity is added successfully     | true          |
 
 Class Bagel
 

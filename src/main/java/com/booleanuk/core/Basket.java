@@ -12,9 +12,16 @@ public class Basket {
     public boolean isEmpty(){
         return bagelBasket.isEmpty();
     }
+    public boolean basketIsFull(){
+        return bagelBasket.size() >= 6;
+    }
+
     public String addBagel(String bagel){
-        if (bagel == null && bagelBasket.isEmpty()){
+        if (bagel == null && isEmpty()){
             return "Basket is empty";
+        }
+        else if (basketIsFull()){
+            return "The Basket is full";
         }
         bagelBasket.add(bagel);
 
@@ -25,6 +32,7 @@ public class Basket {
         bagelBasket.remove(bagel);
         return bagel + " removed from basket";
     }
+
 }
 
 /*

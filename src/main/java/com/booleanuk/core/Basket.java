@@ -1,20 +1,21 @@
 package com.booleanuk.core;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Basket {
 
-    ArrayList<String> basket;
+    HashMap<String, Integer> items;
     int maxCapacity;
 
     public Basket(){
-        this.basket = new ArrayList<>();
+        this.items = new HashMap<>();
         this.maxCapacity = 3;
     }
 
     public void add(String bagel, int amount){
-        for(int i = 0; i< amount; i++){
-            this.basket.add(bagel);
-        }
+
+        this.items.put(bagel, amount);
+
     }
 }

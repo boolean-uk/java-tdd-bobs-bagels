@@ -9,7 +9,8 @@ class BasketTest {
         Basket basket = new Basket();
 
         basket.add("Plain", 1);
-        Assertions.assertTrue(basket.basket.contains("Plain"));
+        Assertions.assertTrue(basket.items.containsKey("Plain"));
+        Assertions.assertEquals(basket.items.get("Plain"), 1);
 
     }
 

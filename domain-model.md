@@ -51,7 +51,7 @@ I'd like to know when my basket is full when I try adding an item beyond my bask
 
 ``` Notes
 Class | Member variables | Methods | Scenario | Output/Result
-Basket  String type        basketIsFull()   If basket is full return true
+Basket  ArrayList<String> bagels, int basketSize        basketIsFull()   If basket is full return true
 ```
 
 Version 1
@@ -90,3 +90,14 @@ As a member of the public
 So that I can maintain my sanity
 I'd like to know if I try to remove an item that doesn't exist in my basket.
 ```
+``` Notes 
+Class | Member variables | Methods | Scenario | Output/Result
+Basket  ArrayList<String> bagels        canRemoveItemInBasket()   Remove a specific type of bagel to basket Return true
+```
+
+Version 1
+
+| Class  | Member variables         | Methods                            | Scenario                      | Output/Result                                       |
+|--------|--------------------------|------------------------------------|-------------------------------|-----------------------------------------------------|
+| Basket | ArrayList<String> bagels | canRemoveItemInBasket(String item) | Item exist in basket          | Return "Item is in basket and can be removed"       |
+|        |                          |                                    | Item does not exist in basket | Return "Item is not in basket and can't be removed" |

@@ -45,9 +45,17 @@ public class Basket {
     }
 
     //User story 4
-    public String changeBasketCapacity(int oldCapacity, int newCapacity) {
-        return "Basket capacity changed!";
+    public String changeBasketCapacity(int newCapacity) {
+        if(this.bagels.size() < newCapacity) {
+            this.bagels = new ArrayList<>(newCapacity);
+            return "Basket capacity changed!";
+        } else if (this.bagels.size() <= newCapacity) {
+            return "Basket capacity is not changed.";
+        }
+        return "Basket capacity is not changed.";
+
     }
 
+    //User Story 5
 
 }

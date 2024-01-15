@@ -3,6 +3,8 @@ package com.booleanuk.core;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+
 class BasketTest {
 
     //User Story 1
@@ -67,7 +69,19 @@ class BasketTest {
     public void basketCapacityIsChanged() {
         Basket basket = new Basket();
 
-        String result = basket.changeBasketCapacity(5, 10);
+        //9 new added entries
+        basket.bagels.add("Chocolate");
+        basket.bagels.add("Vanilla");
+        basket.bagels.add("Banana");
+        basket.bagels.add("Orange");
+        basket.bagels.add("Mint");
+        basket.bagels.add("Chocolate");
+        basket.bagels.add("Vanilla");
+        basket.bagels.add("Banana");
+        basket.bagels.add("Orange");
+
+        //If newCapacity > this.bagels.size() then the following should pass the test
+        String result = basket.changeBasketCapacity(10);
 
         Assertions.assertEquals("Basket capacity changed!", result);
 
@@ -78,9 +92,40 @@ class BasketTest {
     public void basketCapacityIsNotChanged() {
         Basket basket = new Basket();
 
-        String result = basket.changeBasketCapacity(5, 5);
+        //5 entries
+        basket.bagels.add("Chocolate");
+        basket.bagels.add("Vanilla");
+        basket.bagels.add("Banana");
+        basket.bagels.add("Orange");
+        basket.bagels.add("Mint");
+
+        //This should pass, as theres already 5 bagels in the list and the new capacity is 5
+        //Thus the capacity hasnt changed, if new capacity is lower than 5, it should also pass
+        //as the capacity can't be lowered than the items already in the list
+        String result = basket.changeBasketCapacity(5);
+
+        //It should fail if the new capacity is bigger than 5 as the capacity has then been changed
 
         Assertions.assertEquals("Basket capacity is not changed.", result);
+    }
+
+    @Test
+    public void canRemoveItemFromBasket() {
+        Basket basket = new Basket();
+
+        String result = basket.canRemoveItemInBasket("Milk");
+
+        Assertions.assertEquals("Item is in basket and can be removed.", result);
+    }
+
+    @Test
+    public void canNotRemoveItemFromBasket() {
+
+        Basket basket = new Basket();
+
+        String result = basket.canRemoveItemInBasket("Milk");
+
+        Assertions.assertEquals("Item is not in basket and can't be removed.", result);
     }
 
 }

@@ -25,4 +25,15 @@ class BasketTest {
 
         Assertions.assertFalse(basket.remove("Plain"));
     }
+
+    @Test
+    public void testReturnsFalseWhenAddToFullBasket() {
+        Basket basket = new Basket();
+        basket.capacity = 3;
+        basket.add(("Plain"));
+        basket.add(("Everything"));
+        basket.add(("Blueberry"));
+
+        Assertions.assertFalse(basket.add("Chocolate"));
+    }
 }

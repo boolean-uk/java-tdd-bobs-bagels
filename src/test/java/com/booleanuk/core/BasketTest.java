@@ -87,4 +87,10 @@ class BasketTest {
         basket.add("vanilla");
         Assertions.assertFalse(basket.updateCapacity(2));
     }
+
+    @Test
+    public void getCostOfEmptyBasket() {
+        Basket basket = new Basket();
+        Assertions.assertEquals(0, basket.getCost());
+    }
 }

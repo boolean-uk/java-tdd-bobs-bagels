@@ -48,11 +48,11 @@ So that I can expand my business,
 I’d like to change the capacity of baskets.
 ````
 
-| Classes | Methods                            | Member Variables | Scenario      | Results/Output                                                                        |
-|---------|------------------------------------|------------------|---------------|---------------------------------------------------------------------------------------|
-| Basket  | changeBasketCapacity(int capacity) | int max          | Capacity > 0  | Change value of max                                                                   |
-|         |                                    |                  | Capacity == 0 | Ask manager if they want capacity to be 0, allowing no items. Act according to answer |
-|         |                                    |                  | Capacity < 0  | Display error message "Basket capacity cannot be negative"                             |
+| Classes | Methods                            | Member Variables | Scenario      | Results/Output                                                |
+|---------|------------------------------------|------------------|---------------|---------------------------------------------------------------|
+| Basket  | changeBasketCapacity(int capacity) | int max          | Capacity > 0  | Change value of max                                           |
+|         |                                    |                  | Capacity == 0 | Ask manager if they want capacity to be 0, allowing no items. |
+|         |                                    |                  | Capacity < 0  | Display error message "Basket capacity cannot be negative"    |
 
 ````dtd
 5.

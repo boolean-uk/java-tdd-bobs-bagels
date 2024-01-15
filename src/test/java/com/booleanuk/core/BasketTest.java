@@ -59,4 +59,34 @@ class BasketTest {
         Assertions.assertFalse(basket.addToBasket("Seeds"));
     }
 
+    @Test
+    public void testMaxCapacityChangedToPositiveValue()
+    {
+        Basket basket = new Basket();
+
+        basket.changeCapacity(20);
+
+        Assertions.assertEqual(20, basket.max);
+    }
+
+    @Test
+    public void testMaxCapacityChangedToZero()
+    {
+        Basket basket = new Basket();
+
+        basket.changeCapacity(0);
+
+        Assertions.assertEquals(0, basket.max);
+    }
+
+    @Test
+    public void testMaxCapacityNotChangedToNegativeValue()
+    {
+        Basket basket = new Basket();
+
+        basket.changeCapacity(-1);
+
+        Assertions.assertNotEquals(-1, basket.max);
+    }
+
 }

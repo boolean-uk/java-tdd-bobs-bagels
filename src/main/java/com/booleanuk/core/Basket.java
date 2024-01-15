@@ -30,6 +30,10 @@ public class Basket {
         return "Basket is not full";}
         return "Basket is full";
     }
+    public int changeBasketSize(int capacity){
+        this.capacity = capacity;
+        return this.capacity;
+    }
 
 
 }

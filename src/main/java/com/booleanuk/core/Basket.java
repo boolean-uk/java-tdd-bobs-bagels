@@ -54,6 +54,11 @@ public class Basket {
 
         this.capacityOfBasket = i;
     }
+
+    public boolean removeBagelFromBasket() {
+
+        return true;
+    }
 }
 
 

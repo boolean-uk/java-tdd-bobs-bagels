@@ -29,9 +29,19 @@ public class Basket {
         return list.toString();
     }
 
-    public void changeCapacity(int size) {
-        //list = new ArrayList<>();
+    public String changeCapacity(int size) {
+        ArrayList <String> newList = new ArrayList<>();
         this.capacity = size;
+
+        for (int i = 0; i < list.size() ; i++) {
+            if(i >= size){
+                break;
+            }
+            newList.add(list.get(i));
+        }
+
+        list = newList;
+        return list.toString();
     }
 
 
@@ -46,9 +56,11 @@ public class Basket {
 
         basket.list.add(bagelOne);
         basket.list.add(bagelTwo);
-
+        basket.list.add(bagelTwo);
+        basket.list.add(bagelFour);
+        System.out.println(basket.changeCapacity(8));
         System.out.println(basket.add(bagelOne));
-
+        System.out.println(basket.changeCapacity(2));
         System.out.println();
         System.out.println(basket.add(bagelTwo));
         System.out.println(basket.remove(bagelFour));

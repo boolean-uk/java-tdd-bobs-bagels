@@ -58,6 +58,9 @@ public class Basket {
 
     //User Story 5
     public String canRemoveItemInBasket(String item) {
-        return "Item is in basket and can be removed.";
+        if(this.bagels.contains(item)) {
+            return "Item is in basket and can be removed.";
+        }
+        return "Item is not in basket and can't be removed.";
     }
 }

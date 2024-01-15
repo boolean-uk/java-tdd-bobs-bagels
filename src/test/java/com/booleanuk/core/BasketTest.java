@@ -24,8 +24,7 @@ class BasketTest {
     public void removeBagelFromBasketReturnTrue() {
         Basket basket = new Basket();
 
-        basket.addBagelTypeToBasket("Chocolate Bagels");
-
+        basket.bagels.add("Chocolate Bagels");
         basket.removeBagelTypeFromBasket("Chocolate Bagels");
 
         boolean bagelRemoved = !basket.bagels.contains("Chocolate Bagels");
@@ -39,11 +38,11 @@ class BasketTest {
 
         Basket basket = new Basket();
 
-        basket.bagels.add("Chocolate");
-        basket.bagels.add("Vanilla");
-        basket.bagels.add("Banana");
-        basket.bagels.add("Orange");
-        basket.bagels.add("Mint");
+        basket.bagels.add("Chocolate Bagel");
+        basket.bagels.add("Vanilla Bagel");
+        basket.bagels.add("Strawberry Bagel");
+        basket.bagels.add("Blueberry Bagel");
+        basket.bagels.add("Raspberry Bagel");
 
         String result = basket.basketIsFull();
 
@@ -56,8 +55,8 @@ class BasketTest {
 
         Basket basket = new Basket();
 
-        basket.bagels.add("Chocolate");
-        basket.bagels.add("Vanilla");
+        basket.bagels.add("Chocolate Bagel");
+        basket.bagels.add("Vanilla Bagel");
 
         String result = basket.basketIsFull();
 
@@ -69,19 +68,15 @@ class BasketTest {
     public void basketCapacityIsChanged() {
         Basket basket = new Basket();
 
-        //9 new added entries
-        basket.bagels.add("Chocolate");
-        basket.bagels.add("Vanilla");
-        basket.bagels.add("Banana");
-        basket.bagels.add("Orange");
-        basket.bagels.add("Mint");
-        basket.bagels.add("Chocolate");
-        basket.bagels.add("Vanilla");
-        basket.bagels.add("Banana");
-        basket.bagels.add("Orange");
+        //5 new added entries
+        basket.bagels.add("Chocolate Bagel");
+        basket.bagels.add("Vanilla Bagel");
+        basket.bagels.add("Banana Bagel");
+        basket.bagels.add("Strawberry Bagel");
+        basket.bagels.add("Blueberry Bagel");
 
         //If newCapacity > this.bagels.size() then the following should pass the test
-        String result = basket.changeBasketCapacity(10);
+        String result = basket.changeBasketCapacity(6);
 
         Assertions.assertEquals("Basket capacity changed!", result);
 
@@ -93,11 +88,11 @@ class BasketTest {
         Basket basket = new Basket();
 
         //5 entries
-        basket.bagels.add("Chocolate");
-        basket.bagels.add("Vanilla");
-        basket.bagels.add("Banana");
-        basket.bagels.add("Orange");
-        basket.bagels.add("Mint");
+        basket.bagels.add("Chocolate Bagel");
+        basket.bagels.add("Vanilla Bagel");
+        basket.bagels.add("Raspberry Bagel");
+        basket.bagels.add("Strawberry Bagel");
+        basket.bagels.add("Blueberry Bagel");
 
         //This should pass, as theres already 5 bagels in the list and the new capacity is 5
         //Thus the capacity hasnt changed, if new capacity is lower than 5, it should also pass
@@ -109,21 +104,31 @@ class BasketTest {
         Assertions.assertEquals("Basket capacity is not changed.", result);
     }
 
+    //User Story 5 case 1
     @Test
     public void canRemoveItemFromBasket() {
         Basket basket = new Basket();
 
-        String result = basket.canRemoveItemInBasket("Milk");
+        basket.bagels.add("Vanilla Bagel");
+        basket.bagels.add("Chocolate Bagel");
+        basket.bagels.add("Raspberry Bagel");
+
+        String result = basket.canRemoveItemInBasket("Chocolate Bagel");
 
         Assertions.assertEquals("Item is in basket and can be removed.", result);
     }
 
+    //User Story 5 case 2
     @Test
     public void canNotRemoveItemFromBasket() {
 
         Basket basket = new Basket();
 
-        String result = basket.canRemoveItemInBasket("Milk");
+        basket.bagels.add("Vanilla Bagel");
+        basket.bagels.add("Chocolate Bagel");
+        basket.bagels.add("Raspberry Bagel");
+
+        String result = basket.canRemoveItemInBasket("Strawberry Bagel");
 
         Assertions.assertEquals("Item is not in basket and can't be removed.", result);
     }

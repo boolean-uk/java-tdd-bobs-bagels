@@ -52,10 +52,10 @@ I'd like to know when my basket is full when I try adding an item beyond my bask
 
 Class Basket
 
-| Class vars     | Methods               | Scenario                                  | Return/Result |
-|----------------|-----------------------|-------------------------------------------|---------------|
-| Bagel[] basket | basketIsAlreadyFull() | if basket is full and bagel was not added | true          |
-|                |                       | if basket is not full and bagel was added | false         |
+| Class vars     | Methods         | Scenario                                  | Return/Result |
+|----------------|-----------------|-------------------------------------------|---------------|
+| Bagel[] basket | isAlreadyFull() | if basket is full and bagel was not added | true          |
+|                |                 | if basket is not full and bagel was added | false         |
 
 Class Bagel
 

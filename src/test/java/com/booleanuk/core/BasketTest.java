@@ -51,6 +51,25 @@ class BasketTest {
         Assertions.assertTrue(basket.addBagelToBasket(("Bagel1")));
         Assertions.assertFalse(basket.addBagelToBasket("Bagel2"));
 
+    }
+
+    @Test
+    public void testChangeCapacityOfBasket() {
+        Basket basket = new Basket(1, new HashMap<>() {
+            {
+                put("Bagel1", 15);
+                put("Bagel2", 12);
+            }
+        });
+
+
+
+        Assertions.assertTrue(basket.addBagelToBasket(("Bagel1")));
+        Assertions.assertFalse(basket.addBagelToBasket("Bagel2"));
+
+        basket.changeCapacityOfBasket(2);
+        Assertions.assertTrue(basket.addBagelToBasket(("Bagel2")));
+
 
     }
 

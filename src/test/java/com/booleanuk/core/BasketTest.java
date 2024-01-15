@@ -54,7 +54,7 @@ class BasketTest {
 
 
         Exception exception = Assertions.assertThrows(IndexOutOfBoundsException.class, () -> {
-            basket.addBagelToBasket("MassiveBagel");
+            basket.addBagelToBasket("Bagel2");
         });
 
         String expectedMessage = "Cannot add bagel when capacity is full";
@@ -78,15 +78,13 @@ class BasketTest {
 
 
         Assertions.assertTrue(basket.addBagelToBasket(("Bagel1")));
-        Assertions.assertFalse(basket.addBagelToBasket("Bagel2"));
 
         basket.changeCapacityOfBasket(2);
         Assertions.assertTrue(basket.addBagelToBasket(("Bagel2")));
-        Assertions.assertFalse(basket.addBagelToBasket("Bagel3"));
 
         basket.changeCapacityOfBasket(3);
         Assertions.assertTrue(basket.addBagelToBasket(("Bagel3")));
-        Assertions.assertFalse(basket.addBagelToBasket("Bagel4"));
+
     }
 
     @Test

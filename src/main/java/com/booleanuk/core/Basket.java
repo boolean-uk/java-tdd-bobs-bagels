@@ -16,8 +16,12 @@ public class Basket {
     }
     public boolean addBagelToBasket(String bagel1) {
 
+
+
         if(this.basket != null) {
-            if(this.basket.size() < capacityOfBasket) {
+            if(this.basket.size() == this.capacityOfBasket) {
+                throw new IndexOutOfBoundsException("Cannot add bagel when capacity is full");
+            }
                 if (!this.basket.containsKey(bagel1)) {
                     if (this.bagels.containsKey(bagel1)) {
                         this.basket.put(bagel1, new HashMap<String, Integer>() {
@@ -32,8 +36,10 @@ public class Basket {
                         return true;
                     }
                 }
-            }
+
+
         } else if(bagels.containsKey(bagel1)){
+
             Map<String, Map<String, Integer>> newBasket = new HashMap<>();
             newBasket.put(bagel1, new HashMap<String, Integer>() {
                 {

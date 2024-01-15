@@ -26,4 +26,8 @@ public class Basket {
         }
         return false;
     }
+
+    public int changeCapacityOfBasket(int numberOfExtraIndices) {
+        return basket.length+3;
+    }
 }

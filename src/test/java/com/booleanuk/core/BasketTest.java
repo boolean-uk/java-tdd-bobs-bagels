@@ -102,7 +102,7 @@ class BasketTest {
         boolean result = basket.changeCapacity(2);
 
         Assertions.assertFalse(result);
-        Assertions.assertEquals(10 basket.max);
+        Assertions.assertEquals(10, basket.max);
     }
 
     @Test
@@ -144,4 +144,6 @@ class BasketTest {
         Assertions.assertTrue(result);
         Assertions.assertEquals(0,basket.basketList.size());
     }
+
+
 }

@@ -76,4 +76,15 @@ public class Basket {
         System.out.println(emptyBasket);
         return emptyBasket;
     }
+
+    public boolean emptyBasket()
+    {
+        if(this.basketList.size() > 0) {
+            this.basketList = new ArrayList<>();
+            listBasketItems();
+            return true;
+        }
+        System.out.println("Basket is already empty");
+        return false;
+    }
 }

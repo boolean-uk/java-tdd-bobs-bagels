@@ -46,9 +46,7 @@ class BasketTest {
         Assertions.assertFalse(removed);
     }
 
-    //User story 3 Test 5 same as Test 2
-
-    //User story 3 Test 6 same as Test 1
+    //User story 3 is tested in User Story 1
 
     //User story 4 Test 7
     @Test
@@ -58,4 +56,6 @@ class BasketTest {
         int newLength = basket.changeCapacityOfBasket(3);
         Assertions.assertEquals(originalLength+3, newLength);
     }
+
+    //User story 5 is tested in User Story 2
 }

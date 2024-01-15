@@ -8,6 +8,10 @@ public class Basket {
     public Basket() {
         items = new ArrayList<>();
     }
+
+    public boolean addBagel() {
+        return false;
+    }
     public static void main(String[] args) {
 
     }

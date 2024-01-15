@@ -93,4 +93,12 @@ class BasketTest {
         Basket basket = new Basket();
         Assertions.assertEquals(0, basket.getCost());
     }
+
+    @Test
+    public void getCostOfNotEmptyBasket() {
+        Basket basket = new Basket();
+        basket.add("vanilla");
+        basket.add("vanilla");
+        Assertions.assertEquals(10, basket.getCost());
+    }
 }

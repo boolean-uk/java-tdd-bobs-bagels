@@ -1,6 +1,7 @@
 package com.booleanuk.core;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Basket {
     ArrayList<String> basketList;
@@ -14,7 +15,7 @@ public class Basket {
 
     public boolean addToBasket(String type)
     {
-        if(basketList.size() != max) {
+        if(basketList.size() == max) {
             System.out.println("Basket is full. Please remove one or more items before adding another");
             return false;
         }
@@ -40,8 +41,19 @@ public class Basket {
         return false;
     }
 
-    public void changeCapacity(int capacity)
-    {
-
+    public boolean changeCapacity(int capacity) {
+        if (capacity >= 0) {
+            if (this.basketList.size() <= capacity) {
+                this.max = capacity;
+                this.basketList = new ArrayList<>();
+                return true;
+            } else {
+                System.out.println("Could not change capacity, there are basket that exceed desired capacity size");
+                return false;
+            }
+        } else {
+            System.out.println("Capacity cannot be negative");
+            return false;
+        }
     }
 }

@@ -9,7 +9,6 @@ class BasketTest {
     {
         Basket basket = new Basket();
 
-
         Assertions.assertTrue(basket.addToBasket("Whole wheat"));
     }
 
@@ -64,8 +63,8 @@ class BasketTest {
     {
         Basket basket = new Basket();
 
-        basket.changeCapacity(20);
-
+        boolean result = basket.changeCapacity(20);
+        Assertions.assertTrue(result);
         Assertions.assertEquals(20, basket.max);
     }
 
@@ -74,8 +73,7 @@ class BasketTest {
     {
         Basket basket = new Basket();
 
-        basket.changeCapacity(0);
-
+        Assertions.assertTrue(basket.changeCapacity(0));
         Assertions.assertEquals(0, basket.max);
     }
 
@@ -84,9 +82,9 @@ class BasketTest {
     {
         Basket basket = new Basket();
 
-        basket.changeCapacity(-1);
-
-        Assertions.assertNotEquals(-1, basket.max);
+        Assertions.assertFalse(basket.changeCapacity(-20));
+        Assertions.assertNotEquals(-20, basket.max);
+        Assertions.assertEquals(10, basket.max); // 10 - default capacity
     }
 
 }

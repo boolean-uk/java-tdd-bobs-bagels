@@ -61,5 +61,37 @@ class BasketTest {
 
     }
 
+    @Test
+    public void testSettingCapaityToHigherNumber(){
+        Basket basket = new Basket();
+        Assertions.assertEquals(5, basket.maxCapacity);
+        basket.setBasketCapacity(10);
+        Assertions.assertEquals(10, basket.maxCapacity);
+    }
+
+    @Test
+    public void testSettingCapaityToLowerNumber(){
+
+        Basket basket = new Basket();
+
+        basket.add("Plain", 2);
+        basket.add("Salmon", 1);
+        basket.add("Sesame", 1);
+        basket.add("Plain", 1);
+
+        Assertions.assertEquals(5, basket.maxCapacity);
+
+        basket.setBasketCapacity(3);
+
+        Assertions.assertEquals(3, basket.maxCapacity);
+
+        Assertions.assertTrue(basket.items.containsKey("Plain"));
+        Assertions.assertEquals(basket.items.get("Plain"), 2);
+        Assertions.assertTrue(basket.items.containsKey("Salmon"));
+        Assertions.assertEquals(basket.items.get("Plain"), 1);
+        Assertions.assertFalse(basket.items.containsKey("Sesame"));
+
+    }
+
 
 }

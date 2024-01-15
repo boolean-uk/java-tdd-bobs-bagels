@@ -49,6 +49,11 @@ public class Basket {
 
         return false;
     }
+
+    public void changeCapacityOfBasket(int i) {
+
+        this.capacityOfBasket = 2;
+    }
 }
 
 

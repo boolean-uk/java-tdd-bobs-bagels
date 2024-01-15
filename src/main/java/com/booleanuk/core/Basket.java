@@ -16,7 +16,11 @@ public class Basket {
         if(noOfItems == capacity) {
             return false;
         }
-        items.put(bagel, 1);
+        if(items.containsKey(bagel)) {
+            items.put(bagel, items.get(bagel)+1);
+        } else {
+            items.put(bagel, 1);
+        }
         noOfItems++;
         return true;
     }

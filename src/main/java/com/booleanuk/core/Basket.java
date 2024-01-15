@@ -5,11 +5,12 @@ import java.util.ArrayList;
 public class Basket {
 
     ArrayList<String> items;
+    int basketSize = 10;
 
 
     public Basket(){
 
-       this.items = new ArrayList<>(10);
+       this.items = new ArrayList<>(basketSize);
        items.add("Regular");
 
     }
@@ -36,7 +37,12 @@ public class Basket {
     }
     public boolean isBasketFull() {
 
-        return true;
+
+        if (items.size() > basketSize) {
+            return true;
+        }
+
+        return false;
     }
     public boolean updateBasket(int amount) {
 

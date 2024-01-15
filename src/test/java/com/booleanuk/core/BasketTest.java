@@ -53,7 +53,7 @@ class BasketTest {
     public void removeItemNotInTheBasketShouldReturnFalse(){
         Basket basket = new Basket();
         basket.add("Cinnamon bagels");
-        Assertions.assertFalse(basket.isItemInBasket("Sesam bagel"));
+        Assertions.assertFalse(basket.isItemInBasket("Sesam bagels"));
     }
 
 

@@ -47,4 +47,27 @@ class BasketTest {
         basket.basketContents.put("Plain", 1);
         Assertions.assertFalse(basket.add("Seeds"));
     }
+
+    @Test
+    public void testSetBagelLimitAndCheckIfUpdated() {
+        Basket basket = new Basket();
+        basket.setBasketLimit(20);
+        Assertions.assertEquals(20, basket.basketLimit);
+    }
+
+    @Test
+    public void testSetBagelLimitOneAndThenAddTwo() {
+        Basket basket = new Basket();
+        basket.setBasketLimit(1);
+        basket.basketContents.put("Brown", 1);
+        Assertions.assertFalse(basket.add("Seeds"));
+    }
+
+    @Test
+    public void testSetBagelLimitHigherToAddMore() {
+        Basket basket = new Basket();
+        basket.add("Brown");
+        basket.setBasketLimit(2);
+        Assertions.assertTrue(basket.add("Seeds"));
+    }
 }

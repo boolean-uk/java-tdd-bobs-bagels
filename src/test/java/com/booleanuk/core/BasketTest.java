@@ -16,6 +16,17 @@ class BasketTest {
 		Assertions.assertTrue(basket.inBasket(1));
 		Assertions.assertFalse(basket.inBasket(2));
 	}
+
+	public void removeBagelTest(){
+		initInventory();
+		Basket basket=new Basket(inventory);
+		basket.addBagel(1);
+		Assertions.assertTrue(basket.inBasket(1));
+		Assertions.assertFalse(basket.inBasket(2));
+		basket.removeBagel(1);
+		Assertions.assertFalse(basket.inBasket(1));
+		Assertions.assertFalse(basket.inBasket(2));
+	}
 	private void initInventory(){
 		inventory=new Inventory();
 		Bagel bagel1 = new Bagel(0,"Plain",1.99);

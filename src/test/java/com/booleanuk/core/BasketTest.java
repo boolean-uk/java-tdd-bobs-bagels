@@ -38,4 +38,13 @@ class BasketTest {
         basket.remove("Brown");
         Assertions.assertTrue(basket.basketContents.isEmpty());
     }
+
+    @Test
+    public void testAddBagelToFullBasket() {
+        Basket basket = new Basket();
+        basket.basketContents.put("Brown", 1);
+        basket.basketContents.put("Sourdough", 1);
+        basket.basketContents.put("Plain", 1);
+        Assertions.assertFalse(basket.add("Seeds"));
+    }
 }

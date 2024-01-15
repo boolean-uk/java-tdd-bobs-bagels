@@ -21,5 +21,12 @@ public class BasketTest {
         Assertions.assertFalse(result);
     }
 
+    @Test
+    public void removeSpecificBagelReturnTrue(){
+        Basket basket = new Basket();
+        boolean result = basket.removeBagel("bagel2");
+        Assertions.assertTrue(result);
+    }
+
 
 }

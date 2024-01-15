@@ -13,9 +13,9 @@ public class Basket {
         this.maxCapacity = 3;
     }
 
-    public void add(String bagel, int amount){
+    public String add(String bagel, int amount){
 
         this.items.put(bagel, amount);
-
+        return "";
     }
 }

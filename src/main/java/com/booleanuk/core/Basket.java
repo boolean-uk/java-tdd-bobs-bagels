@@ -55,7 +55,9 @@ public class Basket {
     }
 
     public boolean removeBagelFromBasket(String bagel1) {
-
+        if(!this.basket.containsKey(bagel1)) {
+            throw new NullPointerException("Cannot remove bagel that doesnt exist");
+        }
         this.basket.remove("Bagel1");
         return !basket.containsKey("Bagel1");
     }

@@ -86,7 +86,7 @@ class BasketTest {
         });
 
         Assertions.assertTrue(basket.addBagelToBasket(("Bagel1")));
-        Assertions.assertTrue(basket.removeBagelFromBasket());
+        Assertions.assertTrue(basket.removeBagelFromBasket("Bagel1"));
 
     }
 

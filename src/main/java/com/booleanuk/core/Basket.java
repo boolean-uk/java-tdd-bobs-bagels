@@ -1,6 +1,5 @@
 package com.booleanuk.core;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -55,9 +54,11 @@ public class Basket {
         this.capacityOfBasket = i;
     }
 
-    public boolean removeBagelFromBasket() {
+    public boolean removeBagelFromBasket(String bagel1) {
 
-        return true;
+
+
+        return !basket.containsKey("Bagel1");
     }
 }
 

@@ -33,5 +33,7 @@ public class Basket {
             System.out.println("Bagel not found in the basket. Cannot remove.");
         }
     }
+    public void setCapacity(int capacity) {this.capacity = capacity;}
+    public int getCapacity() {return capacity;}
 }
 

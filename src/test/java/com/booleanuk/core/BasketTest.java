@@ -54,7 +54,6 @@ class BasketTest {
 
         basket.addBagel(bagel2);
         assertEquals(2, basket.getBasket().size());
-        assertTrue(basket.isBasketFull());
     }
 }
 

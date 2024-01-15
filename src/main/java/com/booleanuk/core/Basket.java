@@ -13,6 +13,10 @@ public class Basket {
         return basket.add(bagel);
     }
 
+    public boolean remove(String bagel) {
+        return basket.remove(bagel);
+    }
+
     public ArrayList<String> getBasket() {
         return basket;
     }

@@ -1,14 +1,12 @@
 package com.booleanuk.core;
 
 import java.util.HashMap;
-import java.util.Map;
 
 public class Basket {
     public int capacity;
     public int noOfItems;
     public HashMap<String, Integer> items;
     public HashMap<String, Integer> prices;
-    public int cost;
 
     public Basket() {
         capacity = 3;

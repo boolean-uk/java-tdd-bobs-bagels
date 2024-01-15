@@ -16,4 +16,7 @@ public class Basket {
         basket.add(name);
         return name + " added";
     }
+    public String removeBagel(String name){
+        return "";
+    }
 }

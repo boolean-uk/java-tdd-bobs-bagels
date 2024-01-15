@@ -25,4 +25,10 @@ class BasketTest {
         Assertions.assertFalse(basket.addBagel("Plain"));
     }
 
+    @Test
+    public void testRemoveBagelFromEmptyBasket() {
+        Basket basket = new Basket();
+
+        Assertions.assertFalse(basket.removeBagel());
+    }
 }

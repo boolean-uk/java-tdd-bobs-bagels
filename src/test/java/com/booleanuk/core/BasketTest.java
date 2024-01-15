@@ -57,11 +57,15 @@ class BasketTest {
         basket.addBagel("Strawberry");
         basket.addBagel("Vanilla");
         basket.addBagel("Beige");
-        basket.addBagel("Caramel");
-        basket.addBagel("Caramel2");
-        Assertions.assertEquals("Basket is full", basket.checkBasketSize());
+        Assertions.assertEquals("Basket is not full", basket.checkBasketSize());
     }
 
+    @Test
+    public void testChangeBasketSize(){
+        Basket basket = new Basket();
+        Assertions.assertEquals(10, basket.changeBasketSize(10));
+        Assertions.assertEquals(5, basket.changeBasketSize(5));
+    }
 
 
 }

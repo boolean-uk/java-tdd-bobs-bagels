@@ -5,6 +5,9 @@ import java.util.ArrayList;
 public class Basket {
     ArrayList<String> basketList;
     int max;
+    String email = "bob@bagel.com";
+    String number = "12345678";
+    String address = "742 Evergreen Terrace";
 
     public Basket()
     {
@@ -86,5 +89,30 @@ public class Basket {
         }
         System.out.println("Basket is already empty");
         return false;
+    }
+
+    public String showContactInfo(String option)
+    {
+        switch (option) {
+            case "email" -> {
+                return this.email;
+            }
+            case "number" -> {
+                return this.number;
+            }
+            case "address" -> {
+                return this.address;
+            }
+        }
+        return "No matching option";
+    }
+
+    public String showContactInfo()
+    {
+        return """
+                bob@bagel.com
+                12345678
+                742 Evergreen Terrace
+                """;
     }
 }

@@ -162,7 +162,7 @@ class BasketTest {
 
         String expectedOutput = "bob@bagel.com";
 
-        Assertions.assertEquals(expectedOutput, basket.showContactInfo("e-mail"));
+        Assertions.assertEquals(expectedOutput, basket.showContactInfo("email"));
     }
 
     @Test

@@ -40,7 +40,10 @@ public class Basket {
     }
 
     public boolean updateCapacity(int newCapacity) {
-        capacity = newCapacity;
-        return true;
+        if(newCapacity >= noOfItems) {
+            capacity = newCapacity;
+            return true;
+        }
+        return false;
     }
 }

@@ -22,7 +22,6 @@ public class Basket {
             return "Basket is full";
         }
     }
-
     public String removeBagel(String bagel) {
         if (this.basket.contains(bagel)) {
             this.basket.remove(bagel);

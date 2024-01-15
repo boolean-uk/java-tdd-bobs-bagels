@@ -33,6 +33,15 @@ public class Basket {
         return this.capacity;
     }
 
+    public boolean isItemInBasket(String bagel){
+       if(bagelsList.contains(bagel)){
+           bagelsList.remove(bagel);
+           return true;
+       }else {
+           return false;
+       }
+    }
+
 
 
 

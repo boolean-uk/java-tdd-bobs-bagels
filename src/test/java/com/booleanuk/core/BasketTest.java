@@ -29,6 +29,6 @@ class BasketTest {
     public void testRemoveBagelFromEmptyBasket() {
         Basket basket = new Basket();
 
-        Assertions.assertFalse(basket.removeBagel());
+        Assertions.assertFalse(basket.removeBagel("Cinnamon"));
     }
 }

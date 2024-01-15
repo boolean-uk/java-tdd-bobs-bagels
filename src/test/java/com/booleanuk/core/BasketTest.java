@@ -11,7 +11,7 @@ class BasketTest {
         Basket basket = new Basket();
         String bagelOne = "Plain";
 
-        basket.list.add(bagelOne);
+        basket.add(bagelOne);
 
         Assertions.assertTrue(basket.list.contains(bagelOne));
     }
@@ -26,11 +26,45 @@ class BasketTest {
         basket.list.add(bagelOne);
         Assertions.assertTrue(basket.list.contains(bagelOne));
 
-        basket.list.remove(bagelOne);
+        basket.remove(bagelOne);
         Assertions.assertFalse(basket.list.contains(bagelOne));
 
     }
 
+    @Test
+    public void notOverfillBasket() {
+        Basket basket = new Basket();
+
+        String bagelOne = "Plain";
+        String bagelTwo = "Everything";
+        String bagelThree = "Blueberry";
+        String bagelFour = "Cinnamon";
+
+        basket.add(bagelOne);
+        basket.add(bagelTwo);
+        basket.add(bagelThree);
+        basket.add(bagelFour);
+
+        Assertions.assertEquals(3,basket.list.size());
+
+    }
+
+    @Test
+    public void changeCapacity() {
+        Basket basket = new Basket();
+
+        basket.changeCapacity(5);
+
+        Assertions.assertEquals(5, basket.capacity);
+    }
 
 
+    public void removeBagelNotExist() {
+        Basket basket = new Basket();
+
+        String bagelRemove = "Cheddar";
+        basket.remove(bagelRemove);
+
+        Assertions.assertEquals("Bagel does not exist in basket", basket.remove());
+    }
 }

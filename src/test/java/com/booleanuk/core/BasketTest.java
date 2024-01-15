@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 
 class BasketTest {
 
+    // ADD BAGELS TEST
     @Test
     public void testAddBagelToBasketReturnTrue(){
         Basket basket = new Basket();
@@ -18,6 +19,21 @@ class BasketTest {
         Assertions.assertTrue(basket.add("vanilla"));
         Assertions.assertTrue(basket.add("chocolate"));
         Assertions.assertFalse(basket.add(""));
+    }
+
+    // REMOVE BAGEL TESTS
+    @Test
+    public void testRemoveBagelFromBasketReturnsTrue(){
+        Basket basket = new Basket();
+
+        basket.add("Cookie Dough");
+        basket.add("Vanilla");
+        basket.add("Chocolate");
+        basket.add("Blueberry");
+
+        Assertions.assertTrue(basket.remove("Chocolate"));
+        Assertions.assertFalse(basket.remove("Plain"));
+        Assertions.assertTrue(basket.remove("Cookie Dough"));
     }
 
 }

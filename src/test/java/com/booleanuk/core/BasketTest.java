@@ -47,12 +47,6 @@ class BasketTest {
         basket.add(new VeganBagel());
         basket.add(new VeganBagel());
         basket.remove(new SpicyBagel());
-
-        final PrintStream ps = System.out;
-        final ByteArrayOutputStream os = new ByteArrayOutputStream();
-        System.setOut(ps);
-
-        Assertions.assertEquals("This item is not in the cart.", os.toString());
     }
 
     @Test

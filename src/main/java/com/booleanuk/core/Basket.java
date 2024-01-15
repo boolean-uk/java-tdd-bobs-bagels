@@ -14,6 +14,9 @@ public class Basket {
     }
 
     public void remove(Bagel bagel){
+        if (!itemList.containsKey(bagel)){
+            System.out.println("This item is not in the cart.");
+        }
         itemList.remove(bagel);
     }
 

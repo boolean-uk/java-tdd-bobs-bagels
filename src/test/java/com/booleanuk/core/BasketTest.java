@@ -56,7 +56,7 @@ class BasketTest {
         basket.add(new SpicyBagel());
         basket.add(new SpicyBagel());
 
-        Assertions.assertEquals(1, basket.itemList.size());
+        Assertions.assertEquals(1, basket.items);
 
         basket.updateCapacity(3);
         basket.add(new SpicyBagel());
@@ -64,7 +64,7 @@ class BasketTest {
         basket.add(new SpicyBagel());
         basket.add(new SpicyBagel());
 
-        Assertions.assertEquals(3, basket.itemList.size());
+        Assertions.assertEquals(3, basket.items);
     }
 
     @Test

@@ -10,6 +10,9 @@ public class Basket {
     }
 
     public String addBagel(String name){
+        if(basket.contains(name)){
+            return name + " already exists in basket";
+        }
         basket.add(name);
         return name + " added";
     }

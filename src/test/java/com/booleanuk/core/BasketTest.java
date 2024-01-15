@@ -154,4 +154,14 @@ class BasketTest {
         Assertions.assertFalse(result);
         Assertions.assertEquals(0,basket.basketList.size());
     }
+
+    @Test
+    public void testShowEmail()
+    {
+        Basket basket = new Basket();
+
+        String expectedOutput = "bob@bagel.com";
+
+        Assertions.assertEquals(expectedOutput, basket.showContactInfo("e-mail"));
+    }
 }

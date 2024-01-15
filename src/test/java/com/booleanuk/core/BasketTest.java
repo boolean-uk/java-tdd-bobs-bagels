@@ -74,6 +74,26 @@ class BasketTest {
 
     @Test
     public void testingAmount(){
+        Basket basket = new Basket();
+        SpicyBagel spicy = new SpicyBagel();
+        VeganBagel vegan = new VeganBagel();
+        basket.add(spicy);
+        basket.add(vegan);
+        basket.add(new SpicyBagel());
+        basket.add(new VeganBagel());
+        basket.add(new VeganBagel());
+        basket.add(new VeganBagel());
 
+        Assertions.assertEquals(4, basket.itemList.get(vegan));
+        Assertions.assertEquals(2, basket.itemList.get(spicy));
+
+        basket.remove(new VeganBagel());
+        basket.remove(new VeganBagel());
+        basket.remove(new VeganBagel());
+
+        Assertions.assertEquals(1, basket.itemList.get(vegan));
+
+        basket.remove(new VeganBagel());
+        basket.remove(new VeganBagel());
     }
 }

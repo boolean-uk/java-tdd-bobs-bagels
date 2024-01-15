@@ -48,7 +48,7 @@ public class Basket {
     }
 
     public void setCapacity(int newCapacity) {
-
+        this.capacity = newCapacity;
     }
 
     public static void main(String[] args) {

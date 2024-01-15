@@ -20,7 +20,7 @@ class BasketTest {
     @Test
     public void orderBagelInFullBasketTest() {
         Basket basket = new Basket(1);
-        basket.bagels.add("Vanilla") = "Vanilla";
+        basket.bagels.add("Vanilla");
         Assertions.assertFalse(basket.order("Chocolate"));
     }
 
@@ -53,7 +53,7 @@ class BasketTest {
         basket.bagels.add("Chocolate");
         basket.bagels.add("Vanilla");
         Assertions.assertEquals("Vanilla has been deleted", basket.delete("Vanilla"));
-        Assertions.assertNotNull(basket.bagels[0]);
+        Assertions.assertNotNull(basket.bagels.get(0));
     }
 
     @Test
@@ -78,6 +78,6 @@ class BasketTest {
         basket.bagels.add("Vanilla");
         basket.bagels.add("Chocolate");
         basket.expand(1);
-        Assertions.assertEquals(1, basket.bagels.length());
+        Assertions.assertEquals(1, basket.bagels.size());
     }
 }

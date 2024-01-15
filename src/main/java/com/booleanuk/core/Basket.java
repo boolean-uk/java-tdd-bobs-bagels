@@ -26,11 +26,13 @@ public class Basket {
             return "The Basket is full";
         }
         bagelBasket.add(bagel);
-
         return bagel + " added to basket";
     }
 
     public String removeBagel(String bagel){
+        if (!bagelBasket.contains(bagel)){
+            return "Can not remove non-existing item.";
+        }
         bagelBasket.remove(bagel);
         return bagel + " removed from basket";
     }

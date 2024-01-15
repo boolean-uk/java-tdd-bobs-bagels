@@ -66,7 +66,7 @@ class BasketTest {
         basket.addBagel("Everything bagel");
         String bagel = "Egg bagel";
 
-        Assertions.assertEquals("Can not remove non existing item.",basket.removeBagel(bagel));
+        Assertions.assertEquals("Can not remove non-existing item.",basket.removeBagel(bagel));
     }
 
 }

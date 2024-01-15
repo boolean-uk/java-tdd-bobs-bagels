@@ -27,4 +27,11 @@ class BasketTest {
         basket.add("vanilla");
         Assertions.assertEquals(2, basket.items.get("vanilla"));
     }
+
+    @Test
+    public void removingBagelThatDoesntExistInBasket() {
+        Basket basket = new Basket();
+        basket.add("vanilla");
+        Assertions.assertFalse(basket.remove("blueberry"));
+    }
 }

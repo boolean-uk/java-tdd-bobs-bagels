@@ -45,7 +45,12 @@ class BasketTest {
         basket.add("bagel: " + i);
     }
     Assertions.assertTrue(basket.checkIfNotFull());
+    for (int i = 0; i < 8; i++) {
+        basket.add("bagel: " + i);
     }
+    Assertions.assertFalse(basket.checkIfNotFull());
+
+}
     @Test
     public void testAddBagelIfBasketIsFull(){
         Basket basket = new Basket();

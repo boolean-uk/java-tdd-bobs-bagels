@@ -8,6 +8,10 @@ public class Bagel {
         this.name = name;
         this.price = price;
     }
+
+    public double getPrice(){
+        return price;
+    }
 }
 
 

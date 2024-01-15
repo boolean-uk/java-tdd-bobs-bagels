@@ -110,7 +110,7 @@ class BasketTest {
         basket.add(new VeganBagel());
         basket.add(new VeganBagel());
 
-        double estimated = new SpicyBagel().price*3 + new VeganBagel().price*2;
+        double estimated = new SpicyBagel().getPrice()*3 + new VeganBagel().getPrice()*2;
         Assertions.assertEquals(estimated, basket.totalCost());
     }
 }

@@ -29,7 +29,10 @@ public class Basket {
         return "Bagel not in basket";
     }
     public boolean changeCapacity(int capacity){
-        this.capacity += capacity;
-        return true;
+        if(capacity > 0){
+            this.capacity += capacity;
+            return true;
+        }
+        return false;
     }
 }

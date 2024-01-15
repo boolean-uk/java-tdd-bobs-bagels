@@ -34,7 +34,7 @@ class BasketTest {
         basket.add("Sesame", 1);
 
         Assertions.assertEquals(("2 Plain bagels removed from basket") ,basket.remove("Plain", 2));
-        Assertions.assertEquals(("1 Plain bagels removed from basket") ,basket.remove("Sesame", 2));
+        Assertions.assertEquals(("2 Sesame bagels removed from basket") ,basket.remove("Sesame", 2));
 
 
     }

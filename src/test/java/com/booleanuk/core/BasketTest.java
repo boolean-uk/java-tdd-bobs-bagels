@@ -35,5 +35,16 @@ class BasketTest {
         Basket basket = new Basket();
         Assertions.assertEquals("Basket is not full", basket.checkBasketSize());
     }
+    @Test
+    public void testCheckBasketOverSize(){
+        Basket basket = new Basket();
+        basket.addBagel("Chocolate");
+        basket.addBagel("Strawberry");
+        basket.addBagel("Vanilla");
+        basket.addBagel("Beige");
+        basket.addBagel("Caramel");
+        basket.addBagel("Snow");
+        Assertions.assertEquals("Basket is full", basket.checkBasketSize());
+    }
 
 }

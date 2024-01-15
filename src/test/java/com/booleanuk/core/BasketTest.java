@@ -20,4 +20,11 @@ class BasketTest {
         basket.add("chocolate");
         Assertions.assertFalse(basket.add("raspberry"));
     }
+    @Test
+    public void addingBagelThatAlreadyExistsInBasket() {
+        Basket basket = new Basket();
+        basket.add("vanilla");
+        basket.add("vanilla");
+        Assertions.assertEquals(2, basket.items.get("vanilla"));
+    }
 }

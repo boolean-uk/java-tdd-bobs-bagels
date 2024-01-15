@@ -12,7 +12,7 @@ public class Basket {
     }
 
     public boolean order(String name) {
-        if(bagels.size() < this.capacity) {
+        if(bagels.size() < capacity) {
             bagels.add(name);
             return true;
         }

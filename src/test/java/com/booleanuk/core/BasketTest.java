@@ -30,5 +30,12 @@ class BasketTest {
         Assertions.assertTrue(basket.removeFromBasket("Whole wheat"));
     }
 
+    @Test
+    public void testRemoveTypeNotExistsReturnsFalse()
+    {
+        Basket basket = new Basket();
+
+        Assertions.assertFalse(basket.removeFromBasket("Whole wheat"));
+    }
 
 }

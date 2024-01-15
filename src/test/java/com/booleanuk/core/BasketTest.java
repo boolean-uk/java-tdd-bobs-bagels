@@ -69,4 +69,11 @@ class BasketTest {
         Assertions.assertEquals("Bagel not in basket", basket.removeBagel("Cream Cheese"));
 
     }
+    /* Extra tests*/
+    /* Domain model 6 */
+    @Test
+    public void testViewingEmptyBasket(){
+        Basket basket = new Basket();
+        Assertions.assertEquals("Basket is empty", basket.viewBasket());
+    }
 }

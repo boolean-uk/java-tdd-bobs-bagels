@@ -54,7 +54,7 @@ I’d like to change the capacity of baskets.
 
 
 ```
-.
+5.
 As a member of the public
 So that I can maintain my sanity
 I'd like to know if I try to remove an item that doesn't exist in my basket.
@@ -63,4 +63,17 @@ I'd like to know if I try to remove an item that doesn't exist in my basket.
 | Classes | Methods                         | Scenario                   | Returns                 |
 |---------|---------------------------------|----------------------------|-------------------------|
 | Basket  | String removeBagel(String name) | Remove a non-existing item | "Bagel not in basket"   |
-|         |                                 |                            |                         |
+
+
+## Added user stories
+```
+6.
+As a member of the public
+So that I can plan my order
+I'd want to view all items in my basket
+```
+
+| Class  | Methods             | Scenario                        | Returns                          |
+|--------|---------------------|---------------------------------|----------------------------------|
+| Basket | String viewBasket() | List a basket that is populated | String containing names of bagel |
+|        |                     | List a basket that is empty     | "Basket is empty"                |

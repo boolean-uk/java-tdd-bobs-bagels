@@ -53,7 +53,8 @@ class BasketTest {
         basket.bagels.add("Chocolate");
         basket.bagels.add("Vanilla");
         Assertions.assertEquals("Vanilla has been deleted", basket.delete("Vanilla"));
-        Assertions.assertNotNull(basket.bagels.get(0));
+        Assertions.assertEquals("Vanilla", basket.bagels.get(basket.bagels.size()-1));
+        System.out.println(basket.bagels);
     }
 
     @Test

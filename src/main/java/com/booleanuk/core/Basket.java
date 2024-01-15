@@ -19,7 +19,8 @@ public class Basket {
         return false;
     }
     public String delete(String name) {
-        return "";
+        bagels.remove(name);
+        return name + " has been deleted";
     }
     public void expand(int newSize) {
 

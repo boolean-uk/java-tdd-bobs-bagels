@@ -25,6 +25,19 @@ class BasketTest {
     }
 
     @Test
+    public void cantAddBagelToBasketWhenBasketIsFull() {
+        Basket basket = new Basket();
+        basket.add("Plain");
+        basket.add("Pumpernickel");
+        basket.add("Chocolate chip");
+        basket.add("Asiago");
+        basket.add("Blueberry");
+
+        Assertions.assertEquals(5, basket.getBasket().size());
+        Assertions.assertFalse(basket.add("Sourdough"));
+    }
+
+    @Test
     public void canRemoveBagelFromBasket() {
         Basket basket = new Basket();
         basket.add("Plain");

@@ -20,6 +20,11 @@ public class Basket {
 
         return bagel + " added to basket";
     }
+
+    public String removeBagel(String bagel){
+        bagelBasket.remove(bagel);
+        return bagel + " removed from basket";
+    }
 }
 
 /*

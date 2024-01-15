@@ -14,4 +14,10 @@ public class Basket {
         this.basketContents.put(name, 1);
         return true;
     }
+
+    public boolean remove(String name) {
+        if (name.isBlank()) {return false;}
+        this.basketContents.remove(name);
+        return true;
+    }
 }

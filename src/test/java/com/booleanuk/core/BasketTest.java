@@ -8,17 +8,17 @@ class BasketTest {
     // 1.
     @Test
     public void addChocolateBagelReturnTrue() {
-        Basket basket = new Basket();
+        Basket basket = new Basket(3);
         boolean result = basket.addBagel("choclate");
         Assertions.assertTrue(result);
     }
 
     @Test
-    public void addChocolateBagelTwiceReturnFalse() {
-        Basket basket = new Basket();
+    public void addChocolateBagelTwiceReturnTrue() {
+        Basket basket = new Basket(3);
         boolean result = basket.addBagel("choclate");
         result = basket.addBagel("choclate");
-        Assertions.assertFalse(result);
+        Assertions.assertTrue(result);
     }
 
     // 2.
@@ -37,6 +37,7 @@ class BasketTest {
         boolean result = basket.removeBagel("choclate");
         Assertions.assertFalse(result);
     }
+
 
 
 

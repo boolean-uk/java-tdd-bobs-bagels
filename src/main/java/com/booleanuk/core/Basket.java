@@ -17,4 +17,8 @@ public class Basket {
     public boolean remove(String bagel) {
         return bagels.remove(bagel);
     }
+
+    public boolean isFull() {
+        return (bagels.size() >= 2);
+    }
 }

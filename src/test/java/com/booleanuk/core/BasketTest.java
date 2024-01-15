@@ -29,5 +29,18 @@ class BasketTest {
 
         basket.add("Egg bagel");
         Assertions.assertTrue(basket.isFull());
+
+        basket.add("Sourdough bagel");
+        Assertions.assertTrue(basket.isFull());
+    }
+
+    @Test
+    public void testExpandingBasketCapacity() {
+        Basket basket = new Basket();
+
+        Assertions.assertEquals(0, basket.bagels.size());
+
+        basket.modifyCapacity(1);
+        Assertions.assertEquals(1, basket.bagels.size());
     }
 }

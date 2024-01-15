@@ -26,4 +26,14 @@ class BasketTest {
         boolean added = basket.addBagel(bagel);
         Assertions.assertFalse(added);
     }
+
+    //Test 3
+    @Test
+    public void shouldReturnTrueIfBagelIsRemovedFromBasket() {
+        Basket basket = new Basket();
+        Bagel bagel = new Bagel("Sesame", "1234", 10);
+        basket.addBagel(bagel);
+        boolean removed = basket.removeBagel(bagel);
+        Assertions.assertTrue(removed);
+    }
 }

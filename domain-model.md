@@ -15,11 +15,11 @@ Class Basket
 
 Class Bagel
 
-| Class vars       | Methods                                            | Scenario                                      | Return/Result |
-|------------------|----------------------------------------------------|-----------------------------------------------|---------------|
-| String name      | Bagel(String name, String productID, double price) | Instantiating a new Bagel object successfully | true          |
-| String productID |                                                    |                                               |               |
-| double price     |                                                    |                                               |               |
+| Class vars       | Methods                                            | Scenario | Return/Result |
+|------------------|----------------------------------------------------|----------|---------------|
+| String name      | Bagel(String name, String productID, double price) |          |               |
+| String productID |                                                    |          |               |
+| double price     |                                                    |          |               |
 
 ````
 User story 2
@@ -30,18 +30,18 @@ I'd like to remove a bagel from my basket.
 
 Class Basket
 
-| Class vars     | Methods                  | Scenario                              | Return/Result |
-|----------------|--------------------------|---------------------------------------|---------------|
-| Bagel[] basket | removeBagel(Bagel bagel) | if bagel is not in basket             | false         |
-|                |                          | if bagel is removed from basket       | true          |
+| Class vars     | Methods                  | Scenario                        | Return/Result |
+|----------------|--------------------------|---------------------------------|---------------|
+| Bagel[] basket | removeBagel(Bagel bagel) | if bagel is removed from basket | true          |
+|                |                          | if bagel is not in basket       | false         |
 
 Class Bagel
 
-| Class vars       | Methods                                            | Scenario                                      | Return/Result |
-|------------------|----------------------------------------------------|-----------------------------------------------|---------------|
-| String name      | Bagel(String name, String productID, double price) | Instantiating a new Bagel object successfully | true          |
-| String productID |                                                    |                                               |               |
-| double price     |                                                    |                                               |               |
+| Class vars       | Methods                                            | Scenario | Return/Result |
+|------------------|----------------------------------------------------|----------|---------------|
+| String name      | Bagel(String name, String productID, double price) |          |               |
+| String productID |                                                    |          |               |
+| double price     |                                                    |          |               |
 
 ````
 User story 3
@@ -54,16 +54,16 @@ Class Basket
 
 | Class vars     | Methods               | Scenario                                  | Return/Result |
 |----------------|-----------------------|-------------------------------------------|---------------|
-| Bagel[] basket | basketIsAlreadyFull() | if basket is not full and bagel was added | false         |
-|                |                       | if basket is full and bagel was not added | true          |
+| Bagel[] basket | basketIsAlreadyFull() | if basket is full and bagel was not added | true          |
+|                |                       | if basket is not full and bagel was added | false         |
 
 Class Bagel
 
-| Class vars       | Methods                                            | Scenario                                      | Return/Result |
-|------------------|----------------------------------------------------|-----------------------------------------------|---------------|
-| String name      | Bagel(String name, String productID, double price) | Instantiating a new Bagel object successfully | true          |
-| String productID |                                                    |                                               |               |
-| double price     |                                                    |                                               |               |
+| Class vars       | Methods                                            | Scenario | Return/Result |
+|------------------|----------------------------------------------------|----------|---------------|
+| String name      | Bagel(String name, String productID, double price) |          |               |
+| String productID |                                                    |          |               |
+| double price     |                                                    |          |               |
 
 ````
 User story 4
@@ -80,11 +80,11 @@ Class Basket
 
 Class Bagel
 
-| Class vars       | Methods                                            | Scenario                                      | Return/Result |
-|------------------|----------------------------------------------------|-----------------------------------------------|---------------|
-| String name      | Bagel(String name, String productID, double price) | Instantiating a new Bagel object successfully | true          |
-| String productID |                                                    |                                               |               |
-| double price     |                                                    |                                               |               |
+| Class vars       | Methods                                            | Scenario | Return/Result |
+|------------------|----------------------------------------------------|----------|---------------|
+| String name      | Bagel(String name, String productID, double price) |          |               |
+| String productID |                                                    |          |               |
+| double price     |                                                    |          |               |
 
 ````
 User story 5
@@ -102,8 +102,8 @@ Class Basket
 
 Class Bagel
 
-| Class vars       | Methods                                            | Scenario                                      | Return/Result |
-|------------------|----------------------------------------------------|-----------------------------------------------|---------------|
-| String name      | Bagel(String name, String productID, double price) | Instantiating a new Bagel object successfully | true          |
-| String productID |                                                    |                                               |               |
-| double price     |                                                    |                                               |               |
+| Class vars       | Methods                                            | Scenario | Return/Result |
+|------------------|----------------------------------------------------|----------|---------------|
+| String name      | Bagel(String name, String productID, double price) |          |               |
+| String productID |                                                    |          |               |
+| double price     |                                                    |          |               |

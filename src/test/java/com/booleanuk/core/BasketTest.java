@@ -10,4 +10,14 @@ class BasketTest {
         Basket basket = new Basket();
         Assertions.assertTrue(basket.add("vanilla"));
     }
+
+
+    @Test
+    public void addingBagelToFullBasket() {
+        Basket basket = new Basket();
+        basket.add("vanilla");
+        basket.add("apple");
+        basket.add("chocolate");
+        Assertions.assertFalse(basket.add("raspberry"));
+    }
 }

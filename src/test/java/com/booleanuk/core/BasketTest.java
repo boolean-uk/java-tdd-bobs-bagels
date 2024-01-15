@@ -21,4 +21,13 @@ class BasketTest {
         Assertions.assertTrue(basket.add("Plain"));
         Assertions.assertEquals(setupTestArray(), basket.getBasket());
     }
+
+    @Test
+    public void canRemoveBagelFromBasket() {
+        Basket basket = new Basket();
+        basket.add("Plain");
+
+        Assertions.assertTrue(basket.remove("Plain"));
+        Assertions.assertEquals(0, basket.getBasket().size());
+    }
 }

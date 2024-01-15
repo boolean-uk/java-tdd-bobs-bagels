@@ -20,7 +20,6 @@ public class Basket {
         if(this.basket != null) {
                 if (!this.basket.containsKey(bagel1)) {
                     if(this.bagels.containsKey(bagel1)) {
-
                         this.basket.put(bagel1, new HashMap<String, Integer>() {
                             {
                                 putIfAbsent("Quantity", 1);

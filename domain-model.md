@@ -13,7 +13,7 @@ Class Basket
 | Class variables                          | Methods                        | Scenario                          | Output/Return          |
 |------------------------------------------|--------------------------------|-----------------------------------|------------------------|
 | Map<String, Map<String, Integer>> basket | addBagelToBasket(String bagel) | Add bagel from viable bagels      | correctly added bagel  |
-| ArrayList<String> bagels                 |                                | which are listed in bagels list   | returns true and false |
+| Map<String, Integer> bagels              |                                | which are listed in bagels list   | returns true and false |
 | int capacityOfBasket                     |                                | Basket is constrained by capacity | if not                 |
 |                                          |                                | made as a passed value            |                        |
 |                                          |                                |                                   |                        |

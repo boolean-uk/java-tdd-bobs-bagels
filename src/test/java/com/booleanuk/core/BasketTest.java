@@ -29,12 +29,29 @@ class BasketTest {
             }
         });
 
+        //Adding wrong bagel before initalization of basket
         Assertions.assertFalse(basket.addBagelToBasket("Bagel4"));
+
+        //Add to bagels of same type
         Assertions.assertTrue(basket.addBagelToBasket(("Bagel1")));
         Assertions.assertFalse(basket.addBagelToBasket("Bagel1"));
+        //Test for adding wrong bagel after basket is initlized
         Assertions.assertFalse(basket.addBagelToBasket(("bagel3")));
 
     }
+    @Test
+    public void testAddBagelIfCapacityFull() {
+        Basket basket = new Basket(1, new HashMap<>() {
+            {
+                put("Bagel1", 15);
+                put("Bagel2", 12);
+            }
+        });
 
+        Assertions.assertTrue(basket.addBagelToBasket(("Bagel1")));
+        Assertions.assertFalse(basket.addBagelToBasket("Bagel2"));
+
+
+    }
 
 }

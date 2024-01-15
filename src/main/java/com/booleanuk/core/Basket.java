@@ -12,7 +12,9 @@ public class Basket {
         return name+" added";
     }
     public String removeBagel(String name){
-        return "";
+        if (!bagelBasket.contains(name)) return name+" not in basket";
+        bagelBasket.remove(name);
+        return name+" removed";
     }
 
 }

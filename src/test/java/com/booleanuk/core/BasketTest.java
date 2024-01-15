@@ -28,5 +28,18 @@ public class BasketTest {
         Assertions.assertTrue(result);
     }
 
+    @Test
+    public void checkCapacityListReturnTrue(){
+        Basket basket = new Basket();
+        basket.addBagel("bagel3");
+        basket.addBagel("bagel4");
+        basket.addBagel("bagel5");
+        basket.addBagel("bagel6");
+        boolean result = basket.checkCapacity();
+        Assertions.assertTrue(result);
+    }
+
+
+
 
 }

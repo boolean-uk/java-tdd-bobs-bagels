@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class Basket {
     ArrayList<String> bagels;
-
+    int capacity = 2;
     public Basket(){
-        this.bagels = new ArrayList<>();
-        this.bagels.add("bagel2");
+        this.bagels = new ArrayList<>(capacity);
+        bagels.add("bagel2");
     }
 
     public boolean addBagel(String bagel){
@@ -15,17 +15,21 @@ public class Basket {
         if (bagels.contains(bagel)){
             return false;
         }
+        bagels.add(bagel);
         return true;
     }
     public boolean removeBagel(String bagel){
-
         if (bagels.contains(bagel)){
             bagels.remove(bagel);
             return true;
         }
         return false;
     }
-
-
+    public boolean checkCapacity(){
+        if (bagels.size() >capacity ){
+            return true;
+        }
+        return false;
+    }
 
 }

@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 class BasketTest {
 
     @Test
-    public void addItemToBasketReturnTrue(){
+    public void addItemToBasketReturnTrue() {
         Basket basket = new Basket();
 
         boolean result = basket.add("bread");
@@ -15,15 +15,16 @@ class BasketTest {
 
 
     @Test
-    public void removeItemFromBasket(){
+    public void removeItemFromBasket() {
         Basket basket = new Basket();
 
         basket.add("bread");
         boolean result = basket.remove("bread");
         Assertions.assertTrue(result);
     }
+
     @Test
-    public void removeItemNotInBasket(){
+    public void removeItemNotInBasket() {
         Basket basket = new Basket();
 
         boolean result = basket.remove("bread");
@@ -31,7 +32,7 @@ class BasketTest {
     }
 
     @Test
-    public void checkIfBasketIsFull(){
+    public void checkIfBasketIsFull() {
         Basket basket = new Basket();
         basket.add("bread");
         basket.add("milk");
@@ -42,21 +43,22 @@ class BasketTest {
 
 
     }
+
     @Test
     public void checkIfBasketSizeCanIncrease() {
         Basket basket = new Basket();
 
-        basket.changeBasketCapasity(5);
+        basket.changeBasketCapacity(5);
         Assertions.assertEquals(9, basket.basketCapacity);
     }
 
     @Test
-    public void checkIfBasketSizeCanDecrease(){
+    public void checkIfBasketSizeCanDecrease() {
         Basket basket = new Basket();
 
-        basket.changeBasketCapasity(-2);
-        Assertions.assertEquals(4, basket.basketCapacity);
-
+        basket.changeBasketCapacity(-2);
+        Assertions.assertEquals(2, basket.basketCapacity);
 
 
     }
+}

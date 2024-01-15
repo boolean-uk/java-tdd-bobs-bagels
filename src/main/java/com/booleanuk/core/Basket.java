@@ -27,6 +27,14 @@ public class Basket {
 
     }
 
+    public int changeBasketCapacity(int change){
+        if((this.basketCapacity + change) < 0){
+            System.out.println("Can't have negative basket capacity");
+            return basketCapacity;
+        } else {
+            return basketCapacity += change;
+        }
 
+    }
 }
 

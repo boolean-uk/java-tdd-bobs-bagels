@@ -38,9 +38,19 @@ class BasketTest {
     public void testExpandingBasketCapacity() {
         Basket basket = new Basket();
 
-        Assertions.assertEquals(0, basket.bagels.size());
+        Assertions.assertEquals(2, basket.getCapacity());
 
-        basket.modifyCapacity(1);
-        Assertions.assertEquals(1, basket.bagels.size());
+        basket.modifyCapacity(5);
+
+        Assertions.assertEquals(5, basket.getCapacity());
+    }
+
+    @Test
+    public void testRemovingNonExistentItem() {
+        Basket basket = new Basket();
+
+        basket.add("Egg bagel");
+
+        Assertions.assertFalse(basket.remove("Plain bagel"));
     }
 }

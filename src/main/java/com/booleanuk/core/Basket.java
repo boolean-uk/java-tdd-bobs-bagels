@@ -27,5 +27,11 @@ public class Basket {
     }
     public void expand(int newSize) {
         capacity = newSize;
+        if(bagels.size() > newSize) {
+            for(int i = 0; i < bagels.size() - newSize; i++) {
+                bagels.remove(bagels.get(bagels.size()-1));
+            }
+        }
+
     }
 }

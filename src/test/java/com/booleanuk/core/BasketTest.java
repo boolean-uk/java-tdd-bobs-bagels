@@ -9,8 +9,11 @@ class BasketTest {
         Basket basket = new Basket();
 
         basket.add("Plain", 1);
+        basket.add("Sesame", 3);
         Assertions.assertTrue(basket.items.containsKey("Plain"));
         Assertions.assertEquals(basket.items.get("Plain"), 1);
+        Assertions.assertTrue(basket.items.containsKey("Sesame"));
+        Assertions.assertEquals(basket.items.get("Sesame"), 3);
 
     }
 

@@ -18,7 +18,7 @@ public class Basket {
     }
 
     public boolean remove(String name) {
-        if (name.isBlank()) {return false;}
+        if (name.isBlank() || !this.basketContents.containsKey(name)) {return false;}
         this.basketContents.remove(name);
         return true;
     }

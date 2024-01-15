@@ -36,10 +36,10 @@ I'd like to know when my basket is full when I try adding an item beyond my bask
 
 max (Int, max amount of items allowed in a basket)
 
-| Classes | Methods                  | Member Variables         | Scenario           | Results/Output                                                                                           |
-|---------|--------------------------|--------------------------|--------------------|----------------------------------------------------------------------------------------------------------|
-| Basket  | addToBasket(String type) | ArrayList<String> basket | Basket is full     | Do not add bagel, display a message saying "Basket is full. Please remove an item before adding another" |
-|         |                          |                          | Basket is not full | Add bagel like normal                                                                                    |
+| Classes | Methods                  | Member Variables         | Scenario           | Results/Output                                                     |
+|---------|--------------------------|--------------------------|--------------------|--------------------------------------------------------------------|
+| Basket  | addToBasket(String type) | ArrayList<String> basket | Basket is full     | Do not add bagel, display message which should be "Basket is full" |
+|         |                          | String message           | Basket is not full | Add bagel like normal. message is "Successfully added to basket"    |
 
 ````dtd
 4.

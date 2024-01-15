@@ -9,6 +9,7 @@ class BasketTest {
     {
         Basket basket = new Basket();
 
+
         Assertions.assertTrue(basket.addToBasket("Whole wheat"));
     }
 
@@ -36,6 +37,26 @@ class BasketTest {
         Basket basket = new Basket();
 
         Assertions.assertFalse(basket.removeFromBasket("Whole wheat"));
+    }
+
+    @Test
+    public void testAddBagelToOverfilledBasketDisplaysMessage()
+    {
+        Basket basket = new Basket();
+
+        // Max = 10
+        basket.addToBasket("Whole wheat");
+        basket.addToBasket("Half wheat");
+        basket.addToBasket("Whole grain");
+        basket.addToBasket("White");
+        basket.addToBasket("Standard");
+        basket.addToBasket("Sweet");
+        basket.addToBasket("Cheese");
+        basket.addToBasket("Gluten free");
+        basket.addToBasket("Milk free");
+        basket.addToBasket("Premium");
+
+        Assertions.assertFalse(basket.addToBasket("Seeds"));
     }
 
 }

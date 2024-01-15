@@ -28,7 +28,25 @@ class BasketTest {
     @Test
     public void testCheckCapacity() {
         Basket basket = new Basket(10);
-        Assertions.assertTrue(basket.checkCapacity());
+        Basket basket_full = new Basket(1);
+        basket_full.addBagel(new Bagel("Cheese", 10, 1));
+
+        Assertions.assertTrue(basket.checkCapacity() == 10);
+        Assertions.assertTrue(basket_full.checkCapacity() == 0);
+    }
+
+    @Test
+    public void testCheckCapacityDynamicallyAddingAndRemovingBagels() {
+        Basket basket = new Basket(1);
+        Bagel bagel1 = new Bagel("Cheese", 10, 1);
+        Bagel bagel2 = new Bagel("Ham", 20, 1);
+
+        // add first bagle, expect : allowed
+        Assertions.assertTrue(basket.addBagel(bagel1));
+
+        // add second bagle, expect : not allowed
+        basket.addBagel(bagel1);
+        Assertions.assertFalse(basket.addBagel(bagel2));
     }
 
 }

@@ -16,7 +16,7 @@ public class Basket {
     }
 
     public boolean addBagel(Bagel bagel) {
-        if (this.items.size() >= capacity) {
+        if (checkCapacity() <= 0) {
            return false;
         } else {
             items.add(bagel);
@@ -33,8 +33,18 @@ public class Basket {
         }
     }
 
-    public boolean checkCapacity() {
-        return false;
+
+    public int checkCapacity() {
+        System.out.println(getCapacity() - getItems().size());
+        return getCapacity() - getItems().size();
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public ArrayList<Bagel> getItems() {
+        return items;
     }
 
     public static void main(String[] args) {

@@ -56,4 +56,9 @@ class BasketTest {
         Basket basket = new Basket();
         Assertions.assertTrue(basket.changeCapacity(2));
     }
+    @Test
+    public void testReducingCapacityWithANegativeNumber(){
+        Basket basket = new Basket();
+        Assertions.assertFalse(basket.changeCapacity(-1));
+    }
 }

@@ -26,6 +26,6 @@ public class Basket {
         return name + " was not found";
     }
     public void expand(int newSize) {
-
+        capacity = newSize;
     }
 }

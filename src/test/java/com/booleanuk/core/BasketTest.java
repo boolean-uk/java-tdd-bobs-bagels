@@ -8,7 +8,11 @@ class BasketTest {
     @Test
     public void testAddBagelTrue(){
         Basket basket = new Basket();
-        Assertions.assertTrue(basket.addBagel("Chocolate"));
+        Assertions.assertTrue(basket.addBagel("Chocolate1"));
+        Assertions.assertTrue(basket.addBagel("Chocolate2"));
+        Assertions.assertTrue(basket.addBagel("Chocolate3"));
+        Assertions.assertTrue(basket.addBagel("Chocolate4"));
+        Assertions.assertTrue(basket.addBagel("Chocolate5"));
     }
     @Test
     public void testAddBagelFalse(){
@@ -46,5 +50,18 @@ class BasketTest {
         basket.addBagel("Snow");
         Assertions.assertEquals("Basket is full", basket.checkBasketSize());
     }
+    @Test
+    public void testCheckBasketOverwSize(){
+        Basket basket = new Basket();
+        basket.addBagel("Chocolate");
+        basket.addBagel("Strawberry");
+        basket.addBagel("Vanilla");
+        basket.addBagel("Beige");
+        basket.addBagel("Caramel");
+        basket.addBagel("Caramel2");
+        Assertions.assertEquals("Basket is full", basket.checkBasketSize());
+    }
+
+
 
 }

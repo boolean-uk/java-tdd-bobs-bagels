@@ -67,7 +67,24 @@ As a member of the public,
 So that I can not overfill my small bagel basket
 I'd like to know when my basket is full when I try adding an item beyond my basket capacity.
 ```
+### Keywords
+```
+1) Overfill
+2) Full basket
+```
 
+### Class Basket
+
+| Member Variables   | Methods         | Scenario                                | Return Value/Output                        |
+|--------------------|-----------------|-----------------------------------------|--------------------------------------------|
+| items: List<Bagel> | getItems()      | I want to get an overview of the bagels | If empty: Return 0                         |
+|                    |                 | currently in my basket                  | Else: Retrieve the bagels                  |
+|                    | addBagel()      | I want to add/buy a bagel to my basket  | If basket not full: Add, return true       |
+|                    |                 |                                         | If basket full: Return false               |
+|                    | removeBagel()   | If I change my mind or                  | If bagel is in basket: Remove, return true |
+|                    |                 | do not have enough money to pay         | If bagel not in basket: Return false;      |
+|                    | checkCapacity() | If I try to buy more bagels             |                                            |
+|                    |                 | than I can hold                         |                                            |
 ```
 4.
 As a Bob's Bagels manager,

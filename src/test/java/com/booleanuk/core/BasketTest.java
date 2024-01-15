@@ -65,5 +65,20 @@ class BasketTest {
         basket.add("Plain");
         Assertions.assertFalse(basket.checkIfNotFull());
     }
+    @Test
+    public void testTryRemoveBagelInList(){
+        Basket basket = new Basket();
+        basket.add("Blueberry");
+        basket.add("Strawberry");
+        basket.add("Plain");
+        basket.add("Cookie Dough");
+        basket.add("Vanilla");
+        basket.add("Chocolate");
+        Assertions.assertEquals("Bagel not in list", basket.tryRemoveBagel("Redberry"));
+        Assertions.assertEquals("Bagel is removed from list",basket.tryRemoveBagel("Cookie Dough"));
+        Assertions.assertEquals("Bagel not in list", basket.tryRemoveBagel("Plain."));
+        Assertions.assertEquals("Bagel is removed from list", basket.tryRemoveBagel("Blueberry"));
+        Assertions.assertEquals("Bagel is removed from list", basket.tryRemoveBagel("Vanilla"));
+    }
 
 }

@@ -4,14 +4,20 @@ import java.util.ArrayList;
 
 public class Basket {
     ArrayList<String> items;
+    int capacity;
 
     public Basket() {
         this.items = new ArrayList<>();
     }
 
+    public boolean isFull() {
+        return this.items.size() >= this.capacity;
+    }
+
     public boolean add(String bagel) {
-        this.items.add(bagel);
-        return true;
+        if (!this.isFull())
+            return this.items.add(bagel);
+        return false;
     }
 
     public boolean remove(String bagel) {

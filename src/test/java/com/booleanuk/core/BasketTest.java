@@ -62,7 +62,12 @@ class BasketTest {
     @Test
     public void testCheckExists() {
         Basket basket = new Basket(10);
-        Assertions.assertTrue(basket.checkExists());
+        Bagel bagel1 = new Bagel("Cheese", 10, 1);
+        Bagel bagel2 = new Bagel("Ham", 20, 1);
+
+        basket.addBagel(bagel1);
+        Assertions.assertTrue(basket.removeBagel(bagel1));
+        Assertions.assertFalse(basket.removeBagel(bagel2));
     }
 
 }

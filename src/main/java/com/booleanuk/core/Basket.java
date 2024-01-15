@@ -25,7 +25,7 @@ public class Basket {
     }
 
     public boolean removeBagel(Bagel bagel) {
-        if (!this.items.contains(bagel)) {
+        if (!checkExists(bagel)) {
             return false;
         } else {
             this.items.remove(bagel);
@@ -51,8 +51,12 @@ public class Basket {
         this.capacity = newCapacity;
     }
 
-    public boolean checkExists() {
-        return false;
+    public boolean checkExists(Bagel bagel) {
+        if (!this.items.contains(bagel)) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public static void main(String[] args) {

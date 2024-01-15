@@ -23,6 +23,10 @@ public class Basket {
     }
 
     public boolean remove(String bagel) {
+        if (bagelsList.isEmpty()) {
+            System.out.println("Can't remove item from empty basket");
+            return false;
+        }
         return this.bagelsList.remove(bagel);
 
     }

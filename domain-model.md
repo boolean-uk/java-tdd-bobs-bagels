@@ -54,8 +54,8 @@ As a member of the public
 So that I can maintain my sanity
 I'd like to know if I try to remove an item that doesn't exist in my basket.
 ```
-| Methods                        | Member variables    | Scenario                  | Outputs/Results        |
-|--------------------------------|---------------------|---------------------------|------------------------|
-| void removeBagel(String bagel) | String[] bagelTypes | If bagelType exist        | Remove bagel to basket |
-|                                |                     | If bageltype do not exist | Print message          |
-|                                |                     |                           |                        |
+| Methods                        | Member variables | Scenario                  | Outputs/Results        |
+|--------------------------------|------------------|---------------------------|------------------------|
+| void removeBagel(String bagel) | boolean remove() | If bagelType exist        | Remove bagel to basket |
+|                                |                  | If bageltype do not exist | Print message          |
+|                                |                  |                           |                        |

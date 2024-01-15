@@ -53,4 +53,11 @@ class BasketTest {
 
         Assertions.assertFalse(basket.removeBagel("Plain"));
     }
+
+    @Test
+    public void testChangeCapacity() {
+        Basket basket = new Basket();
+
+        Assertions.assertEquals(10, basket.changeBasketCapacity(10));
+    }
 }

@@ -55,8 +55,12 @@ public class Basket {
     }
     public String canItemBeRemoved(String name) {
 
+        if (items.contains(name)) {
+            return "The item can be removed.";
+        }
 
-        return "";
+
+        return "The item is not in the list!";
     }
 
 

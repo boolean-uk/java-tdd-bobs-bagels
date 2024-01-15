@@ -17,7 +17,7 @@ class BasketTest {
     @Test
     public void testRemoveBagelFromBasket() {
         Basket basket = new Basket();
-        String bagel = "Everything";
+        String bagel = "Everything!";
 
         basket.addBagel(bagel);
         basket.removeBagel(bagel);

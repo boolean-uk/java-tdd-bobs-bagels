@@ -30,7 +30,7 @@ public class Basket {
             bagels.remove(bagel);
         } else {
             // Handle bagel not found scenario
-            System.out.println("Bagel not found in the basket. Cannot remove.");
+            System.out.println("Bagel  is not found in the basket. Cannot remove.");
         }
     }
     public void setCapacity(int capacity) {this.capacity = capacity;}

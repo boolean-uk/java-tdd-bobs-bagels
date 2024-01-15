@@ -8,17 +8,13 @@ class BasketTest {
     @Test
     public void testAddBagelTrue(){
         Basket basket = new Basket();
-        Assertions.assertTrue(basket.addBagel("Chocolate1"));
-        Assertions.assertTrue(basket.addBagel("Chocolate2"));
-        Assertions.assertTrue(basket.addBagel("Chocolate3"));
-        Assertions.assertTrue(basket.addBagel("Chocolate4"));
-        Assertions.assertTrue(basket.addBagel("Chocolate5"));
+        Assertions.assertEquals("Bagel added to basket", basket.addBagel("Chocolate"));
     }
     @Test
     public void testAddBagelFalse(){
         Basket basket = new Basket();
         basket.addBagel("Chocolate");
-        Assertions.assertFalse(basket.addBagel("Chocolate"));
+        Assertions.assertEquals("Bagel already in basket", basket.addBagel("Chocolate"));
     }
 
     @Test
@@ -47,8 +43,7 @@ class BasketTest {
         basket.addBagel("Vanilla");
         basket.addBagel("Beige");
         basket.addBagel("Caramel");
-        basket.addBagel("Snow");
-        Assertions.assertEquals("Basket is full", basket.checkBasketSize());
+        Assertions.assertEquals("Basket is full", basket.addBagel("Snow"));
     }
     @Test
     public void testCheckBasketOverwSize(){
@@ -66,6 +61,20 @@ class BasketTest {
         Assertions.assertEquals(10, basket.changeBasketSize(10));
         Assertions.assertEquals(5, basket.changeBasketSize(5));
         Assertions.assertNotEquals(5, basket.changeBasketSize(10));
+    }
+    @Test
+    public void testChangeBasketSizeWithElements(){
+        Basket basket = new Basket();
+        basket.addBagel("Chocolate");
+        basket.addBagel("Strawberry");
+        basket.addBagel("Vanilla");
+        basket.addBagel("Beige");
+        Assertions.assertEquals("Basket is not full", basket.checkBasketSize());
+        Assertions.assertEquals(2, basket.changeBasketSize(2));
+        Assertions.assertEquals("Basket is full", basket.checkBasketSize());
+        Assertions.assertEquals(10, basket.changeBasketSize(10));
+        Assertions.assertEquals("Basket is not full", basket.checkBasketSize());
+
     }
 
 

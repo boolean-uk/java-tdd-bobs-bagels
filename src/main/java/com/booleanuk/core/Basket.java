@@ -73,6 +73,7 @@ public class Basket {
             }
 
         }
+
         //Makes the original array == the new array
         basketArr = newArray;
     }

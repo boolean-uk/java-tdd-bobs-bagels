@@ -37,7 +37,7 @@ class BasketTest {
 
         Basket basket = new Basket();
 
-        String message = basket.isBasketFull();
+        String message = basket.isBasketFull(10);
 
         Assertions.assertEquals("Basket is full!", message);
     }

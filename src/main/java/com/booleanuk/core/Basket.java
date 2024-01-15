@@ -30,5 +30,9 @@ public class Basket {
         return false;
     }
 
+    //User Story 3
+    public String isBasketFull(int quantity) {
+        return "Basket is full!";
+    }
 
 }

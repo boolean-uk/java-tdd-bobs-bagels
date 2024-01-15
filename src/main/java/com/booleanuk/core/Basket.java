@@ -44,5 +44,10 @@ public class Basket {
         return "Basket is not full!";
     }
 
-    //User Story 4
+    //User story 4
+    public String changeBasketCapacity(int oldCapacity, int newCapacity) {
+        return "Basket capacity changed!";
+    }
+
+
 }

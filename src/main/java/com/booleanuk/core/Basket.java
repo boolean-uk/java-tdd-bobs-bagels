@@ -26,4 +26,8 @@ public class Basket {
         }
         return false;
     }
+
+    public boolean isAlreadyFull() {
+        return true;
+    }
 }

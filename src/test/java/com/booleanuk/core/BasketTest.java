@@ -145,5 +145,13 @@ class BasketTest {
         Assertions.assertEquals(0,basket.basketList.size());
     }
 
+    @Test
+    public void testEmptyBasketNotEmptiedBecauseItIsEmpty()
+    {
+        Basket basket = new Basket();
 
+        boolean result = basket.emptyBasket();
+        Assertions.assertFalse(result);
+        Assertions.assertEquals(0,basket.basketList.size());
+    }
 }

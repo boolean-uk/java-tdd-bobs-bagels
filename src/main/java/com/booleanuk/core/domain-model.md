@@ -18,12 +18,12 @@ I'd like to add a specific type of bagel to my basket.
 
 ### Class Bagel
 
-| Member Variables | Methods   | Scenario                       | Return Value/Output                 |
-|------------------|-----------|--------------------------------|-------------------------------------|
-| Type: String     | getType() | Get a bagel type from the shop | If bagel in stock: Return true      |
-| Cost: Double     |           |                                | If bagel not in stock: Return false |
-|                  | getCost() | Get a bagel type and cost      | If bagel not exists: Return true    |
-|                  |           |                                | If bagel exists: Return false       |
+| Member Variables   | Methods   | Scenario                       | Return Value/Output                 |
+|--------------------|-----------|--------------------------------|-------------------------------------|
+| Type: String       | getType() | Get a bagel type from the shop | If bagel in stock: Return true      |
+| Cost: Integer      |           |                                | If bagel not in stock: Return false |
+| ProductID: Integer | getCost() | Get a bagel type and cost      | If bagel not exists: Return true    |
+|                    |           |                                | If bagel exists: Return false       |
 
 ### Class Basket
 

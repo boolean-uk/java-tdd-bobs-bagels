@@ -12,6 +12,7 @@ public class Basket {
         bagels = new ArrayList<>();
     }
 
+    //User Story 1
     public boolean addBagelTypeToBasket(String bagelType) {
         if(this.bagels.contains(bagelType)) {
             return false;
@@ -20,8 +21,14 @@ public class Basket {
         return true;
     }
 
+    //User Story 2
     public boolean removeBagelTypeFromBasket(String bagelType) {
-        return true;
+        if(this.bagels.contains(bagelType)) {
+            this.bagels.remove(bagelType);
+            return true;
+        }
+        return false;
     }
+
 
 }

@@ -9,9 +9,10 @@ So I can order a bagel before work,
 I'd like to add a specific type of bagel to my basket.
 ```
 
-``` Notes ```
+``` Notes 
 Class | Member variables | Methods | Scenario | Output/Result
 Basket  String type        addBagelType()   Add a specific type of bagel to basket Return true
+```
 
 Version 1
 
@@ -27,9 +28,10 @@ As a member of the public,
 So I can change my order,
 I'd like to remove a bagel from my basket.
 ```
-``` Notes ```
+``` Notes 
 Class | Member variables | Methods | Scenario | Output/Result
-Basket  String type        removeBagelType()   Add a specific type of bagel to basket Return true
+Basket  String type        removeBagelType()   Remove a specific type of bagel to basket Return true
+```
 
 Version 1
 
@@ -46,6 +48,19 @@ As a member of the public,
 So that I can not overfill my small bagel basket
 I'd like to know when my basket is full when I try adding an item beyond my basket capacity.
 ```
+
+``` Notes
+Class | Member variables | Methods | Scenario | Output/Result
+Basket  String type        basketIsFull()   If basket is full return true
+```
+
+Version 1
+
+| Class  | Member variables         | Methods                    | Scenario              | Output/Result                |
+|--------|--------------------------|----------------------------|-----------------------|------------------------------|
+| Basket | ArrayList<String> bagels | basketIsFull(int quantity) | If basket is full     | Return "Basket is full!"     |
+|        |                          |                            | If basket is not full | Return "Basket is not full." |
+
 
 ```
 4.

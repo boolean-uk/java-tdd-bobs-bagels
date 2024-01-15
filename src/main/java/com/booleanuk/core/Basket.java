@@ -11,11 +11,10 @@ public class Basket {
     }
 
     public boolean add(String bagel) {
-        if (bagels.contains(bagel)) {
-            return false;
-        } else {
-            bagels.add(bagel);
-            return true;
-        }
+        return bagels.add(bagel);
+    }
+
+    public boolean remove(String bagel) {
+        return bagels.remove(bagel);
     }
 }

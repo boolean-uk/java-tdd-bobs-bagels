@@ -16,6 +16,6 @@ public class Basket {
     public String add(String bagel, int amount){
 
         this.items.put(bagel, amount);
-        return "";
+        return amount + " " +  bagel + " bagel added to basket";
     }
 }

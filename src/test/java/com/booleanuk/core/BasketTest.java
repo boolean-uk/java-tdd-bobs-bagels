@@ -10,4 +10,11 @@ class BasketTest {
         boolean isEmpty = basket.isEmpty();
         Assertions.assertTrue(isEmpty);
     }
+
+    @Test
+    public void testAddBagel(){
+        Basket basket = new Basket();
+        String bagel = "Plain bagel";
+        Assertions.assertEquals("Plain bagel added to basket",basket.addBagel(bagel));
+    }
 }

@@ -59,6 +59,17 @@ class BasketTest {
         Assertions.assertTrue(result);
     }
 
+    // 4.
+
+    @Test
+    public void updateBasketCapacityTo5() {
+        Basket basket = new Basket(3);
+        int newCapacity = 5;
+        int result = basket.changeBasketCapacity(newCapacity);
+        Assertions.assertEquals(newCapacity, result);
+    }
+
+
 
 
 

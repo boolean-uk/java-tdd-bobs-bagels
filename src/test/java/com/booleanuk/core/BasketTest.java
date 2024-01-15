@@ -10,7 +10,7 @@ class BasketTest {
     public void isItemnew() {
         Basket basket1 = new Basket();
 
-        boolean result = basket1.add("Regular");
+        boolean result = basket1.add("Fried");
         Assertions.assertTrue(result);
     }
 

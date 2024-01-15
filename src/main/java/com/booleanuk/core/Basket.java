@@ -8,16 +8,19 @@ public class Basket {
 
 
     public Basket(){
+
        this.items = new ArrayList<>(10);
+       items.add("Regular");
+
     }
 
     public boolean add(String name) {
 
         if (items.contains(name)) {
-           return true;
+           return false;
         }
         items.add(name);
-        return false;
+        return true;
 
 
 

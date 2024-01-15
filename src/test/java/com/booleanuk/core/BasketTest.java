@@ -76,4 +76,11 @@ class BasketTest {
         Basket basket = new Basket();
         Assertions.assertEquals("Basket is empty", basket.viewBasket());
     }
+    @Test
+    public void testViewingBasketWithTwoItems(){
+        Basket basket = new Basket();
+        basket.addBagel("Cream Cheese");
+        basket.addBagel("Mustard");
+        Assertions.assertEquals("Cream Cheese, Mustard", basket.viewBasket());
+    }
 }

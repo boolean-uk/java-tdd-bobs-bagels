@@ -25,5 +25,10 @@ class BasketTest {
         Assertions.assertFalse(basket.removeBagel(bagel_not_in_basket));
     }
 
+    @Test
+    public void testCheckCapacity() {
+        Basket basket = new Basket(10);
+        Assertions.assertTrue(basket.checkCapacity());
+    }
 
 }

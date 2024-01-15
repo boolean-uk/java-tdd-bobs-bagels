@@ -33,6 +33,10 @@ public class Basket {
         }
     }
 
+    public boolean checkCapacity() {
+        return false;
+    }
+
     public static void main(String[] args) {
 
     }

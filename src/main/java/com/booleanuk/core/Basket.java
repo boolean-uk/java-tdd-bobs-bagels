@@ -57,5 +57,7 @@ public class Basket {
     }
 
     //User Story 5
-
+    public String canRemoveItemInBasket(String item) {
+        return "Item is in basket and can be removed.";
+    }
 }

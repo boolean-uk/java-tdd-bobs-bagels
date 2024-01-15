@@ -12,4 +12,8 @@ public class Basket {
     public boolean addBagel(String type) {
         return bagels.add(type);
     }
+
+    public boolean removeBagel(String type) {
+        return bagels.remove(type);
+    }
 }

@@ -43,4 +43,10 @@ class BasketTest {
         Assertions.assertEquals("Basket full", basket.addBagel("Mustard"));
     }
 
+    @Test
+    public void testAddBagelWhenNotAtCapacity(){
+        Basket basket = new Basket();
+        Assertions.assertEquals("Cream Cheese added", basket.addBagel("Cream Cheese"));
+    }
+
 }

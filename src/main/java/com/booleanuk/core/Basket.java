@@ -26,6 +26,6 @@ public class Basket {
     }
 
     public boolean remove(String bagel) {
-        return false;
+        return items.remove(bagel) != null;
     }
 }

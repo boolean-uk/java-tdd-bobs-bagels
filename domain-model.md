@@ -7,11 +7,11 @@ So I can order a bagel before work,
 I'd like to add a specific type of bagel to my basket.
 ````
 
-| Classes | Methods                  | Member Variables         | Scenario                  | Results/Output                                                              |
-|---------|--------------------------|--------------------------|---------------------------|-----------------------------------------------------------------------------|
-| Basket  | addToBasket(String type) | ArrayList<String> basket | Bagel type exists         | Bagel is added to list, message "Successfully added to basket" is displayed |
-|         |                          |                          | Bagel type does not exist | An error message is displayed, e.g. "Bagel type does not exist"             |
-|         |                          |                          |                           |                                                                             |
+| Classes | Methods                  | Member Variables         | Scenario                  | Results/Output                                                                           |
+|---------|--------------------------|--------------------------|---------------------------|------------------------------------------------------------------------------------------|
+| Basket  | addToBasket(String type) | ArrayList<String> basket | Bagel type exists         | Bagel is added to list, message "Successfully added to basket" is displayed. Return true |
+|         |                          |                          | Bagel type does not exist | An error message is displayed, e.g. "Bagel type does not exist". Return false            |
+|         |                          |                          |                           |                                                                                          |
 
 
 ````dtd
@@ -56,9 +56,9 @@ I’d like to change the capacity of baskets.
 
 ````dtd
 5.
-        As a member of the public
-        So that I can maintain my sanity
-        I'd like to know if I try to remove an item that doesn't exist in my basket.
+As a member of the public
+So that I can maintain my sanity
+I'd like to know if I try to remove an item that doesn't exist in my basket.
 ````
 
 | Classes | Methods                      | Member Variables         | Scenario               | Results/Output                                 |

@@ -29,6 +29,22 @@ class BasketTest {
         basket.add("Cinnamon bagels");
         Assertions.assertFalse(basket.remove("Egg bagels"));
     }
+    @Test
+    public void isFullShouldReturnTrue(){
+        Basket basket = new Basket();
+        basket.add("Cinnamon bagels");
+        basket.add("Sesam bagels");
+        basket.add("Salt bagels");
+        basket.add("Egg bagels");
+        Assertions.assertTrue(basket.isFull(4));
+    }
+    @Test
+    public void isFullShouldReturnFalse(){
+        Basket basket = new Basket();
+        basket.add("Cinnamon bagels");
+        Assertions.assertFalse(basket.isFull(4));
+
+    }
 
 
 }

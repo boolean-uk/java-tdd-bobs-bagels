@@ -27,4 +27,10 @@ class BasketTest {
         Assertions.assertEquals("Cream Cheese removed", basket.removeBagel("Cream Cheese"));
     }
 
+    @Test
+    public void testRemovingBagelThatDoNotExist(){
+        Basket basket = new Basket();
+        Assertions.assertEquals("Cream Cheese removed", basket.removeBagel("Cream Cheese"));
+    }
+
 }

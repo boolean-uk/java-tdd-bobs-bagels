@@ -1,5 +1,19 @@
 package com.booleanuk.core;
 
-public class Basket {
+import java.util.ArrayList;
 
+public class Basket {
+    private final ArrayList<String> basket;
+
+    public Basket() {
+        this.basket = new ArrayList<>();
+    }
+
+    public boolean add(String bagel) {
+        return basket.add(bagel);
+    }
+
+    public ArrayList<String> getBasket() {
+        return basket;
+    }
 }

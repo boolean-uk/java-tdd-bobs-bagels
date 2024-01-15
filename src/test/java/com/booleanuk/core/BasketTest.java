@@ -12,4 +12,12 @@ class BasketTest {
         Assertions.assertTrue(result);
     }
 
+    @Test
+    public void testAddBagelToBasketReturnFalse(){
+        Basket basket = new Basket();
+        Assertions.assertTrue(basket.add("vanilla"));
+        Assertions.assertTrue(basket.add("chocolate"));
+        Assertions.assertFalse(basket.add(""));
+    }
+
 }

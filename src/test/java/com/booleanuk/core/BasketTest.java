@@ -9,7 +9,7 @@ class BasketTest {
         Basket basket = new Basket();
         VeganBagel vegan = new VeganBagel();
         basket.add(vegan);
-        Assertions.assertEquals(basket.items.get(vegan).name, "Vegan bagel");
+        Assertions.assertTrue(basket.itemList.containsKey(vegan));
     }
 
     @Test

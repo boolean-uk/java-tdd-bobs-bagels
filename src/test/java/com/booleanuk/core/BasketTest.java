@@ -9,6 +9,9 @@ class BasketTest {
     public void testAddBagel() {
         Basket basket = new Basket(10);
         Assertions.assertTrue(basket.addBagel());
+
+        Basket full_basket = new Basket(0);
+        Assertions.assertFalse(full_basket.addBagel());
     }
 
 }

@@ -19,6 +19,10 @@ public class Basket {
         return name+" removed";
     }
     public boolean changeSize(int size){
+        if (size>0){
+            this.basketSize += size;
+            return true;
+        }
         return false;
     }
 

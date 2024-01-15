@@ -1,12 +1,28 @@
-| Clasess | Members                  | Methods                                   | Scenario                | Output             |
-|---------|--------------------------|-------------------------------------------|-------------------------|--------------------|
-| Basket  | ArrayList<String> bagels | add(String bagel)                         | Can add to list         | updated list       |
-|         |                          |                                           | Can't add to list       | list full          |
-|         |                          | remove(String bagel)                      | Remove item             | updated list       |
-|         |                          |                                           | List empty              | empty list         |
-|         |                          | isFull()                                  | List is full            | true               |
-|         |                          |                                           | List is not full        | false              |
-|         |                          | expandListCapacity()                      | Add size to list        | new size list      |
-|         |                          | tryRemoveNonExistingElement(String bagel) | List don't contain item | can't find in list |
-|         |                          |                                           |                         |                    |
-|         |                          |                                           |                         |                    |
+| Clasess | Members                         | Methods                                   | Scenario                | Output             |
+|---------|---------------------------------|-------------------------------------------|-------------------------|--------------------|
+| Basket  | HashMap<String, Integer> bagels | add(String bagel)                         | Can add to list         | return true        |
+|         |                                 |                                           |                         |                    |
+
+
+| Clasess | Members                         | Methods              | Scenario         | Output       |
+|---------|---------------------------------|----------------------|------------------|--------------|
+| Basket  | HashMap<String, Integer> bagels | remove(String bagel) | Can add to list  | return true  |
+|         |                                 |                      | Cant add to list | return false |
+
+
+| Clasess | Members                         | Methods             | Scenario | Output       |
+|---------|---------------------------------|---------------------|----------|--------------|
+| Basket  | HashMap<String, Integer> bagels | isFull(int howMany) | Not full | return true  |
+|         | int howMany                     |                     | Full     | return false |
+
+
+| Clasess | Members     | Methods                     | Scenario                         | Output  |
+|---------|-------------|-----------------------------|----------------------------------|---------|
+| Basket  | int howMany | capacitySetter(int howMany) | Changed how many bagels capacity | changed |
+|         |             |                             |                                  |         |
+
+
+| Clasess | Members                         | Methods              | Scenario                  | Output       |
+|---------|---------------------------------|----------------------|---------------------------|--------------|
+| Basket  | HashMap<String, Integer> bagels | remove(String bagel) | Is existing can remove    | return true  |
+|         |                                 |                      | Not existing can't remove | return false |

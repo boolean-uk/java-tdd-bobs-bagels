@@ -65,3 +65,16 @@ I'd like to know if I try to remove an item that doesn't exist in my basket.
 |---------|------------------------------|--------------------------|------------------------|------------------------------------------------|
 | Basket  | removeFromBasket(String type | ArrayList<String> basket | Bagel is not in basket | Display message to user "Bagel does not exist" |
 |         |                              |                          | Bagel is in basket     | Remove bagel                                   |
+
+````dtd
+6.
+As a member of the public, 
+To keep track of my actions,
+I'd like to see the items I currently have in my basket
+````
+
+| Classes | Methods         | Member Variables         | Scenario         | Results/Output                           |
+|---------|-----------------|--------------------------|------------------|------------------------------------------|
+| Basket  | listBasketItems | ArrayList<String> basket | Basket size > 0  | Items are listed.                        |
+|         |                 |                          | Basket size == 0 | "No items, basket empty"                 |
+|         |                 |                          | Basket < 0       | "Error: Basket size is negative \(how?)" |

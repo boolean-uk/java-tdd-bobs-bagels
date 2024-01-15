@@ -17,9 +17,7 @@ public class Basket {
         return bagels.add(type);
     }
 
-    public boolean removeBagel(String type) {
-        return bagels.remove(type);
-    }
+
 
     public boolean isBasketFull() {
         if (bagels.size() >= basketCapacity) {
@@ -30,5 +28,7 @@ public class Basket {
         }
     }
 
-
+    public void setBasketCapacity(int newBasketCapacity) {
+        this.basketCapacity = newBasketCapacity;
+    }
 }

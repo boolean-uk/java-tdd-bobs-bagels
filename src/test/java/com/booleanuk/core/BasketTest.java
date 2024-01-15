@@ -53,5 +53,14 @@ class BasketTest {
 
     }
 
+    @Test
+    public void testIsItemInBasket() {
+        Basket basket = new Basket();
+
+        basket.addBagel("Ham & Cheese");
+        basket.addBagel("Cream Cheese");
+        Assertions.assertFalse(basket.removeBagel("Sesame"));
+    }
+
 }
 

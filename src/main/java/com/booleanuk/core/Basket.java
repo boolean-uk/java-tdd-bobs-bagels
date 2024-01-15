@@ -11,5 +11,8 @@ public class Basket {
         bagelBasket.add(name);
         return name+" added";
     }
+    public String removeBagel(String name){
+        return "";
+    }
 
 }

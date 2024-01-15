@@ -20,5 +20,18 @@ class BasketTest {
         Assertions.assertEquals("Bagel already exists in basket", basket.addBagel("Bagel"));
 
     }
+    @Test
+    public void RemovingBagel(){
+        Basket basket = new Basket();
+        basket.addBagel("Bagel");
+        Assertions.assertEquals("Bagel removed", basket.removeBagel("Bagel"));
+    }
+    @Test
+    public void removingBagelNotInBasket(){
+        Basket basket = new Basket();
+        Assertions.assertEquals("Bagel not in basket", basket.removeBagel("Bagel"));
+    }
+
+
 
 }

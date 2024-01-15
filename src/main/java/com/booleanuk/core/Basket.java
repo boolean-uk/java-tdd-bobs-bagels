@@ -24,5 +24,7 @@ public class Basket {
     public List<String> getBasket() {
         return new ArrayList<>(bagels);
     }
+
+    public void removeBagel(String bagel) {}
 }
 

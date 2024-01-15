@@ -39,7 +39,8 @@ public class Basket {
         return true;
     }
 
-    public void updateCapacity(int newCapacity) {
+    public boolean updateCapacity(int newCapacity) {
         capacity = newCapacity;
+        return true;
     }
 }

@@ -74,9 +74,10 @@ I’d like to change the capacity of baskets.
 
 Class Basket
 
-| Class vars     | Methods                                          | Scenario                                    | Return/Result |
-|----------------|--------------------------------------------------|---------------------------------------------|---------------|
-| Bagel[] basket | changeCapacityOfBasket(int numberOfExtraIndices) | if extra capacity is added successfully     | true          |
+| Class vars     | Methods                                          | Scenario                       | Return/Result |
+|----------------|--------------------------------------------------|--------------------------------|---------------|
+| Bagel[] basket | changeCapacityOfBasket(int numberOfExtraIndices) | if extra capacity is added     | true          |
+|                |                                                  | if extra capacity is not added | false         |
 
 Class Bagel
 

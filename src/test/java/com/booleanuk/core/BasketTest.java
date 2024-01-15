@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 class BasketTest {
 
-    //Test 1
+    //User story 1 Test 1
     @Test
     public void shouldReturnTrueIfBagelIsAddedToBasket() {
         Basket basket = new Basket();
@@ -14,7 +14,7 @@ class BasketTest {
         Assertions.assertTrue(added);
     }
 
-    //Test 2
+    //User story 1 Test 2
     @Test
     public void shouldReturnFalseIfBagelIsNotAddedToBasket() {
         Basket basket = new Basket();
@@ -27,7 +27,7 @@ class BasketTest {
         Assertions.assertFalse(added);
     }
 
-    //Test 3
+    //User story 2 Test 3
     @Test
     public void shouldReturnTrueIfBagelIsRemovedFromBasket() {
         Basket basket = new Basket();
@@ -37,7 +37,7 @@ class BasketTest {
         Assertions.assertTrue(removed);
     }
 
-    //Test 4
+    //User story 2 Test 4
     @Test
     public void shouldReturnFalseIfBagelIsNotInBasket() {
         Basket basket = new Basket();
@@ -46,18 +46,17 @@ class BasketTest {
         Assertions.assertFalse(removed);
     }
 
-    //Test 5
+    //User story 3 Test 5 same as Test 2
+
+    //User story 3 Test 6 same as Test 1
+
+    //User story 4 Test 7
     @Test
-    public void shouldReturnTrueIfBasketIsFullAndBagelWasNotAdded() {
+    public void newArrayIsCorrectSize() {
         Basket basket = new Basket();
-        Bagel bagel = new Bagel("Sesame", "1234", 10);
-        basket.addBagel(bagel);
-        basket.addBagel(bagel);
-        basket.addBagel(bagel);
-        basket.addBagel(bagel);
-        basket.addBagel(bagel);
-        boolean isFull = basket.isAlreadyFull();
-        Assertions.assertTrue(isFull);
+        int originalLength = basket.basket.length;
+        int newLength = basket.changeCapacityOfBasket(3);
+        Assertions.assertEquals(newLength, originalLength+3);
     }
 
 }

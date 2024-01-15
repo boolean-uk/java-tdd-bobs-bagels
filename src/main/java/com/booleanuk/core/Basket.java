@@ -2,11 +2,16 @@ package com.booleanuk.core;
 import java.util.ArrayList;
 public class Basket {
     ArrayList<String> bagelsList;
+    int capacity;
+
     public Basket(){
         this.bagelsList = new ArrayList<String>();
 
-
     }
+    public Basket(int capacity){
+        this.bagelsList=new ArrayList<>(capacity);
+    }
+
     public boolean add(String bagels){
         if(this.bagelsList.contains(bagels)){
             return false;
@@ -20,8 +25,15 @@ public class Basket {
 
     }
 
-    public boolean isFull(int capacity){
+    public boolean isFull(int capacity) {
         return this.bagelsList.size() == capacity;
     }
+    public int changeCapacity(int capacity){
+        this.capacity = capacity;
+        return this.capacity;
+    }
+
+
+
 
 }

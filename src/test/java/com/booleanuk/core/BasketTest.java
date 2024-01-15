@@ -164,4 +164,38 @@ class BasketTest {
 
         Assertions.assertEquals(expectedOutput, basket.showContactInfo("e-mail"));
     }
+
+    @Test
+    public void testShowNumber()
+    {
+        Basket basket = new Basket();
+
+        String expectedOutput = "12345678";
+
+        Assertions.assertEquals(expectedOutput, basket.showContactInfo("number"));
+    }
+
+    @Test
+    public void testShowAddress()
+    {
+        Basket basket = new Basket();
+
+        String expectedOutput = "742 Evergreen Terrace";
+
+        Assertions.assertEquals(expectedOutput, basket.showContactInfo("address"));
+    }
+
+    @Test
+    public void testShowAllContactInfo()
+    {
+        Basket basket = new Basket();
+
+        String expectedOutput = """
+                bob@bagel.com
+                12345678
+                742 Evergreen Terrace
+                """;
+
+        Assertions.assertEquals(expectedOutput,basket.showContactInfo());
+    }
 }

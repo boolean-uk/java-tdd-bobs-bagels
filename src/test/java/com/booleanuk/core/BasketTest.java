@@ -8,9 +8,7 @@ class BasketTest {
     public void addingBagelToBasketReturnsTrue() {
         Basket basket = new Basket();
 
-        String bagel = basket.add("Plain bagel");
-
-        Assertions.assertEquals("Plain bagel", bagel);
+        Assertions.assertTrue(basket.add("Plain bagel"));
     }
 
 

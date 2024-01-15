@@ -31,6 +31,7 @@ public class Basket {
             this.bagelsInBasket--;
             return true;
         }
+        System.out.print("That bagel is not in the basket!\n");
         return false;
     }
 

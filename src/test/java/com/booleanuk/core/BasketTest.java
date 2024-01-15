@@ -124,4 +124,35 @@ class BasketTest {
         basket.removeBagel("Plain");
         Assertions.assertEquals("That bagel is not in the basket!\n", outContent.toString());
     }
+
+    @Test
+    public void testAllFunctions() {
+        Basket basket = new Basket();
+
+        Assertions.assertTrue(basket.addBagel("Blueberry"));
+        Assertions.assertTrue(basket.addBagel("Plain"));
+        Assertions.assertTrue(basket.addBagel("Egg"));
+
+        Assertions.assertFalse(basket.removeBagel("Chocolate"));
+
+        Assertions.assertTrue(basket.removeBagel("Blueberry"));
+        Assertions.assertTrue(basket.removeBagel("Egg"));
+        Assertions.assertTrue(basket.removeBagel("Plain"));
+        Assertions.assertFalse(basket.removeBagel("Blueberry"));
+
+        Assertions.assertTrue(basket.addBagel("Blueberry"));
+        Assertions.assertTrue(basket.addBagel("Cinnamon"));
+        Assertions.assertTrue(basket.addBagel("Egg"));
+        Assertions.assertTrue(basket.addBagel("Everything"));
+        Assertions.assertTrue(basket.addBagel("Blueberry"));
+
+        Assertions.assertEquals(7, basket.changeBasketCapacity(7));
+
+        Assertions.assertTrue(basket.removeBagel("Blueberry"));
+
+        Assertions.assertTrue(basket.addBagel("Blueberry"));
+        Assertions.assertTrue(basket.addBagel("Blueberry"));
+        Assertions.assertTrue(basket.addBagel("Blueberry"));
+        Assertions.assertFalse(basket.addBagel("Blueberry"));
+    }
 }

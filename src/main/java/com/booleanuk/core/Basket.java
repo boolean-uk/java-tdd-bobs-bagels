@@ -18,16 +18,21 @@ public class Basket {
     public boolean addBagelToBasket(String bagel1) {
 
         if(this.basket != null) {
-            this.basket.put(bagel1, new HashMap<String, Integer>() {
-                {
-                    putIfAbsent("Quantity", 1);
-                    putIfAbsent("Price", bagels.get(bagel1));
-                }
+                if (!this.basket.containsKey(bagel1)) {
+                    if(this.bagels.containsKey(bagel1)) {
 
-            });
+                        this.basket.put(bagel1, new HashMap<String, Integer>() {
+                            {
+                                putIfAbsent("Quantity", 1);
+                                putIfAbsent("Price", bagels.get(bagel1));
+                            }
 
-            return true;
+                        });
 
+
+                        return true;
+                    }
+                    }
         } else if(bagels.containsKey(bagel1)){
             Map<String, Map<String, Integer>> newBasket = new HashMap<>();
             newBasket.put(bagel1, new HashMap<String, Integer>() {

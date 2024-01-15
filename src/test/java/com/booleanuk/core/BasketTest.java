@@ -29,9 +29,12 @@ class BasketTest {
             }
         });
 
-        Assertions.assertFalse(basket.addBagelToBasket("Bagel2"));
+        Assertions.assertFalse(basket.addBagelToBasket("Bagel4"));
         Assertions.assertTrue(basket.addBagelToBasket(("Bagel1")));
         Assertions.assertFalse(basket.addBagelToBasket("Bagel1"));
+        Assertions.assertFalse(basket.addBagelToBasket(("bagel3")));
 
     }
+
+
 }

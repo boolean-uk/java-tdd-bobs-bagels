@@ -42,5 +42,21 @@ class BasketTest {
 
 
     }
+    @Test
+    public void checkIfBasketSizeCanIncrease() {
+        Basket basket = new Basket();
 
-}
+        basket.changeBasketCapasity(5);
+        Assertions.assertEquals(9, basket.basketCapacity);
+    }
+
+    @Test
+    public void checkIfBasketSizeCanDecrease(){
+        Basket basket = new Basket();
+
+        basket.changeBasketCapasity(-2);
+        Assertions.assertEquals(4, basket.basketCapacity);
+
+
+
+    }

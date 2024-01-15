@@ -18,12 +18,15 @@ public class Basket {
     I'd like to add a specific type of bagel to my basket.
  */
     public boolean addBagel(String bagel) {
+        if (this.basket.size() >= this.basketCapacity)
+            return false;
+
         if (!this.basket.contains(bagel)) {
             this.basket.add(bagel);
-            return true;
         }
         return true;
     }
+
 /*
             2.
     As a member of the public,

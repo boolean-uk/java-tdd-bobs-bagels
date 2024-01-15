@@ -6,8 +6,6 @@ public class Basket {
 
 
     public HashMap<String, Integer> bagels;
-
-
     int limit;
 
 

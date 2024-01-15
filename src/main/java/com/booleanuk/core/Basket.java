@@ -18,13 +18,20 @@ public class Basket {
 
 	public void addBagel(int id) {
 		if (inventory.inInventory(id)) {
-			items.add(id);
+			if (!isFull()) {
+				items.add(id);
+			}
 		}
 	}
-	public void removeBagel(int id){
-		if(items.contains(id)){
-			items.remove((Integer)id);
+
+	public void removeBagel(int id) {
+		if (items.contains(id)) {
+			items.remove((Integer) id);
 		}
+	}
+
+	public boolean isFull() {
+		return items.size() >= size;
 	}
 
 

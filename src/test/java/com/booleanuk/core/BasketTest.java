@@ -3,6 +3,10 @@ package com.booleanuk.core;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.OutputStream;
+import java.io.PrintStream;
+
 class BasketTest {
     @Test
     public void addBagelToCart(){
@@ -34,8 +38,21 @@ class BasketTest {
     }
 
     @Test
-    public void removingFromEmptyCart(){
+    public void removingFromEmptyCartAndNonPresentBagel() {
+        Basket basket = new Basket();
+        basket.remove(new SpicyBagel());
 
+        Assertions.assertEquals(0, basket.itemList.size());
+
+        basket.add(new VeganBagel());
+        basket.add(new VeganBagel());
+        basket.remove(new SpicyBagel());
+
+        final PrintStream ps = System.out;
+        final ByteArrayOutputStream os = new ByteArrayOutputStream();
+        System.setOut(ps);
+
+        Assertions.assertEquals("This item is not in the cart.", os.toString());
     }
 
     @Test
@@ -45,6 +62,11 @@ class BasketTest {
 
     @Test
     public void changingCapacity(){
+
+    }
+
+    @Test
+    public void testingAmount(){
 
     }
 }

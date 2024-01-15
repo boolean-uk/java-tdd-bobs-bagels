@@ -32,11 +32,11 @@ So that I can not overfill my small bagel basket
 I'd like to know when my basket is full when I try adding an item beyond my basket capacity.
 ```
 
-| Classes | Methods                     | Scenario             | Output       |
-|---------|-----------------------------|----------------------|--------------|
-| Basket  | checkIfFull()   | if list not full     | return true  |
-|         |                             | if list is full      | return false |
-|         |                             | if bagel is null     | return false |
+| Classes | Methods          | Scenario             | Output       |
+|---------|------------------|----------------------|--------------|
+| Basket  | checkIfFull()    | if list not full     | return true  |
+|         |                  | if list is full      | return false |
+|         |                  | if bagel is null     | return false |
 
 ```
 4.

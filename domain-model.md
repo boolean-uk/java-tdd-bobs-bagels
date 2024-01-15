@@ -50,7 +50,7 @@ Class Basket
 
 | Class variables                          | Methods                        | Scenario                          | Output/Return              |
 |------------------------------------------|--------------------------------|-----------------------------------|----------------------------|
-| Map<String, Map<String, Integer>> basket | addBagelToBasket(String bagel) | Throws outOfBounds exception      | True if bagel can be added |
+| Map<String, Map<String, Integer>> basket | addBagelToBasket(String bagel) | Throws IndexOutOfBoundsException  | True if bagel can be added |
 | int capacityOfBasket                     |                                | when bagel is added when capacity | false if not               |
 |                                          |                                | is full                           |                            |
 |                                          |                                |                                   |                            |

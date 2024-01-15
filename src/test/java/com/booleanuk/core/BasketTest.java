@@ -48,8 +48,20 @@ class BasketTest {
             }
         });
 
+
         Assertions.assertTrue(basket.addBagelToBasket(("Bagel1")));
-        Assertions.assertFalse(basket.addBagelToBasket("Bagel2"));
+
+
+
+        Exception exception = Assertions.assertThrows(IndexOutOfBoundsException.class, () -> {
+            basket.addBagelToBasket("MassiveBagel");
+        });
+
+        String expectedMessage = "Cannot add bagel when capacity is full";
+        String actualMessage = exception.getMessage();
+
+        Assertions.assertEquals(expectedMessage, actualMessage);
+
 
     }
 

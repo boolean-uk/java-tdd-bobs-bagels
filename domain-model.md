@@ -8,10 +8,10 @@ So I can order a bagel before work,
 I'd like to add a specific type of bagel to my basket.
 ```
 
-| Members                     | Methods                | Scenario                   | Return |
-|-----------------------------|------------------------|----------------------------|--------|
-| ArrayList<String> bagelList | addBagel(String bagel) | Bagel is not in basket     | True   |
-|                             |                        | Bagel is already in basket | False  |
+| Members                     | Methods                | Scenario                   | Return             |
+|-----------------------------|------------------------|----------------------------|--------------------|
+| ArrayList<String> bagelList | addBagel(String bagel) | Bagel is not in basket     | String Information |
+|                             |                        | Bagel is already in basket | String Information |
 
 ```
 2.

@@ -5,14 +5,22 @@ import org.junit.jupiter.api.Test;
 
 class BasketTest {
     @Test
-    public void testIfAddAddsBagelsProperly(){
+    public void testIfAddAddsWhenNotInBasket(){
         Basket basket = new Basket();
         Assertions.assertEquals(("1 Plain bagel(s) added to basket"), basket.add("Plain", 1));
         Assertions.assertEquals(("3 Sesame bagel(s) added to basket"),basket.add("Sesame", 3));
         Assertions.assertTrue(basket.items.containsKey("Plain"));
-        Assertions.assertEquals(basket.items.get("Plain"), 1);
+        Assertions.assertEquals(1, basket.items.get("Plain"));
         Assertions.assertTrue(basket.items.containsKey("Sesame"));
-        Assertions.assertEquals(basket.items.get("Sesame"), 3);
+        Assertions.assertEquals(3, basket.items.get("Sesame"));
+    }
+
+    public void testIfAddAddsBagelsWhenInBasket(){
+        Basket basket = new Basket();
+        basket.add("Plain", 2);
+        basket.add("Plain", 1);
+        Assertions.assertEquals(3, basket.items.get("Plain"));
+
     }
 
     @Test
@@ -86,9 +94,9 @@ class BasketTest {
         Assertions.assertEquals(3, basket.maxCapacity);
 
         Assertions.assertTrue(basket.items.containsKey("Plain"));
-        Assertions.assertEquals(basket.items.get("Plain"), 2);
+        Assertions.assertEquals(2, basket.items.get("Plain"));
         Assertions.assertTrue(basket.items.containsKey("Salmon"));
-        Assertions.assertEquals(basket.items.get("Plain"), 1);
+        Assertions.assertEquals(1, basket.items.get("Plain"));
         Assertions.assertFalse(basket.items.containsKey("Sesame"));
 
     }

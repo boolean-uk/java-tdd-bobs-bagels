@@ -69,9 +69,9 @@ class BasketTest {
 
         basket.changeCapacityOfBasket(2);
         Assertions.assertTrue(basket.addBagelToBasket(("Bagel2")));
+        Assertions.assertFalse(basket.addBagelToBasket("Bagel3"));
 
-
-
+        basket.changeCapacityOfBasket(3);
     }
 
 }

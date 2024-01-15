@@ -26,7 +26,7 @@ public class Basket {
     }
 
     public boolean changeCapacity(int capacity) {
-        if (capacity >= 0) {
+        if (capacity >= 0 && this.items.size() <= capacity) {
             this.capacity = capacity;
             return true;
         }

@@ -110,4 +110,18 @@ class BasketTest {
         basket.addBagel("Plain");
         Assertions.assertEquals("Basket is full!\n", outContent.toString());
     }
+
+    @Test
+    public void testOutputRemoveBagelNotInBasket() {
+        final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+
+        Basket basket = new Basket();
+        basket.addBagel("Blueberry");
+        basket.addBagel("Cinnamon");
+        basket.addBagel("Egg");
+
+        basket.removeBagel("Plain");
+        Assertions.assertEquals("That bagel is not in the basket!\n", outContent.toString());
+    }
 }

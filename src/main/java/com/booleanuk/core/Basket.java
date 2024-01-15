@@ -19,13 +19,11 @@ public int capacity;
         return true;
     }
 
-    public boolean remove(String item) {
+    public String remove(String item) {
         if (this.bagelList.containsKey(item)) {
-            bagelList.remove(item);
-            return true;
+            return "Item successfully removed";
         } else {
-            System.out.println("This item is not in the basket");
-            return false;
+            return "This item is not in the basket";
         }
     }
     public String capacity() {

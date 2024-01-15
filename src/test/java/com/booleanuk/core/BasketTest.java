@@ -16,7 +16,7 @@ class BasketTest {
     public void removingAnItemFromBasketReturnTrue(){
         Basket basket = new Basket();
         basket.add("bagel1", 4);
-        Assertions.assertTrue(basket.remove("bagel1"));
+        Assertions.assertEquals("Item successfully removed", basket.remove("bagel1"));
     }
 
     @Test

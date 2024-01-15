@@ -39,6 +39,16 @@ public class Basket {
         if(basket.isEmpty()){
             return "Basket is empty";
         }
-        return "";
+        String basketContent = "";
+        for(int i = 0; i < basket.size(); i++){
+            if(i == basket.size() - 1){
+                basketContent += basket.get(i);
+            }
+            else{
+                basketContent += basket.get(i) + ", ";
+            }
+
+        }
+        return basketContent;
     }
 }

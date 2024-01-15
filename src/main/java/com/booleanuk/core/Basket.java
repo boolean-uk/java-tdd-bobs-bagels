@@ -40,6 +40,6 @@ public class Basket {
     }
 
     public void updateCapacity(int newCapacity) {
-        capacity = 2;
+        capacity = newCapacity;
     }
 }

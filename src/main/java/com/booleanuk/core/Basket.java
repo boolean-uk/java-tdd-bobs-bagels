@@ -1,7 +1,23 @@
 package com.booleanuk.core;
 
-public class Basket {
+import java.util.ArrayList;
 
+public class Basket {
+    ArrayList<String> bagelBasket;
+
+    public Basket(){
+        this.bagelBasket = new ArrayList<>(6);
+    }
+
+    public boolean isEmpty(){
+        return bagelBasket.isEmpty();
+    }
+    public String addBagel(String bagel){
+        if (bagelBasket.isEmpty()){
+            return "Basket is empty";
+        }
+        return "";
+    }
 }
 
 /*

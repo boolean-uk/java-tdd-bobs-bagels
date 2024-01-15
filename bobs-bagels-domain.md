@@ -49,4 +49,6 @@ I'd like to know if I try to remove an item that doesn't exist in my basket.
 |        |                   |                                    | change basket capacity | capacity                   |
 |        |                   | boolean itemDoesntExist(String     | Checks if the item     | if exist return true       |
 |        |                   | bagel)                             | removed exists         | else return false          |
+|        |                   | boolean isEmpty()                  | Checks if the basket   | if empty return true       |
+|        |                   |                                    | is empty               | else return false          |
 

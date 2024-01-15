@@ -7,7 +7,7 @@ class BasketTest {
     @Test
     public void testBasketIsEmpty(){
         Basket basket = new Basket();
-        boolean isEmpty = basket.addBagel("");
+        boolean isEmpty = basket.isEmpty();
         Assertions.assertTrue(isEmpty);
     }
 }

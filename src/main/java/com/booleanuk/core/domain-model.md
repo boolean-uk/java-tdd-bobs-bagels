@@ -1,7 +1,9 @@
 # Domain Model for Bobs Bagels Shop :-)
-
+``
+I will copy paste the domain-model-tables under each user story
+if they received modifications from previous user stories
+``
 ## User Story (1)
-
 ```
 1.
 As a member of the public,
@@ -36,13 +38,28 @@ I'd like to add a specific type of bagel to my basket.
 |                    |            |                                         | If basket full: return false            |
 
 
-
+## User Story (2)
 ```
 2.
 As a member of the public,
 So I can change my order,
 I'd like to remove a bagel from my basket.
 ```
+### Keywords
+```
+1) Change my order
+2) Remove bagel from basket
+```
+### Class Basket
+
+| Member Variables   | Methods       | Scenario                                | Return Value/Output                        |
+|--------------------|---------------|-----------------------------------------|--------------------------------------------|
+| items: List<Bagel> | getItems()    | I want to get an overview of the bagels | If empty: Return 0                         |
+|                    |               | currently in my basket                  | Else: Retrieve the bagels                  |
+|                    | addBagel()    | I want to add/buy a bagel to my basket  | If basket not full: Add, return true       |
+|                    |               |                                         | If basket full: Return false               |
+|                    | removeBagel() | If I change my mind or                  | If bagel is in basket: Remove, return true |
+|                    |               | do not have enough money to pay         | If bagel not in basket: Return false;      |
 
 ```
 3.

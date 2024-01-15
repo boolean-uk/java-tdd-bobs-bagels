@@ -11,11 +11,20 @@ public class Basket {
         this.capacity = capacity;
     }
 
-    public boolean addBagel() {
+    public boolean addBagel(Bagel bagel) {
         if (this.items.size() >= capacity) {
            return false;
         } else {
-            items.add(new Bagel("Cheese", 10, 1));
+            items.add(bagel);
+            return true;
+        }
+    }
+
+    public boolean removeBagel(Bagel bagel) {
+        if (!this.items.contains(bagel)) {
+            return false;
+        } else {
+            this.items.remove(bagel);
             return true;
         }
     }

@@ -12,6 +12,13 @@ class BasketTest {
     }
 
     @Test
+    public void testAddBagelToEmptyBasketAndCheckIfAdded() {
+        Basket basket = new Basket();
+        basket.add("Brown");
+        Assertions.assertTrue(basket.basketContents.containsKey("Brown"));
+    }
+
+    @Test
     public void testAddBagelWithoutNameBasket() {
         Basket basket = new Basket();
         Assertions.assertFalse(basket.add(""));

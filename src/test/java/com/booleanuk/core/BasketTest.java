@@ -87,4 +87,20 @@ class BasketTest {
         Assertions.assertEquals(10, basket.max); // 10 - default capacity
     }
 
+    @Test
+    public void testShowThreeBasketItems()
+    {
+        Basket basket = new Basket();
+
+        basket.addToBasket("Whole wheat");
+        basket.addToBasket("White");
+        basket.addToBasket("Gluten free");
+        String expectedString = """
+                Your basket has 3 items:
+                Whole wheat
+                White
+                Gluten free
+                """;
+        Assertions.assertEquals(expectedString, basket.listBasketItems());
+    }
 }

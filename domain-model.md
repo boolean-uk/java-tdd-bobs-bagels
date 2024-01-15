@@ -30,13 +30,13 @@ I'd like to remove a bagel from my basket.
 
 Class Basket
 
-| Class variables                          | Methods               | Scenario                | Output/Return           |
-|------------------------------------------|-----------------------|-------------------------|-------------------------|
-| Map<String, Map<String, Integer>> basket | removeBagelFromBasket | Bagel gets removed from | True or false according |
-|                                          |                       | basket.                 | to if bagel got removed |
-|                                          |                       |                         | correctly               |
-|                                          |                       |                         |                         |
-|                                          |                       |                         |                         |
+| Class variables                          | Methods                            | Scenario                | Output/Return           |
+|------------------------------------------|------------------------------------|-------------------------|-------------------------|
+| Map<String, Map<String, Integer>> basket | removeBagelFromBasket(String name) | Bagel gets removed from | True or false according |
+|                                          |                                    | basket.                 | to if bagel got removed |
+|                                          |                                    |                         | correctly               |
+|                                          |                                    |                         |                         |
+|                                          |                                    |                         |                         |
 
 
 ## 3
@@ -48,13 +48,13 @@ I'd like to know when my basket is full when I try adding an item beyond my bask
 
 Class Basket
 
-| Class variables                          | Methods               | Scenario               | Output/Return              |
-|------------------------------------------|-----------------------|------------------------|----------------------------|
-| Map<String, Map<String, Integer>> basket | checkIfCapacityIsFull | Checks if basket is at | True if bagel can be added |
-| int capacityOfBasket                     |                       | max bagels             | false if not               |
-|                                          |                       |                        |                            |
-|                                          |                       |                        |                            |
-|                                          |                       |                        |                            |
+| Class variables                          | Methods                 | Scenario               | Output/Return              |
+|------------------------------------------|-------------------------|------------------------|----------------------------|
+| Map<String, Map<String, Integer>> basket | checkIfCapacityIsFull() | Checks if basket is at | True if bagel can be added |
+| int capacityOfBasket                     |                         | max bagels             | false if not               |
+|                                          |                         |                        |                            |
+|                                          |                         |                        |                            |
+|                                          |                         |                        |                            |
 
 
 ## 4
@@ -66,13 +66,13 @@ I’d like to change the capacity of baskets.
 
 Class Basket
 
-| Class variables      | Methods                              | Scenario                        | Output/Return             |
-|----------------------|--------------------------------------|---------------------------------|---------------------------|
-| int capacityOfBasket | changeCapacityOfBasket(int capacity) | Changes value of class variable | True if capacity got      |
-|                      |                                      | capacityOfBasket                | correctly changed.        |
-|                      | getCapacityOfBasket()                | Get the total capacity of bagel | Gets int capacityOfBasket |
-|                      |                                      | basket                          |                           |
-|                      |                                      |                                 |                           |
+| Class variables      | Methods                              | Scenario                        | Output/Return        |
+|----------------------|--------------------------------------|---------------------------------|----------------------|
+| int capacityOfBasket | changeCapacityOfBasket(int capacity) | Changes value of class variable | True if capacity got |
+|                      |                                      | capacityOfBasket                | correctly changed.   |
+|                      |                                      |                                 |                      |
+|                      |                                      |                                 |                      |
+|                      |                                      |                                 |                      |
 
 
 ## 5
@@ -84,11 +84,12 @@ I'd like to know if I try to remove an item that doesn't exist in my basket.
 
 Class Basket
 
-| Class variables                          | Methods                                  | Scenario                 | Output/Return |
-|------------------------------------------|------------------------------------------|--------------------------|---------------|
-| Map<String, Map<String, Integer>> basket | doesBasketContainBagel(String bagelName) | Check if basket contains | True if bagel |
-|                                          |                                          | bagel according to name  | is in basket  |
-|                                          |                                          |                          |               |
-|                                          |                                          |                          |               |
-|                                          |                                          |                          |               |
+| Class variables                          | Methods                                  | Scenario                       | Output/Return   |
+|------------------------------------------|------------------------------------------|--------------------------------|-----------------|
+| Map<String, Map<String, Integer>> basket | doesBasketContainBagel(String bagelName) | Check if basket contains       | True if bagel   |
+|                                          |                                          | bagel according to name        | is in basket    |
+|                                          |                                          |                                |                 |
+|                                          | removeBagelFromBasket(String bagelName)  | Bagel gets removed from        | True if removal |
+|                                          |                                          | basket and if bagel doesnt     | was correct and |
+|                                          |                                          | exist it is printed in console | false if not    |
 

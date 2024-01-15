@@ -59,4 +59,11 @@ public class Basket {
         }
     }
 
+    public double totalCost(){
+        double totalCost = 0;
+        for (Bagel item: itemList.keySet()){
+            totalCost += item.price*itemList.get(item);
+        }
+        return totalCost;
+    }
 }

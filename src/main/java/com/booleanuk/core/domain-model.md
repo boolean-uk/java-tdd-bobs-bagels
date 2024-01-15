@@ -20,9 +20,9 @@ I'd like to add a specific type of bagel to my basket.
 
 | Member Variables   | Methods   | Scenario                                 | Return Value/Output                      |
 |--------------------|-----------|------------------------------------------|------------------------------------------|
-| Type: String       | getType() | Get a bagel type from the shop           | If bagel in stock: Return true           |
-| Cost: Integer      |           |                                          | If bagel not in stock: Return false      |
-| ProductID: Integer | getCost() | Get a bagel type and cost                | If bagel not exists: Return true         |
+| type: String       | getType() | Get a bagel type from the shop           | If bagel in stock: Return true           |
+| cost: Integer      |           |                                          | If bagel not in stock: Return false      |
+| productID: Integer | getCost() | Get a bagel type and cost                | If bagel not exists: Return true         |
 |                    |           |                                          | If bagel exists: Return false            |
 |                    | getID()   | Get a unique ID for each bagel available | If bagel ID already exists: Return false |
 
@@ -30,7 +30,7 @@ I'd like to add a specific type of bagel to my basket.
 
 | Member Variables   | Methods    | Scenario                                | Return Value/Output                     |
 |--------------------|------------|-----------------------------------------|-----------------------------------------|
-| Items: List<Bagel> | getItems() | I want to get an overview of the bagels | If empty: Return 0                      |
+| items: List<Bagel> | getItems() | I want to get an overview of the bagels | If empty: Return 0                      |
 |                    |            | currently in my basket                  | Else: Retrieve the bagels               |
 |                    | addBagel() | I want to add/buy a bagel to my basket  | If basket not full: return true and add |
 |                    |            |                                         | If basket full: return false            |

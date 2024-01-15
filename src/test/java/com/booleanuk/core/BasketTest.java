@@ -103,4 +103,13 @@ class BasketTest {
                 """;
         Assertions.assertEquals(expectedString, basket.listBasketItems());
     }
+
+    @Test
+    public void testNoItemsBasketEmpty()
+    {
+        Basket basket = new Basket();
+
+        String expectedString = "No items to show, basket is empty";
+        Assertions.assertEquals(expectedString, basket.listBasketItems());
+    }
 }

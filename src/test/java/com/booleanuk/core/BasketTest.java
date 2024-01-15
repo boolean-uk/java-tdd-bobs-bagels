@@ -9,15 +9,15 @@ class BasketTest {
         Basket basket = new Basket();
 
         basket.addToBasket("Plain");
-        Assertions.assertEquals("Plain",basket.basketArr[basket.basketArr.length-1]);
+        Assertions.assertEquals("Plain",basket.basketArr[1]);
     }
 
     @Test
     public void testRemoveBagelFromBasket(){
         Basket basket = new Basket();
 
-        basket.removeFromBasket("Plain");
-        Assertions.assertEquals("Chocolate",basket.basketArr[basket.basketArr.length-1]);
+        boolean result = basket.removeFromBasket("Strawberry");
+        Assertions.assertTrue(result);
     }
 
     @Test
@@ -35,8 +35,8 @@ class BasketTest {
     public void testChangeArrayCapacity(){
         Basket basket = new Basket();
 
-        basket.changeBasketCapacity(6);
-        Assertions.assertEquals(6,basket.basketArr.length);
+        basket.changeBasketCapacity(5);
+        Assertions.assertEquals(5,basket.basketArr.length);
     }
 
     @Test

@@ -1,32 +1,11 @@
 package com.booleanuk.core;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import java.util.HashMap;
 
 class BasketTest {
-    private static final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private static final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
-    private static final PrintStream originalOut = System.out;
-    private static final PrintStream originalErr = System.err;
-    @BeforeAll
-    public static void setUpStreams() {
-        System.setOut(new PrintStream(outContent));
-        System.setErr(new PrintStream(errContent));
-    }
-
-    @AfterAll
-    public static void restoreStreams() {
-        System.setOut(originalOut);
-        System.setErr(originalErr);
-    }
 
     @Test
     public void testAddBagelToBasket() {
@@ -107,11 +86,25 @@ class BasketTest {
             }
         });
 
+
+
+
+
+
         Assertions.assertTrue(basket.addBagelToBasket(("Bagel1")));
         Assertions.assertTrue(basket.removeBagelFromBasket("Bagel1"));
         Assertions.assertTrue(basket.addBagelToBasket("Bagel1"));
         Assertions.assertFalse(basket.addBagelToBasket("Bagel3"));
 
+
+        Exception exception = Assertions.assertThrows(NullPointerException.class, () -> {
+            basket.removeBagelFromBasket("NotABagel");
+        });
+
+        String expectedMessage = "Cannot remove bagel that doesnt exist";
+        String actualMessage = exception.getMessage();
+
+        Assertions.assertEquals(expectedMessage, actualMessage);
 
 
     }

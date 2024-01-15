@@ -57,7 +57,6 @@ public class Basket {
     public boolean removeBagelFromBasket(String bagel1) {
 
         this.basket.remove("Bagel1");
-
         return !basket.containsKey("Bagel1");
     }
 }

@@ -22,7 +22,7 @@ class BasketTest {
         Basket basket = new Basket();
         basket.addBagel("Chocolate");
         basket.addBagel("Strawberry");
-        Assertions.assertEquals("Bagel removed", basket.removeBagel);
+        Assertions.assertEquals("Bagel removed", basket.removeBagel("Chocolate"));
     }
 
 }

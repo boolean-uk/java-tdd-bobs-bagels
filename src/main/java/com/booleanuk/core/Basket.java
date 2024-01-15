@@ -15,4 +15,13 @@ public class Basket {
         }
         return this.basket.add(bagel);
     }
+
+    public String removeBagel(String bagel) {
+        if (this.basket.contains(bagel)){
+            this.basket.remove(bagel);
+            return "Bagel removed";
+        }
+        return "Bagel not in basket";
+    }
+
 }

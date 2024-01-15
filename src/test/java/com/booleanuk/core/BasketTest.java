@@ -38,6 +38,17 @@ class BasketTest {
         Assertions.assertFalse(result);
     }
 
+    // 3.
+    @Test
+    public void addChocolateToAFullBasketReturFalse() {
+        Basket basket = new Basket(3);
+        boolean result = basket.addBagel("choclate");
+        result = basket.addBagel("cheese");
+        result = basket.addBagel("creme");
+        result = basket.addBagel("ham");
+        Assertions.assertFalse(result);
+    }
+
 
 
 

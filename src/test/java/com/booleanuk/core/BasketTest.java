@@ -9,8 +9,10 @@ class BasketTest {
     private ArrayList<String> setupTestArray() {
         ArrayList<String> testArray = new ArrayList<>();
         testArray.add("Plain");
-        //testArray.add("Pumpernickel");
-        //testArray.add("Chocolate chip");
+        // testArray.add("Pumpernickel");
+        // testArray.add("Chocolate chip");
+        // testArray.add("Asiago");
+        // testArray.add("Blueberry");
         return testArray;
     }
 
@@ -38,5 +40,27 @@ class BasketTest {
 
         Assertions.assertFalse(basket.remove("Plain"));
         Assertions.assertEquals(1, basket.getBasket().size());
+    }
+
+    @Test
+    public void isFullReturnsTrueWhenBasketIsFull() {
+        Basket basket = new Basket();
+        basket.add("Plain");
+        basket.add("Pumpernickel");
+        basket.add("Chocolate chip");
+        basket.add("Asiago");
+        basket.add("Blueberry");
+
+        Assertions.assertEquals(5, basket.getBasket().size());
+        Assertions.assertTrue(basket.isFull());
+    }
+
+    @Test
+    public void isFullReturnsFalseWhileBasketIsNotFull() {
+        Basket basket = new Basket();
+        basket.add("Pumpernickel");
+
+        Assertions.assertEquals(1, basket.getBasket().size());
+        Assertions.assertFalse(basket.isFull());
     }
 }

@@ -46,4 +46,8 @@ public class Basket {
         }
         return false;
     }
+
+    public int getCost() {
+        return 0;
+    }
 }

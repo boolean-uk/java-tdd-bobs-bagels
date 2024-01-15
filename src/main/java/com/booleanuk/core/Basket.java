@@ -1,16 +1,21 @@
 package com.booleanuk.core;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Basket {
     public int capacity;
     public int noOfItems;
     public HashMap<String, Integer> items;
+    public HashMap<String, Integer> prices;
+    public int cost;
 
     public Basket() {
         capacity = 3;
         noOfItems = 0;
         items = new HashMap<>();
+        prices = new HashMap<>();
+        prices.put("vanilla", 5);
     }
     public boolean add(String bagel) {
         if(noOfItems >= capacity) {
@@ -48,6 +53,10 @@ public class Basket {
     }
 
     public int getCost() {
-        return 0;
+        int cost = 0;
+        for(String bagel: items.keySet()) {
+            cost += prices.get(bagel)*items.get(bagel);
+        }
+        return cost;
     }
 }

@@ -4,13 +4,12 @@ public class Basket {
     ArrayList<String> bagelsList;
     int capacity;
 
-    public Basket(){
+    public Basket(int capacity){
         this.bagelsList = new ArrayList<String>();
+        this.capacity = capacity;
 
     }
-    public Basket(int capacity){
-        this.bagelsList=new ArrayList<>(capacity);
-    }
+
 
     public boolean add(String bagels){
         if(this.bagelsList.contains(bagels)){

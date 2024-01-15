@@ -39,12 +39,13 @@ I'd like to know if I try to remove an item that doesn't exist in my basket.
 
 Basket 
 
-| Member Variables           | Methods             | Scenario                                                   | Output                           |
-|----------------------------|---------------------|------------------------------------------------------------|----------------------------------|
-| HashMap<Bagel, int\> items | add(Bagel bagel)    | add bagel to basket, if already in basket increase amount. | "Added <BAGEL\> to basket"       |
-| int capacity               |                     | cannot add more bagels than capacity allows.               | "Your basket is full"            |
-|                            | remove(Bagel bagel) | remove bagel from basket, receive message when trying to   | "Removed <BAGEL> from basket"    |
-|                            |                     | remove item that's not in basket.                          | "This bagel is not in your cart" |
+| Member Variables           | Methods                         | Scenario                                                   | Output                           |
+|----------------------------|---------------------------------|------------------------------------------------------------|----------------------------------|
+| HashMap<Bagel, int\> items | add(Bagel bagel)                | add bagel to basket, if already in basket increase amount. | "Added <BAGEL\> to basket"       |
+| int capacity               |                                 | cannot add more bagels than capacity allows.               | "Your basket is full"            |
+|                            | remove(Bagel bagel)             | remove bagel from basket, receive message when trying to   | "Removed <BAGEL> from basket"    |
+|                            |                                 | remove item that's not in basket.                          | "This bagel is not in your cart" |
+|                            | updateCapacity(int newCapacity) |                                                            |                                  |
 
 Bagel
 

@@ -26,7 +26,7 @@ public class Basket {
             return "The Basket is full";
         }
         bagelBasket.add(bagel);
-        return bagel + " added to basket";
+        return bagel + " added to your basket";
     }
 
     public String removeBagel(String bagel){
@@ -34,7 +34,7 @@ public class Basket {
             return "Can not remove non-existing item.";
         }
         bagelBasket.remove(bagel);
-        return bagel + " removed from basket";
+        return bagel + " removed from your basket";
     }
 
     public int changeCapacity(int newCapacity){

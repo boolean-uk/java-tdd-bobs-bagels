@@ -22,9 +22,6 @@ public class Basket {
         }
         return false;
     }
-
-
-
 /*
             2.
     As a member of the public,
@@ -32,7 +29,11 @@ public class Basket {
     I'd like to remove a bagel from my basket.
  */
 
-/*
+    public boolean removeBagel(String bagel) {
+        return true;
+    }
+
+    /*
             3.
     As a member of the public,
     So that I can not overfill my small bagel basket

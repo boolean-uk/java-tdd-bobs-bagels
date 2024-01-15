@@ -27,7 +27,7 @@ class BasketTest {
     public void removeChocolateAfteraddingReturnTrue() {
         Basket basket = new Basket();
         boolean result = basket.addBagel("choclate");
-        result = basket.remove("choclate");
+        result = basket.removeBagel("choclate");
         Assertions.assertTrue(result);
     }
 

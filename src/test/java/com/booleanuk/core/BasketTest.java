@@ -58,7 +58,7 @@ class BasketTest {
         basket.add("Blueberry");
         basket.add("Strawberry");
         basket.add("Plain");
-        Assertions.assertFalse(basket.checkIfFull());
+        Assertions.assertFalse(basket.checkIfNotFull());
     }
 
 }

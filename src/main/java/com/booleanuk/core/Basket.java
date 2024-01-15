@@ -6,6 +6,7 @@ public class Basket {
     HashMap<Bagel, Integer> itemList;
     int capacity = 10;
     int items;
+    boolean manager = false;
 
     public Basket(){
         itemList = new HashMap<>();
@@ -50,12 +51,16 @@ public class Basket {
     }
 
     public void updateCapacity(int capacity){
-        this.capacity = capacity;
+        if (manager){
+            this.capacity = capacity;
 
-        if (capacity < items){
-            itemList = new HashMap<>();
-            items = 0;
-            System.out.println("The capacity has been updated. Cart can only hold " + capacity + " items. Your cart has been reset.");
+            if (capacity < items){
+                itemList = new HashMap<>();
+                items = 0;
+                System.out.println("The capacity has been updated. Cart can only hold " + capacity + " items. Your basket has been reset.");
+            }
+        } else {
+            System.out.println("Cannot change the capacity.");
         }
     }
 
@@ -65,5 +70,9 @@ public class Basket {
             totalCost += item.price*itemList.get(item);
         }
         return totalCost;
+    }
+
+    public void authorize(){
+        manager = true;
     }
 }

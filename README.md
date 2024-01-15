@@ -21,12 +21,27 @@ So I can order a bagel before work,
 I'd like to add a specific type of bagel to my basket.
 ```
 
+| Classes | Methods          | Members     | Scenario                  | Output |
+|---------|------------------|-------------|---------------------------|--------|
+| Bagel   | add(String name) | ArrayList<> | Item is not already added | true   |
+|         |                  |             | Item is already added     | false  |
+|         |                  |             |                           |        |
+
+
+
 ```
 2.
 As a member of the public,
 So I can change my order,
 I'd like to remove a bagel from my basket.
 ```
+
+| Classes | Methods             | Members     | Scenario                             | Output |
+|---------|---------------------|-------------|--------------------------------------|--------|
+| Bagel   | remove(String name) | ArrayList<> | Item is in list, and can get removed | true   |
+|         |                     |             | Item is not existing in list         | false  |
+|         |                     |             |                                      |        |
+
 
 ```
 3.
@@ -35,6 +50,13 @@ So that I can not overfill my small bagel basket
 I'd like to know when my basket is full when I try adding an item beyond my basket capacity.
 ```
 
+| Classes | Methods        | Members     | Scenario         | Output |
+|---------|----------------|-------------|------------------|--------|
+| Bagel   | isBasketFull() | ArrayList<> | List is not full | true   |
+|         |                |             | List is full     | false  |
+|         |                |             |                  |        |
+
+
 ```
 4.
 As a Bob's Bagels manager,
@@ -42,12 +64,26 @@ So that I can expand my business,
 I’d like to change the capacity of baskets.
 ```
 
+| Classes | Methods                  | Members     | Scenario                  | Output |
+|---------|--------------------------|-------------|---------------------------|--------|
+| Bagel   | updateBasket(int amount) | ArrayList<> | Item is not already added | true   |
+|         |                          |             | Item is already added     | false  |
+|         |                          |             |                           |        |
+
+
 ```
 5.
 As a member of the public
 So that I can maintain my sanity
 I'd like to know if I try to remove an item that doesn't exist in my basket.
 ```
+
+| Classes | Methods                       | Members     | Scenario                                   | Output                         |
+|---------|-------------------------------|-------------|--------------------------------------------|--------------------------------|
+| Bagel   | canItemBeRemoved(String name) | ArrayList<> | If item is in list, it can be removed      | "The item can be removed."     |
+|         |                               |             | If item is not in list, it cant be removed | "The item is not in the list!" |
+|         |                               |             |                                            |                                |
+
 
 ## Set up instructions
 - Fork this repository and clone the forked version to your machine

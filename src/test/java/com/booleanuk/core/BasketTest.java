@@ -108,6 +108,6 @@ class BasketTest {
         basket.addBagel("Blueberry");
 
         basket.addBagel("Plain");
-        Assertions.assertEquals("Basket is full\n", outContent.toString());
+        Assertions.assertEquals("Basket is full!\n", outContent.toString());
     }
 }

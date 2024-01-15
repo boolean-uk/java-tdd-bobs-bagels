@@ -21,6 +21,7 @@ public class Basket {
             this.bagelsInBasket++;
             return true;
         }
+        System.out.print("Basket is full!\n");
         return false;
     }
 

@@ -8,4 +8,12 @@ public class Bagel {
         this.type = type;
         this.cost = cost;
     }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public String getType() {
+        return type;
+    }
 }

@@ -6,7 +6,7 @@ public class Basket {
 
     ArrayList<String> basket;
     public Basket(){
-        this.basket = new ArrayList<>();
+        this.basket = new ArrayList<>(5);
     }
 
     public boolean addBagel(String bagel) {

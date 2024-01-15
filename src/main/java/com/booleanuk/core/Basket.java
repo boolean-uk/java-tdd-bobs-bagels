@@ -13,7 +13,7 @@ public class Basket {
         items = new HashMap<>();
     }
     public boolean add(String bagel) {
-        if(noOfItems == capacity) {
+        if(noOfItems >= capacity) {
             return false;
         }
         if(items.containsKey(bagel)) {
@@ -37,5 +37,9 @@ public class Basket {
             items.put(bagel, noOfBagels-1);
         }
         return true;
+    }
+
+    public void updateCapacity(int newCapacity) {
+        capacity = 2;
     }
 }

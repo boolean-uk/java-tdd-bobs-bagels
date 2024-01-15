@@ -24,4 +24,8 @@ public class Basket {
         noOfItems++;
         return true;
     }
+
+    public boolean remove(String bagel) {
+        return false;
+    }
 }

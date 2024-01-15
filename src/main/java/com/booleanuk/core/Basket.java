@@ -25,13 +25,14 @@ public class Basket {
         }
         return name + " was not found";
     }
-    public void expand(int newSize) {
+    public void changeCapacity(int newSize) {
         capacity = newSize;
-        if(bagels.size() > newSize) {
-            for(int i = 0; i < bagels.size() - newSize; i++) {
-                bagels.remove(bagels.get(bagels.size()-1));
+        if (bagels.size() > capacity) {
+            int elementsToRemove = bagels.size() - capacity;
+            for (int i = 0; i < elementsToRemove; i++) {
+                bagels.remove(bagels.size() - 1);
             }
         }
-
     }
+
 }

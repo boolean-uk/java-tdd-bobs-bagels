@@ -32,4 +32,9 @@ public class Basket {
         }
         return false;
     }
+
+    public int changeBasketCapacity(int newCapacity) {
+        this.capacity = newCapacity;
+        return this.capacity;
+    }
 }

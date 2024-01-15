@@ -40,6 +40,33 @@ class BasketTest {
 
     }
 
+    @Test
+    public void testBasketIsFull() {
+        Basket basket1 = new Basket();
+
+        basket1.items.add("Oregano");
+        basket1.items.add("Oregano Cheese");
+        basket1.items.add("Whole Wheat");
+        basket1.items.add("Grains");
+        basket1.items.add("Rye");
+        basket1.items.add("Spicy");
+        basket1.items.add("Flat");
+        basket1.items.add("Double Rye");
+        basket1.items.add("Cheese");
+        basket1.items.add("Double Cheese");
+        basket1.items.add("Triple Spice");
+        boolean result = basket1.isBasketFull();
+        Assertions.assertTrue(result);
+    }
+
+    @Test
+    public void testBasketIsNotFull() {
+        Basket basket1 = new Basket();
+
+        boolean result = basket1.isBasketFull();
+        Assertions.assertFalse(result);
+
+    }
 
 
 }

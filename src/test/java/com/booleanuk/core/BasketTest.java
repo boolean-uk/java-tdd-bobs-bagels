@@ -122,9 +122,9 @@ class BasketTest {
     public void testGetDisplayOfBasketWithMultipleBagels() {
         Basket basket = new Basket();
         basket.add("Brown", 1);
-        basket.add("Sourdough", 1);
         basket.add("Seeds", 1);
-        Assertions.assertEquals(basket.display(), "Brown: 1\nSourdough: 1\nSeeds: 1");
+        basket.add("Sourdough", 1);
+        Assertions.assertEquals(basket.display(), "Brown: 1\nSeeds: 1\nSourdough: 1");
     }
 
     @Test

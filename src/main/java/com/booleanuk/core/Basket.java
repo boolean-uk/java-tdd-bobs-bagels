@@ -29,4 +29,8 @@ public class Basket {
     public void setBasketLimit(int capacity) {
         this.basketLimit = capacity;
     }
+
+    public String display() {
+        return this.basketContents.toString().replaceAll("[{}.]", "").replace(", ", "\n").replace("=", ": ");
+    }
 }

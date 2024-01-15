@@ -23,6 +23,12 @@ public class Basket {
         return amount + " " +  bagel + " bagel added to basket";
     }
 
+    public String remove(String bagel, int amount){
+
+        this.items.remove(bagel, amount);
+        return amount + " " + bagel + " bagels removed from basket";
+    }
+
     public int getTotalAmount(){
         int totalAmount = 0;
         for (int amount : this.items.values()){

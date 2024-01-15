@@ -49,6 +49,13 @@ So that I can maintain my sanity
 I'd like to know if I try to remove an item that doesn't exist in my basket.
 ```
 
+```
+6.
+As a member of the public,
+So that I know I can afford the purchase,
+I'd like to get the total cost of all bagels currently in my basket.
+```
+
 ## Set up instructions
 - Fork this repository and clone the forked version to your machine
 - Open the root directory of the project in IntelliJ

@@ -59,4 +59,14 @@ class BasketTest {
         Assertions.assertEquals(10, basket.bagelBasket.size());
     }
 
+    @Test
+    public void testRemoveNonExistingItem(){
+        Basket basket = new Basket();
+        basket.addBagel("Plain bagel");
+        basket.addBagel("Everything bagel");
+        String bagel = "Egg bagel";
+
+        Assertions.assertEquals("Can not remove non existing item.",basket.removeBagel(bagel));
+    }
+
 }

@@ -26,16 +26,38 @@ class BasketTest {
     }
 
     @Test
-    public void testRemovingBagleFromBasketWhenBagelsInBasket(){
+    public void testRemovingBagelFromBasketWhenBagelsInBasket(){
 
         Basket basket = new Basket();
 
         basket.add("Plain", 4);
         basket.add("Sesame", 1);
 
-        Assertions.assertEquals(("2 Plain bagels removed from basket") ,basket.remove("Plain", 2));
-        Assertions.assertEquals(("2 Sesame bagels removed from basket") ,basket.remove("Sesame", 2));
+        Assertions.assertEquals(("2 Plain bagel(s) removed from basket") ,basket.remove("Plain", 2));
+        Assertions.assertEquals(("1 Sesame bagel(s) removed from basket") ,basket.remove("Sesame", 1));
 
+
+    }
+
+    @Test
+    public void testRemovingBagelFromBasketWhenNotEnoughBagelsInBasket(){
+
+        Basket basket = new Basket();
+
+        basket.add("Plain", 4);
+        basket.add("Sesame", 1);
+
+        Assertions.assertEquals(("2 Plain bagel(s) removed from basket") ,basket.remove("Plain", 2));
+        Assertions.assertEquals(("You only have 1 Sesame bagel(s) in your basket") ,basket.remove("Sesame", 2));
+
+    }
+
+    @Test
+    public void testRemovingBagelFromBasketWhenBasketIsEmpty(){
+
+        Basket basket = new Basket();
+
+        Assertions.assertEquals(("Basket is empty") ,basket.remove("Plain", 2));
 
     }
 

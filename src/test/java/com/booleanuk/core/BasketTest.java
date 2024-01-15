@@ -9,18 +9,22 @@ class BasketTest {
     public void bagelAddedToBasketReturnTrue() {
         Basket basket = new Basket();
 
-        boolean bagelAdded = basket.addBagelTypeToBasket();
+        basket.addBagelTypeToBasket("Chocolate Bagels");
+
+        boolean bagelAdded = basket.bagels.contains("Chocolate Bagels");
 
         Assertions.assertTrue(bagelAdded);
     }
 
     @Test
-    public void bagelNotAddedToBasketReturnFalse() {
+    public void removeBagelFromBasketReturnTrue() {
         Basket basket = new Basket();
 
-        boolean bagelNotAdded = basket.addBagelTypeToBasket();
+        basket.removeBagelTypeFromBasket("Chocolate Bagels");
 
-        Assertions.assertFalse(bagelNotAdded);
+        boolean bagelRemoved = !basket.bagels.contains("Chocolate Bagels");
+
+        Assertions.assertTrue(bagelRemoved);
     }
 
 }

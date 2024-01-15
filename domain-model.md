@@ -15,10 +15,10 @@ Basket  String type        addBagelType()   Add a specific type of bagel to bask
 
 Version 1
 
-| Class  | Member variables | Methods                | Scenario                    | Output/Result |
-|--------|------------------|------------------------|-----------------------------|---------------|
-| Basket | String type      | addBagelTypeToBasket() | If type added to basket     | Return true   |
-|        |                  |                        | If type not added to basket | Return false  |
+| Class  | Member variables         | Methods                                | Scenario                          | Output/Result |
+|--------|--------------------------|----------------------------------------|-----------------------------------|---------------|
+| Basket | ArrayList<String> bagels | addBagelTypeToBasket(String bagelType) | If bagel type added to basket     | Return true   |
+|        |                          |                                        | If bagel type not added to basket | Return false  |
 
 
 ```
@@ -27,6 +27,18 @@ As a member of the public,
 So I can change my order,
 I'd like to remove a bagel from my basket.
 ```
+``` Notes ```
+Class | Member variables | Methods | Scenario | Output/Result
+Basket  String type        removeagelType()   Add a specific type of bagel to basket Return true
+
+Version 1
+
+| Class  | Member variables         | Methods                                     | Scenario                          | Output/Result |
+|--------|--------------------------|---------------------------------------------|-----------------------------------|---------------|
+| Basket | ArrayList<String> bagels | removeBagelTypeFromBasket(String bagelType) | If bagel type removed from basket | Return true   |
+|        |                          |                                             | If bagel type not removed basket  | Return false  |
+
+
 
 ```
 3.

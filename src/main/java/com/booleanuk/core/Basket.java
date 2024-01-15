@@ -4,13 +4,18 @@ import java.util.HashMap;
 
 public class Basket {
     HashMap<Bagel, Integer> itemList;
+    int capacity = 10;
 
     public Basket(){
         itemList = new HashMap<>();
     }
 
     public void add(Bagel bagel){
-        itemList.put(bagel, 1);
+        if (itemList.size() < capacity){
+            itemList.put(bagel, 1);
+        } else {
+            System.out.println("Your cart is full.");
+        }
     }
 
     public void remove(Bagel bagel){
@@ -18,6 +23,10 @@ public class Basket {
             System.out.println("This item is not in the cart.");
         }
         itemList.remove(bagel);
+    }
+
+    public void updateCapacity(int capacity){
+        this.capacity = capacity;
     }
 
 }

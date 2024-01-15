@@ -21,8 +21,6 @@ public class Basket {
             basket.remove(name);
             return name + " removed";
         }
-
-
         return "Bagel not in basket";
     }
 }

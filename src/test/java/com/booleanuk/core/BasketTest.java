@@ -45,6 +45,11 @@ class BasketTest {
         Assertions.assertFalse(basket.isFull(4));
 
     }
+    @Test
+    public void shouldChangeCapacity(){
+        Basket basket = new Basket(4);
+        Assertions.assertEquals(8,basket.changeCapacity(8));
+    }
 
 
 }

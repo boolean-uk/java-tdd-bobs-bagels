@@ -61,4 +61,12 @@ class BasketTest {
         Basket basket = new Basket();
         Assertions.assertFalse(basket.changeCapacity(-1));
     }
+
+    /* Domain model 5*/
+    @Test
+    public void testRemovingNonExistentBagelInBasket(){
+        Basket basket = new Basket();
+        Assertions.assertEquals("Bagel not in basket", basket.removeBagel("Cream Cheese"));
+
+    }
 }

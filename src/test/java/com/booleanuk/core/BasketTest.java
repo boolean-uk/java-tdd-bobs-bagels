@@ -36,16 +36,25 @@ class BasketTest {
         Assertions.assertTrue(basket.remove("Cookie Dough"));
     }
 
-
+@Test
+    public void testChangeCapacityOfBasket(){
+        Basket basket = new Basket();
+        basket.changeCapacity(10);
+        Assertions.assertEquals(10, basket.capacity);
+    for (int i = 0; i < 8; i++) {
+        basket.add("bagel: " + i);
+    }
+    Assertions.assertTrue(basket.checkIfNotFull());
+    }
     @Test
     public void testAddBagelIfBasketIsFull(){
         Basket basket = new Basket();
 
-        Assertions.assertTrue(basket.checkIfFull());
+        Assertions.assertTrue(basket.checkIfNotFull());
         basket.add("Cookie Dough");
         basket.add("Vanilla");
         basket.add("Chocolate");
-        Assertions.assertTrue(basket.checkIfFull());
+        Assertions.assertTrue(basket.checkIfNotFull());
         basket.add("Blueberry");
         basket.add("Strawberry");
         basket.add("Plain");

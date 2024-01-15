@@ -7,7 +7,9 @@ public class Basket {
 
 
     public String addBagel(String name){
-        return "";
+        if (bagelBasket.contains(name)) return name+" already exists in basket";
+        bagelBasket.add(name);
+        return name+" added";
     }
 
 }

@@ -25,5 +25,19 @@ class BasketTest {
 
     }
 
+    @Test
+    public void testRemovingBagleFromBasketWhenBagelsInBasket(){
+
+        Basket basket = new Basket();
+
+        basket.add("Plain", 4);
+        basket.add("Sesame", 1);
+
+        Assertions.assertEquals(("2 Plain bagels removed from basket") ,basket.remove("Plain", 2));
+        Assertions.assertEquals(("1 Plain bagels removed from basket") ,basket.remove("Sesame", 2));
+
+
+    }
+
 
 }

@@ -18,11 +18,22 @@ class BasketTest {
     }
 
     @Test
-    public void testRemoveBagel(){
+    public void testRemoveBagelTrue(){
         Basket basket = new Basket();
         basket.addBagel("Chocolate");
-        basket.addBagel("Strawberry");
         Assertions.assertEquals("Bagel removed", basket.removeBagel("Chocolate"));
+    }
+    @Test
+    public void testRemoveBagelFalse(){
+        Basket basket = new Basket();
+        basket.addBagel("Chocolate");
+        Assertions.assertEquals("Bagel not in basket", basket.removeBagel("Strawberry"));
+    }
+
+    @Test
+    public void testCheckBasketSize(){
+        Basket basket = new Basket();
+        Assertions.assertEquals("Basket is not full", basket.checkBasketSize());
     }
 
 }

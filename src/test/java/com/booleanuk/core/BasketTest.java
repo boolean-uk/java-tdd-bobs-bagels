@@ -7,7 +7,7 @@ class BasketTest {
 
     @Test
     public void testAddBagel() {
-        Basket basket = new Basket();
+        Basket basket = new Basket(10);
         Assertions.assertTrue(basket.addBagel());
     }
 

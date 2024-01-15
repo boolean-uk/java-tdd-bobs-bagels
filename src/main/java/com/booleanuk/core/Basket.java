@@ -12,4 +12,8 @@ public class Basket {
         currentIndex++;
         return true;
     }
+
+    public boolean removeBagel(Bagel bagel) {
+        return true;
+    }
 }

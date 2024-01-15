@@ -66,7 +66,7 @@ class BasketTest {
 
         basket.changeCapacity(20);
 
-        Assertions.assertEqual(20, basket.max);
+        Assertions.assertEquals(20, basket.max);
     }
 
     @Test

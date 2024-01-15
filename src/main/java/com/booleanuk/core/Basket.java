@@ -14,6 +14,10 @@ public class Basket {
 
     public boolean addToBasket(String type)
     {
+        if(basketList.size() != max) {
+            System.out.println("Basket is full. Please remove one or more items before adding another");
+            return false;
+        }
         if(basketList.contains(type))
         {
             System.out.println("Bagel of type \"" + type + "\" already exists in basket");

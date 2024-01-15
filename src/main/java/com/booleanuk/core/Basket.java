@@ -27,8 +27,12 @@ public class Basket {
     }
     public boolean remove(String name) {
 
+        if (items.contains(name)) {
+            items.remove(name);
+            return true;
+        }
 
-        return true;
+        return false;
     }
     public boolean isBasketFull() {
         return true;

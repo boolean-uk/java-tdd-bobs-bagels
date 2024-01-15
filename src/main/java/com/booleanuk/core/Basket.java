@@ -5,8 +5,9 @@ import java.util.ArrayList;
 public class Basket {
 
     ArrayList<String> basket;
+    Integer capacity = 5;
     public Basket(){
-        this.basket = new ArrayList<>(5);
+        this.basket = new ArrayList<>(capacity);
     }
 
     public boolean addBagel(String bagel) {
@@ -25,7 +26,7 @@ public class Basket {
     }
 
     public String checkBasketSize(){
-        if (this.basket.size() <= 5){
+        if (this.basket.size() <= this.capacity){
         return "Basket is not full";}
         return "Basket is full";
     }

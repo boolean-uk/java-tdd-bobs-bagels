@@ -13,7 +13,7 @@ class BasketTest {
     }
 
     @Test
-    public void testAddBagelToBasketReturnFalse(){
+    public void testAddBagelToBasketWithTrueAndFalse(){
         Basket basket = new Basket();
         Assertions.assertTrue(basket.add("vanilla"));
         Assertions.assertTrue(basket.add("chocolate"));

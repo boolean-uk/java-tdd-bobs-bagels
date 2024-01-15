@@ -35,6 +35,7 @@ public class Basket {
     }
 
     public void setCapacity(int capacity) {
+        // TODO Add checks for "capacity < 0" and "capacity < basket.size()"
         this.capacity = capacity;
     }
 }

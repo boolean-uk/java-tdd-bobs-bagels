@@ -7,18 +7,17 @@ import org.junit.jupiter.api.Test;
 public class BasketTest {
 
     @Test
-    public void addSpecificBagel() {
+    public void addSpecificBagelReturnTrue() {
         Basket basket = new Basket();
 
-        boolean result = basket.add("bagel1");
+        boolean result = basket.addBagel("bagel1");
         Assertions.assertTrue(result);
     }
 
     @Test
-    public void addSpecificBagel(){
+    public void addSpecificBagelReturnFalse(){
         Basket basket = new Basket();
-        basket.add("bagel1");
-        boolean result = basket.add("bagel1");
+        boolean result = basket.addBagel("bagel2");
         Assertions.assertFalse(result);
     }
 

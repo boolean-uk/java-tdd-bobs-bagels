@@ -15,5 +15,9 @@ public class Basket {
         return true;
 
     }
+    public boolean remove(String bagels){
+        return this.bagelsList.remove(bagels);
+
+    }
 
 }

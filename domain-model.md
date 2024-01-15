@@ -90,3 +90,17 @@ I'd like to empty my basket of all its items at once
 |---------|---------------|--------------------------|------------------|-------------------------------------------------------------------------------------|
 | Basket  | emptyBasket() | ArrayList<String> basket | Basket size > 0  | Basket size is now 0; A message is displayed to inform the user. Return true;       |
 |         |               |                          | Basket size == 0 | Basket is not emptied since it is empty. Message is displayed to user. Return false |
+
+````dtd
+8.
+As a member of the public,
+So I don't get confused,
+I'd like to see Bob's Bagels' contact information
+````
+
+| Classes | Methods                       | Member Variables                               | Scenario                  | Results/Outputs                                       |
+|---------|-------------------------------|------------------------------------------------|---------------------------|-------------------------------------------------------|
+| Basket  | getContactInfo(String option) | String email<br/>Int number<br/>String address | option is "e-mail         | Bob's Bagels' e-mail is showed and nothing else       |
+|         |                               |                                                | option is number          | Bob's Bagels' phone number is showed and nothing else |
+|         |                               |                                                | option is address         | Bob's Bagels' address is showed and nothing else      |
+|         |                               |                                                | option is an empty string | All of Bob's Bagels' contact information is displayed |

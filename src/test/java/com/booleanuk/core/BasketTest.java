@@ -41,7 +41,17 @@ class BasketTest {
         basket.addBagel("Sesame");
         Assertions.assertFalse(basket.addBagel("The Best Bagel"));
 
+    }
+
+    @Test
+    public void testCanSetBasketCapacity() {
+        Basket basket = new Basket();
+        basket.setBasketCapacity(500);
+        Assertions.assertEquals(500, basket.basketCapacity);
+        basket.setBasketCapacity(20);
+        Assertions.assertEquals(20, basket.basketCapacity);
 
     }
+
 }
 

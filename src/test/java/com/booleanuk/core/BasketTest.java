@@ -37,7 +37,10 @@ class BasketTest {
     @Test
     public void testAddToAFullBasket(){
         Basket basket = new Basket();
-        Assertions.assertEquals("Basket full", basket.addBagel("Cream Cheese"));
+        basket.addBagel("Cream Cheese");
+        basket.addBagel("Cheese");
+        basket.addBagel("Bacon");
+        Assertions.assertEquals("Basket full", basket.addBagel("Mustard"));
     }
 
 }

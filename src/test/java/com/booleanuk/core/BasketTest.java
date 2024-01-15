@@ -59,4 +59,10 @@ class BasketTest {
         Assertions.assertTrue(basket.getCapacity() == 5);
     }
 
+    @Test
+    public void testCheckExists() {
+        Basket basket = new Basket(10);
+        Assertions.assertTrue(basket.checkExists());
+    }
+
 }

@@ -51,6 +51,10 @@ public class Basket {
         this.capacity = newCapacity;
     }
 
+    public boolean checkExists() {
+        return false;
+    }
+
     public static void main(String[] args) {
 
     }

@@ -4,9 +4,11 @@ import java.util.ArrayList;
 
 public class Basket {
     ArrayList<String> basket;
+    int basketCapacity;
 
-    public Basket() {
-        basket = new ArrayList<>();
+    public Basket(int basketCapacity) {
+        this.basket = new ArrayList<>();
+        this.basketCapacity = basketCapacity;
     }
 
 /*
@@ -20,7 +22,7 @@ public class Basket {
             this.basket.add(bagel);
             return true;
         }
-        return false;
+        return true;
     }
 /*
             2.

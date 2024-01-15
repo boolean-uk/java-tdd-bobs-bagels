@@ -35,4 +35,10 @@ public class Basket {
         }
         return false;
     }
+    public String viewBasket(){
+        if(basket.isEmpty()){
+            return "Basket is empty";
+        }
+        return "";
+    }
 }

@@ -33,12 +33,13 @@ class BasketTest {
     public void testIsBasketFull() {
         Basket basket = new Basket();
 
+        // Should probably dynamically change how many bagels are added so we don't rely on changing to a set amount before testing
         basket.basketCapacity = 3;
 
         basket.addBagel("Cream Cheese");
         basket.addBagel("With Everything");
         basket.addBagel("Sesame");
-        Assertions.assertTrue(basket.addBagel("The Best Bagel"));
+        Assertions.assertFalse(basket.addBagel("The Best Bagel"));
 
 
     }

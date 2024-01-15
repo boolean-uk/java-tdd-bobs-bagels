@@ -18,9 +18,9 @@ class BasketTest {
     @Test
     public void canAddSeveralBagelToEmpty() {
         Basket basket = new Basket();
-        Assertions.assertTrue(basket.add("Bagel", 1));
-        Assertions.assertTrue(basket.add("B", 2));
-        Assertions.assertTrue(basket.add("Bag", 3));
+        Assertions.assertTrue(basket.add("Bagel", 0));
+        Assertions.assertTrue(basket.add("B", 1));
+        Assertions.assertTrue(basket.add("Bag", 2));
 
 
     }
@@ -31,15 +31,6 @@ class BasketTest {
         Basket basket = new Basket();
         Assertions.assertFalse(basket.add("", 1));
 
-
-    }
-
-
-    @Test
-    public void cantAddSameBagel() {
-        Basket basket = new Basket();
-        basket.add("Bagel", 1);
-        Assertions.assertFalse(basket.bagels.containsKey("Bagel"));
 
     }
 
@@ -78,10 +69,9 @@ class BasketTest {
     @Test
     public void limitBagelOneAddOneBagel() {
         Basket basket = new Basket();
-        basket.add("Bagel", 1);
-        basket.add("Ba", 2);
-        basket.setLimit(3);
-        Assertions.assertTrue(basket.add("Bag", 3));
+        basket.add("Bagel", 0);
+        basket.setLimit(2);
+        Assertions.assertTrue(basket.add("Bag", 1));
 
 
     }

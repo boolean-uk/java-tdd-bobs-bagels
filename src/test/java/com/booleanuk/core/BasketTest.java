@@ -58,13 +58,13 @@ class BasketTest {
         Assertions.assertEquals(5, basket.capacity);
     }
 
-
+    @Test
     public void removeBagelNotExist() {
         Basket basket = new Basket();
 
         String bagelRemove = "Cheddar";
         basket.remove(bagelRemove);
 
-        Assertions.assertEquals("Bagel does not exist in basket", basket.remove());
+        Assertions.assertEquals("Bagel does not exist in basket", basket.remove(bagelRemove));
     }
 }

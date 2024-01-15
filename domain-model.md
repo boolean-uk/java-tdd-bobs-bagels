@@ -40,10 +40,10 @@ As a Bob's Bagels manager,
 So that I can expand my business,
 I’d like to change the capacity of baskets.
 ```
-| Class  | Method                       | Member Variables       | Scenario                          | Outputs/Results               |
-|--------|------------------------------|------------------------|-----------------------------------|-------------------------------|
-| Basket | changeCapacity(int capacity) | int capacity           | Copy the old list into a new list | Return "Capacity has changed" |
-|        |                              | Arraylist<String> list | with the new capacity             |                               |
+| Class  | Method                       | Member Variables       | Scenario            | Outputs/Results               |
+|--------|------------------------------|------------------------|---------------------|-------------------------------|
+| Basket | changeCapacity(int capacity) | int capacity           | Change value of the | Return "Capacity has changed" |
+|        |                              | Arraylist<String> list | capacity            |                               |
 
 ``` 
 5.

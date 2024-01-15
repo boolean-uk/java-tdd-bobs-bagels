@@ -36,4 +36,16 @@ class BasketTest {
 
         Assertions.assertFalse(basket.add("Chocolate"));
     }
+
+    @Test
+    public void testChangeCapacityReturnsTrueWhenNewCapacityIsPositive() {
+        Basket basket = new Basket();
+        Assertions.assertTrue(basket.changeCapacity(5));
+    }
+
+    @Test
+    public void testChangeCapacityReturnsFalseWhenNegativeCapacity() {
+        Basket basket = new Basket();
+        Assertions.assertFalse(basket.changeCapacity(-2));
+    }
 }

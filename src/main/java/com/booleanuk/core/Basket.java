@@ -1,7 +1,6 @@
 package com.booleanuk.core;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Basket {
     ArrayList<String> basketList;
@@ -59,7 +58,7 @@ public class Basket {
 
     public String listBasketItems()
     {
-        if(basketList.size() > 0) {
+        if(!basketList.isEmpty()) {
             StringBuilder result = new StringBuilder();
             result.append("Your basket has ");
             result.append(basketList.size());

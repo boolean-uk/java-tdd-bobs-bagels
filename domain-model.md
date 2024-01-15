@@ -61,6 +61,13 @@ Version 1
 | Basket | ArrayList<String> bagels | basketIsFull(int quantity) | If basket is full     | Return "Basket is full!"     |
 |        |                          |                            | If basket is not full | Return "Basket is not full." |
 
+Version 2
+
+| Class  | Member variables         | Methods        | Scenario              | Output/Result                |
+|--------|--------------------------|----------------|-----------------------|------------------------------|
+| Basket | ArrayList<String> bagels | basketIsFull() | If basket is full     | Return "Basket is full!"     |
+|        | int basketSize           |                | If basket is not full | Return "Basket is not full." |
+
 
 ```
 4.
@@ -68,6 +75,14 @@ As a Bob's Bagels manager,
 So that I can expand my business,
 I’d like to change the capacity of baskets.
 ```
+
+Version 1
+
+| Class  | Member variables         | Methods                                                | Scenario                          | Output/Result                            |
+|--------|--------------------------|--------------------------------------------------------|-----------------------------------|------------------------------------------|
+| Basket | ArrayList<String> bagels | changeBasketCapacity(int oldDapacity, int newCapacity) | If basket capacity is changed     | Return "Basket capacity change!"         |
+|        |                          |                                                        | if basket capacity is not changed | Return "Basket is capacity is the same." |
+
 
 ```
 5.

@@ -31,15 +31,56 @@ class BasketTest {
         Assertions.assertTrue(bagelRemoved);
     }
 
-    //User Story 3
+    //User Story 3 case 1
     @Test
-    public void basketIsFullReturnAffirmingStatement() {
+    public void testReturnBasketIsFull() {
 
         Basket basket = new Basket();
 
-        String message = basket.isBasketFull(10);
+        basket.bagels.add("Chocolate");
+        basket.bagels.add("Vanilla");
+        basket.bagels.add("Banana");
+        basket.bagels.add("Orange");
+        basket.bagels.add("Mint");
 
-        Assertions.assertEquals("Basket is full!", message);
+        String result = basket.basketIsFull();
+
+        Assertions.assertEquals("Basket is full!", result);
+    }
+
+    //User Story 3 case 2
+    @Test
+    public void testReturnBasketIsNotFull() {
+
+        Basket basket = new Basket();
+
+        basket.bagels.add("Chocolate");
+        basket.bagels.add("Vanilla");
+
+        String result = basket.basketIsFull();
+
+        Assertions.assertEquals("Basket is not full!", result);
+    }
+
+    //User Story 4 case 1
+    @Test
+    public void basketCapacityIsChanged() {
+        Basket basket = new Basket();
+
+        String result = basket.changeBasketCapacity(5, 10);
+
+        Assertions.assertEquals("Basket capacity changed!", result);
+
+    }
+
+    //User Story 4 case 2
+    @Test
+    public void basketCapacityIsNotChanged() {
+        Basket basket = new Basket();
+
+        String result = basket.changeBasketCapacity(5, 5);
+
+        Assertions.assertEquals("Basket capacity is not changed.", result);
     }
 
 }

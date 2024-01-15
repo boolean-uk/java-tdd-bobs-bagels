@@ -41,18 +41,15 @@ class BasketTest {
     public void testAddBagelIfBasketIsFull(){
         Basket basket = new Basket();
 
+        Assertions.assertTrue(basket.checkIfFull());
         basket.add("Cookie Dough");
         basket.add("Vanilla");
         basket.add("Chocolate");
+        Assertions.assertTrue(basket.checkIfFull());
         basket.add("Blueberry");
         basket.add("Strawberry");
         basket.add("Plain");
-
-        Assertions.assertTrue(3, basket.checkIfFull());
-        Assertions.assertTrue(4, basket.checkIfFull());
-        Assertions.assertTrue(5, basket.checkIfFull());
-        Assertions.assertFalse(6, basket.checkIfFull());
-        Assertions.assertFalse(7, basket.checkIfFull());
+        Assertions.assertFalse(basket.checkIfFull());
     }
 
 }

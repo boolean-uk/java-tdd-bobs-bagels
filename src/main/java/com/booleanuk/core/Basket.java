@@ -12,7 +12,10 @@ public class Basket {
 
     public boolean add(String bagel){
         return this.bagelsList.add(bagel);
+    }
 
+    public boolean remove(String bagel){
+        return this.bagelsList.remove(bagel);
     }
 
 }

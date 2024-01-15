@@ -22,5 +22,12 @@ class BasketTest {
         boolean result = basket.remove("bread");
         Assertions.assertTrue(result);
     }
+    @Test
+    public void removeItemNotInBasket(){
+        Basket basket = new Basket();
+
+        boolean result = basket.remove("bread");
+        Assertions.assertFalse(result);
+    }
 
 }

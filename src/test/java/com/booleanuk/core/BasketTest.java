@@ -70,4 +70,18 @@ class BasketTest {
         basket.setBasketLimit(2);
         Assertions.assertTrue(basket.add("Seeds"));
     }
+
+    @Test
+    public void testRemoveBagelFromEmptyBasket() {
+        Basket basket = new Basket();
+        Assertions.assertFalse(basket.remove("Seeds"));
+    }
+
+    @Test
+    public void testRemoveBagelNotInBasket() {
+        Basket basket = new Basket();
+        basket.basketContents.put("Brown",1);
+        basket.basketContents.put("Sourdough",1);
+        Assertions.assertFalse(basket.remove("Seeds"));
+    }
 }

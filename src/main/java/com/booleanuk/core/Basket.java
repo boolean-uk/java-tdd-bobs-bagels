@@ -56,4 +56,21 @@ public class Basket {
             return false;
         }
     }
+
+    public String listBasketItems()
+    {
+        StringBuilder result = new StringBuilder();
+        result.append("Your basket has ");
+        result.append(basketList.size());
+        result.append(" items:\n");
+        for(String item : basketList)
+        {
+            result.append(item);
+            result.append("\n");
+        }
+
+        System.out.println(result);
+
+        return result.toString();
+    }
 }

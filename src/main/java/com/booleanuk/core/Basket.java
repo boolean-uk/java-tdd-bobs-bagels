@@ -10,6 +10,10 @@ public class Basket {
         this.basket = new ArrayList<>();
         this.capacity = 5;
     }
+    public Basket(int capacity) {
+        this.basket = new ArrayList<>();
+        this.capacity = capacity;
+    }
 
     public boolean add(String bagel) {
         if (this.isFull()) {
@@ -28,5 +32,9 @@ public class Basket {
 
     public ArrayList<String> getBasket() {
         return basket;
+    }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 }

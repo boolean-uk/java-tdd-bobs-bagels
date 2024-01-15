@@ -14,12 +14,14 @@ public class Basket {
     }
 
     public boolean removeBagel(Bagel bagel) {
-        for(int i = 0; i < basket.length; i++) {
-            if(basket[i].productID.equalsIgnoreCase(bagel.productID)) {
-                basket[i] = basket[currentIndex-1]; //Switch index of last added bagel so new bagels can be added
-                basket[currentIndex] = null;
-                currentIndex--;
-                return true;
+        if(currentIndex > 0) {  //If basket is not empty
+            for (int i = 0; i < basket.length; i++) {
+                if (basket[i].productID.equalsIgnoreCase(bagel.productID)) {
+                    basket[i] = basket[currentIndex - 1]; //Switch index of last added bagel so new bagels can be added
+                    basket[currentIndex] = null;
+                    currentIndex--;
+                    return true;
+                }
             }
         }
         return false;

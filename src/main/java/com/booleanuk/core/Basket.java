@@ -26,6 +26,16 @@ public class Basket {
     }
 
     public boolean remove(String bagel) {
-        return items.remove(bagel) != null;
+        Integer noOfBagels = items.get(bagel);
+        if(noOfBagels == null) {
+            return false;
+        }
+        noOfItems--;
+        if(noOfBagels == 0) {
+            items.remove(bagel);
+        } else {
+            items.put(bagel, noOfBagels-1);
+        }
+        return true;
     }
 }

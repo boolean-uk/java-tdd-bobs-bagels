@@ -19,19 +19,19 @@ public class Basket {
         if (this.isFull()) {
             return false;
         }
-        return basket.add(bagel);
+        return this.basket.add(bagel);
     }
 
     public boolean remove(String bagel) {
-        return basket.remove(bagel);
+        return this.basket.remove(bagel);
     }
 
     public boolean isFull() {
-        return basket.size() >= capacity;
+        return this.basket.size() >= this.capacity;
     }
 
     public ArrayList<String> getBasket() {
-        return basket;
+        return this.basket;
     }
 
     public void setCapacity(int capacity) {

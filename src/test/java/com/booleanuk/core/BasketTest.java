@@ -3,6 +3,9 @@ package com.booleanuk.core;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 class BasketTest {
 
     @Test
@@ -59,5 +62,52 @@ class BasketTest {
         Basket basket = new Basket();
 
         Assertions.assertEquals(10, basket.changeBasketCapacity(10));
+    }
+
+    @Test
+    public void testLowerCapacity() {
+        Basket basket = new Basket();
+
+        Assertions.assertEquals(4, basket.changeBasketCapacity(4));
+    }
+
+    @Test
+    public void testChangeCapacityAndAddBagels() {
+        Basket basket = new Basket();
+
+        basket.addBagel("Blueberry");
+        basket.addBagel("Cinnamon");
+        basket.addBagel("Egg");
+        basket.addBagel("Everything");
+        basket.addBagel("Blueberry");
+
+        Assertions.assertFalse(basket.addBagel("Plain"));
+
+        basket.changeBasketCapacity(10);
+
+        Assertions.assertTrue(basket.addBagel("Blueberry"));
+
+        basket.addBagel("Egg");
+        basket.addBagel("Chocolate");
+        basket.addBagel("Everything");
+        basket.addBagel("Sugar");
+
+        Assertions.assertFalse(basket.addBagel("Plain"));
+    }
+
+    @Test
+    public void testOutputAddToFullBasket() {
+        final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+
+        Basket basket = new Basket();
+        basket.addBagel("Blueberry");
+        basket.addBagel("Cinnamon");
+        basket.addBagel("Egg");
+        basket.addBagel("Everything");
+        basket.addBagel("Blueberry");
+
+        basket.addBagel("Plain");
+        Assertions.assertEquals("Basket is full\n", outContent.toString());
     }
 }

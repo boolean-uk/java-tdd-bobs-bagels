@@ -110,4 +110,26 @@ class BasketTest {
         basket.add("Onion", 2);
         Assertions.assertFalse(basket.remove("Onion", 3));
     }
+
+    @Test
+    public void testGetDisplayOfBasketWithOneBagel() {
+        Basket basket = new Basket();
+        basket.add("Onion", 2);
+        Assertions.assertEquals(basket.display(), "Onion: 2");
+    }
+
+    @Test
+    public void testGetDisplayOfBasketWithMultipleBagels() {
+        Basket basket = new Basket();
+        basket.add("Brown", 1);
+        basket.add("Sourdough", 1);
+        basket.add("Seeds", 1);
+        Assertions.assertEquals(basket.display(), "Brown: 1\nSourdough: 1\nSeeds: 1");
+    }
+
+    @Test
+    public void testGetDisplayOfEmptyBasket() {
+        Basket basket = new Basket();
+        Assertions.assertEquals(basket.display(), "");
+    }
 }

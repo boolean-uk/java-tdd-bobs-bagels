@@ -77,6 +77,16 @@ class BasketTest {
         Assertions.assertEquals(10, result);
     }
 
+    // 5.
+
+    @Test
+    public void removeBananaFromBasketOnlyContainingChocolate() {
+        Basket basket = new Basket(3);
+        boolean addResult = basket.addBagel("choclate");
+        boolean removeResult = basket.removeBagel("banana");
+        Assertions.assertFalse(removeResult);
+    }
+
 
 
 

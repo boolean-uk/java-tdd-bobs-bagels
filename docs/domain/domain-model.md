@@ -11,8 +11,11 @@ I'd like to add a specific type of bagel to my basket.
 | Basket         | addBagel(int bagelId)       | Bagel type is available, not in basket     | add item to basket          |
 |                |                             | Bagel type is available, already in basket | increase amount in basket   |
 |                |                             | Bagel type is not available                | throw exception NoSuchBagel |
+|                | inBasket(int bagelId)       | Bagel is in basket                         | true                        |
+|                |                             | Bagel is not in basket                     | false                       |
 | BagelInventory | availableBagel(int bagelId) | Bagel is in inventory                      | true                        |
 |                |                             | Bagel is not in inventory                  | false                       |
+|                |                             |                                            |                             |
 
 
 ```

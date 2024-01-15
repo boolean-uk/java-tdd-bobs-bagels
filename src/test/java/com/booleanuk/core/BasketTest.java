@@ -41,4 +41,13 @@ class BasketTest {
         basket.add("vanilla");
         Assertions.assertTrue(basket.remove("vanilla"));
     }
+
+    @Test
+    public void removingBagelThatThereIsMoreThanOneOf() {
+        Basket basket = new Basket();
+        basket.add("vanilla");
+        basket.add("vanilla");
+        basket.remove("vanilla");
+        Assertions.assertEquals(1, basket.items.get("vanilla"));
+    }
 }

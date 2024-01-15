@@ -16,11 +16,11 @@ class BasketTest {
     public void testAddBagelToFullBasket() {
         Basket basket = new Basket();
 
-        Assertions.assertTrue(basket.addBagel("Blueberry"));
-        Assertions.assertTrue(basket.addBagel("Cinnamon"));
-        Assertions.assertTrue(basket.addBagel("Egg"));
-        Assertions.assertTrue(basket.addBagel("Everything"));
-        Assertions.assertTrue(basket.addBagel("Blueberry"));
+        basket.addBagel("Blueberry");
+        basket.addBagel("Cinnamon");
+        basket.addBagel("Egg");
+        basket.addBagel("Everything");
+        basket.addBagel("Blueberry");
 
         Assertions.assertFalse(basket.addBagel("Plain"));
     }

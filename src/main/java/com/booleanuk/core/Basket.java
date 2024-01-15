@@ -25,6 +25,11 @@ public class Basket {
     }
 
     public boolean removeBagel(String bagel) {
+        if (this.basketList.contains(bagel)) {
+            this.basketList.remove(bagel);
+            this.bagelsInBasket--;
+            return true;
+        }
         return false;
     }
 }

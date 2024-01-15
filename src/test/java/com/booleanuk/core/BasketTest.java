@@ -49,4 +49,14 @@ class BasketTest {
         Assertions.assertFalse(basket.addBagel(bagel2));
     }
 
+    @Test
+    public void testSetCapacity() {
+        Basket basket = new Basket(10);
+        Assertions.assertEquals(basket.getCapacity(), 10);
+
+        basket.setCapacity(5);
+        Assertions.assertFalse(basket.getCapacity() == 10);
+        Assertions.assertTrue(basket.getCapacity() == 5);
+    }
+
 }

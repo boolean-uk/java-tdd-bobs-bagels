@@ -47,6 +47,10 @@ public class Basket {
         return items;
     }
 
+    public void setCapacity(int newCapacity) {
+
+    }
+
     public static void main(String[] args) {
 
     }

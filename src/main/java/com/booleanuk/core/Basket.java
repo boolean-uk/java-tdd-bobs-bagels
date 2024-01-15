@@ -46,8 +46,12 @@ public class Basket {
     }
     public int updateBasket(int amount) {
 
+        if (amount > items.size()) {
+            basketSize = amount;
+        }
 
-        return 0;
+
+        return basketSize;
     }
     public String canItemBeRemoved(String name) {
 

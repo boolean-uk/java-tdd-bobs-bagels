@@ -19,4 +19,15 @@ class BasketTest {
 
         Assertions.assertTrue(basket.remove("Plain bagel"));
     }
+
+    @Test
+    public void returnsTrueIfBasketIsFull() {
+        Basket basket = new Basket();
+
+        basket.add("Plain bagel");
+        Assertions.assertFalse(basket.isFull());
+
+        basket.add("Egg bagel");
+        Assertions.assertTrue(basket.isFull());
+    }
 }

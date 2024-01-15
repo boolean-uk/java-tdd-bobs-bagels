@@ -12,6 +12,14 @@ class BasketTest {
         Assertions.assertTrue(result);
     }
 
+    @Test
+    public void addChocolateBagelTwiceReturnFalse() {
+        Basket basket = new Basket();
+        boolean result = basket.addBagel("choclate");
+        result = basket.addBagel("choclate");
+        Assertions.assertFalse(result);
+    }
+
 
 
 

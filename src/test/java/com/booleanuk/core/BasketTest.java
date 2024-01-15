@@ -20,4 +20,11 @@ class BasketTest {
 
     }
 
+    @Test
+    public void testRemovingBagelThatExists(){
+        Basket basket = new Basket();
+        basket.addBagel("Cream Cheese");
+        Assertions.assertEquals("Cream Cheese removed", basket.removeBagel("Cream Cheese"));
+    }
+
 }

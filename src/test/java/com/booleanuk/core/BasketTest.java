@@ -69,7 +69,13 @@ class BasketTest {
 
     @Test
     public void changingCapacity(){
+        Basket basket = new Basket();
+        basket.add(new VeganBagel());
+        basket.add(new VeganBagel());
+        basket.add(new SpicyBagel());
+        basket.updateCapacity(2);
 
+        Assertions.assertTrue(basket.itemList.isEmpty());
     }
 
     @Test

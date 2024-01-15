@@ -52,7 +52,8 @@ public class Basket {
     I’d like to change the capacity of baskets.
 */
     public int changeBasketCapacity(int newCapacity) {
-        return newCapacity;
+        this.basketCapacity = newCapacity;
+        return this.basketCapacity;
     }
 
 /*

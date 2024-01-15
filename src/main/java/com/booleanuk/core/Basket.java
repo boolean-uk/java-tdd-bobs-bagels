@@ -12,17 +12,26 @@ public class Basket {
         this.capacity = 5;
     }
 
-    public boolean checkIfFull(){
+    public boolean checkIfNotFull(){
         if(this.basket == null){
             return false;
         }
-        if(this.basket.size() > 5){
+        if(this.basket.size() > this.capacity){
             System.out.println("Basket is full, unable to add bagel!");
             return false;
         }
         System.out.println("Basket is not full, adding bagel");
         return true;
 
+    }
+
+    public boolean changeCapacity(int capacity){
+        if(capacity < 0 ){
+            System.out.println("Invalid capacity");
+            return false;
+        }
+        this.capacity = capacity;
+        return true;
     }
     public boolean remove(String bagel) {
         if(bagel == null){
@@ -44,7 +53,7 @@ public class Basket {
         if(bagel.isEmpty()){
             return false;
         }
-        if(checkIfFull()){
+        if(checkIfNotFull()){
             basket.add(bagel);
         }
         return true;

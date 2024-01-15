@@ -89,6 +89,35 @@ class BasketTest {
 
 
 
+    // Overall Test
+
+    @Test
+    public void overallTest() {
+        Basket basket = new Basket(3);
+
+        // Add 4 bagels to a max 3 bagel basket. Fours add should return false, the rest true
+        Assertions.assertTrue(basket.addBagel("choclate"));
+        Assertions.assertTrue(basket.addBagel("banana"));
+        Assertions.assertTrue(basket.addBagel("creme"));
+        Assertions.assertFalse(basket.addBagel("cheese"));
+
+        // Remove banana to add cheese and salami. Salami should return fail, the rest true
+        Assertions.assertTrue(basket.removeBagel("banana"));
+        Assertions.assertTrue(basket.addBagel("cheese"));
+        Assertions.assertFalse(basket.addBagel("salami"));
+
+        // Change capacity to 5 and add the extra bagels
+        Assertions.assertEquals(5, basket.changeBasketCapacity(5));
+        Assertions.assertTrue(basket.addBagel("banana"));
+        Assertions.assertTrue(basket.addBagel("salami"));
+
+        // Remove ham bagel, that has now been added
+        Assertions.assertFalse(basket.removeBagel("ham"));
+
+    }
+
+
+
 
 
 

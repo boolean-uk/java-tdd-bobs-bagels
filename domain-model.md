@@ -78,3 +78,15 @@ I'd like to see the items I currently have in my basket
 | Basket  | listBasketItems | ArrayList<String> basket | Basket size > 0  | Items are listed.                        |
 |         |                 |                          | Basket size == 0 | "No items, basket empty"                 |
 |         |                 |                          | Basket < 0       | "Error: Basket size is negative \(how?)" |
+
+````dtd
+7.
+As a member of the public,
+So that I don't feel like I have to commit,
+I'd like to empty my basket of all its items at once
+````
+
+| Classes | Methods       | Member Variables         | Scenario         | Results(Output                                                                      |
+|---------|---------------|--------------------------|------------------|-------------------------------------------------------------------------------------|
+| Basket  | emptyBasket() | ArrayList<String> basket | Basket size > 0  | Basket size is now 0; A message is displayed to inform the user. Return true;       |
+|         |               |                          | Basket size == 0 | Basket is not emptied since it is empty. Message is displayed to user. Return false |

@@ -57,7 +57,7 @@ So that I can maintain my sanity
 I'd like to know if I try to remove an item that doesn't exist in my basket.
 ```
 
-| Classes | Methods                   | Scenario             | Output                              |
-|---------|---------------------------|----------------------|-------------------------------------|
-| Basket  | bagelInList(String bagel) | if bagel not in list | return "Bagel not in list"          |
-|         |                           | if bagel in list     | return "Bagel is removed from list" |
+| Classes | Methods                            | Scenario             | Output                              |
+|---------|------------------------------------|----------------------|-------------------------------------|
+| Basket  | tryRemoveBagelInList(String bagel) | if bagel not in list | return "Bagel not in list"          |
+|         |                                    | if bagel in list     | return "Bagel is removed from list" |

@@ -45,7 +45,7 @@ class BasketTest {
     @Test
     public void testBasketCapacity(){
         Basket basket = new Basket();
-        basket.bagelBasket.size() = basket.changeCapacity(10);
+        basket.changeCapacity(10);
         basket.addBagel("Plain bagel");
         basket.addBagel("Plain bagel");
         basket.addBagel("Plain bagel");
@@ -56,7 +56,6 @@ class BasketTest {
         basket.addBagel("Plain bagel");
         basket.addBagel("Plain bagel");
         basket.addBagel("Plain bagel");
-
         Assertions.assertEquals(10, basket.bagelBasket.size());
     }
 

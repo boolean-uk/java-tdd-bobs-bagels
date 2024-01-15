@@ -51,6 +51,9 @@ public class Basket {
     So that I can expand my business,
     I’d like to change the capacity of baskets.
 */
+    public int changeBasketCapacity(int newCapacity) {
+        return newCapacity;
+    }
 
 /*
             5.

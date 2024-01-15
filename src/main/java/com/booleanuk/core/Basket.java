@@ -24,4 +24,10 @@ public class Basket {
         return "Bagel not in basket";
     }
 
+    public String checkBasketSize(){
+        if (this.basket.size() <= 5){
+        return "Basket is not full";}
+        return "Basket is full";
+    }
+
 }

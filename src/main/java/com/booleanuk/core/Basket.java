@@ -25,6 +25,13 @@ public class Basket {
         return new ArrayList<>(bagels);
     }
 
-    public void removeBagel(String bagel) {}
+    public void removeBagel(String bagel) {
+        if (bagels.contains(bagel)) {
+            bagels.remove(bagel);
+        } else {
+            // Handle bagel not found scenario
+            System.out.println("Bagel not found in the basket. Cannot remove.");
+        }
+    }
 }
 

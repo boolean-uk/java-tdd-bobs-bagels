@@ -59,4 +59,14 @@ class BasketTest {
         basket.updateCapacity(2);
         Assertions.assertFalse(basket.add("vanilla"));
     }
+
+    @Test
+    public void testIncreasingCapacity() {
+        Basket basket = new Basket();
+        basket.add("vanilla");
+        basket.add("vanilla");
+        basket.add("vanilla");
+        basket.updateCapacity(4);
+        Assertions.assertTrue(basket.add("vanilla"));
+    }
 }

@@ -30,7 +30,7 @@ public class Basket {
  */
 
     public boolean removeBagel(String bagel) {
-        return true;
+        return this.basket.remove(bagel);
     }
 
     /*

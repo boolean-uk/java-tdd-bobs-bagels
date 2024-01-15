@@ -17,6 +17,18 @@ class BasketTest {
         boolean result = basket.add("Cinnamon bagels");
         Assertions.assertFalse(result);
     }
+    @Test
+    public void testRemoveItemOfBasketRemoveCorrectly(){
+        Basket basket= new Basket();
+        basket.add("Cinnamon bagels");
+        Assertions.assertTrue(basket.remove("Cinnamon bagels"));
+    }
+    @Test
+    public void testRemoveItemOfBasketRemoveIncorrectly(){
+        Basket basket = new Basket();
+        basket.add("Cinnamon bagels");
+        Assertions.assertFalse(basket.remove("Egg bagels"));
+    }
 
 
 }

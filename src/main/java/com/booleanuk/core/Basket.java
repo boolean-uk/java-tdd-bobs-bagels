@@ -14,4 +14,9 @@ public class Basket {
         return true;
     }
 
+    public boolean remove(String bagel) {
+        this.items.remove(bagel);
+        return true;
+    }
+
 }

@@ -21,10 +21,10 @@ So I can change my order,
 I'd like to remove a bagel from my basket.
 ````
 
-| Classes | Methods                       | Member Variables         | Scenario                    | Results/Output                                                                      |
-|---------|-------------------------------|--------------------------|-----------------------------|-------------------------------------------------------------------------------------|
-| Basket  | removeFromBasket(String type) | ArrayList<String> basket | Bagel type is in basket     | Bagel is removed from list, message "Successfully removed from basket" is displayed |
-|         |                               |                          | Bagel type is not in basket | An error message is displayed, e.g. "Bagel type is not in basket"                   |
+| Classes | Methods                       | Member Variables         | Scenario                    | Results/Output                                                                                   |
+|---------|-------------------------------|--------------------------|-----------------------------|--------------------------------------------------------------------------------------------------|
+| Basket  | removeFromBasket(String type) | ArrayList<String> basket | Bagel type is in basket     | Bagel is removed from list, message "Successfully removed from basket" is displayed. Return true |
+|         |                               |                          | Bagel type is not in basket | An error message is displayed, e.g. "Bagel type is not in basket". Return false                  |
 
 
 ````dtd

@@ -4,7 +4,6 @@ import java.util.HashMap;
 
 public class Basket {
 
-
     public HashMap<String, Integer> bagels;
     int limit;
 

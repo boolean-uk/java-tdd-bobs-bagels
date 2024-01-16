@@ -29,9 +29,9 @@ class BasketTest {
         double price = 4.50;
 
         basket.add(sesame, price);
+        Assertions.assertTrue(basket.isNotEmpty(sesame));
         basket.remove(sesame);
-        Assertions.assertFalse(basket.isEmpty(sesame));
-
+        Assertions.assertFalse(basket.isNotEmpty(sesame));
     }
     @Test
     public void existsBagelInCart(){

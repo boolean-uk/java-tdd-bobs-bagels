@@ -49,6 +49,11 @@ class BasketTest {
     }
     @Test
     public void isAuthorizedToChangeCap(){
+        Basket basket = new Basket();
+        int managerCode = 1234;
+
+        Assertions.assertTrue(basket.isManager(managerCode));
+    }
 
     }
     @Test

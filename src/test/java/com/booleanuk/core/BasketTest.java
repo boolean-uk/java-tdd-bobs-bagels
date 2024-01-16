@@ -57,6 +57,11 @@ class BasketTest {
 
     @Test
     public void capacityIsChanged(){
+        Basket basket = new Basket();
+        int newCapacity = 10;
+        int managerCode = 1234;
+        basket.changeCap(newCapacity, managerCode);
 
+        Assertions.assertEquals(newCapacity, basket.getCapacity());
     }
 }

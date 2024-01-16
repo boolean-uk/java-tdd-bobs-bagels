@@ -8,11 +8,11 @@ public class Basket {
     Integer capacity = 5;
 
     public Basket() {
-        this.basket = new ArrayList<>(capacity);
+        this.basket = new ArrayList<>();
     }
     public String addBagel(String bagel) {
         int size = this.basket.size() + 1;
-        if (size < this.capacity) {
+        if (size <= this.capacity) {
             if (this.basket.contains(bagel)) {
                 return "Bagel already in basket";
             }

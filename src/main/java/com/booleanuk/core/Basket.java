@@ -7,6 +7,7 @@ import java.util.function.BooleanSupplier;
 public class Basket {
     private Map<String, Double> items;
     private int capacity;
+    private int managerCode = 1234;
 
     public Basket() {
         this.items = new HashMap<>();
@@ -35,6 +36,10 @@ public class Basket {
 
     public Map<String, Double> getItems() {
         return items;
+    }
+
+    public boolean isManager(int password) {
+        return password == managerCode;
     }
 }
 

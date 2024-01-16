@@ -55,7 +55,6 @@ class BasketTest {
         Assertions.assertTrue(basket.isManager(managerCode));
     }
 
-    }
     @Test
     public void capacityIsChanged(){
 

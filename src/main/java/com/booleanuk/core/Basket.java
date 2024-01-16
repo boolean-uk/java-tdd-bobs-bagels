@@ -32,4 +32,17 @@ public class Basket {
         return false;
     }
 
+    public int updateCapacity(int newCap){
+        this.capacity = newCap;
+        return this.capacity;
+    }
+    public String removeBagelString(String bagel){
+        String ut="The bagel " + bagel + " doesn't exist";
+        if (bagels.contains(bagel)){
+            bagels.remove(bagel);
+            ut= "The bagel " + bagel + " is removed";
+        }
+        return ut;
+    }
+
 }

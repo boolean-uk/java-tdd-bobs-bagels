@@ -38,6 +38,15 @@ public class BasketTest {
         boolean result = basket.checkCapacity();
         Assertions.assertTrue(result);
     }
+    @Test
+    public void updateCapacityReturnString(){
+        Basket basket = new Basket();
+        int updateCap=10;
+        String returnV = basket.removeBagelString("bagel10");
+        Assertions.assertEquals("The bagel " + "bagel10" + " doesn't exist",returnV);
+    }
+
+
 
 
 

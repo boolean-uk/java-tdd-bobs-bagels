@@ -18,8 +18,27 @@ class BasketTest {
     public void checkIfBasketIsFull(){
         Basket basket = new Basket();
         String sesame = "Sesame Bagel";
-        double price = 4.50;
-        basket.add(sesame, price);
+        double price1 = 4.50;
+        String redvelvet = "Everything Bagel";
+        double price2 = 5.50;
+        String jalapenoCheese = "jalapenoCheese Bagel";
+        double price3 = 5.50;
+        String cinnamon = "Cinnamon Bagel";
+        double price4 = 4.50;
+        String flaxseed = "Flaxseed Bagel";
+        double price5 = 3.50;
+        String oats = "Oat Bagel";
+        double price6 = 5.50;
+        String whole = "WholeGrain Bagel";
+        double price7 = 6.50;
+
+        basket.add(sesame, price1);
+        basket.add(redvelvet, price2);
+        basket.add(jalapenoCheese, price3);
+        basket.add(cinnamon, price4);
+        basket.add(flaxseed, price5);
+        basket.add(oats, price6);
+        basket.add(whole, price7);
 
         Assertions.assertTrue(basket.isFull());
     }

@@ -25,6 +25,12 @@ class BasketTest {
     @Test
     public void removeBagelFromBasket(){
         Basket basket = new Basket();
+        String sesame = "Sesame Bagel";
+        double price = 4.50;
+
+        basket.add(sesame, price);
+        basket.remove(sesame);
+        Assertions.assertFalse(basket.isEmpty(sesame));
 
     }
     @Test

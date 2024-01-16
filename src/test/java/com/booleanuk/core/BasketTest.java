@@ -15,9 +15,17 @@ class BasketTest {
     }
     @Test
     public void checkIfBasketIsFull(){
+        Basket basket = new Basket();
+        int initialCapacity = 0;
+        String sesame = "Sesame Bagel";
+        double price = 4.50;
+        basket.add(sesame, price);
+
+        Assertions.assertTrue(basket.isFull());
     }
     @Test
     public void removeBagelFromBasket(){
+        Basket basket = new Basket();
 
     }
     @Test

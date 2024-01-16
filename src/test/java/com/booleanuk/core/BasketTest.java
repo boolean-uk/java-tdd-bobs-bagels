@@ -5,12 +5,13 @@ import org.junit.jupiter.api.Test;
 
 class BasketTest {
     @Test
-    public void addBagelToBasket(){
+    public void addBagelToBasket() {
         Basket basket = new Basket();
-        Bagel sesame = new Bagel("Sesame Bagel", 4.50);
-        basket.add(sesame);
-        Assertions.assertEquals(basket.items.get(sesame).name, "Sesame Bagel");
-        Assertions.assertEquals(basket.items.get(sesame).price, 4.50);
+        String sesame = "Sesame Bagel";
+        double price = 4.50;
+        basket.add(sesame, price);
+
+        Assertions.assertEquals(basket.getItems().get(sesame), price);
     }
     @Test
     public void checkIfBasketIsFull(){

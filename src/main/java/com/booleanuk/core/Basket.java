@@ -15,7 +15,12 @@ public class Basket {
     }
 
     public void add(String bagel, double price) {
-        items.put(bagel, price);
+        if (!isFull());
+        {
+            items.put(bagel, price);
+            System.out.println("Added " + bagel +" to basket");
+        }
+        System.out.println("Basket is full.");
     }
     public boolean isFull() {
         return items.size() >= capacity;
@@ -31,7 +36,8 @@ public class Basket {
     public void remove(String bagel) {
         if (items.containsKey(bagel)) {
             items.remove(bagel);
-        } System.out.println("Bagel not in basket.");
+            System.out.println("Removed " + bagel + " from basket.");
+        } System.out.println(bagel + " not in basket.");
     }
 
     public Map<String, Double> getItems() {
@@ -40,6 +46,21 @@ public class Basket {
 
     public boolean isManager(int password) {
         return password == managerCode;
+    }
+
+    public int changeCap(int newCapacity, int password) {
+        if (isManager(password)) {
+            this.capacity = newCapacity;
+            System.out.println("Password correct, capacity is updated!");
+            return newCapacity;
+        } else {
+            System.out.println("Password incorrect, capacity is not updated!");
+            return this.capacity; // Return the current capacity if the password is incorrect
+        }
+    }
+
+    public int getCapacity() {
+        return capacity;
     }
 }
 

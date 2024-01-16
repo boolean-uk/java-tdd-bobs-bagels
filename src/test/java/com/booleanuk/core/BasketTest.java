@@ -11,6 +11,7 @@ class BasketTest {
         double price = 4.50;
         basket.add(sesame, price);
 
+        Assertions.assertFalse(basket.isFull());
         Assertions.assertEquals(basket.getItems().get(sesame), price);
     }
     @Test

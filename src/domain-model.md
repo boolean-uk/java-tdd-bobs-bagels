@@ -1,3 +1,6 @@
+package com.booleanuk.core;
+
+
 | Clasess | Members                         | Methods                                   | Scenario                | Output             |
 |---------|---------------------------------|-------------------------------------------|-------------------------|--------------------|
 | Basket  | HashMap<String, Integer> bagels | add(String bagel)                         | Can add to list         | return true        |
@@ -25,4 +28,4 @@
 | Clasess | Members                         | Methods              | Scenario                  | Output       |
 |---------|---------------------------------|----------------------|---------------------------|--------------|
 | Basket  | HashMap<String, Integer> bagels | remove(String bagel) | Is existing can remove    | return true  |
-|         |                                 |                      | Not existing can't remove | return false |
+|         |                                 |                      | Not existing can't remove<br/> | return false |

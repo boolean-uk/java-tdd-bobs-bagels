@@ -35,6 +35,16 @@ class BasketTest {
     }
     @Test
     public void existsBagelInCart(){
+        Basket basket = new Basket();
+        String sesame = "Sesame Bagel";
+        double price1 = 4.50;
+        String jalapenoCheese = "Jalapeno Cheese Bagel";
+        double price2 = 5.50;
+
+        basket.add(sesame, price1);
+        Assertions.assertTrue(basket.isNotEmpty(sesame));
+        Assertions.assertFalse(basket.isNotEmpty(jalapenoCheese));
+
 
     }
     @Test

@@ -1,4 +1,4 @@
-package com.booleanuk.core;
+package com.boolean;
 
 
 | Clasess | Members                         | Methods                                   | Scenario                | Output             |

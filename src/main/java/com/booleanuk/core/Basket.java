@@ -36,4 +36,11 @@ public class Basket {
     public int getCapacity() {
         return maxCapcity;
     }
+
+    public String getItemsAsString() {
+        StringBuilder _sb = new StringBuilder();
+        for (String item : items)
+            _sb.append(" - ").append(item).append("\n");
+        return _sb.toString();
+    }
 }

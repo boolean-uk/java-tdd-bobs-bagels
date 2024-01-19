@@ -38,6 +38,14 @@ public class BasketTest {
         _basket.changeBasketCapacity(10);
 
         Assertions.assertNotEquals(3, _basket.getCapacity());
+
+        _basket.add("plain_bagel");
+        _basket.add("everything_bagel");
+        _basket.add("egg_bagel");
+
+        System.out.println("-----------------------------------\n" + _basket.getItemsAsString());
+        _basket.changeBasketCapacity(2);
+        System.out.println("After alteration:\n" + _basket.getItemsAsString());
     }
 
     @Test

@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 public class Basket {
     private int maxCapcity = 5;
-    private final ArrayList<String> items = new ArrayList<>();
+    private ArrayList<String> items = new ArrayList<>();
 
     public boolean add(String bagelName) {
-        if (items.contains(bagelName)) return false;
+        if (items.contains(bagelName) || maxCapcity < items.size()) return false;
         items.add(bagelName);
         return true;
     }
@@ -19,7 +19,18 @@ public class Basket {
     }
 
     public void changeBasketCapacity(int capacity) {
+        if (capacity <= 0) return;
+
         maxCapcity = capacity;
+
+        if (maxCapcity < items.size()) {
+            ArrayList<String> _newItemListing = new ArrayList<>();
+
+            for (int i = 0; i < maxCapcity; i++)
+                _newItemListing.add(items.get(i));
+
+            items = _newItemListing;
+        }
     }
 
     public int getCapacity() {

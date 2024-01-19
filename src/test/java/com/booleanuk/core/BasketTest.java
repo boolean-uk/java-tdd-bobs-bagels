@@ -39,4 +39,14 @@ public class BasketTest {
 
         Assertions.assertNotEquals(3, _basket.getCapacity());
     }
+
+    @Test
+    public void testRemovingBeyond() {
+        Basket _basket = new Basket();
+
+        Assertions.assertTrue(_basket.add("plain_bagel"));
+
+        Assertions.assertTrue(_basket.remove("plain_bagel"));
+        Assertions.assertFalse(_basket.remove("plain_bagel"));
+    }
 }

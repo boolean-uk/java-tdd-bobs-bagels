@@ -23,6 +23,7 @@ public class Basket {
                 if(this.basketArr[i] == null){
                     this.basketArr[i] = bagel;
                     bool = true;
+                    break;
                 }
             }
         }
@@ -80,7 +81,8 @@ public class Basket {
 
     public static void main(String[] args) {
         Basket basket = new Basket();
-
+        System.out.println(Arrays.toString(basket.basketArr));
+        basket.addToBasket("Plain");
 
         System.out.println(Arrays.toString(basket.basketArr));
     }

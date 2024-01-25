@@ -20,11 +20,11 @@ public class Basket {
 
     //User Story 1
     public boolean addBagelTypeToBasket(String bagelType) {
-        if (this.bagels.contains(bagelType)) {
-            return false;
+        if (!this.bagels.contains(bagelType)) {
+            this.bagels.add(bagelType);
+            return true;
         }
-        this.bagels.add(bagelType);
-        return true;
+        return false;
     }
 
     //User Story 2

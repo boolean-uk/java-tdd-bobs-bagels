@@ -9,14 +9,22 @@ class BasketTest {
 
     //User Story 1
     @Test
-    public void bagelAddedToBasketReturnTrue() {
+    public void addBagelNotAlreadyInBasket() {
+        Basket basket = new Basket();
+
+        boolean bagelAdded = basket.addBagelTypeToBasket("Chocolate Bagels");
+
+        Assertions.assertTrue(bagelAdded);
+    }
+    @Test
+    public void addBagelAlreadyInBasket() {
         Basket basket = new Basket();
 
         basket.addBagelTypeToBasket("Chocolate Bagels");
 
-        boolean bagelAdded = basket.bagels.contains("Chocolate Bagels");
+        boolean bagelAddedAgain = basket.addBagelTypeToBasket("Chocolate Bagels");;
 
-        Assertions.assertTrue(bagelAdded);
+        Assertions.assertFalse(bagelAddedAgain);
     }
 
     //User Story 2

@@ -14,4 +14,18 @@ public class Basket {
         basket.add(bagel);
         return "Bagel added successfully.";
     }
+
+    public String removeBagel(String bagel){
+
+        if (!basket.contains(bagel)){
+            return "This bagel is not in your basket.";
+        }
+
+        basket.remove(bagel);
+        return "Bagel successfully removed from basket.";
+    }
+
+
 }
+
+

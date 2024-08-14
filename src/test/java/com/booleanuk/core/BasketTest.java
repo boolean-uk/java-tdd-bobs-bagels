@@ -34,37 +34,32 @@ class BasketTest {
         Assertions.assertEquals(expectedSuccess, testSuccess);
         Assertions.assertEquals(expectedFail, testFail);
     }
+
+    @Test
+    public void changeBasketCapacityTest(){
+        Basket b = new Basket();
+        b.basketSize = 1;
+
+        String basketIsNotFull = "Bagel added successfully.";
+        String basketIsFull = "Basket is full.";
+
+        // Triggers basket is full error
+        b.addBagel("Cheese");
+        String failString = b.addBagel("Chocolate");
+
+        // Verifies basket is full error
+        Assertions.assertEquals(basketIsFull, failString);
+
+        // Changes capacity of basketCapacity and verifies equality
+        int newBasketCapacity = 2;
+        b.changeBasketCapacity(newBasketCapacity);
+        Assertions.assertEquals(newBasketCapacity, b.basketSize);
+
+        // Repeat first test to demonstrate that the basket has increased
+        String successString = b.addBagel("Chocolate");
+        Assertions.assertEquals(basketIsNotFull, successString);
+
+        // Test to see if function returns true
+        Assertions.assertTrue(b.changeBasketCapacity(3));
+    }
 }
-
-
-/*
-
-
-### User story 2
-```
-As a member of the public,
-So I can change my order,
-I'd like to remove a bagel from my basket.
-```
-
-### User story 3
-```
-As a member of the public,
-So that I can not overfill my small bagel basket
-I'd like to know when my basket is full when I try adding an item beyond my basket capacity.
-```
-
-### User story 4
-```
-As a Bob's Bagels manager,
-So that I can expand my business,
-I’d like to change the capacity of baskets.
-```
-
-### User story 5
-```
-As a member of the public
-So that I can maintain my sanity
-I'd like to know if I try to remove an item that doesn't exist in my basket.
-```
- */

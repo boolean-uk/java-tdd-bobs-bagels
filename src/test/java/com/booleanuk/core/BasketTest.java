@@ -7,12 +7,13 @@ class BasketTest {
     @Test
     public void addBagelTest(){
         Basket b = new Basket();
+        basket.basketSize = 1;
 
         String expectedSuccess = "Bagel added successfully.";
         String expectedFail = "Basket is full.";
 
         String testSuccess = b.addBagel("Cream");
-        String testFail = b.addBagel("Cream");
+        String testFail = b.addBagel("Chocolate");
 
         Assertions.assertEquals(expectedSuccess, testSuccess);
         Assertions.assertEquals(expectedFail, testFail);

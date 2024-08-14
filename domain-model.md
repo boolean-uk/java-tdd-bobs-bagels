@@ -1,0 +1,11 @@
+| Classes  | Variables                           | Methods                                    | Scenario                                            | Outcome                                        |
+|----------|-------------------------------------|--------------------------------------------|-----------------------------------------------------|------------------------------------------------|
+| `Basket` | `List<String> bagels`               | `addToBasket(String bagelType, int amount` | bagelType is available                              | bagelType is added amount times to bagels list |
+|          | `String[] allowedTypes`             |                                            | bagelType not available                             | user notified that bagels not added            |
+|          |                                     |                                            | amount is <1                                        | user warned that amount is insufficient        |
+|          | `int basketSize`                    |                                            | basket overfull (bagels.size()+amount > basketSize) | bagels not added, user warned of full basket   |
+|          |                                     | `order()`                                  | items in bagels                                     | order sent to store                            |
+|          |                                     |                                            | bagels list empty                                   | warning given                                  |
+|          |                                     | `removeBagel(String bagelType)`            | bagel of bagelType in bagels list                   | one bagel of bagelType is removed              |
+|          |                                     |                                            | no bagel of bagelType in bagels list                | no bagel removed, user warned                  |
+|          | `int basketSize, boolean userIsBob` | `setBasketSize(int newSize)`               | basketSize set to newSize                           |                                                |

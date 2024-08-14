@@ -6,7 +6,7 @@ public class Basket {
     ArrayList<String> basket = new ArrayList<>();
     Integer basketSize = 1;
 
-    public String addBagel(String bagel){
+    public String addBagel(String bagel) {
 
         if (basket.size() >= this.basketSize)
             return "Basket is full.";
@@ -15,9 +15,9 @@ public class Basket {
         return "Bagel added successfully.";
     }
 
-    public String removeBagel(String bagel){
+    public String removeBagel(String bagel) {
 
-        if (!basket.contains(bagel)){
+        if (!basket.contains(bagel)) {
             return "This bagel is not in your basket.";
         }
 
@@ -25,7 +25,8 @@ public class Basket {
         return "Bagel successfully removed from basket.";
     }
 
-
+    public void changeBasketCapacity(Integer newBasketCapacity) {
+        this.basketSize = newBasketCapacity;
+    }
 }
-
 

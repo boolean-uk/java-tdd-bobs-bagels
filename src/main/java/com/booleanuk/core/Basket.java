@@ -8,7 +8,8 @@ public class Basket {
 
     public String addBagel(String bagel) {
 
-        if (basket.size() >= this.basketSize)
+        // If the size of the basket is equal to or larger
+        if (basket.size() == this.basketSize)
             return "Basket is full.";
 
         basket.add(bagel);
@@ -25,8 +26,8 @@ public class Basket {
         return "Bagel successfully removed from basket.";
     }
 
-    public void changeBasketCapacity(Integer newBasketCapacity) {
-        this.basketSize = newBasketCapacity;
+    public void changeBasketSize(Integer newBasketSize) {
+        this.basketSize = newBasketSize;
     }
 }
 

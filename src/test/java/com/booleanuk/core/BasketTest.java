@@ -9,9 +9,11 @@ class BasketTest {
         Basket b = new Basket();
         b.basketSize = 1;
 
+        // Expected return strings
         String expectedSuccess = "Bagel added successfully.";
         String expectedFail = "Basket is full.";
 
+        // Resulting strings from addBagel execution
         String testSuccess = b.addBagel("Cream");
         String testFail = b.addBagel("Chocolate");
 
@@ -22,12 +24,13 @@ class BasketTest {
     @Test
     public void removeBagelTest(){
         Basket b = new Basket();
-
         b.addBagel("Chocolate");
 
+        // Expected return strings
         String expectedSuccess = "Bagel successfully removed from basket.";
         String expectedFail = "This bagel is not in your basket.";
 
+        // Resulting strings from removeBagel execution
         String testSuccess = b.removeBagel("Chocolate");
         String testFail = b.removeBagel("Cream");
 
@@ -36,7 +39,7 @@ class BasketTest {
     }
 
     @Test
-    public void changeBasketCapacityTest(){
+    public void changeBasketSizeTest(){
         Basket b = new Basket();
         b.basketSize = 1;
 
@@ -50,10 +53,10 @@ class BasketTest {
         // Verifies basket is full error
         Assertions.assertEquals(basketIsFull, failString);
 
-        // Changes capacity of basketCapacity and verifies equality
-        int newBasketCapacity = 2;
-        b.changeBasketCapacity(newBasketCapacity);
-        Assertions.assertEquals(newBasketCapacity, b.basketSize);
+        // Changes size of basketSize and verifies equality
+        int newBasketSize = 2;
+        b.changeBasketSize(newBasketSize);
+        Assertions.assertEquals(newBasketSize, b.basketSize);
 
         // Repeat first test to demonstrate that the basket has increased
         String successString = b.addBagel("Chocolate");

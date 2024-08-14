@@ -18,15 +18,27 @@ class BasketTest {
         Assertions.assertEquals(expectedSuccess, testSuccess);
         Assertions.assertEquals(expectedFail, testFail);
     }
+
+    @Test
+    public void removeBagelTest(){
+        Basket b = new Basket();
+
+        b.addBagel("Chocolate");
+
+        String expectedSuccess = "Bagel successfully removed from basket.";
+        String expectedFail = "This bagel is not in your basket.";
+
+        String testSuccess = b.removeBagel("Chocolate");
+        String testFail = b.removeBagel("Cream");
+
+        Assertions.assertEquals(expectedSuccess, testSuccess);
+        Assertions.assertEquals(expectedFail, testFail);
+    }
 }
 
+
 /*
-### User story 1
-```
-As a member of the public,
-So I can order a bagel before work,
-I'd like to add a specific type of bagel to my basket.
-```
+
 
 ### User story 2
 ```

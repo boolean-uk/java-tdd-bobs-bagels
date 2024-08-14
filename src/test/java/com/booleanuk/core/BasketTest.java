@@ -58,8 +58,5 @@ class BasketTest {
         // Repeat first test to demonstrate that the basket has increased
         String successString = b.addBagel("Chocolate");
         Assertions.assertEquals(basketIsNotFull, successString);
-
-        // Test to see if function returns true
-        Assertions.assertTrue(b.changeBasketCapacity(3));
     }
 }

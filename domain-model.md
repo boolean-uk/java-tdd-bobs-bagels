@@ -46,12 +46,11 @@ I'd like to know if I try to remove an item that doesn't exist in my basket.
 | `Integer basketSize`        | Size of the basket.                                                  |
 
 ### Methods
-| Methods                                         | Scenario                                                         | Outputs                                   |
-|-------------------------------------------------|------------------------------------------------------------------|-------------------------------------------|
-| `String addBagel(String bagle)`                 | Customer successfully adds bagel to basket                       | `Bagel added successfully.`               |
-|                                                 | Customer fails to add bagel to basket as basket is full          | `Basket is full.`                         |
-| `String removeBagel(String bagle)`              | Customer successfully removes bagel from basket                  | `Bagel successfully removed from basket.` |
-|                                                 | Customer tries to remove bagel not in the basket from the basket | `This bagel is not in your basket.`       |
-| `Boolean changeBasketCapacity(int newCapacity)` | Manager successfully changes the capacity of the basket          | Return true                               |
-|                                                 | Manager fails in changing the capacity of the basket             | Return false                              |
+| Methods                                      | Scenario                                                        | Outputs                                   |
+|----------------------------------------------|-----------------------------------------------------------------|-------------------------------------------|
+| `String addBagel(String bagle)`              | Customer successfully adds bagel to basket                      | `Bagel added successfully.`               |
+|                                              | Customer fails to add bagel to basket as basket is full         | `Basket is full.`                         |
+| `String removeBagel(String bagle)`           | Customer successfully removes bagel from basket                 | `Bagel successfully removed from basket.` |
+|                                              | Customer tries to remove bagel not in the basket from the basket | `This bagel is not in your basket.`       |
+| `Void changeBasketCapacity(int newCapacity)` | Manager changes the capacity of the basket                      | -                                         |
 

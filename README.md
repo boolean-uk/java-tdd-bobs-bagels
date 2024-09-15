@@ -21,6 +21,11 @@ So I can order a bagel before work,
 I'd like to add a specific type of bagel to my basket.
 ```
 
+| Classes | Methods |   |   |
+|---------|---------|---|---|
+|         |         |   |   |
+
+
 ```
 2.
 As a member of the public,
